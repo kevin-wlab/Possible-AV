@@ -1,0 +1,175 @@
+// Services — 5 detail pages + the overview grid. Maps to a Webflow "Services"
+// CMS collection (one item per service).
+
+export const services = [
+  {
+    slug: "av-systems",
+    name: "AV Systems",
+    icon: "◧",
+    cardLine: "System design, integration, and on-site operation.",
+    h1: "Signal in. Experience out.",
+    sub: "AV system design, integration, and on-site operation for events and permanent installations.",
+    capabilities: [
+      "Signal routing & switching",
+      "Multi-display management",
+      "Video distribution (SDI, HDMI, NDI)",
+      "Scaler & format conversion",
+      "Control systems (Crestron / Q-SYS / custom)",
+      "On-site AV operation & techs",
+    ],
+    useCases: [
+      "Corporate presentations",
+      "Brand experience spaces",
+      "Museum AV infrastructure",
+      "Pop-up retail displays",
+      "Broadcast & live production support",
+    ],
+    tech: [
+      "Resolume Arena media serving",
+      "Brompton LED processing",
+      "NDI over IP workflows",
+      "Multi-screen synchronized playback",
+    ],
+    ledNote: true,
+    cta: "Get a Quote for Your Project",
+  },
+  {
+    slug: "projection",
+    name: "Projection",
+    icon: "◮",
+    cardLine: "From single setups to large-scale architectural mapping.",
+    h1: "Projection that transforms any surface.",
+    sub: "From single-projector setups to large-scale architectural mapping — indoors and out.",
+    capabilities: [
+      "Single & multi-projector setups",
+      "Projection mapping (architectural, object, floor)",
+      "Short-throw & ultra-short-throw installation",
+      "Laser projector deployment",
+      "Edge blending & warping",
+      "3D mapping & motion content integration",
+    ],
+    useCases: [
+      "Retail window displays",
+      "Museum & gallery installations",
+      "Brand launch events",
+      "Architectural projections",
+      "Stage & set design",
+    ],
+    tech: [
+      "Epson laser projectors (in stock)",
+      "Resolume / TouchDesigner content serving",
+      "Indoor & outdoor protection rigs",
+    ],
+    cta: "Plan Your Projection Setup",
+  },
+  {
+    slug: "audio",
+    name: "Audio Engineering",
+    icon: "◍",
+    cardLine: "Sound for live events, experiences, and installations.",
+    h1: "Sound that fills the room. Or the building.",
+    sub: "Professional audio engineering for live events, brand experiences, and permanent installations.",
+    capabilities: [
+      "PA system design & deployment",
+      "Live sound mixing",
+      "Distributed audio (background music, zoned audio)",
+      "Wireless microphone systems",
+      "IEM & monitor systems",
+      "Audio over IP (Dante / AES67)",
+      "Immersive audio (spatial, multi-channel)",
+      "Noise floor management for sensitive spaces",
+    ],
+    useCases: [
+      "Corporate events & conferences",
+      "Product launches",
+      "Museum audio installations",
+      "Pop-up brand activations",
+      "Outdoor events",
+    ],
+    tech: [
+      "Dante / AES67 networked audio",
+      "Spatial & multi-channel immersive rigs",
+      "Zoned distributed playback",
+    ],
+    cta: "Talk to an Audio Engineer",
+  },
+  {
+    slug: "network",
+    name: "Network & IT",
+    icon: "◇",
+    cardLine: "The infrastructure everything else runs on.",
+    h1: "The infrastructure everything runs on.",
+    sub: "Reliable network and IT infrastructure for events, studios, and commercial spaces.",
+    groups: [
+      {
+        title: "Event Networking",
+        items: [
+          "Temporary event networks",
+          "High-density WiFi deployment",
+          "VLAN segmentation (AV / show / guest)",
+          "Fiber backbone for large venues",
+          "Remote monitoring during events",
+        ],
+      },
+      {
+        title: "Permanent Installation",
+        items: [
+          "Structured cabling (Cat6A / fiber)",
+          "UniFi enterprise deployment",
+          "Network rack buildout",
+          "PoE infrastructure for AV devices",
+          "IT / AV convergence design",
+        ],
+      },
+      {
+        title: "AV over IP",
+        items: [
+          "NDI workflow setup",
+          "Dante audio networking",
+          "SDVoE / AVoIP distribution",
+        ],
+      },
+    ],
+    useCases: [
+      "Event venues",
+      "Museum & gallery tech infrastructure",
+      "Retail & hospitality spaces",
+      "Production studios",
+      "Corporate offices",
+    ],
+    cta: "Get a Network Assessment",
+  },
+  {
+    slug: "interactive-experience",
+    name: "Interactive Experience",
+    icon: "◉",
+    cardLine: "Technology that responds to people.",
+    h1: "Technology that responds to people.",
+    sub: "Interactive AV installations for brand experiences, museums, and public spaces.",
+    capabilities: [
+      "Touchscreen interactive displays",
+      "Sensor-based installations (motion, proximity, gesture)",
+      "Multi-screen synchronized experiences",
+      "Content + hardware integration",
+      "Kiosk deployment & management",
+      "Real-time data visualization displays",
+      "Custom show control systems",
+    ],
+    useCases: [
+      "Museum & gallery interactive exhibits",
+      "Brand activation & experiential marketing",
+      "Retail interactive displays",
+      "Corporate lobbies & showrooms",
+      "Public installations",
+    ],
+    tech: ["TouchDesigner", "Resolume", "Custom hardware integration"],
+    cta: "Design an Interactive Experience",
+  },
+];
+
+export const servicesOverview = {
+  h1: "Every signal. Every space. Every city.",
+  sub: "End-to-end AV services for events, installations, and permanent deployments.",
+};
+
+export const getService = (slug) => services.find((s) => s.slug === slug);
