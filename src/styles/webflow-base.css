@@ -1,0 +1,110 @@
+/* Possible AV — Webflow base layer.
+   The pa-* COMPONENT classes are native Webflow styles (editable in the Designer).
+   This file only carries what flat classes can't express: fonts, resets, keyframes,
+   pseudo-elements, dark-context overrides, hover, and responsive rules.
+   Injected on the live site via the `pawf` registered script. */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Hanken Grotesk", system-ui, sans-serif;
+  background: #f4f2ec;
+  color: #16181d;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* hero glow */
+.pa-hero::after {
+  content: ""; position: absolute; inset: auto -10% -40% 40%; height: 560px;
+  background: radial-gradient(closest-side, rgba(59,91,255,0.5), transparent 70%);
+  filter: blur(40px); opacity: 0.5; pointer-events: none;
+}
+.pa-phero::after {
+  content: ""; position: absolute; inset: -30% -20% auto auto; width: 520px; height: 520px;
+  background: radial-gradient(closest-side, rgba(41,223,230,0.28), transparent 70%);
+  filter: blur(30px); pointer-events: none;
+}
+.pa-hero .pa-wrap, .pa-phero .pa-wrap { position: relative; z-index: 1; }
+
+/* eyebrow accent line */
+.pa-eyebrow { display: inline-flex; align-items: center; gap: 10px; }
+.pa-eyebrow::before { content: ""; width: 22px; height: 1px; background: currentColor; display: inline-block; }
+.pa-sec--dark .pa-eyebrow { color: #29dfe6; }
+
+/* dark-context text overrides */
+.pa-hero .pa-lede, .pa-phero .pa-lede, .pa-sec--dark .pa-lede, .pa-sec--dark .pa-p { color: #a7adb8; }
+.pa-sec--dark .pa-mono-meta, .pa-sec--dark .pa-stat-label { color: #a7adb8; }
+.pa-sec--dark .pa-chip { border-color: rgba(244,242,236,0.14); color: #a7adb8; }
+.pa-sec--dark .pa-btn--line { border-color: rgba(244,242,236,0.18); color: #f4f2ec; }
+.pa-sec--dark .pa-marq { border-color: rgba(244,242,236,0.14); }
+
+/* nav hover */
+.pa-nav-link:hover { color: #f4f2ec; background: rgba(244,242,236,0.07); }
+
+/* button hover */
+.pa-btn { transition: transform .15s ease, background .2s ease, box-shadow .2s ease, color .2s ease; }
+.pa-btn--signal { box-shadow: 0 8px 28px rgba(59,91,255,0.32); }
+.pa-btn:hover { transform: translateY(-2px); }
+.pa-btn--signal:hover { background: #5b78ff; }
+.pa-btn--line:hover { border-color: #3b5bff; color: #3b5bff; }
+.pa-sec--dark .pa-btn--line:hover { border-color: #29dfe6; color: #29dfe6; }
+
+/* card hover */
+.pa-card { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.pa-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(16,18,23,0.08); border-color: #3b5bff; }
+.pa-work-card { transition: transform .2s ease, box-shadow .2s ease; }
+.pa-work-card:hover { transform: translateY(-4px); box-shadow: 0 20px 44px rgba(0,0,0,0.25); }
+.pa-arrow-link { transition: gap .2s ease; }
+.pa-arrow-link:hover { gap: 12px; }
+
+/* footer descendants */
+.pa-footer-col h4 { font-family: "Space Mono", monospace; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #29dfe6; margin: 0 0 16px; }
+.pa-footer-col a { display: block; color: #a7adb8; padding: 6px 0; font-size: 15px; }
+.pa-footer-col a:hover { color: #f4f2ec; }
+
+/* marquee animation */
+@keyframes pa-scroll { to { transform: translateX(-50%); } }
+.pa-marq-track { animation: pa-scroll 32s linear infinite; }
+.pa-marq:hover .pa-marq-track { animation-play-state: paused; }
+
+/* blog prose */
+.pa-prose h2 { font-family: "Fraunces", serif; font-weight: 400; font-size: clamp(26px,3vw,34px); margin: 44px 0 12px; letter-spacing: -0.02em; }
+.pa-prose p { color: #16181d; margin: 16px 0; }
+
+/* CMS rich text */
+.w-richtext ul { list-style: disc; padding-left: 1.25em; margin: 14px 0; }
+.w-richtext ol { list-style: decimal; padding-left: 1.25em; margin: 14px 0; }
+.w-richtext li { padding: 4px 0; }
+.w-richtext h4 { font-family: "Fraunces", serif; font-weight: 400; font-size: 19px; margin: 22px 0 6px; }
+.w-richtext p { margin: 12px 0; }
+.pa-sec--dark .w-richtext li, .pa-sec--dark .w-richtext p { color: #a7adb8; }
+
+/* native form fields */
+.w-input, .w-select, .w-textarea {
+  font-family: "Hanken Grotesk", sans-serif; font-size: 16px; padding: 13px 15px;
+  border: 1px solid rgba(16,18,23,0.16); border-radius: 10px; background: #fff; color: #16181d;
+  width: 100%; margin-bottom: 16px;
+}
+.w-input:focus, .w-select:focus, .w-textarea:focus { outline: 2px solid #3b5bff; border-color: #3b5bff; }
+.w-textarea { min-height: 130px; }
+form label { font-family: "Space Mono", monospace; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: #5b6068; margin: 0 0 6px; display: block; }
+
+/* responsive */
+@media (max-width: 960px) {
+  .pa-grid-3, .pa-steps, .pa-stats { grid-template-columns: 1fr 1fr; }
+  .pa-split, .pa-footer-top { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .pa-grid-3, .pa-steps, .pa-stats, .pa-footer-top { grid-template-columns: 1fr; }
+  .pa-callout { flex-direction: column; align-items: flex-start; }
+  .pa-nav-inner { height: auto; padding-top: 10px; padding-bottom: 10px; flex-wrap: wrap; }
+  .pa-nav-links { flex-wrap: wrap; grid-column-gap: 4px; }
+  .pa-nav-link { padding-left: 8px; padding-right: 8px; font-size: 13px; }
+}
