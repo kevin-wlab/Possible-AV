@@ -15,7 +15,8 @@ Last updated: 2026-11-12 (positioning, address, client-name and Touring rules ad
 
 ## Design
 - The site family (ledwall.nyc → Possible AV → WLAB) shares copywriting style and per-page section layout, but **each site has its own visual style**.
-- Possible AV direction: **lit dark "console" look** — the approved version sits between the two earlier glow versions, slightly brightened, applied to all pages. Rejected: a matte glow-free restyle (worse) and an earlier palette that looked too "AI-generated". Avoid large blocks of flat solid color.
+- **2026-11-13: owner moved the homepage to a curated.design-style direction** (black, Inter, pill buttons, 28px image cards; classes `cv-*`). Other pages still use the earlier style until restyled.
+- Earlier Possible AV direction: **lit dark "console" look** — the approved version sits between the two earlier glow versions, slightly brightened, applied to all pages. Rejected: a matte glow-free restyle (worse) and an earlier palette that looked too "AI-generated". Avoid large blocks of flat solid color.
 - Photos are generated with FLORA. Site content is placeholder for now; the owner will replace it.
 
 ## Positioning and copy rules

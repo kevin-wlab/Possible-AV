@@ -37,3 +37,19 @@ Owner asked to run the same audit used on ledwall.nyc on Possible AV ("用同样
 - Webflow dashboard: set **www.possibleav.com as default domain** (apex then 301s) and **Global canonical URL** `https://www.possibleav.com` (Site settings → SEO). Not available via API.
 - Thin pages still: case studies ~110–170 words, `/industries` ~140, `/services` ~180, About/Contact/Touring have the image placeholder.
 - No GBP, no Search Console, no analytics tag (`googleTagIds` empty).
+
+## Homepage redesign (curated.design direction) — live 2026-11-13 ~21:25 ET
+- Owner: "学习这个网站设计 (https://curated.design/)，重新设计 possibleav" → design canvas https://claude.ai/artifact/QcLNYnUWAqd3YkLcfG7ReG → owner: "上线看看".
+- Home `6a34a78c3bca7b2b60e5eae5`: inserted `.cv-page` `b765a958-8026-0457-e2a2-f0144561b14d` after the nav via `data_whtml_builder` (hero with pill badge + brief bar → /contact, industry chips → industry pages, 6-card work grid with existing FLORA covers as CSS backgrounds `cv-ph-1..6`, services, process, touring panel + stats, ledwall.nyc/WLAB cards, CTA). Removed the 8 old sections (pa-hero … final CTA). Nav and footer unchanged.
+- Page head code: Inter + JetBrains Mono (Google Fonts), `body{background:#000}`.
+- Style: black ground, Inter 500 tight-tracked headings, #949494 secondary, white pill CTA, #171717 chips, 28px radius cards. All classes `cv-*`.
+- LA card uses the generic hero image, not the LA cover (its filename contains names).
+- Live check: one H1, title unchanged, all home links 200, no Navy Yard.
+
+### Gotchas
+- whtml CSS: media queries must be exactly `screen and (max-width: 991px|767px|479px)`; no descendant selectors (`.a:hover .b` refused).
+- A second whtml call that reuses an existing class name can create a duplicate (`cv-sec-1`, unstyled) — check for `-1` classes and `set_style` back.
+- Fonts in whtml CSS warn "missing_font"; load them via page head code.
+
+### Open
+- Nav (mono caps, orange button) and other pages still use the old console style; restyle site-wide once the owner sends the extra business scope.
