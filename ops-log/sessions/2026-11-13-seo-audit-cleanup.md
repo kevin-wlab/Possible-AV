@@ -25,12 +25,15 @@ Owner asked to run the same audit used on ledwall.nyc on Possible AV ("用同样
 - Remaining name: LA cover **image filename** (known open item, owner kept the photo).
 - CMS item publishes are already live; the template bindings, Home marquee removal and static SEO trims wait for a custom-domain publish (owner approval per CLAUDE.md).
 
+## Live publish (owner: "发布", 2026-11-13 ~21:06 ET)
+- Full-site publish to www.possibleav.com + possibleav.com (task `2c18b7e3-147e-40f9-8d30-b254eb0c8ab8`).
+- Live crawl: 41 URLs all 200, 0 broken, 0 Navy Yard, 0 client names in visible text, 0 generic titles, 0 over-length titles/descriptions.
+
 ## Gotchas
 - A staging publish can lag: static-page edits didn't show ~45s after the second publish; the third publish + cache-busted fetch showed them.
 - Template SEO binding works via `bulk_update_pages` — no Designer needed.
 
 ## Open (owner)
-- Approve the custom-domain publish.
 - Webflow dashboard: set **www.possibleav.com as default domain** (apex then 301s) and **Global canonical URL** `https://www.possibleav.com` (Site settings → SEO). Not available via API.
 - Thin pages still: case studies ~110–170 words, `/industries` ~140, `/services` ~180, About/Contact/Touring have the image placeholder.
 - No GBP, no Search Console, no analytics tag (`googleTagIds` empty).

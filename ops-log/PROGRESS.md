@@ -9,7 +9,7 @@ Last updated: 2026-11-13 (SEO audit + rule cleanup; see sessions/2026-11-13-seo-
 - **Brooklyn, New York wording** (2026-11-12): Navy Yard and the street address removed from footers, Home stats and eyebrows, Contact, FAQ, SEO descriptions and JSON-LD. *Live check 2026-11-12: Home has no Navy Yard mention. Other pages were checked via the API only.*
 - **No client names on visible pages** (2026-11-12): Touring copy is generic. The LA case study is renamed with generic labels. The Times Square and New Orleans case studies are hidden (unpublished, archived, cards removed). *Live check 2026-11-12: Home, Touring and Work show no client names; Work lists 7 cards.*
 
-- **SEO audit cleanup** (2026-11-13): CMS template SEO bound to item meta fields (30 pages had the bare title "Possible AV"); Navy Yard and client names removed from Experiential, AV Systems, industries and the Home marquee; broken links to hidden case studies fixed; long titles/descriptions trimmed. *Verified on staging; CMS items live; template/static changes await custom-domain publish.*
+- **SEO audit cleanup** (2026-11-13): CMS template SEO bound to item meta fields (30 pages had the bare title "Possible AV"); Navy Yard and client names removed from Experiential, AV Systems, industries and the Home marquee; broken links to hidden case studies fixed; long titles/descriptions trimmed. *Live 2026-11-13; live crawl clean (41/41 200, 0 broken, 0 Navy Yard, 0 client names, 0 generic titles).*
 
 ## Decided in earlier sessions (verify against the live site before relying on it)
 - Visual direction: lit dark "console" style, applied to all pages.
