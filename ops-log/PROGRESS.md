@@ -1,6 +1,6 @@
 # PROGRESS — Possible AV
 
-Last updated: 2026-11-12 (after the NYC SEO / Touring sessions).
+Last updated: 2026-11-13 (SEO audit + rule cleanup; see sessions/2026-11-13-seo-audit-cleanup.md).
 
 ## Live
 - Site is on Webflow and live on possibleav.com (last publish 2026-11-12, per Webflow).
@@ -8,6 +8,8 @@ Last updated: 2026-11-12 (after the NYC SEO / Touring sessions).
 - **Touring & Out-of-Town AV page** `/touring-av` (2026-11-12): "Touring" nav item after Work on every page, inline links from Home, About and Services, included in the sitemap. *Live check 2026-11-12: nav item and H1 confirmed on Home and Touring; sitemap API confirms the page is included.*
 - **Brooklyn, New York wording** (2026-11-12): Navy Yard and the street address removed from footers, Home stats and eyebrows, Contact, FAQ, SEO descriptions and JSON-LD. *Live check 2026-11-12: Home has no Navy Yard mention. Other pages were checked via the API only.*
 - **No client names on visible pages** (2026-11-12): Touring copy is generic. The LA case study is renamed with generic labels. The Times Square and New Orleans case studies are hidden (unpublished, archived, cards removed). *Live check 2026-11-12: Home, Touring and Work show no client names; Work lists 7 cards.*
+
+- **SEO audit cleanup** (2026-11-13): CMS template SEO bound to item meta fields (30 pages had the bare title "Possible AV"); Navy Yard and client names removed from Experiential, AV Systems, industries and the Home marquee; broken links to hidden case studies fixed; long titles/descriptions trimmed. *Verified on staging; CMS items live; template/static changes await custom-domain publish.*
 
 ## Decided in earlier sessions (verify against the live site before relying on it)
 - Visual direction: lit dark "console" style, applied to all pages.
@@ -24,7 +26,7 @@ Last updated: 2026-11-12 (after the NYC SEO / Touring sessions).
 - **The LA case-study cover photo** shows a name on a banner, and its file URL contains names. The owner kept the photo for now; replacing or cropping it and re-uploading under a generic filename would finish the job.
 - **Two archived Work CMS items** (Times Square, New Orleans) can be permanently deleted in the Webflow dashboard if wanted. Old case-study URLs 404 on purpose (no redirects).
 - **Phone number** missing from the site and the JSON-LD.
-- **CMS template pages** (`/post`, `/project`, `/industry`, `/service`) have no SEO title or description bound. Bind them to CMS fields in the Designer.
+- **Duplicate hosts:** apex and www both serve the site with no canonical. Owner: set www as default domain + Global canonical URL in Webflow dashboard.
 - **Touring page:** confirm the "larger systems ship ahead to the venue" line with the owner, and add a real tour photo.
 - **Mobile nav:** check the layout with 8 items.
 - **More out-of-town case studies** (only LA is visible now), written without client names.
