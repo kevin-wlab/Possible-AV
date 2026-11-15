@@ -1,6 +1,10 @@
 # Resume here
 
 ## FIRST (owner, 2026-11-15 04:31): the redesign goes LIVE on Webflow, not just the prototype
+**Owner, 04:34: the new site REPLACES the whole of possibleav.com.** Every live page moves to the new design, not only the pages built so far:
+Home, Services (+ the nine service pages), Industries, Work (+ CMS Work template), About, Blog (+ post template), FAQ, Pricing, Touring, Contact, Get a Quote, Services/Industries CMS templates, 404.
+Plan: one shared design system in Webflow (styles from the prototype: bg #ECE9E3, ink #1A1A18, amber #E8892D, Geist/Geist Mono, frosted nav, footer without WLAB), rebuild each page in it, keep URLs/slugs and SEO titles (they carry the NYC SEO work), keep the native form. Work in Webflow without publishing until Home + Services + Get a Quote + the shared nav/footer are done, then publish; after that publish page by page as each is finished. Delete the 4 draft duplicate pages (untitled…untitled-4) only after asking.
+
 The owner is redoing the whole site; the new design is what should be on possibleav.com. Before more service pages:
 1. Rebuild /get-a-quote (Webflow page `6af97b78d8e68fc36722099d`, live since 04:30 in the OLD style) in the NEW design, keeping the native Webflow form (form name "Possible AV Project Inquiry", fields Name, Email, Company, Event Type="What do you need?", Location and Date="Where and when", Budget Range, Message). Use data_whtml_builder with the prototype's CSS tokens (bg #ECE9E3, ink #1A1A18, amber #E8892D, Geist/Geist Mono) and the frosted nav.
 2. Port the finished prototype pages into Webflow (staging first, then publish): Home (studio 3D homepage or the product-film one), Services, Audio, Displays, Projection. 3D: page-level custom code / HTML embed loading three.js from cdn.jsdelivr.net with the models inlined; images uploaded as Webflow assets.
