@@ -70,7 +70,7 @@ html{height:auto}body{font-size:16px;line-height:normal;min-height:0;margin:0}h1
   .idx a:hover,.idx a.hot,.idx a.on{background:var(--ink);border-color:var(--ink);color:var(--bg);transform:translateY(-2px)}
   .idx a:hover b,.idx a.hot b,.idx a.on b{color:rgba(236,233,227,.6)}
   #veil{position:absolute;inset:0;z-index:3;pointer-events:none;transition:opacity .4s;background:linear-gradient(90deg,var(--bg) 0,rgba(236,233,227,.94) 30%,rgba(236,233,227,0) 47%)}
-  #focus{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0;transition:opacity .25s}
+  #focusl{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0;transition:opacity .25s}
   #lead{position:absolute;inset:0;width:100%;height:100%;z-index:5;pointer-events:none;opacity:0;transition:opacity .2s}
   #lead path{fill:none;stroke:var(--ink);stroke-width:1}
   #lead circle{fill:var(--bg);stroke:var(--ink);stroke-width:1.5}

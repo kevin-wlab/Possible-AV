@@ -956,7 +956,7 @@ function keys(){
 const lerp=(a,b,t)=>a+(b-a)*t, ease=t=>t*t*(3-2*t);
 const floorEl=document.getElementById('floor'), copyEl=document.getElementById('copy'), cards=[...document.querySelectorAll('.card')];
 const pinEl=document.querySelector('.pin'), railA=[...document.querySelectorAll('#rail a')];
-const focusEl=document.getElementById('focus'), veilEl=document.getElementById('veil');
+const focusEl=document.getElementById('focusl'), veilEl=document.getElementById('veil');
 const leadEl=document.getElementById('lead'), leadP=leadEl.querySelector('path'), leadC=leadEl.querySelector('circle');
 let hotList=0, hot3d=0; const ptr=new THREE.Vector2(); let ptrOn=false;
 railA.forEach(a=>{ a.addEventListener('pointerenter',()=>hotList=+a.dataset.i); a.addEventListener('pointerleave',()=>hotList=0); });

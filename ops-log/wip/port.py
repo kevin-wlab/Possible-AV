@@ -55,6 +55,7 @@ for k,f in PAGES.items():
     if extra: open(W+k+'.css','a').write('\n/* inline styles moved out of the markup */\n'+extra)
     for hk,hv in HOMEIMG.items(): body=body.replace('img/home-%s.jpg'%hk,'img/%s.jpg'%hv)
     body=links(body)
+    if k=='studio': body=body.replace('id="focus"','id="focusl"')
     if k=='studio': body=re.sub(r'href="/services#('+'|'.join(LIVE)+r')"',r'href="/\1"',body)
     A=dict(l.split() for l in open(P+'assets.txt') if l.strip())
     body=re.sub(r'src="img/([a-z0-9-]+\.jpg)"',lambda m:'src="https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/%s_%s"'%(A[m.group(1)],m.group(1)) if m.group(1) in A else m.group(0),body)
@@ -69,3 +70,9 @@ for k,f in PAGES.items():
     open(P+k+'.body.html','w').write(body.strip())
     open(P+k+'.bodyattrs','w').write(battrs.strip())
     print(k,'css',len(css),'js',len(mod.group(1)) if mod else 0,'body',len(body),'attrs',battrs.strip()[:60])
+
+# Webflow refuses the element id 'focus': the studio uses 'focusl' instead
+W2=W+'studio.'
+for ext in ['js','css']:
+    t=open(W2+ext).read(); t=t.replace("getElementById('focus')","getElementById('focusl')").replace('#focus{','#focusl{').replace('#focus,','#focusl,').replace('#focus ','#focusl ')
+    open(W2+ext,'w').write(t)
