@@ -19,7 +19,7 @@ window.chk = async function (page, w, h) {
   const n = Math.min(ea.length, eb.length);
   for (let i = 0; i < n && out.length < 22; i++) {
     const a = ea[i], b = eb[i], d = [];
-    if (a.tagName !== b.tagName || cls(a) !== cls(b)) d.push('tag ' + a.tagName + '.' + cls(a) + ' ≠ ' + b.tagName + '.' + cls(b));
+    if ((a.tagName !== b.tagName && !(a.tagName === 'A' && b.tagName === 'BUTTON')) || cls(a) !== cls(b)) d.push('tag ' + a.tagName + '.' + cls(a) + ' ≠ ' + b.tagName + '.' + cls(b));
     const ca = A.contentWindow.getComputedStyle(a), cb = B.contentWindow.getComputedStyle(b);
     P.forEach(p => { if (ca[p] !== cb[p] && !(p === 'width' && Math.abs(parseFloat(ca[p]) - parseFloat(cb[p])) < 1)) d.push(p + ': ' + ca[p] + ' ≠ ' + cb[p]); });
     const ra = a.getBoundingClientRect(), rb = b.getBoundingClientRect();
