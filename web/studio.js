@@ -965,7 +965,7 @@ canvas.addEventListener('pointerleave',()=>{ ptrOn=false; });
 const goStop=(i)=>{ const span=floorEl.offsetHeight-innerHeight; scrollTo({top:floorEl.offsetTop+span*i/(zones.length+1),behavior:'smooth'}); };
 canvas.addEventListener('click',()=>{ if(hot3d&&(stop===0||stop===zones.length+1)) goStop(hot3d); });
 const ray=new THREE.Raycaster(), floorPl=new THREE.Plane(V(0,1,0),0), hit=new THREE.Vector3(), clock=new THREE.Clock();
-if(!SVCM) railA.forEach(a=>a.addEventListener('click',e=>{ e.preventDefault(); goStop(+a.dataset.i); }));
+if(!SVCM) railA.forEach(a=>a.addEventListener('click',e=>{ e.preventDefault(); e.stopPropagation(); goStop(+a.dataset.i); }));
 
 let prog=0, stop=-1; const SNAP=location.hash.startsWith('#snap'); if(SNAP) window.__pav={THREE,scene,assets,clips,mixers,crew,skClone,posers,crewAll};
 const mouse={x:0,y:0,tx:0,ty:0}; addEventListener('pointermove',e=>{ mouse.tx=e.clientX/innerWidth-.5; mouse.ty=e.clientY/innerHeight-.5; });

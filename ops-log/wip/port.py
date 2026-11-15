@@ -30,7 +30,8 @@ for k,f in PAGES.items():
     im=re.search(r'<script type="importmap">(.*?)</script>',s,re.S)
     if im: open(W+k+'.importmap.json','w').write(im.group(1).strip())
     mod=re.search(r'<script type="module">(.*?)</script>',s,re.S)
-    if mod: open(W+k+'.js','w').write(mod.group(1))
+    # rail chips: stop the click reaching Webflow's own #anchor smooth-scroll (it scrolled to #floor top and won)
+    if mod: open(W+k+'.js','w').write(mod.group(1).replace("e.preventDefault(); goStop(+a.dataset.i);","e.preventDefault(); e.stopPropagation(); goStop(+a.dataset.i);").replace("e.preventDefault(); goStop(+a.dataset.go);","e.preventDefault(); e.stopPropagation(); goStop(+a.dataset.go);"))
     ui=re.findall(r'<script>(.*?)</script>',s,re.S)
     NAV="(function(){var p=location.pathname.replace(/\\/$/,'')||'/',m={'/':'/','/services':'/services',"+''.join("'/%s':'/services',"%k for k in LIVE)+"'/work':'/work','/about':'/about'},t=m[p];document.querySelectorAll('.nav .links a').forEach(function(a){a.classList.toggle('cur',a.getAttribute('href')===t);});})();"
     open(W+k+'.ui.js','w').write((NAV+'\n'+'\n'.join(ui)).replace('function(e){e.stopPropagation();set(!n','function(e){e.preventDefault();e.stopPropagation();set(!n'))
