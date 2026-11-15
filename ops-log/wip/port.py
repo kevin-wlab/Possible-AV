@@ -5,8 +5,8 @@
 #   port/<page>.body.html  the body markup with scripts removed and links rewritten to live URLs (fed to Webflow as native elements)
 import re, json, os, sys
 R='/home/claude/pav-hero/'; W='/home/claude/possible-av/web/'; P=R+'port/'; os.makedirs(P,exist_ok=True)
-LIVE=['audio','displays','projection','lighting','fabrication']
-HOMEIMG={'audio':'audio-systems','displays':'displays-transparent','projection':'projection-mapping','lighting':'lighting-package','fabrication':'fabrication-popup'}  # homepage card picture per service  # service pages that are finished and go on Webflow
+LIVE=['audio','displays','projection','lighting','fabrication','networks']
+HOMEIMG={'audio':'audio-systems','displays':'displays-transparent','projection':'projection-mapping','lighting':'lighting-package','fabrication':'fabrication-popup','networks':'networks-wifi'}  # homepage card picture per service  # service pages that are finished and go on Webflow
 PAGES=dict([('home','home.html'),('services','services.html')]+[(k,k+'.html') for k in LIVE])
 LINK=[(r'https://www\.possibleav\.com/get-a-quote','/get-a-quote'),(r'index\.html#','/#'),(r'index\.html','/'),(r'services\.html#','/services#'),(r'services\.html','/services'),
       (r'('+'|'.join(LIVE)+r')\.html','/\\1')]
