@@ -1,3 +1,5 @@
+/* Webflow base styles reset to the browser defaults the prototype was built on */
+html{height:auto}body{font-size:16px;line-height:normal;min-height:0;margin:0}h1,h2,h3,h4,h5,h6,p,ul,ol,figure,blockquote,label,figcaption{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-weight:bold;line-height:normal}h1{font-size:2em}h2{font-size:1.5em}h3{font-size:1.17em}h4{font-size:1em}h5{font-size:.83em}h6{font-size:.67em}blockquote{border:0;font-size:inherit;line-height:inherit}label{font-weight:inherit;display:inline}figcaption{text-align:inherit}img{vertical-align:baseline;max-width:none;display:inline}canvas{vertical-align:baseline;display:inline}
 
   :root{ --bg:#ECE9E3; --bg2:#E3DFD7; --ink:#1A1A18; --ink2:#55524C; --ink3:#8A867E; --line:rgba(26,26,24,.14); --a:#E8892D; }
   *{box-sizing:border-box;margin:0;padding:0}
