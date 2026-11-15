@@ -8,7 +8,7 @@ python3 - <<'P'
 import os,re
 W='/home/claude/possible-av/web/'
 LIVE=re.search(r"^LIVE=\[(.*?)\]",open('/home/claude/pav-hero/port.py').read(),re.M).group(1).replace("'","").split(',')
-for k in ['home','services']+LIVE:
+for k in ['home','studio','services']+LIVE:
     b=open('/home/claude/pav-hero/port/%s.body.html'%k).read()
     im=open(W+k+'.importmap.json').read() if os.path.exists(W+k+'.importmap.json') else ''
     js='<script type="module" src="../%s.js"></script>'%k if os.path.exists(W+k+'.js') else ''
