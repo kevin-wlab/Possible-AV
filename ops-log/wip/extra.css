@@ -38,3 +38,7 @@ a.room.ex h3{color:var(--ink)}
 .prose.facts li{border:1px solid var(--line);border-radius:16px;padding:20px 22px;background:rgba(255,255,255,.28);color:var(--ink);font-size:17px;font-weight:500}
 .prose.facts li:before{display:none}
 @media (max-width:900px){.casecover{padding:4px 20px 48px}.casecover .cover{aspect-ratio:4/3;border-radius:16px}.prose{font-size:16.5px}.prose.facts ul{grid-template-columns:1fr}}
+main #background.next,main #work.next,main #glance.next{padding-top:64px;padding-bottom:72px}
+main #article.next{padding-top:72px}
+.prose.facts{max-width:none}
+@media (max-width:900px){main #background.next,main #work.next,main #glance.next{padding-top:44px;padding-bottom:52px}main #article.next{padding-top:48px}}
