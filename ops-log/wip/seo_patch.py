@@ -6,6 +6,8 @@ R = [
     # nav
     ('<a href="/#industries">Industries</a><a href="/work">Work</a><a href="/about">About</a></nav>',
      '<a href="/industries">Industries</a><a href="/work">Work</a><a href="/touring-av">Touring</a><a href="/blog">Blog</a><a href="/about">About</a></nav>'),
+    ('<a href="#industries">Industries</a><a href="/work">Work</a><a href="/about">About</a></nav>',
+     '<a href="/industries">Industries</a><a href="/work">Work</a><a href="/touring-av">Touring</a><a href="/blog">Blog</a><a href="/about">About</a></nav>'),
     # footer, Company column
     ('<a href="/#industries">Industries</a><a href="/work">Work</a><a href="/about">About</a><a href="/get-a-quote">Contact</a>',
      '<a href="/industries">Industries</a><a href="/work">Work</a><a href="/touring-av">Touring</a><a href="/blog">Blog</a><a href="/about">About</a><a href="/get-a-quote">Contact</a>'),
