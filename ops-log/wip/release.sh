@@ -15,6 +15,7 @@ for k in ['home','studio','services']+LIVE:
     h='<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">\n<link rel="stylesheet" href="../%s.css">%s</head><body>\n%s\n<script src="../%s.ui.js"></script>%s</body></html>'%(k,('<script type="importmap">%s</script>'%im) if im else '',b,k,js)
     open(W+'ref/%s.html'%k,'w').write(h)
 P
+python3 pages/build_landing.py >/dev/null
 python3 seo_patch.py >/dev/null
 cp seo_patch.py port.py frag.py acts.py code.py release.sh upload-helper.js chk.js port/assets.txt /home/claude/possible-av/ops-log/wip/
 cd /home/claude/possible-av

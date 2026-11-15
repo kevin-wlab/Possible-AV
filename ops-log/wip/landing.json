@@ -1,0 +1,574 @@
+{
+ "av-rental-nyc": {
+  "title": "AV Rental NYC: Audio, Video, Lighting & Screens | Possible AV",
+  "desc": "AV rental in New York City with the crew included: screens, projectors, sound, microphones, lighting, staging, streaming and Wi-Fi, delivered from Brooklyn.",
+  "faq": {
+   "@context": "https://schema.org",
+   "@type": "FAQPage",
+   "@id": "https://possibleav.com/av-rental-nyc#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Does AV rental in NYC include setup?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Every rental goes out with our crew: delivery, setup, a technician while it runs, and strike."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I rent just one piece of equipment?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. A single TV, projector or speaker is a normal job. It still arrives set up and tested."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you deliver across all five boroughs?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. We deliver from Brooklyn to Manhattan, Brooklyn, Queens, the Bronx and Staten Island, and to Jersey City and Long Island."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What if you do not carry something?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "We source it and bring it in with everything else, on the same quote and the same schedule."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you rent LED walls?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "LED walls are rented through our sister site, ledwall.nyc, and we plan them in with the rest of the AV."
+     }
+    }
+   ]
+  }
+ },
+ "audio-visual-company-nyc": {
+  "title": "Audio Visual Company in NYC: Rental, Install & Production | Possible AV",
+  "desc": "A Brooklyn, New York audio visual company: AV rental for events, AV installation for offices, showrooms and homes, and full production, all in house.",
+  "faq": {
+   "@context": "https://schema.org",
+   "@type": "FAQPage",
+   "@id": "https://possibleav.com/audio-visual-company-nyc#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What does an audio visual company do?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It supplies and runs the screens, sound, lighting and networks for events, and designs and installs AV systems for offices, showrooms and homes. Possible AV does both, in house."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you install AV in offices?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes: conference rooms, lobbies and showrooms, including displays, audio, control, cabling and the network, with training and support after."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you install home theater in New York?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. We supply and install projectors, screens and sound for homes, and set the system up so it is easy to use."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Where are you based?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Brooklyn, New York. We work across the five boroughs, and the same crew travels for work outside the city."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do we start?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Send the space, the dates and what it has to do through the quote form. We reply within 24 hours."
+     }
+    }
+   ]
+  }
+ },
+ "event-production-company-nyc": {
+  "title": "Event Production Company in NYC | Possible AV",
+  "desc": "A New York event production company with the AV, lighting, staging, streaming, fabrication and crew in house, for launches, conferences, galas and activations.",
+  "faq": {
+   "@context": "https://schema.org",
+   "@type": "FAQPage",
+   "@id": "https://possibleav.com/event-production-company-nyc#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What does an event production company do?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It plans and runs the technical side of an event: staging, lighting, sound, screens, streaming and the crew. Possible AV also builds sets and interactive pieces in house."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you work with event planners and agencies?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. We work for brands directly, and with planners and agencies who set the creative and want one team to deliver it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can you produce an event outside New York?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. The same crew and equipment travel from Brooklyn. See touring and out-of-town AV."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How far ahead should we book?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "As early as you can, especially for large events. Tight timelines are worth a message too: tell us the date."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you include LED walls?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "LED walls come from our sister site, ledwall.nyc, and we plan them into the same production."
+     }
+    }
+   ]
+  }
+ },
+ "projector-rental-nyc": {
+  "title": "Projector Rental NYC: Laser Projectors & Screens | Possible AV",
+  "desc": "Projector and screen rental in New York City: Epson laser projectors up to 7,000 lumens, screens and projection mapping, delivered, set up and run by our crew.",
+  "faq": {
+   "@context": "https://schema.org",
+   "@type": "FAQPage",
+   "@id": "https://possibleav.com/projector-rental-nyc#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How bright a projector do I need?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It depends on the image size and how much light is in the space. For lit spaces and large screens we use Epson laser projectors up to 7,000 lumens; tell us the space and we will spec it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you rent a projector with a screen?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Projectors go out with the screen, stands or rigging, cabling and playback the job needs."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can you project on a building or an object?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Projection mapping on walls, objects and irregular surfaces is part of our projection work."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is setup included with a projector rental?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. We deliver, set up, focus and test it, and a technician can stay to run it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you install home theater projectors?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. We rent projectors for home use and install home theater systems in New York."
+     }
+    }
+   ]
+  }
+ },
+ "sound-system-rental-nyc": {
+  "title": "Sound System & Speaker Rental NYC | Possible AV",
+  "desc": "Sound system, PA and speaker rental in New York City, from one speaker and a mic to a flown line array, with an engineer to set it up and mix the show.",
+  "faq": {
+   "@context": "https://schema.org",
+   "@type": "FAQPage",
+   "@id": "https://possibleav.com/sound-system-rental-nyc#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How big a sound system do I need?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It depends on the space, the number of guests and what is on the program: speech, background music or a live band. Tell us those and we will size the system."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does a sound system rental come with an engineer?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. We set it up and check it, and an engineer can stay to mix the show."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I rent just speakers for a party?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. A pair of speakers with a microphone is a normal job, delivered and set up."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you rent directional speakers?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. We rent and sell directional speakers for exhibitions, stores and installs where the sound has to stay in one spot."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you install sound systems?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Background and zoned audio for stores, lobbies, offices and homes, installed and handed over."
+     }
+    }
+   ]
+  }
+ },
+ "microphone-rental-nyc": {
+  "title": "Wireless Microphone Rental NYC | Possible AV",
+  "desc": "Wireless microphone rental in New York City: handhelds, headsets and lavaliers, with frequency coordination, spares and a technician on site.",
+  "faq": {
+   "@context": "https://schema.org",
+   "@type": "FAQPage",
+   "@id": "https://possibleav.com/microphone-rental-nyc#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How many wireless microphones do I need?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "One for each voice that can be live at the same moment, plus a spare. Our wireless microphone guide walks through common programs."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I rent microphones without a sound system?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. We can feed the microphones into the system already in your space, or bring speakers and a mixer as well."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Headset, lavalier or handheld?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Handhelds are the most forgiving, headsets keep the level steady for presenters who move, and lavaliers are the most discreet. We will suggest a mix for your program."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is a technician included?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. A technician sets up and checks every channel, and can stay to run them during the event."
+     }
+    }
+   ]
+  }
+ },
+ "tv-rental-nyc": {
+  "title": "TV & Screen Rental NYC: OLED, Touch & Transparent | Possible AV",
+  "desc": "TV and screen rental in New York City: OLED TVs, touch screens with Android or Windows, transparent displays and kiosks, delivered and set up by our crew.",
+  "faq": {
+   "@context": "https://schema.org",
+   "@type": "FAQPage",
+   "@id": "https://possibleav.com/tv-rental-nyc#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Can I rent a TV for one day?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Single-day TV rentals for events and meetings are a normal job, delivered and set up."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you rent touch screens?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Touch screens with built-in Android or Windows, for kiosks, check-in, product catalogs and interactive pieces."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you load the content?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Send the files and we load and test them before the screens leave Brooklyn."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can screens be wall mounted?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Screens go out on stands or mounted to the wall, depending on the space."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you sell screens as well?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. We sell and install touch screens and displays for offices, stores and showrooms."
+     }
+    }
+   ]
+  }
+ },
+ "event-lighting-rental-nyc": {
+  "title": "Event Lighting Rental NYC | Possible AV",
+  "desc": "Event lighting rental in New York City: Aputure lights, stage and wash lighting, a lighting desk and an operator, for galas, launches, panels and parties.",
+  "faq": {
+   "@context": "https://schema.org",
+   "@type": "FAQPage",
+   "@id": "https://possibleav.com/event-lighting-rental-nyc#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Do you provide an operator with the lighting?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. A lighting operator can run the desk for the whole event, and the crew sets up and strikes."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can the lighting work on camera?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. We light panels and talks so they look right in the space and on the stream."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can you hang lights from truss?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Truss and rigging go out with the lighting when the space calls for it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you also rent a stage?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Stage decks, truss and lighting can come together; see stage rental."
+     }
+    }
+   ]
+  }
+ },
+ "stage-rental-nyc": {
+  "title": "Stage & Truss Rental NYC: Staging for Events | Possible AV",
+  "desc": "Stage, staging and truss rental in New York City: modular stage decks, stairs, skirting, truss and rigging, built and struck by our crew.",
+  "faq": {
+   "@context": "https://schema.org",
+   "@type": "FAQPage",
+   "@id": "https://possibleav.com/stage-rental-nyc#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What size stage do I need?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It depends on how many people are on it and how far back the audience goes. Tell us the program and the headcount and we will size it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you set up and take down the stage?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Our crew builds the stage on site and strikes it at the end."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can lighting and screens go on the stage?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Lighting, sound, screens and microphones come from the same crew, planned with the stage."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you rent truss on its own?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Truss and rigging can be rented for lights, screens or signs, set up by our crew."
+     }
+    }
+   ]
+  }
+ },
+ "event-wifi-rental-nyc": {
+  "title": "Event Wi-Fi & Internet Rental NYC | Possible AV",
+  "desc": "Temporary event Wi-Fi in New York City: access points, switching and a separate show network, with backup internet and monitoring while the event runs.",
+  "faq": {
+   "@context": "https://schema.org",
+   "@type": "FAQPage",
+   "@id": "https://possibleav.com/event-wifi-rental-nyc#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Why not use the building Wi-Fi?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You cannot control it or see into it, and it is shared with everyone else. When streaming, check-in and payments depend on it, a network of your own is safer."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can you provide internet for an event?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "We plan the internet connection with the space, add a backup path, and build the Wi-Fi and wired network on top."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you install permanent networks?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. UniFi networks for offices and buildings, with structured cabling and support."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is someone on site during the event?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. The network is monitored while the event runs, with a technician on hand."
+     }
+    }
+   ]
+  }
+ },
+ "computer-rental-nyc": {
+  "title": "Computer & Workstation Rental NYC | Possible AV",
+  "desc": "Computer and workstation rental in New York City: show computers, playback machines and high-end workstations for events and productions, set up by our crew.",
+  "faq": {
+   "@context": "https://schema.org",
+   "@type": "FAQPage",
+   "@id": "https://possibleav.com/computer-rental-nyc#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What computers do you rent?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Show computers for playback and presentations, and high-end workstations for real-time 3D, TouchDesigner and video work."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you set the computers up?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. We configure them for your software before delivery and connect them on site."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I buy a workstation instead?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. We build and sell custom PCs and workstations configured for your work."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you rent computers for exhibitions?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Playback and interactive machines for exhibitions, galleries and installs, set to start on their own each day."
+     }
+    }
+   ]
+  }
+ },
+ "experiential-production-nyc": {
+  "title": "Experiential Production & Interactive Experiences NYC | Possible AV",
+  "desc": "Experiential production in New York City: interactive installations, immersive projection, fabrication and the AV to run them, built in Brooklyn.",
+  "faq": {
+   "@context": "https://schema.org",
+   "@type": "FAQPage",
+   "@id": "https://possibleav.com/experiential-production-nyc#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is experiential production?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Building the physical experience: the interactive pieces, the set, the projection and sound, and the crew that installs and runs it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you design the experience or build what an agency designed?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Both. Some projects come with creative direction from an agency or studio; on others we take it from the first sketch."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can people interact with the piece?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. We build interactive floors, walls and screens with sensors, body tracking and RFID or NFC triggers."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can it be tested before the event?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Pieces are built and tested in Brooklyn before they are installed."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can the experience travel?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. The same build and crew can go to several cities. See touring."
+     }
+    }
+   ]
+  }
+ }
+}

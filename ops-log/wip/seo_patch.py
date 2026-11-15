@@ -10,7 +10,8 @@ R = [
      '<a href="/industries">Industries</a><a href="/work">Work</a><a href="/touring-av">Touring</a><a href="/blog">Blog</a><a href="/about">About</a></nav>'),
     # footer, Company column
     ('<a href="/#industries">Industries</a><a href="/work">Work</a><a href="/about">About</a><a href="/get-a-quote">Contact</a>',
-     '<a href="/industries">Industries</a><a href="/work">Work</a><a href="/touring-av">Touring</a><a href="/blog">Blog</a><a href="/about">About</a><a href="/get-a-quote">Contact</a>'),
+     '<a href="/industries">Industries</a><a href="/work">Work</a><a href="/touring-av">Touring</a><a href="/blog">Blog</a><a href="/av-rental-nyc">AV rental NYC</a><a href="/about">About</a><a href="/get-a-quote">Contact</a>'),
+    ('<a href="/blog">Blog</a><a href="/about">About</a><a href="/get-a-quote">Contact</a>','<a href="/blog">Blog</a><a href="/av-rental-nyc">AV rental NYC</a><a href="/about">About</a><a href="/get-a-quote">Contact</a>'),
     # hero sub-lines
     ('Rented, sold or installed, and run by our engineers.', 'Rented, sold or installed in New York, and run by our engineers.'),
     ('playback stations. Rented, sold or installed, and set up by our crew.', 'playback stations. Rented, sold or installed across New York City, and set up by our crew.'),
