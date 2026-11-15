@@ -473,8 +473,33 @@ const xSt2=xSteps(xI2,[[.12,.76,-.35,-1],[.32,.7,-.35,1]],xFoot);
 // 03 motion tracking systems: cameras on poles around a taped area, the wand lifting into their view
 const xI3=grp(scene,3*IG,0,0); xTapeSquare(xI3,2.6,2.6); const xMc=[];
 for(let k=0;k<6;k++){ const a=k/6*Math.PI*2+Math.PI/6, p=xMocapPole(2.1); p.position.set(Math.sin(a)*1.9,0,Math.cos(a)*1.9-.3); xI3.add(p); p.updateWorldMatrix(true,false); const c=p.userData.cam; c.lookAt(xI3.localToWorld(V(0,1.0,-.3))); xMc.push(p); }
-const xWd=xWand(); xI3.add(xWd); const xCs=lvCase(.7,.35,.45); xCs.position.set(.6,0,.5); xCs.rotation.y=-.3; xI3.add(xCs);
-const xRays=new THREE.LineSegments(new THREE.BufferGeometry(),new THREE.LineBasicMaterial({color:0xff5a2a,transparent:true,opacity:.0,toneMapped:false})); xI3.add(xRays); { const P=new Float32Array(6*3*2*3); xRays.geometry.setAttribute('position',new THREE.BufferAttribute(P,3)); }
+const xCs=lvCase(.7,.35,.45); xCs.position.set(1.15,0,.75); xCs.rotation.y=-.3; xI3.add(xCs);
+// a performer in the middle of the taped area, markers on the joints, like the home page
+const xPf=(()=>{ const g=grp(xI3,0,0,-.3), skin=std(0xd9d4ca,.62), jm=std(0x8f8a80,.5,.3), cap=(r,l)=>mesh(new THREE.CapsuleGeometry(r,l,8,16),skin);
+  const fig=grp(g,0,0,0), hips=grp(fig,0,1.0,0); hips.add(at(rbox(.3,.18,.19,skin,.08),0,.04,0)); const chest=mesh(new THREE.CapsuleGeometry(.16,.26,8,18),skin); chest.scale.set(1.12,1,.8); chest.position.y=.4; hips.add(chest); hips.add(at(cyl(.045,.05,.1,skin,14),0,.69,0));
+  const head=sph(.115,skin,24,18); head.scale.set(.92,1.12,1); head.position.y=.84; hips.add(head);
+  const limb=(p,x,y,len,r)=>{ const j=grp(p,x,y,0); j.add(sph(r*1.25,jm,14,10)); j.add(at(cap(r,len),0,-len/2-r*.9,0)); return {j,end:grp(j,0,-len-r*1.8,0)}; };
+  const lu=limb(hips,-.27,.58,.24,.05), ll=limb(lu.end,0,0,.22,.043), ru=limb(hips,.27,.58,.24,.05), rl=limb(ru.end,0,0,.22,.043), lt=limb(hips,-.1,-.04,.36,.068), ls=limb(lt.end,0,0,.36,.052), rt=limb(hips,.1,-.04,.36,.068), rs=limb(rt.end,0,0,.36,.052);
+  const st={g,fig,live:null,mixer:null,joints:[head,lu.j,lu.end,ll.end,ru.j,ru.end,rl.end,hips,lt.end,ls.end,rt.end,rs.end],
+    pose:(t)=>{ hips.position.y=1.0; hips.rotation.y=Math.sin(t*.7)*.55; lu.j.rotation.z=-1.9+Math.sin(t*2.2)*.6; ll.j.rotation.z=-.6+Math.sin(t*2.2+1)*.5; ru.j.rotation.z=1.2+Math.sin(t*1.7)*.7; rl.j.rotation.z=.5+Math.sin(t*1.7+.6)*.4; lt.j.rotation.x=Math.sin(t*2)*.28; rt.j.rotation.x=-Math.sin(t*2)*.28; ls.j.rotation.x=Math.max(0,-Math.sin(t*2))*.45; rs.j.rotation.x=Math.max(0,Math.sin(t*2))*.45; } };
+  const mk=glow(0xffffff); st.markers=st.joints.map(()=>{ const m=new THREE.Mesh(new THREE.SphereGeometry(.024,10,8),mk); xI3.add(m); return m; });
+  want('Michelle').then(a=>{ if(!a) return; const o=skClone(a.scene), mm=std(0xdad5cb,.58); o.traverse(n=>{ if(n.isMesh){ n.material=mm; n.frustumCulled=false; n.castShadow=true; } }); g.add(o);
+    const mx=new THREE.AnimationMixer(o); mx.clipAction(a.animations.find(c=>/samba/i.test(c.name))||a.animations[0]).play();
+    const find=(k)=>{ let r=null; o.traverse(n=>{ if(!r&&n.isBone&&n.name.replace(/^mixamorig:?/,'')===k) r=n; }); return r; };
+    const B=['Head','LeftArm','LeftForeArm','LeftHand','RightArm','RightForeArm','RightHand','Hips','LeftLeg','LeftFoot','RightLeg','RightFoot'].map(find);
+    if(B.every(Boolean)){ st.joints=B; st.live=o; st.mixer=mx; fig.visible=false; } else g.remove(o); });
+  return st; })();
+// the live avatar: the capture drawn as a skeleton on a screen behind
+const xBones=[[0,7],[1,4],[1,2],[2,3],[4,5],[5,6],[7,8],[8,9],[7,10],[10,11],[1,7],[4,7]];
+const xAvT=ctex(768,432,()=>{}); xAvT.userData.draw=(tt,P,k)=>{ const c=xAvT.userData.g, W=768, H=432; c.fillStyle='#0a0c12'; c.fillRect(0,0,W,H);
+  c.strokeStyle='rgba(120,140,170,.18)'; c.lineWidth=1; for(let i=1;i<8;i++){ c.beginPath(); c.moveTo(0,H*.93-i*H*.11); c.lineTo(W,H*.93-i*H*.11); c.stroke(); } c.beginPath(); c.moveTo(0,H*.93); c.lineTo(W,H*.93); c.stroke();
+  if(k>.02){ const px=(p)=>[W*.5+p.x*H*.4, H*.93-p.y*H*.4]; c.globalAlpha=k; c.lineCap='round'; c.strokeStyle='#bff0ff'; c.lineWidth=5; c.shadowColor='#58d6ff'; c.shadowBlur=16;
+    xBones.forEach(([a,b])=>{ const A=px(P[a]),B=px(P[b]); c.beginPath(); c.moveTo(A[0],A[1]); c.lineTo(B[0],B[1]); c.stroke(); });
+    c.fillStyle='#fff'; P.forEach((p,i)=>{ const Q2=px(p); c.beginPath(); c.arc(Q2[0],Q2[1],i===0?H*.045:6,0,7); i===0?c.stroke():c.fill(); }); c.shadowBlur=0; c.globalAlpha=1; }
+  for(let i=0;i<26;i++){ const sx=(i*97.3+tt*40)%W, sy=(i*53.7+tt*(20+i))%H; c.fillStyle='rgba(127,212,230,.45)'; c.fillRect(sx,sy,2,2); }
+  c.fillStyle='#7fd4e6'; c.font='500 20px "Geist Mono", monospace'; c.fillText('MOTION CAPTURE · 12 PTS',18,32); xAvT.needsUpdate=true; };
+const xAv=lvBigScreen(xAvT,2.3,1.29,.62); xAv.position.set(0,0,-2.45); xI3.add(xAv);
+const xRays=new THREE.LineSegments(new THREE.BufferGeometry(),new THREE.LineBasicMaterial({color:0xff5a2a,transparent:true,opacity:.0,toneMapped:false})); xI3.add(xRays); { const P=new Float32Array(6*5*2*3); xRays.geometry.setAttribute('position',new THREE.BufferAttribute(P,3)); }
 // 04 RFID & NFC triggers: a reader on a plinth, the badge tapping it, the screen answering
 const xI4=grp(scene,4*IG,0,0); xI4.add(xPlinth(.46,1.0,.46)); const xRd=xReader(); xRd.position.y=1.0; xI4.add(xRd); const xBd=xBadge(); xI4.add(xBd);
 const xWT=xWelcomeTex(), xWs=lvBigScreen(xWT,1.9,1.07,.55); xWs.position.set(.4,0,-1.3); xI4.add(xWs);
@@ -490,8 +515,9 @@ updaters.push((t,x)=>{ for(const [g,c] of xIs) g.visible=Math.abs(x-c)<(c===.5||
   // 02: the view opens out of the sensor
   const u2=sstep(2.45,2.95,x), sw=xSS.userData.sensor; sw.updateWorldMatrix(true,false); const sp=xI2.worldToLocal(sw.getWorldPosition(V())); const L=1.95*u2+.001;
   xFrG.position.copy(sp); xFrG.quaternion.copy(sw.getWorldQuaternion(new THREE.Quaternion())); xFrG.rotateX(-Q); xFr.scale.set(L*.55,L,L*.42); xFrE.scale.copy(xFr.scale); xFr.position.y=xFrE.position.y=-L/2; xFrG.visible=u2>.01; xFr.material.opacity=.07*u2; xFrE.material.opacity=.6*u2;
-  // 03: the wand lifts into the middle and the cameras find its markers
-  const u3=sstep(3.45,3.95,x); xWd.position.set(lerp(.55,0,u3),lerp(.405,1.15,u3),lerp(.5,-.3,u3)); xWd.rotation.set(0,lerp(-.3,.4+Math.sin(t*.6)*.3*u3,u3),lerp(Q,0,u3));
+  // 03: the performer dances in the middle; the cameras lock on to the markers and the skeleton appears on the screen
+  const u3=sstep(3.45,3.95,x); const xDt=Math.min(.1,Math.max(0,t-(xPf.lt||t))); xPf.lt=t;
+  if(xI3.visible){ if(xPf.mixer) xPf.mixer.update(xDt); else xPf.pose(t); (xPf.live||xPf.fig).updateMatrixWorld(true); const tmp=V(); xPf.joints.forEach((j,i)=>{ j.getWorldPosition(tmp); xI3.worldToLocal(tmp); xPf.markers[i].position.copy(tmp); }); }
   // 04: the badge comes down onto the reader
   const u4=sstep(4.45,4.85,x), tap=sstep(4.82,4.92,x); xBd.position.set(lerp(.18,0,u4),1.0+lerp(.3,.03,u4),lerp(.15,0,u4)); xBd.rotation.set(lerp(-.6,0,u4),lerp(.5,.2,u4),0); xRd.userData.ring.material.opacity=.15+.85*tap*(.6+.4*Math.sin(t*6));
   // 05: the sculpture draws itself, then fills in
@@ -501,9 +527,10 @@ updaters.push((t,x)=>{ for(const [g,c] of xIs) g.visible=Math.abs(x-c)<(c===.5||
   if(xRange.visible){ xMedT.userData.draw(t,[[.3+.4*((t*.1)%1),.5]],1); xBigT.userData.draw(t,[[.5+Math.sin(t*.4)*.3,.6]],1); }
   if(xI1.visible){ const k=Math.max(0,Math.min(xSt1.length-1,Math.floor(ns)-1)), p=xPath1[k], pts=[]; if(ns>.5){ pts.push([(p[0]+1.5)/3,(p[1]+1)/2]); if(k>0){ const q=xPath1[k-1]; pts.push([(q[0]+1.5)/3,(q[1]+1)/2]); } } xF1.tex.userData.draw(t,pts,1); }
   if(xI2.visible){ const lit=u2>.6; let n=0; for(let i=0;i<12;i++) for(let j=0;j<10;j++){ const cx=.2+(i-5.5)*.25, cz=.7+(j-4.5)*.25, d=Math.hypot(cx-.22,cz-.72); xTiles.setColorAt(n++,new THREE.Color(lit&&d<.38?AMBER:(lit&&d<.65?0xedc9a2:0xe0dcd4))); } xTiles.instanceColor.needsUpdate=true; }
-  if(xI3.visible){ const P=xRays.geometry.attributes.position.array; let o=0; const balls=xWd.userData.balls; xWd.updateWorldMatrix(true,true);
-    for(const p of xMc){ const c=xI3.worldToLocal(p.userData.cam.getWorldPosition(V())); for(const b of balls){ const w=xI3.worldToLocal(b.getWorldPosition(V())); P[o++]=c.x; P[o++]=c.y; P[o++]=c.z; P[o++]=w.x; P[o++]=w.y; P[o++]=w.z; } }
-    xRays.geometry.attributes.position.needsUpdate=true; xRays.material.opacity=.45*sstep(.75,1,u3); xRays.visible=u3>.75; }
+  if(xI3.visible){ const P=xRays.geometry.attributes.position.array; let o=0; const tg=[0,3,6,9,11].map(i=>xPf.markers[i].position);
+    for(const p of xMc){ const c=xI3.worldToLocal(p.userData.cam.getWorldPosition(V())); for(const w of tg){ P[o++]=c.x; P[o++]=c.y; P[o++]=c.z; P[o++]=w.x; P[o++]=w.y; P[o++]=w.z; } }
+    xRays.geometry.attributes.position.needsUpdate=true; xRays.material.opacity=.32*sstep(.6,1,u3); xRays.visible=u3>.6;
+    const L=xPf.markers.map(m=>V(m.position.x,m.position.y,0)); xAvT.userData.draw(t,L,sstep(.3,.9,u3)); }
   if(xI4.visible) xWT.userData.draw(t,tap);
   if(xI5.visible) xRT.userData.draw(t,u5); });
 PAGE.keys=(narrow,K,R)=>[
