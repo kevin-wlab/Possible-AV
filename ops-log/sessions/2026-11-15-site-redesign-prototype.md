@@ -166,3 +166,13 @@ Verification: staging only. chk clean at 1280 and 390 (only the nav highlight di
 - Gotchas: `bulk_update_pages` ignored `draft:false`; `update_page_settings` per page worked. Duplicated pages keep element ids (component = new page id) but not page custom code. Strip image ids = strip element id minus 3/2/1 (hex).
 - Not built on purpose: 3D printing NYC (goes to ctrlp.studio), LED wall rental (ledwall.nyc), camera rental (film gear, not this business), laptop rental (not confirmed in scope).
 - Staging verified: 12 × 200, 9 sections, 3 images, JSON-LD parses, 29 internal links all 200, no banned words.
+
+## Homepage low-performance fallback ("lite" mode), 2026-11-15
+Owner request: if the homepage 3D hasn't loaded after a set time, switch to a version for low-performance devices. (Pricing work postponed by the owner.)
+
+- `web/studio.ui.js` now decides before three.js loads and then injects `studio.js` itself (so the home footer holds only `studio.ui.js`; `code.py` skips the module tag for studio).
+- Goes lite straight away (three.js never downloads) when: no WebGL, Save-Data on, deviceMemory ≤ 2 GB, ≤ 2 CPU cores, or the URL has `?lite` / `#lite`.
+- Otherwise: lite after **7 s** if the scene hasn't rendered (`LITE_MS` in `port.py`), or if frames 30–120 average over 55 ms (~18 fps). The frame count resets after a >400 ms gap so a background tab doesn't trigger it.
+- Lite layout: canvas, labels and HUD hidden; hero over a static studio render; the 9 system cards become a normal scroll list, each with its own still (`web/img/studio-lite-0..10.jpg`, mobile hero crop `studio-lite-0m.jpg`; renders from `ops-log/wip/render_lite.py`). When it switches mid-load, the 3D renderer is disposed and the page scrolls to the top.
+- Webflow home page `6a34a78c3bca7b2b60e5eae5`: head + footer code set to `possible-av@1ddbea1`.
+- Verified on staging: normal path (3D ready, not lite), `?lite` on 375 px mobile and 1280 desktop, and a forced switch after load (`window.__pavGoLite()`): canvas hidden, page at top, no console errors.
