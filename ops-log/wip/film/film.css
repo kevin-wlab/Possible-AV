@@ -51,6 +51,7 @@
   /* example projects: labelled as examples, with illustrations */
   .exnote{margin-top:16px;font-size:16px;line-height:1.5;color:var(--ink2);max-width:640px}
   .rooms.two{grid-template-columns:1fr 1fr} .room.ex:hover{transform:none;box-shadow:none}
+  @media (min-width: 901px){ .rooms.two .room.ex:last-child:nth-child(odd){grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr} .rooms.two .room.ex:last-child:nth-child(odd) img{height:100%;aspect-ratio:auto;object-fit:cover} }
   .room.ex img{aspect-ratio:16/10} .room.ex div{padding:20px 24px 26px} .room.ex .mono{color:var(--a);margin-bottom:8px} .room.ex h3{font-size:26px}
   .room.ex dl{margin-top:16px;border-top:1px solid var(--line);display:grid;grid-template-columns:92px 1fr;gap:0}
   .room.ex dt,.room.ex dd{padding:10px 0;border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.45} .room.ex dt{font:500 11.5px "Geist Mono",monospace;text-transform:uppercase;letter-spacing:.04em;color:var(--ink3);padding-top:12px}

@@ -10,7 +10,7 @@ def sec(i0): a=re.search(r'<section class="next[^"]*" id="%s">'%i0,low).start();
 foot=low[low.index('<footer'):]
 HOME=[('displays','Displays','Screens for every space.','OLED TVs, touch screens, transparent displays and playback stations.','Rent · Buy · Install'),
  ('projection','Projection','Any surface, lit.','Projectors for events and immersive spaces, mapping on any surface, home theater.','Rent · Buy · Install'),
- ('audio','Audio','Sound, sized to the venue.','From two speakers and a microphone to a flown system for a full hall.','Rent · Buy · Install'),
+ ('audio','Audio','Sound, sized to the space.','From two speakers and a microphone to a flown system for a full hall.','Rent · Buy · Install'),
  ('lighting','Lighting & staging','Light, stage and truss.','Aputure lighting, stage decks, truss and rigging.','Rent · Install'),
  ('live-video','Live video & visuals','Live, on every screen.','Live streaming, switchers and production kits, VJ and Resolume visuals.','Rent · Install'),
  ('networks','Networks & computers','The network underneath.','UniFi networks for events and buildings, workstations and custom PCs.','Rent · Buy · Install'),
@@ -22,21 +22,21 @@ page=lambda k: ('%s.html'%k) if os.path.exists(F+'pages/%s.js'%k) and os.path.ex
 e=lambda s:s.replace('&','&amp;')
 caps='''  <div class="cap close hero on" data-s="0">
     <p class="mono">AV rental, installation and production · Brooklyn, New York</p>
-    <h1>Everything your event needs. <em>One crew.</em></h1>
+    <h1>Everything your project needs. <em>One crew.</em></h1>
     <p class="sub">Screens, projection, sound, light, live video, networks, interactive, fabrication, and the truck that brings it. Rent it, buy it or have us install it.</p>
-    <div class="ctas"><a class="btn" href="#quote">Get a quote →</a><a class="ghost" href="#" data-go="1">See the nine services ↓</a></div>
+    <div class="ctas"><a class="btn" href="https://www.possibleav.com/get-a-quote" target="_top">Get a quote →</a><a class="ghost" href="#" data-go="1">See the nine services ↓</a></div>
   </div>
 '''
 rail=''
 for i,(k,n,hd,d,tags) in enumerate(have):
     caps+='  <div class="cap" data-s="%d" data-key="%s"><p class="mono">%02d · %s</p><h2>%s</h2><p>%s</p><div class="ctas"><a class="btn" href="%s">Explore %s →</a><span class="tags">%s</span></div></div>\n'%(i+1,k,i+1,e(n),hd,e(d),page(k),e(n.lower()),''.join('<span class="tag">%s</span>'%t for t in tags.split(' · ')))
     rail+='<a href="#" data-i="%d"><b>%02d</b><span class="nm">%s</span></a>'%(i+1,i+1,e(n.split(' &')[0]))
-caps+='  <div class="cap close" data-s="%d"><p class="mono">Get a quote</p><h2>Tell us about your event.</h2><p>The date, the space and what has to happen in it. We come back with an itemized quote.</p><div class="ctas"><a class="btn" href="#quote">Get a quote →</a><a class="ghost" href="services.html">All services</a></div></div>\n'%(len(have)+1)
+caps+='  <div class="cap close" data-s="%d"><p class="mono">Get a quote</p><h2>Tell us about your project.</h2><p>The date, the space and what has to happen in it. We come back with an itemized quote.</p><div class="ctas"><a class="btn" href="https://www.possibleav.com/get-a-quote" target="_top">Get a quote →</a><a class="ghost" href="services.html">All services</a></div></div>\n'%(len(have)+1)
 cards=''.join('<a class="gc w2" href="%s">%s<div class="gt"><h3>%s</h3><p>%s</p><span class="tags">%s</span></div></a>'%(page(k),('<img src="img/home-%s.jpg" alt="%s" loading="lazy">'%(k,e(n)+': '+e(d))) if os.path.exists(R+'img/home-%s.jpg'%k) else '<div class="noimg"></div>',e(n),e(d),''.join('<span class="tag">%s</span>'%t for t in tags.split(' · '))) for k,n,hd,d,tags in have)
 header='''<header class="nav">
   <a class="logo" href="index.html"><span class="dot"></span>Possible AV</a>
   <nav class="links" id="menu"><a class="cur" href="index.html">Home</a><a href="services.html">Services</a><a href="#solutions">Solutions</a><a href="#industries">Industries</a><span class="soon">Work</span><span class="soon">About</span></nav>
-  <a class="btn" href="#quote">Get a quote</a>
+  <a class="btn" href="https://www.possibleav.com/get-a-quote" target="_top">Get a quote</a>
   <button class="menu" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu"><i></i><i></i><span>Menu</span></button>
 </header>
 <script>(function(){var n=document.querySelector('.nav'),b=document.getElementById('menuBtn');function set(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);}b.addEventListener('click',function(e){e.stopPropagation();set(!n.classList.contains('open'));});document.addEventListener('click',function(e){if(!n.contains(e.target)||e.target.closest('.links a'))set(false);});})();</script>
@@ -57,7 +57,7 @@ body='''<section class="floor film" id="floor" style="height:%dvh">
   <ul class="incl"><li><b>Delivered and set up</b>by our own crew, in our own truck</li><li><b>Run on the day</b>by technicians who stay for the show</li><li><b>Struck and taken away</b>when it is over</li><li><b>Outside New York</b>the same crew travels with it</li></ul>
 </section>
 '''%((len(have)+2)*110,caps,rail,cards)
-lower='\n\n'.join(sec(x) for x in ['industries','solutions','ways','process','also','faq','quote'])
+lower='\n\n'.join(sec(x) for x in ['turnkey','industries','solutions','ways','process','also','faq','quote'])
 models='\n'.join(open(F+'models/%s.js'%h[0]).read() for h in have)
 module=open(F+'core.head.js').read()+'\n'+models+'\n'+open(F+'pages/home.js').read()+'\n'+open(F+'core.tail.js').read()
 imp=src[src.index('<script type="importmap">'):src.index('<script type="module">')]

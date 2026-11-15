@@ -45,3 +45,11 @@ The redesign is built as a **prototype first** (a published Claude artifact, not
 - Owner to confirm: Rent / Buy / Install tags per service; LED walls card tags; Audio copy listed in the Audio page notes.
 - Real case studies: waiting for the owner to choose which projects can be shown.
 - Then: build in Webflow (staging first), ask before publishing to the custom domains.
+
+## Later the same night (04:00–04:35)
+- **Projection page** live in the prototype: compact projector + pull-up screen, range, 7,000-lumen Epson laser projectors (owner fact), mapping one picture across three panels of different sizes from projectors hung on a truss (owner's own project as the reference), mapping on objects (two twisted columns, edges traced then filled), home theater with a rising screen; at-a-glance cards; five labelled examples (FLORA, $0.44 total).
+- **Homepage:** new "Turnkey" section (one call, the whole job, every part in-house) + hero line; owner: turnkey is a main selling point.
+- **Get a Quote page on the LIVE Webflow site:** page `6af97b78d8e68fc36722099d`, slug `/get-a-quote`, duplicated from Contact so it keeps the native Webflow form "Possible AV Project Inquiry". Copy rewritten (no "room", no WLAB/virtual production, no turning small jobs away); labels "What do you need?", "Where and when", "Tell us about the project"; WLAB link removed from the LED card. Site published twice to possibleav.com + www (only change since the Nov 14 publish). Every prototype "Get a quote" button now opens this page.
+- **Owner direction (04:31):** the redesign itself should go live on Webflow, not stay a prototype. Next session starts by rebuilding /get-a-quote in the new design, then porting Home, Services, Audio, Displays, Projection into Webflow. See `ops-log/wip/RESUME.md`.
+- **Still on the live site:** footer "WLAB ↗" / "WLAB Virtual Production ↗" links and WLAB mentions on Contact and About SEO text.
+- Scheduled: the session resumes at 07:21 ET.

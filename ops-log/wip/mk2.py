@@ -12,7 +12,7 @@ foot=low[low.index('<footer'):]
 def header(cur): return '''<header class="nav">
   <a class="logo" href="index.html"><span class="dot"></span>Possible AV</a>
   <nav class="links" id="menu"><a href="index.html">Home</a><a class="cur" href="services.html">Services</a><a href="index.html#solutions">Solutions</a><a href="index.html#industries">Industries</a><span class="soon">Work</span><span class="soon">About</span></nav>
-  <a class="btn" href="#quote">Get a quote</a>
+  <a class="btn" href="https://www.possibleav.com/get-a-quote" target="_top">Get a quote</a>
   <button class="menu" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu"><i></i><i></i><span>Menu</span></button>
 </header>
 <script>(function(){var n=document.querySelector('.nav'),b=document.getElementById('menuBtn');function set(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);}b.addEventListener('click',function(e){e.stopPropagation();set(!n.classList.contains('open'));});document.addEventListener('click',function(e){if(!n.contains(e.target)||e.target.closest('.links a'))set(false);});})();</script>
@@ -27,19 +27,19 @@ SVC=[
   ('Transparent displays','See-through screens that put motion graphics in front of a real product.',None),
   ('Playback stations','Screens on truss or stands with players and a control position, looping content for the whole run.',None),
   ('LED walls','LED video walls go up with the same crew. Sizes, specs and pricing are on our LED site.',('ledwall.nyc','https://ledwall.nyc'))]),
- ('projection','Projection','Projection','Rent · Buy · Install','Projectors for events, trade shows and immersive spaces, mapping on any surface, and home theater.',None,[
-  ('Projector rental','Projectors, lenses and screens for events, trade shows and immersive spaces, hung and aligned by us.',None),
+ ('projection','Projection','Projection','Rent · Buy · Install','Epson laser projectors up to 7,000 lumens for events, trade shows and immersive exhibitions, mapping on any surface, and home theater.',None,[
+  ('Projector rental','7,000-lumen Epson laser projectors, lenses and screens for events, trade shows and immersive exhibitions, hung and aligned by us.',None),
   ('Projection mapping','Content fitted to walls, objects, sets and architecture, including irregular and sculptural surfaces.',None),
   ('Home theater','A projector, screen and sound at home: rented for a night or installed for good.',None)]),
  ('audio','Audio','Audio','Rent · Buy · Install','Sound systems, wireless microphones, directional speakers, spatial audio and haptic seating.','audio.html',[
-  ('Sound system rental','Line arrays, subs and fills sized to the venue, with an engineer at the console.',None),
+  ('Sound system rental','Line arrays, subs and fills sized to the space, with an engineer at the console.',None),
   ('Wireless microphones','Handheld, lavalier and headset wireless for panels, presenters and performers.',None),
   ('Directional speakers','Sound that stays in one spot: the person underneath hears it, the person beside them does not. To rent or to buy.',None),
   ('Spatial audio & haptic seating','Sound placed around the audience, and seating that moves with the low end.',None),
   ('Mixing & engineers','Consoles and the audio engineers who run them, with our system or yours.',None)]),
  ('lighting','Lighting & staging','Lighting & staging','Rent · Install','Aputure lighting, stage decks, truss and rigging, and the stage work around them.',None,[
-  ('Event lighting','Aputure fixtures for stages, venues and camera, placed, focused and run by us.',None),
-  ('Stage decks','Modular stage decks in the size and height the venue needs, built and levelled.',None),
+  ('Event lighting','Aputure fixtures for stages, spaces and camera, placed, focused and run by us.',None),
+  ('Stage decks','Modular stage decks in the size and height the job needs, built and levelled.',None),
   ('Truss & rigging','Ground-supported and flown truss for lights, screens, speakers and projectors.',None),
   ('Lighting control','A lighting desk and an operator for the show.',None)]),
  ('live-video','Live video & visuals','Live video','Rent · Install','Live streaming, switchers and production kits, and VJ and Resolume visuals.',None,[
@@ -63,7 +63,7 @@ SVC=[
   ('Pop-up shops & retail units','A branded unit that arrives finished, with display, light and sound inside it.',None),
   ('Large-format 3D printing','Pieces printed at furniture scale, and small-batch runs on the print farm.',('ctrlp.studio','https://ctrlp.studio'))]),
  ('logistics','Logistics & touring','Logistics','Deliver · Tour','We case it, truck it and load it in ourselves. For work outside New York, the same crew travels with the gear.',None,[
-  ('Delivery, load-in & strike','Our truck and our crew, from the dock to the venue and back.',None),
+  ('Delivery, load-in & strike','Our truck and our crew, from our dock to your door and back.',None),
   ('Touring & multi-city','The same system and the same people in every city on the run.',None)]),
 ]
 e=lambda s:s.replace('&','&amp;')
@@ -75,7 +75,7 @@ for _k,_n,*_ in SVC:
         mm=re.search(r'@models:\s*([\w\-, ]+)',open(pj).read()[:400]); extra=[x.strip() for x in mm.group(1).split(',')] if mm else []
         FILM[_k]=(_n,[x for x in dict.fromkeys(extra+[_k]) if os.path.exists(F+'models/%s.js'%x)])
 # release builds only publish pages that have been reviewed: python3 mk2.py --live audio,displays   (test builds take whatever exists)
-_live=sys.argv[sys.argv.index('--live')+1].split(',') if '--live' in sys.argv else (None if '--test' in sys.argv else ['audio'])
+_live=sys.argv[sys.argv.index('--live')+1].split(',') if '--live' in sys.argv else (None if '--test' in sys.argv else ['audio','displays','projection'])
 if _live is not None: FILM={k:v for k,v in FILM.items() if k in _live}
 ICON={
  'displays':'<rect x="6" y="9" width="36" height="22" rx="2.5"/><path d="M24 31v7M15 39h18"/>',
@@ -104,7 +104,7 @@ if(user){try{history.replaceState(null,'','#'+bs[i].dataset.k);}catch(e){}}}
 bs.forEach(function(b,j){b.addEventListener('click',function(){show(b.dataset.k,true);});b.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){var n=bs[(j+d+bs.length)%%bs.length];n.focus();show(n.dataset.k,true);}});});
 addEventListener('hashchange',function(){show(location.hash.slice(1));});show(location.hash.slice(1));})();</script>'''.replace('%%','%')
 svc=css.replace('<title>Possible AV — homepage prototype: the studio</title>','<title>Services · Possible AV (prototype)</title>')+'<body data-page="services">\n'+header('services')+'''<main>
-<section class="svh"><p class="mono">Services</p><h1>What does your event need?</h1><p class="sub">Nine services, one crew. Pick one to see what is in it.</p></section>
+<section class="svh"><p class="mono">Services</p><h1>What does your project need?</h1><p class="sub">Nine services, one crew. Pick one to see what is in it.</p></section>
 <div class="svw"><div class="tiles" role="tablist" aria-label="Services">'''+tabs+'</div>\n'+panels+'</div>\n</main>\n'+script+'\n'+'\n\n'.join([sec('ways'),sec('process'),sec('faq'),sec('quote')]).replace('href="services.html">Browse services','href="index.html">Back to the studio')+'\n\n'+foot+'\n</body>\n</html>\n'
 def film(page,models): return open(F+'core.head.js').read()+'\n'+'\n'.join(open(F+'models/%s.js'%k).read() for k in models)+'\n'+open(F+'pages/%s.js'%page).read()+'\n'+open(F+'core.tail.js').read()
 imp=h[h.index('<script type="importmap">'):h.index('<script type="module">')]

@@ -11,9 +11,12 @@ Last updated: 2026-11-15 (site redesign prototype; see sessions/2026-11-15-site-
 
 - **SEO audit cleanup** (2026-11-13): CMS template SEO bound to item meta fields (30 pages had the bare title "Possible AV"); Navy Yard and client names removed from Experiential, AV Systems, industries and the Home marquee; broken links to hidden case studies fixed; long titles/descriptions trimmed. *Live 2026-11-13; live crawl clean (41/41 200, 0 broken, 0 Navy Yard, 0 client names, 0 generic titles).*
 
-## Redesign prototype (not on Webflow yet)
+## Live changes 2026-11-15
+- **/get-a-quote** (Webflow page `6af97b78d8e68fc36722099d`) live with the native Webflow form; old-style for now, to be rebuilt in the new design.
+
+## Redesign prototype (not on Webflow yet; owner wants it moved to the live site next)
 - Prototype: https://claude.ai/artifact/59BenDUsBszjEaKxJeZSEw — 3D studio homepage, tabbed Services page, Audio and Displays service pages (2026-11-15).
-- Service pages are built and published one at a time: Projection next, then Lighting, Live video, Networks, Interactive, Fabrication, Logistics. Then the homepage moves to the same product-film style.
+- Service pages are built and published one at a time: Audio, Displays, Projection done; then Lighting, Live video, Networks, Interactive, Fabrication, Logistics. Then the homepage moves to the same product-film style.
 - Example projects on service pages are labelled examples with illustrations until the owner picks real projects.
 
 ## Decided in earlier sessions (verify against the live site before relying on it)
