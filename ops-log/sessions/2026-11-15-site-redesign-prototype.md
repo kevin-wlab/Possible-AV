@@ -86,3 +86,8 @@ Verification: built-in browser on possibleav.webflow.io, two iframes (Webflow pa
 - New film page `logistics` (6 stops): a flight case with two more stacked on a dolly (opening); the range (cases / stack / box truck); 01 the truck backed up to our loading dock, door rolling up and cases rolling out; 01 at the door, the liftgate lowering a case and another case opening; 02 a touring route out of New York with a small truck travelling it.
 - Webflow page `6af9c9136be449de58147c70` (slug logistics), 7 image assets (4 stills, 3 labelled FLORA examples). Homepage: Logistics caption 09, close 10, rail and card. Services: placeholder replaced by a link. All nine service pages are now on staging.
 - Staging publish only; check clean at 1280 and 390 for Logistics, Home and Services.
+
+## About page in the new design (evening)
+- Rebuilt `/about` (page `6a34f3bdbee39509ab20e532`) in the new design: hero "One crew for the whole job.", an image strip, Turnkey (plan, make, bring, run), the nine services as tiles linking to their pages, New York and on the road, rent/buy/install, FAQ, quote. Follows the owner's About rules: no team, no street address, no WLAB, no client names, no numbers.
+- Files: `web/about.css`, `web/about.ui.js`, `web/ref/about.html`. Staged; check clean at 1280 and 390.
+- Contact SEO description no longer mentions WLAB; Services SEO title and description now list all nine services.
