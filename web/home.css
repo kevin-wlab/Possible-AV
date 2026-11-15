@@ -270,5 +270,5 @@ html{height:auto}body{font-size:16px;line-height:normal;min-height:0;margin:0}h1
   @media (max-width: 900px){ body .cap.hero{bottom:66px} body .cap.hero .sub{margin:12px 0 0} body .cap .tags{display:none} }
 
 /* inline styles moved out of the markup */
-#floor{height:990vh}
+#floor{height:1100vh}
 #glance{border-top:0}
