@@ -5,7 +5,8 @@
 #   port/<page>.body.html  the body markup with scripts removed and links rewritten to live URLs (fed to Webflow as native elements)
 import re, json, os, sys
 R='/home/claude/pav-hero/'; W='/home/claude/possible-av/web/'; P=R+'port/'; os.makedirs(P,exist_ok=True)
-LIVE=['audio','displays','projection','lighting']  # service pages that are finished and go on Webflow
+LIVE=['audio','displays','projection','lighting','fabrication']
+HOMEIMG={'audio':'audio-systems','displays':'displays-transparent','projection':'projection-mapping','lighting':'lighting-package','fabrication':'fabrication-popup'}  # homepage card picture per service  # service pages that are finished and go on Webflow
 PAGES=dict([('home','home.html'),('services','services.html')]+[(k,k+'.html') for k in LIVE])
 LINK=[(r'https://www\.possibleav\.com/get-a-quote','/get-a-quote'),(r'index\.html#','/#'),(r'index\.html','/'),(r'services\.html#','/services#'),(r'services\.html','/services'),
       (r'('+'|'.join(LIVE)+r')\.html','/\\1')]
@@ -42,7 +43,8 @@ for k,f in PAGES.items():
     body=body.replace(' style="text-decoration:underline;text-underline-offset:3px"',' class="ul"')
     if 'class="ul"' in body: extra+='.ul{text-decoration:underline;text-underline-offset:3px}\n'
     if extra: open(W+k+'.css','a').write('\n/* inline styles moved out of the markup */\n'+extra)
-    body=links(body).replace('img/home-audio.jpg','img/audio-systems.jpg').replace('img/home-displays.jpg','img/displays-transparent.jpg').replace('img/home-projection.jpg','img/projection-mapping.jpg').replace('img/home-lighting.jpg','img/lighting-package.jpg')
+    for hk,hv in HOMEIMG.items(): body=body.replace('img/home-%s.jpg'%hk,'img/%s.jpg'%hv)
+    body=links(body)
     A=dict(l.split() for l in open(P+'assets.txt') if l.strip())
     body=re.sub(r'src="img/([a-z0-9-]+\.jpg)"',lambda m:'src="https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/%s_%s"'%(A[m.group(1)],m.group(1)) if m.group(1) in A else m.group(0),body)
     # Webflow turns <button> into a.w-button with href="#": make the service tiles real links to their deep-link hash instead
