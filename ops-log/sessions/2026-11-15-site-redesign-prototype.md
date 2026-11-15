@@ -121,3 +121,4 @@ Gotchas
 - CMS update responses echo the whole body; long posts are expensive to edit.
 
 Verification: staging only. chk clean at 1280 and 390 (only the nav highlight differs) for Contact, Work, Blog, Industries, FAQ, Pricing, Touring, project/corporate-general-session, post/dante-audio-networking-explained, industry/trade-shows, service/projection. Scan of all 51 sitemap URLs + /contact + /get-a-quote: all 200, no old-design elements, no WLAB / virtual production / VP / XR / "room" (outside "conference room") / Navy Yard / Fortune 500, no links to wlab.tech or /service/*.
+- Owner request (12:41): removed the sentence "An example of the kind of job we take on, not a past client. The picture is an illustration." from the six Work example items. The "Example" labels on the Work cards, the Work intro and the "Example:" SEO titles are unchanged.
