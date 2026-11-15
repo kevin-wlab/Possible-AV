@@ -67,3 +67,13 @@ live-video-ex-talk.jpg 6af9c0c4d73ae5b7c4d30310
 live-video-ex-conference.jpg 6af9c0c4e699303789b05a12
 live-video-ex-party.jpg 6af9c0c4f658dc93b0148cde
 live-video-ex-hybrid.jpg 6af9c0c4691e879008a64156
+interactive-floor.jpg 6af9c53cf772377c64c620b1
+interactive-screen.jpg 6af9c53d24c1df7c6930e075
+interactive-sensor.jpg 6af9c53d24c1df7c6930e08c
+interactive-mocap.jpg 6af9c53de1cb9d5b564ecfd2
+interactive-rfid.jpg 6af9c53daa174c051320f9c9
+interactive-3d.jpg 6af9c53de1cb9d5b564ecff1
+interactive-ex-lobby.jpg 6af9c53d66f69f982782d530
+interactive-ex-floor.jpg 6af9c53e24c1df7c6930e0dc
+interactive-ex-exhibit.jpg 6af9c53e66f69f982782d56d
+interactive-ex-stage.jpg 6af9c53e66f69f982782d591
