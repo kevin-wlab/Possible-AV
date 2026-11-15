@@ -92,3 +92,10 @@ Verification: built-in browser on possibleav.webflow.io, two iframes (Webflow pa
 - Files: `web/about.css`, `web/about.ui.js`, `web/ref/about.html`. Staged; check clean at 1280 and 390.
 - Contact SEO description no longer mentions WLAB; Services SEO title and description now list all nine services.
 - Footer (NX Footer component) and the booked-with chips on every service page now link straight to the service pages instead of Services tabs; sources updated to match. Verified on staging.
+
+## Industries, FAQ, Pricing, Touring in the new design (night)
+- Rebuilt in place, same slugs, native elements with NX Nav / NX Footer: Industries `6a34f3b99c1be9130cf3fded`, FAQ `6a362c72491d6977ea71846c`, Pricing `6a362c70161ad75e9e266882`, Touring `6af5488a42e3ba43c291bc3f`. Old `pa-*` elements removed after the new content was in.
+- Built by `pages/build_pages.py` (copy in `ops-log/wip/`): body files, `web/ref/<page>.html`, one shared `web/page.css` (About rules + industry list, tiers, "more" blocks) and `web/page.ui.js`.
+- Page code: guard + Geist fonts + `web/page.css` in the head, `web/page.ui.js` in the footer, at commit fc9869f.
+- Copy: LED walls only as "through ledwall.nyc" (FAQ answer, Pricing extras); no WLAB, VP, client names, street address or numbers. Text scan of all four pages on staging found none.
+- Staging publish only; element-by-element check clean at 1280 and 390 for all four (only accepted difference: nav highlight).
