@@ -81,3 +81,8 @@ Verification: built-in browser on possibleav.webflow.io, two iframes (Webflow pa
 - New film page `interactive` (8 stops): portrait screen with a sensor on top (opening); the range (one screen / interactive floor / three-screen space); 01 interactive floor under a truss goal post, footprints appearing step by step with the content following; 02 depth sensor with its view opening out and floor tiles lighting where someone stands; 03 six tracking cameras around a taped area, the wand lifting and rays meeting its markers; 04 badge tapping a reader on a plinth, the screen answering; 05 a sculpture drawing itself in wireframe and filling in, rendered live on a screen.
 - Webflow page `6af9c4d92742afeb22aafb4d` (slug interactive), 10 image assets (6 stills, 4 labelled FLORA examples). Homepage: Interactive caption 07, Fabrication 08, close 9, rail and card. Services: placeholder replaced by a link.
 - Staging publish only; check clean at 1280 and 390 for Interactive, Home and Services.
+
+## Logistics & touring page (evening)
+- New film page `logistics` (6 stops): a flight case with two more stacked on a dolly (opening); the range (cases / stack / box truck); 01 the truck backed up to our loading dock, door rolling up and cases rolling out; 01 at the door, the liftgate lowering a case and another case opening; 02 a touring route out of New York with a small truck travelling it.
+- Webflow page `6af9c9136be449de58147c70` (slug logistics), 7 image assets (4 stills, 3 labelled FLORA examples). Homepage: Logistics caption 09, close 10, rail and card. Services: placeholder replaced by a link. All nine service pages are now on staging.
+- Staging publish only; check clean at 1280 and 390 for Logistics, Home and Services.

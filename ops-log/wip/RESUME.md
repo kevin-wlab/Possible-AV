@@ -34,6 +34,8 @@ About SEO description fixed (no WLAB). 13:05 asked owner: publish custom domains
 | Networks & computers | 6af9bb66072856e73f5ee163 | NEW: event kit / range / rack / workstation / tower film, NG=12; stills + 4 FLORA examples; staged at sha 3a5d683, check clean desktop+phone; Home caption 05 + card, Services link added. |
 | Live video & visuals | 6af9c0ab47d68d8c7ce5f08b | NEW (slug live-video): camcorder on tripod + stream kit / range / streaming with LIVE tally + signal pulse / flypack lid lifts to multiview / VJ laptop + pads + audio-reactive screen / hybrid panel with PTZ and remote tiles. LG=12. 5 stills + 4 FLORA examples. Staged at sha 800c094, check clean desktop+phone. Home: caption 05 inserted (ad811dca), Networks→06, Fabrication→07, close→8, rail relinked, card ee124b63. Services: placeholder replaced by button ebcc5029. |
 | Interactive & tracking | 6af9c4d92742afeb22aafb4d | NEW (slug interactive), 8 stops (IG=12): portrait screen + sensor / range / interactive floor under truss goal post with footprints / depth sensor frustum + floor tiles / 6 mocap cameras + wand + rays / RFID reader + badge + welcome screen / torus-knot sculpture wireframe→solid + render screen. Uses @models: live-video (lvBigScreen, lvCase). 6 stills + 4 FLORA examples. Staged at sha d5b6579, check clean desktop+phone. Home: caption 07 (2165ce0d), Fabrication→08, close→9, rail 6d618297/807de58e, card 05f4abe1. Services button 215e2a67. |
+| Logistics & touring | 6af9c9136be449de58147c70 | NEW (slug logistics), 6 stops (GG=16, #floor 690vh): case + stacked dolly / range (cases, stack, box truck) / truck at our dock, door rolls up, cases roll out (island rotated -0.9) / liftgate lowers a case at the door + open case / touring route with NEW YORK pin and mini truck. 4 stills + 3 FLORA examples. Staged at sha 166c054, check clean desktop+phone. Home: caption 09 (dbd8269d), close→10, rail 86f757d4, card 6013d8aa. Services button 37b9561b. |
+**All nine service pages are on Webflow staging.** Follow-up: chips on Lighting/Fabrication/Networks/Live video/Interactive pages still link /services#<key> for later pages; works, but could point to the pages directly (update source bodies + Webflow links together so ref check stays clean).
 New-page recipe: finish src/film/pages/<k>.*, add k to LIVE in port.py and mk_home.py, img/home-<k>.jpg + port.py mapping, `./release.sh "msg"` (build+port+ref+commit → sha), upload stills/examples from the browser with ops-log/wip/upload-helper.js (only name,id,date,signature needed from create_asset; shell can't reach media.flora.ai or website-files), append ids to port/assets.txt, create page, nav/footer instances, frag.py + acts.py, set_image_asset, code.py <k> <sha>, update every page's code to the new sha, staging publish, chk() at 1280 and 390.
 Custom domains NOT published yet (old site still live there). Nav component Menu link → #menu, role=button.
 
@@ -56,7 +58,7 @@ Live pages: index.html (3D studio homepage), services.html, audio.html. Release 
 | projection | done | done | done | **LIVE** (v13.1: panels mapping + object mapping) |
 | live-video | done | done | done | **on Webflow staging** |
 | interactive | done | done | done | **on Webflow staging** |
-| logistics | – | – | – | not started (last service page) |
+| logistics | done | done | done | **on Webflow staging** |
 
 Brief for each page: AGENT_BRIEF.md. Test: `ft.sh <slot> <page> stops|cam|thumb|glance` (never pipe into tail/head).
 
