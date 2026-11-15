@@ -41,6 +41,16 @@ for k,f in PAGES.items():
     for m in re.finditer(r'<([a-z]+)([^>]*?) id="([a-z0-9-]+)"([^>]*?) style="([^"]*)"',body): extra+='#%s{%s}\n'%(m.group(3),m.group(5))
     body=re.sub(r'(<[a-z]+[^>]*? id="[a-z0-9-]+"[^>]*?) style="[^"]*"',r'\1',body)
     body=body.replace(' style="text-decoration:underline;text-underline-offset:3px"',' class="ul"')
+    # any other inline style becomes a small class (Webflow keeps classes, not style attributes)
+    seen={}
+    def _st(m):
+        st=m.group(2)
+        if st not in seen: seen[st]='ps%d'%(len(seen)+1)
+        c=seen[st]; tag=m.group(1)
+        if ' class="' in tag: return tag.replace(' class="',' class="%s '%c,1)
+        return tag+' class="%s"'%c
+    body=re.sub(r'(<[a-z]+[^>]*?) style="([^"]*)"',_st,body)
+    for st,c in seen.items(): extra+='.%s{%s}\n'%(c,st)
     if 'class="ul"' in body: extra+='.ul{text-decoration:underline;text-underline-offset:3px}\n'
     if extra: open(W+k+'.css','a').write('\n/* inline styles moved out of the markup */\n'+extra)
     for hk,hv in HOMEIMG.items(): body=body.replace('img/home-%s.jpg'%hk,'img/%s.jpg'%hv)
