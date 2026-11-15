@@ -84,3 +84,10 @@ logistics-tour.jpg 6af9c968b2985e17b8383969
 logistics-ex-drop.jpg 6af9c96816da4ff0af1e49ac
 logistics-ex-loadin.jpg 6af9c9680ebf9bb7ddd78b70
 logistics-ex-tour.jpg 6af9c96a16da4ff0af1e4a60
+6af9d121fc8459c2b77f53fd work-la-secret-show.jpg
+6af9d121b2985e17b83a0c18 work-ex-popup.jpg
+6af9d121a8707557077d460e work-ex-gallery.jpg
+6af9d121b2985e17b83a0c6d work-ex-session.jpg
+6af9d122987f038cef8a8400 work-ex-window.jpg
+6af9d12262ce94d871315fdd work-ex-stage.jpg
+6af9d125994d262a71379878 work-ex-lobby.jpg
