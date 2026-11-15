@@ -16,14 +16,14 @@ Last updated: 2026-11-15 (site redesign prototype; see sessions/2026-11-15-site-
 
 ## Redesign on Webflow (staged on possibleav.webflow.io, custom domains not published yet)
 - Native Webflow elements with the prototype's class names; the stylesheet, 3D and small scripts load from this repo via jsDelivr (`web/`). Method and tools: `ops-log/wip/` (port.py, frag.py, acts.py, code.py, guard.html).
-- Done and checked element by element against `web/ref/` at 1280 and 390 wide: Home, Services, Audio, Displays, Projection, Lighting & staging, Fabrication, Networks & computers, Live video & visuals, Get a Quote (native form restyled). Shared components NX Nav / NX Footer.
-- Service pages still to build: Interactive & tracking, Logistics & touring. Then the remaining site pages (About, Industries, Work, Blog, FAQ, Pricing, Touring, Contact).
+- Done and checked element by element against `web/ref/` at 1280 and 390 wide: Home, Services, Audio, Displays, Projection, Lighting & staging, Fabrication, Networks & computers, Live video & visuals, Interactive & tracking, Get a Quote (native form restyled). Shared components NX Nav / NX Footer.
+- Service pages still to build: Logistics & touring. Then the remaining site pages (About, Industries, Work, Blog, FAQ, Pricing, Touring, Contact).
 - New pages carry a head guard that removes the old site-wide theme scripts' styles; remove the guard once the old registered scripts are taken off the site.
 - Waiting on the owner: publish to the custom domains now (old pages still in the old style) or after the remaining pages.
 
 ## Redesign prototype
 - Prototype: https://claude.ai/artifact/59BenDUsBszjEaKxJeZSEw — 3D studio homepage, tabbed Services page, Audio and Displays service pages (2026-11-15).
-- Service pages are built and published one at a time: Audio, Displays, Projection, Lighting, Fabrication, Networks, Live video done; Interactive and Logistics next. Then the homepage moves to the same product-film style.
+- Service pages are built and published one at a time: Audio, Displays, Projection, Lighting, Fabrication, Networks, Live video, Interactive done; Logistics next. Then the homepage moves to the same product-film style.
 - Example projects on service pages are labelled examples with illustrations until the owner picks real projects.
 
 ## Decided in earlier sessions (verify against the live site before relying on it)
