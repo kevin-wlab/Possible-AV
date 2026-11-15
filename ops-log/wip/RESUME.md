@@ -29,6 +29,8 @@ Check: built-in browser on possibleav.webflow.io, two iframes (Webflow page vs w
 | Home | 6a34a78c3bca7b2b60e5eae5 | old cd-root replaced, staged, check clean |
 | Get a Quote | 6af97b78d8e68fc36722099d | new design (web/quote.css), native form moved in, classes ql/qi/qsend/qmsg, placeholders set by quote.ui.js only when Webflow default; staged |
 About SEO description fixed (no WLAB). 13:05 asked owner: publish custom domains now (mixed old/new) or after About etc.; default = wait, keep building.
+| Lighting & staging | 6af9b2f937d7fb834f3f6e33 | NEW: film rebuilt with LG=12 spacing + sets shown only near their stop + range scales in/out; glance stills + 4 FLORA examples; staged, check clean desktop+phone. Home film/glance and Services tab updated to include it. |
+New-page recipe: finish src/film/pages/<k>.*, add k to LIVE in port.py and mk_home.py, img/home-<k>.jpg + port.py mapping, `./release.sh "msg"` (build+port+ref+commit → sha), upload stills/examples from the browser (md5 in browser via js-md5, create_asset, POST to S3; shell can't reach media.flora.ai or website-files), append ids to port/assets.txt, create page, nav/footer instances, frag.py + acts.py, set_image_asset, code.py <k> <sha>, update every page's code to the new sha, staging publish, chk() at 1280 and 390.
 Custom domains NOT published yet (old site still live there). Nav component Menu link → #menu, role=button.
 
 Live prototype: artifact `218911a6-2058-422c-9113-fe52218f7b5c`, version `1794735156-3c81`, read=public
