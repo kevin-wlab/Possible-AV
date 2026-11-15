@@ -82,7 +82,7 @@ for ext in ['js','css']:
 # -> lite at once. Otherwise it injects studio.js; if the first frame is not drawn within LITE_MS,
 # or the first seconds run below ~18 fps, the page switches to lite: canvas stopped, the stills
 # (web/img/studio-lite-<n>.jpg, rendered from the same scene) shown with the same copy and cards.
-LITE_MS=7000
+LITE_MS=6000
 t=open(W2+'js').read()
 if '__pavLite' not in t:
     t=t.replace("requestAnimationFrame(frame); if(!visible) return; fc++;",

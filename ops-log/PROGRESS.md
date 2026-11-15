@@ -59,4 +59,4 @@ Last updated: 2026-11-15 (site redesign prototype; see sessions/2026-11-15-site-
 
 - 2026-11-15 14:00: Blog + Touring back in nav and footer (shared components); NYC SEO pass (hero sub-lines, meta, LocalBusiness/WebSite/FAQPage JSON-LD, canonical to possibleav.com); old /service/* redirect by script. Open: set the default domain + real 301s in Webflow hosting settings; submit sitemap in Search Console.
 
-- 2026-11-15: Homepage low-performance fallback (lite mode): static version after 7 s without the 3D, on low-end devices, or with `?lite`. Home code at `@1ddbea1`; verified on staging. Live publish waiting for owner OK.
+- 2026-11-15: Homepage low-performance fallback (lite mode): static version after 6 s without the 3D, on low-end devices, or with `?lite`. Home code at `@1ddbea1`; verified on staging. Live publish waiting for owner OK.
