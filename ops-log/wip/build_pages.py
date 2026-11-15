@@ -85,7 +85,7 @@ css=open(W+'about.css').read()+'''
 .tier .btn{margin-top:auto;align-self:flex-start}
 @media (max-width:900px){.ind{grid-template-columns:1fr;gap:14px;padding:20px}.ind .chips{justify-content:flex-start}.tiers{grid-template-columns:1fr}.tier h3{font-size:28px}}
 '''
-open(W+'page.css','w').write(css)
+open(W+'page.css','w').write(css+'\n'+open(R+'pages/extra.css').read())
 ui=open(W+'about.ui.js').read().replace("'/about':'/about'}","'/about':'/about','/industries':'/#industries','/faq':'/about','/pricing':'/about','/touring-av':'/services'}")
 open(W+'page.ui.js','w').write(ui)
 print('ok', list(P))

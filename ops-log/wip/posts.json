@@ -1,0 +1,93 @@
+[
+{
+"slug": "permanent-av-for-showrooms-and-lobbies",
+"category": "Install",
+"read": "7 min",
+"name": "Permanent AV for showrooms and lobbies: what to plan before you build",
+"excerpt": "Commercial displays, one-button control, a rack with airflow and a support plan \u2014 what a permanent install needs that an event doesn't."
+},
+{
+"slug": "multi-city-roadshow-av-planning",
+"category": "Guide",
+"read": "7 min",
+"name": "Multi-city roadshow AV: how to keep the system identical in every city",
+"excerpt": "One kit, one show file, one crew lead and a venue advance for every stop \u2014 how to run the same activation in every market."
+},
+{
+"slug": "wireless-microphones-events-nyc",
+"category": "Technical",
+"read": "7 min",
+"name": "Wireless microphones at events: how many channels you need, and why NYC is harder",
+"excerpt": "Count voices, not people, add spares, and coordinate frequencies on site \u2014 wireless mic planning for crowded New York venues."
+},
+{
+"slug": "hybrid-event-av-streaming-guide",
+"category": "Guide",
+"read": "7 min",
+"name": "Hybrid events: how to stream a corporate event without losing the live audience",
+"excerpt": "Cameras, a separate stream mix, a wired upload and a producer who only watches the stream \u2014 what a hybrid event actually needs."
+},
+{
+"slug": "dante-audio-networking-explained",
+"category": "Technical",
+"read": "6 min",
+"name": "Dante audio networking, explained",
+"excerpt": "Dante sends multichannel audio over standard networks. Here's why it simplifies event and install audio."
+},
+{
+"slug": "projection-mapping-101",
+"category": "Projection",
+"read": "7 min",
+"name": "Projection mapping 101: what's possible on any surface",
+"excerpt": "How projection mapping turns buildings, objects, and stages into canvases \u2014 and what it takes to do it well."
+},
+{
+"slug": "how-much-does-event-av-cost-nyc",
+"category": "Cost",
+"read": "7 min",
+"name": "How much does event AV cost in NYC?",
+"excerpt": "What drives AV pricing for events \u2014 scope, gear, crew, and venue \u2014 and how to budget realistically."
+},
+{
+"slug": "temporary-event-network-setup-guide",
+"category": "Guide",
+"read": "7 min",
+"name": "Temporary event network setup guide",
+"excerpt": "How to design a reliable temporary network for an event \u2014 VLANs, high-density WiFi, and keeping show traffic off guest WiFi."
+},
+{
+"slug": "how-museums-use-interactive-av-in-2026",
+"category": "Industry",
+"read": "7 min",
+"name": "How museums are using interactive AV in 2026",
+"excerpt": "Sensor-driven exhibits, synchronized screens, and quiet zoned audio \u2014 the interactive techniques shaping galleries now."
+},
+{
+"slug": "av-checklist-for-trade-show-exhibitors",
+"category": "Checklist",
+"read": "6 min",
+"name": "AV checklist for trade show exhibitors",
+"excerpt": "Everything to confirm before the show floor opens \u2014 power orders, rigging rules, internet, and on-site support."
+},
+{
+"slug": "what-is-ndi-and-why-it-matters",
+"category": "Technical",
+"read": "6 min",
+"name": "What is NDI and why does it matter for live events",
+"excerpt": "NDI moves video over standard networks. Here's what that unlocks for live events \u2014 and where its limits are."
+},
+{
+"slug": "projector-vs-led-wall-which-is-right",
+"category": "Comparison",
+"read": "7 min",
+"name": "Projector vs LED wall: which is right for your event",
+"excerpt": "Brightness, ambient light, budget, and surface \u2014 how to choose between projection and an LED wall for your space."
+},
+{
+"slug": "how-to-plan-av-for-a-popup-event",
+"category": "Guide",
+"read": "7 min",
+"name": "How to plan AV for a pop-up event",
+"excerpt": "A practical checklist for planning audio, video, and power at a temporary retail or brand pop-up \u2014 before you sign the venue."
+}
+]
