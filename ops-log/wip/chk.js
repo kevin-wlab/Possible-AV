@@ -1,8 +1,8 @@
 // chk(page,w,h): compare the Webflow staging page (same origin) with web/ref/<page>.html at window.SHA.
 // Run in a tab on possibleav.webflow.io. Returns [null, 1, [heightWF, heightRef], "counts a vs b", ...diffs].
-window.chk = async function (page, w, h) {
+window.chk = async function (page, w, h, refName) {
   const base = 'https://cdn.jsdelivr.net/gh/kevin-wlab/possible-av@' + window.SHA + '/web/';
-  let ref = await (await fetch(base + 'ref/' + page + '.html')).text();
+  let ref = await (await fetch(base + 'ref/' + (refName || page) + '.html')).text();
   ref = ref.replace('<head>', '<head><base href="' + base + 'ref/">');
   const mk = () => { const f = document.createElement('iframe'); f.style.cssText = 'position:fixed;left:-20000px;top:0;border:0;width:' + w + 'px;height:' + h + 'px'; document.body.appendChild(f); return f; };
   const load = (f, set) => new Promise(r => { f.onload = r; set(); });
