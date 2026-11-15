@@ -2,28 +2,28 @@
 import json,re
 R='/home/claude/pav-hero/'; W='/home/claude/possible-av/web/'
 exec(open(R+'pages/build_pages.py').read().split('P={}')[0])   # NAV, FOOT, Q, hero, sec, faq, ways, chips
-C='https://cdn.prod.website-files.com/6a34e9e5383e05c75c473463/'
+C='https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/'
 WORK=[('la-secret-show-led-wall','Project · Los Angeles','Secret show LED wall, Los Angeles','A curved LED wall in a downtown LA penthouse that changed the world behind the artist as the set went on.',
   [('For','A beauty brand\'s music launch'),('We ran','The worlds behind the artist, live through the set')],
-  '6af54af3114f46e82ae3d565_6af3d19307c27589ef878ee1_6af3c299c8fbb2eedeccc0e1_wlab-elf-turizo-secret-show-led-wall-audience.jpeg','A crowd watching a curved LED wall at a secret show in a downtown LA penthouse','6af54af3114f46e82ae3d565'),
+  '6af9d121fc8459c2b77f53fd_work-la-secret-show.jpg','A crowd watching a curved LED wall at a secret show in a downtown LA penthouse','6af9d121fc8459c2b77f53fd'),
  ('brand-launch-popup','Example · Brand pop-up','A pop-up that travels between cities','One kit, packed and tested in Brooklyn, set up the same way in every city.',
   [('We bring','Projection on the product wall, zoned sound, playback'),('Crew','The same technicians at every install and strike')],
-  '6af3a430aeda8da98f522a6b_gen-m17dedv5kj1hj6j0pyqk7trvxn8hzvt2-0.jpeg','Illustration: a brand pop-up with a lit product wall','6af3a430aeda8da98f522a6b'),
+  '6af9d121b2985e17b83a0c18_work-ex-popup.jpg','Illustration: a brand pop-up with a lit product wall','6af9d121b2985e17b83a0c18'),
  ('museum-interactive-gallery','Example · Gallery install','An interactive gallery that runs itself','Exhibits that respond to visitors, built for in-house staff to run.',
   [('We bring','Sensors, synchronized screens, zoned audio, the network'),('Crew','Install, training for staff, support after opening')],
-  '6af3a430aeda8da98f522a61_gen-m17e5z3xpsvs85g63ba9hvmkqs8hypw1-0.jpeg','Illustration: a gallery with interactive projection','6af3a430aeda8da98f522a61'),
+  '6af9d121a8707557077d460e_work-ex-gallery.jpg','Illustration: a gallery with interactive projection','6af9d121a8707557077d460e'),
  ('corporate-general-session','Example · Corporate event','A full-day general session','Keynotes, panels and demos, with a backup for every signal.',
   [('We bring','Screens, live sound, a separate show network'),('Crew','Technicians on site for the whole day')],
-  '6af3a430aeda8da98f522a5d_gen-m178tcd592jn882cbt4mkenxn18hzfe3-0.jpeg','Illustration: a general session stage with screens','6af3a430aeda8da98f522a5d'),
+  '6af9d121b2985e17b83a0c6d_work-ex-session.jpg','Illustration: a general session stage with screens','6af9d121b2985e17b83a0c6d'),
  ('retail-flagship-window','Example · Retail','A projection-mapped store window','A storefront that changes after dark, with content swapped remotely.',
   [('We bring','Weatherproof short-throw projectors, mapping, remote scheduling'),('Crew','Install, then monitoring for the run')],
-  '6af3a430aeda8da98f522a70_gen-m17cj8n08ebp9dgtdhpnfxh9d18hzbjs-0.jpeg','Illustration: a lit flagship store window','6af3a430aeda8da98f522a70'),
+  '6af9d122987f038cef8a8400_work-ex-window.jpg','Illustration: a lit flagship store window','6af9d122987f038cef8a8400'),
  ('outdoor-festival-stage','Example · Outdoor stage','An outdoor main stage','Sound across a large field, video to stage-side screens and a network that holds up in a crowd.',
   [('We bring','Line-array PA, stage-side screens, a separate show network'),('Crew','Audio and video crew for the full day')],
-  '6af3a430aeda8da98f522a59_gen-m17chgcjhsja4a8g1c4d4qk9pn8hz9rn-0.jpeg','Illustration: an outdoor festival stage','6af3a430aeda8da98f522a59'),
+  '6af9d12262ce94d871315fdd_work-ex-stage.jpg','Illustration: an outdoor festival stage','6af9d12262ce94d871315fdd'),
  ('corporate-lobby-install','Example · Permanent install','An interactive lobby wall','A welcome wall staff can update themselves, with quiet zoned audio.',
   [('We bring','A multi-screen wall, show control with a scheduler, cabling and network'),('Crew','Install, handover and support')],
-  '6af3a430aeda8da98f522a66_gen-m17bv75q5qb0z2g0wnt0n5cqvn8hyxqb-0.jpeg','Illustration: a corporate lobby with an interactive wall','6af3a430aeda8da98f522a66')]
+  '6af9d125994d262a71379878_work-ex-lobby.jpg','Illustration: a corporate lobby with an interactive wall','6af9d125994d262a71379878')]
 cards='<div class="rooms two">\n'+'\n'.join('<a class="room ex" href="/project/%s"><img src="%s%s" alt="%s" loading="lazy"><div><p class="mono">%s</p><h3>%s</h3><p>%s</p><dl>%s</dl></div></a>'%(s,C,img,alt,tag,h,p,''.join('<dt>%s</dt><dd>%s</dd>'%x for x in dl)) for s,tag,h,p,dl,img,alt,aid in WORK)+'\n</div>'
 POSTS=json.load(open(R+'pages/posts.json'))
 pc='<div class="posts">\n'+'\n'.join('<a class="post" href="/post/%s"><p class="mono">%s · %s</p><h3>%s</h3><p>%s</p><span class="more">Read →</span></a>'%(p['slug'],p['category'],p['read'],p['name'],p['excerpt']) for p in POSTS)+'\n</div>'
