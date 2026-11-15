@@ -12,7 +12,7 @@ window.chk = async function (page, w, h, refName) {
   await Promise.all([settle(A), settle(B)]);
   await new Promise(r => setTimeout(r, 1500));
   const P = ['display', 'position', 'font-family', 'font-size', 'font-weight', 'line-height', 'letter-spacing', 'color', 'background-color', 'border-top-color', 'border-top-width', 'border-radius', 'padding-top', 'padding-left', 'margin-top', 'opacity', 'width'];
-  const els = d => [...d.querySelectorAll('header.nav, main, footer.foot')].flatMap(r => [r, ...r.querySelectorAll('*')]).filter(e => !/^(SCRIPT|STYLE|LINK|META|BR)$/.test(e.tagName));
+  const els = d => [...d.querySelectorAll('header.nav, main, body > section, footer.foot')].flatMap(r => [r, ...r.querySelectorAll('*')]).filter(e => !/^(SCRIPT|STYLE|LINK|META|BR)$/.test(e.tagName));
   const cls = e => [...e.classList].filter(c => !/^w-|^w--/.test(c)).join(' ');
   const ea = els(A.contentDocument), eb = els(B.contentDocument);
   const out = [null, 1, [A.contentDocument.documentElement.scrollHeight, B.contentDocument.documentElement.scrollHeight], 'counts ' + ea.length + ' vs ' + eb.length];
