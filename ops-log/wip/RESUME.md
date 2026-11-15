@@ -17,6 +17,20 @@ The owner is redoing the whole site; the new design is what should be on possibl
 Then continue the remaining service pages one at a time.
 
 
+## Webflow port status (2026-11-15, later)
+Method (tools in possible-av/ops-log/wip/): `port.py` (split prototype → web/<k>.css/.js/.ui.js + port/<k>.body.html; prepends a reset of Webflow's base styles; tiles/menu buttons → real links), `frag.py <k>` (top-level fragments + neutral class CSS), `acts.py <k> <pageId> <anchorId> <idx>` (whtml actions, img src stripped, prints asset ids in order → set_image_asset), `code.py <k> <sha>` (page head/footer code: guard.html + fonts + css + importmap / ui.js + module js). guard.html removes the old site-wide theme scripts' styles (pawf, seriestheme, padark1-10) on new pages; drop it once the old registered scripts are removed site-wide.
+Check: built-in browser on possibleav.webflow.io, two iframes (Webflow page vs web/ref/<k>.html from jsDelivr), compare computed styles + rects of every element (`cmp`), at 1280x800 and 390x844, plus screenshots. Only accepted difference: nav highlights the current section.
+| page | Webflow page id | state |
+|---|---|---|
+| Displays | 6af9a6c59d106ee114ca64c8 | native, staged, check clean |
+| Projection | 6af9a6c6e699303789abd33a | native, staged, check clean |
+| Audio | 6af9a6cae699303789abd3d9 | native, staged, check clean |
+| Services | 6a34f354a49eba40de650fca | old content replaced, staged, check clean (old ref with buttons) |
+| Home | 6a34a78c3bca7b2b60e5eae5 | old cd-root replaced, staged, check clean |
+| Get a Quote | 6af97b78d8e68fc36722099d | new design (web/quote.css), native form moved in, classes ql/qi/qsend/qmsg, placeholders set by quote.ui.js only when Webflow default; staged |
+About SEO description fixed (no WLAB). 13:05 asked owner: publish custom domains now (mixed old/new) or after About etc.; default = wait, keep building.
+Custom domains NOT published yet (old site still live there). Nav component Menu link → #menu, role=button.
+
 Live prototype: artifact `218911a6-2058-422c-9113-fe52218f7b5c`, version `1794735156-3c81`, read=public
 (republish with shared_live "public", artifact_title "Possible AV — homepage prototype: the studio").
 Live pages: index.html (3D studio homepage), services.html, audio.html. Release build: `python3 mk2.py --live audio[,key…]`.
