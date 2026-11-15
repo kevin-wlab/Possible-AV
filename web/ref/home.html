@@ -1,0 +1,141 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../home.css"><script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script></head><body>
+<header class="nav">
+  <a class="logo" href="/"><span class="dot"></span>Possible AV</a>
+  <nav class="links" id="menu"><a class="cur" href="/">Home</a><a href="/services">Services</a><a href="#solutions">Solutions</a><a href="#industries">Industries</a><a href="/work">Work</a><a href="/about">About</a></nav>
+  <a class="btn" href="/get-a-quote">Get a quote</a>
+  <button class="menu" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu"><i></i><i></i><span>Menu</span></button>
+</header>
+
+<section class="floor film" id="floor">
+ <div class="pin">
+  <canvas id="stage" aria-hidden="true"></canvas>
+  <div class="fveil" aria-hidden="true"></div>
+  <div class="cap close hero on" data-s="0">
+    <p class="mono">AV rental, installation and production · Brooklyn, New York</p>
+    <h1>Everything your project needs. <em>One crew.</em></h1>
+    <p class="sub">Screens, projection, sound, light, live video, networks, interactive, fabrication, and the truck that brings it. Rent it, buy it or have us install it.</p>
+    <div class="ctas"><a class="btn" href="/get-a-quote">Get a quote →</a><a class="ghost" href="#" data-go="1">See the nine services ↓</a></div>
+  </div>
+  <div class="cap" data-s="1" data-key="displays"><p class="mono">01 · Displays</p><h2>Screens for every space.</h2><p>OLED TVs, touch screens, transparent displays and playback stations.</p><div class="ctas"><a class="btn" href="/displays">Explore displays →</a><span class="tags"><span class="tag">Rent</span><span class="tag">Buy</span><span class="tag">Install</span></span></div></div>
+  <div class="cap" data-s="2" data-key="projection"><p class="mono">02 · Projection</p><h2>Any surface, lit.</h2><p>Projectors for events and immersive spaces, mapping on any surface, home theater.</p><div class="ctas"><a class="btn" href="/projection">Explore projection →</a><span class="tags"><span class="tag">Rent</span><span class="tag">Buy</span><span class="tag">Install</span></span></div></div>
+  <div class="cap" data-s="3" data-key="audio"><p class="mono">03 · Audio</p><h2>Sound, sized to the space.</h2><p>From two speakers and a microphone to a flown system for a full hall.</p><div class="ctas"><a class="btn" href="/audio">Explore audio →</a><span class="tags"><span class="tag">Rent</span><span class="tag">Buy</span><span class="tag">Install</span></span></div></div>
+  <div class="cap close" data-s="4"><p class="mono">Get a quote</p><h2>Tell us about your project.</h2><p>The date, the space and what has to happen in it. We come back with an itemized quote.</p><div class="ctas"><a class="btn" href="/get-a-quote">Get a quote →</a><a class="ghost" href="/services">All services</a></div></div>
+
+  <div class="hud"><span class="mono idxl">Services</span><nav class="idx" id="rail" aria-label="Services"><a href="#" data-i="1"><b>01</b><span class="nm">Displays</span></a><a href="#" data-i="2"><b>02</b><span class="nm">Projection</span></a><a href="#" data-i="3"><b>03</b><span class="nm">Audio</span></a></nav></div>
+ </div>
+</section>
+
+<section class="next glance" id="glance">
+  <p class="mono eb">Services, at a glance</p>
+  <h2>Everything we do. <span>On one screen.</span></h2>
+  <div class="gl"><a class="gc w2" href="/displays"><img src="https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/6af9a603043125479c6cbd6c_displays-transparent.jpg" alt="Displays: OLED TVs, touch screens, transparent displays and playback stations." loading="lazy"><div class="gt"><h3>Displays</h3><p>OLED TVs, touch screens, transparent displays and playback stations.</p><span class="tags"><span class="tag">Rent</span><span class="tag">Buy</span><span class="tag">Install</span></span></div></a><a class="gc w2" href="/projection"><img src="https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/6af9a606e699303789ab7f35_projection-mapping.jpg" alt="Projection: Projectors for events and immersive spaces, mapping on any surface, home theater." loading="lazy"><div class="gt"><h3>Projection</h3><p>Projectors for events and immersive spaces, mapping on any surface, home theater.</p><span class="tags"><span class="tag">Rent</span><span class="tag">Buy</span><span class="tag">Install</span></span></div></a><a class="gc w2" href="/audio"><img src="https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/6af9a5ffe699303789ab7be8_audio-systems.jpg" alt="Audio: From two speakers and a microphone to a flown system for a full hall." loading="lazy"><div class="gt"><h3>Audio</h3><p>From two speakers and a microphone to a flown system for a full hall.</p><span class="tags"><span class="tag">Rent</span><span class="tag">Buy</span><span class="tag">Install</span></span></div></a></div>
+  <ul class="incl"><li><b>Delivered and set up</b>by our own crew, in our own truck</li><li><b>Run on the day</b>by technicians who stay for the show</li><li><b>Struck and taken away</b>when it is over</li><li><b>Outside New York</b>the same crew travels with it</li></ul>
+</section>
+
+<section class="next" id="turnkey">
+  <p class="mono eb">Turnkey</p>
+  <h2>One call, the whole job. <span>Every part of it is in-house.</span></h2>
+  <p class="tkl">A project like this usually means separate vendors for the screens, the sound, the lighting, the build and the truck. We do all of it ourselves, so you get one quote, one contact, and one crew that already knows how every piece fits together.</p>
+  <div class="tk">
+    <div><b class="mono">01 · Plan</b><h3>The layout and the system</h3><p>Worked out with you before anything ships: what goes where, how it is powered and how it all connects.</p></div>
+    <div><b class="mono">02 · Equipment</b><h3>Our own inventory</h3><p>Displays, projection, audio, lighting, cameras, networks and computers, from our own stock.</p></div>
+    <div><b class="mono">03 · Content</b><h3>Made for the system</h3><p>Motion graphics, mapping, live visuals and interactive pieces, built to fit the screens they run on.</p></div>
+    <div><b class="mono">04 · Fabrication</b><h3>The custom pieces</h3><p>Housings, plinths, props, mounts and pop-up units, designed, 3D-printed and assembled in house.</p></div>
+    <div><b class="mono">05 · Logistics</b><h3>Our truck, our cases</h3><p>Cased, trucked and loaded in by us. When the job travels, the same crew travels with it.</p></div>
+    <div><b class="mono">06 · Crew</b><h3>The people who run it</h3><p>Technicians and operators who set it up, stay for the show and take it away.</p></div>
+  </div>
+</section>
+
+<section class="next" id="industries">
+  <p class="mono eb">Where it goes</p>
+  <h2>One crew, for very different spaces.</h2>
+  <div class="rooms">
+    <article class="room"><img src="https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/6af9a6063cf5c6a6012b7368_room-activation.jpg" alt="A brand activation set up in a loft: a product on a plinth behind a transparent display, screens on stands and soft lights" loading="lazy" onerror="this.remove()"><div><h3>Brand activations</h3><p>Screens, light, sound and interactive pieces built around the product.</p></div></article>
+    <article class="room"><img src="https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/6af9a607f3d4385110560dea_room-corporate.jpg" alt="An event space ready before doors: a stage with a lectern, a large screen, speakers on stands and rows of chairs" loading="lazy" onerror="this.remove()"><div><h3>Corporate events</h3><p>A stage, screens and microphones, and a stream for the people who could not be there.</p></div></article>
+    <article class="room"><img src="https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/6af9a60888c2e2af9d1f8daf_room-tradeshow.jpg" alt="A trade show booth before opening: a truss frame, three tall screens, a counter and a touch kiosk" loading="lazy" onerror="this.remove()"><div><h3>Trade shows</h3><p>Booth displays, playback stations, lighting and a network of your own on the show floor.</p></div></article>
+    <article class="room"><img src="https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/6af9a6075edbd2a5411a7a90_room-popup.jpg" alt="A free-standing retail pop-up unit with shelves, a built-in screen and warm lighting" loading="lazy" onerror="this.remove()"><div><h3>Retail pop-ups</h3><p>A unit that arrives finished, with the display, light and sound already in it.</p></div></article>
+    <article class="room"><img src="https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/6af9a607b58fe075438f1387_room-gallery.jpg" alt="A gallery with a projection-mapped sculpture, a ceiling projector and a directional speaker over a bench" loading="lazy" onerror="this.remove()"><div><h3>Museums &amp; galleries</h3><p>Projection, directional sound and interactive pieces for exhibitions.</p></div></article>
+    <article class="room"><img src="https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/6af9a6075edbd2a5411a7a74_room-office.jpg" alt="A conference room with a large wall display, a camera bar and a ceiling microphone over an oak table" loading="lazy" onerror="this.remove()"><div><h3>Offices &amp; homes</h3><p>Conference room AV, permanent networks and home theater.</p></div></article>
+  </div>
+</section>
+
+<section class="next" id="solutions">
+  <p class="mono eb">Solutions</p>
+  <h2>Or start from the result you want.</h2>
+  <ul class="rows">
+    <li><a href="/services"><h3>Event AV production</h3><p>Screens, sound, light and network for a show, under one crew.</p><i>→</i></a></li>
+    <li><a href="/#ways"><h3>AV crew &amp; technicians</h3><p>Technicians for your show, with or without our equipment.</p><i>→</i></a></li>
+    <li><a href="/services#interactive"><h3>Immersive experiences</h3><p>Immersive exhibitions planned, built and run: concept, content, hardware, operation.</p><i>→</i></a></li>
+    <li><a href="/services#interactive"><h3>Interactive installations</h3><p>TouchDesigner, sensors, RFID and motion tracking that respond to the people in the space.</p><i>→</i></a></li>
+    <li><a href="/projection"><h3>Projection mapping</h3><p>Walls, objects, sets and architecture, including irregular and sculptural surfaces.</p><i>→</i></a></li>
+    <li><a href="/services#live-video"><h3>VJ &amp; live visuals</h3><p>Live and audio-reactive visuals, playback and show control. If Resolume does it, we do it.</p><i>→</i></a></li>
+    <li><a href="/services#interactive"><h3>3D &amp; real-time content</h3><p>3D modeling and real-time content made for the screens and surfaces it will play on.</p><i>→</i></a></li>
+    <li><a href="/displays"><h3>Conference room AV</h3><p>Displays, audio, cameras and network for meeting spaces.</p><i>→</i></a></li>
+    <li><a href="/projection"><h3>Home theater</h3><p>Projector, screen and sound, rented for a night or installed for good.</p><i>→</i></a></li>
+    <li><a href="/#also"><h3>Equipment sales &amp; sourcing</h3><p>What we sell and integrate, and what we find for you.</p><i>→</i></a></li>
+  </ul>
+</section>
+
+<section class="next" id="ways">
+  <p class="mono eb">How to work with us</p>
+  <h2>Rent it, buy it, have it installed, <span>or hire just the crew.</span></h2>
+  <div class="ways">
+    <div class="way"><b class="mono">Rent</b><h3>For the event</h3><p>Delivered, set up, run and struck by our crew.</p></div>
+    <div class="way"><b class="mono">Buy</b><h3>To keep</h3><p>Displays, projectors, directional speakers, network equipment and computers, supplied and configured.</p></div>
+    <div class="way"><b class="mono">Install</b><h3>In your space</h3><p>Permanent systems for offices, venues, galleries, retail and homes, with the network underneath.</p></div>
+    <div class="way"><b class="mono">Crew</b><h3>Just the people</h3><p>Audio, video and lighting technicians for a show that already has its equipment.</p></div>
+  </div>
+</section>
+
+<section class="next" id="process">
+  <p class="mono eb">How a job runs</p>
+  <h2>One team, from the first call to the last case.</h2>
+  <ol class="steps">
+    <li><b class="mono">01</b><h3>Brief</h3><p>Tell us where, when and what has to happen. Drawings and references help.</p></li>
+    <li><b class="mono">02</b><h3>Quote</h3><p>Equipment, crew and delivery on one quote.</p></li>
+    <li><b class="mono">03</b><h3>Build</h3><p>Content, programming and custom pieces are made before the truck is loaded.</p></li>
+    <li><b class="mono">04</b><h3>Load-in</h3><p>Our truck, our cases, our crew. We set up, test and stay to run it.</p></li>
+    <li><b class="mono">05</b><h3>Strike</h3><p>We take it down and take it away. Installs are handed over working.</p></li>
+  </ol>
+</section>
+
+<section class="next" id="also">
+  <p class="mono eb">Also ours</p>
+  <h2>LED walls, 3D printing, <span>and anything not on this page.</span></h2>
+  <div class="duo">
+    <a class="panel" href="https://ledwall.nyc"><b class="mono">LED walls</b><h3>Need an LED video wall?</h3><p>Our LED side has a site of its own. The same crew builds it.</p><span>ledwall.nyc ↗</span></a>
+    <a class="panel" href="https://ctrlp.studio"><b class="mono">3D printing</b><h3>Need something printed, large?</h3><p>Large-format and small-batch 3D printing runs through our print studio.</p><span>ctrlp.studio ↗</span></a>
+    <a class="panel" id="sourcing" href="#quote"><b class="mono">Sourcing</b><h3>Looking for something else?</h3><p>Ask. We find it, buy it or rent it in, and make it work with the rest.</p><span>Ask us →</span></a>
+  </div>
+</section>
+
+<section class="next" id="faq">
+  <p class="mono eb">Questions</p>
+  <h2>Short answers.</h2>
+  <div class="faq">
+    <details><summary>Do you rent, sell or install?</summary><p>All three. Most equipment can be rented for an event. Displays, projectors, directional speakers, network equipment and computers can also be bought. We install permanent systems in offices, venues, galleries, retail and homes.</p></details>
+    <details><summary>Can we hire only the crew?</summary><p>Yes. We send audio, video and lighting technicians to shows that already have their equipment.</p></details>
+    <details><summary>Do you work outside New York?</summary><p>Yes. We are based in Brooklyn, New York, and the same crew travels with the equipment.</p></details>
+    <details><summary>Do you rent LED walls?</summary><p>Yes, through our LED site, <a href="https://ledwall.nyc">ledwall.nyc</a>.</p></details>
+    <details><summary>Can you build something custom?</summary><p>Yes. We design and fabricate custom pieces and pop-up units with the screens, light and sound built in, and we run large-format 3D printing through <a href="https://ctrlp.studio">ctrlp.studio</a>.</p></details>
+    <details><summary>What if we need something that is not listed?</summary><p>We source it and integrate it with the rest of the system.</p></details>
+  </div>
+</section>
+
+<section class="next end" id="quote">
+  <p class="mono eb">Get a quote</p>
+  <h2>Start with what you need and when.</h2>
+  <p class="lead">Tell us where, when, how many people and what has to happen. We reply with one quote for equipment, crew and delivery.</p>
+  <div class="ctas"><a class="btn" href="/get-a-quote">Get a quote →</a><a class="ghost" href="/services">Browse services</a></div>
+</section>
+
+<footer class="foot">
+  <div class="fl"><a class="logo" href="/"><span class="dot"></span>Possible AV</a><p>AV rental, installation and production.<br>Brooklyn, New York. Crews travel.</p></div>
+  <div class="fc"><b class="mono">Services</b><a href="/displays">Displays</a><a href="/projection">Projection</a><a href="/audio">Audio</a><a href="/services#lighting">Lighting &amp; staging</a><a href="/services#live-video">Live video &amp; visuals</a></div>
+  <div class="fc"><b class="mono">&nbsp;</b><a href="/services#networks">Networks &amp; computers</a><a href="/services#interactive">Interactive &amp; tracking</a><a href="/services#fabrication">Fabrication</a><a href="/services#logistics">Logistics &amp; touring</a></div>
+  <div class="fc"><b class="mono">Company</b><a href="/#solutions">Solutions</a><a href="/#industries">Industries</a><a href="/work">Work</a><a href="/about">About</a><a href="/get-a-quote">Contact</a></div>
+  <div class="fc"><b class="mono">Also ours</b><a href="https://ledwall.nyc">ledwall.nyc ↗</a><a href="https://ctrlp.studio">ctrlp.studio ↗</a></div>
+</footer>
+<script src="../home.ui.js"></script><script type="module" src="../home.js"></script></body></html>
