@@ -266,3 +266,7 @@
   body.top .fveil,body.end .fveil{background:linear-gradient(0deg,rgba(236,233,227,.94) 0,rgba(236,233,227,.7) 24%,rgba(236,233,227,0) 44%)}
   .gc .noimg{aspect-ratio:4/3;background:var(--bg2)} a.gc{color:inherit}
   @media (max-width: 900px){ body .cap.hero{bottom:66px} body .cap.hero .sub{margin:12px 0 0} body .cap .tags{display:none} }
+
+/* inline styles moved out of the markup */
+#floor{height:550vh}
+#glance{border-top:0}

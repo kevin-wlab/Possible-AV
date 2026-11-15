@@ -259,3 +259,6 @@
   .room.ex dt,.room.ex dd{padding:10px 0;border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.45} .room.ex dt{font:500 11.5px "Geist Mono",monospace;text-transform:uppercase;letter-spacing:.04em;color:var(--ink3);padding-top:12px}
   .room.ex dl>:nth-last-child(-n+2){border-bottom:0}
   @media (max-width: 900px){ .rooms.two{grid-template-columns:1fr} .room.ex h3{font-size:21px} .room.ex div{padding:16px 16px 20px} .room.ex dl{grid-template-columns:76px 1fr} .room.ex dt,.room.ex dd{font-size:13.5px} }
+
+/* inline styles moved out of the markup */
+#glance{border-top:0}
