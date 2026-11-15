@@ -6,5 +6,5 @@ w.__pavGoLite=lite;var gl=null;try{var c=document.createElement('canvas');gl=c.g
 var slow=!gl||(n.connection&&n.connection.saveData)||(n.deviceMemory&&n.deviceMemory<=2)||(n.hardwareConcurrency&&n.hardwareConcurrency<=2)||/[?&#]lite\b/.test(location.search+location.hash);
 if(slow){lite(!gl?'nogl':'device');return;}
 var f=0,t0=0,tl=0,ready=0;w.__pavTick=function(){var t=performance.now();if(!ready){ready=1;w.__pavReady=1;}if(tl&&t-tl>400)f=0;tl=t;f++;if(f===30)t0=t;if(f===120){if((t-t0)/90>55)lite('fps');w.__pavTick=null;}};
-setTimeout(function(){if(!w.__pavReady)lite('timeout');},7000);
+setTimeout(function(){if(!w.__pavReady)lite('timeout');},6000);
 var s=document.createElement('script');s.type='module';s.src=(me&&me.src||'').replace(/\.ui\.js(\?.*)?$/,'.js');document.body.appendChild(s);})();
