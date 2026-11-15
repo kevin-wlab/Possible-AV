@@ -91,3 +91,4 @@ Verification: built-in browser on possibleav.webflow.io, two iframes (Webflow pa
 - Rebuilt `/about` (page `6a34f3bdbee39509ab20e532`) in the new design: hero "One crew for the whole job.", an image strip, Turnkey (plan, make, bring, run), the nine services as tiles linking to their pages, New York and on the road, rent/buy/install, FAQ, quote. Follows the owner's About rules: no team, no street address, no WLAB, no client names, no numbers.
 - Files: `web/about.css`, `web/about.ui.js`, `web/ref/about.html`. Staged; check clean at 1280 and 390.
 - Contact SEO description no longer mentions WLAB; Services SEO title and description now list all nine services.
+- Footer (NX Footer component) and the booked-with chips on every service page now link straight to the service pages instead of Services tabs; sources updated to match. Verified on staging.
