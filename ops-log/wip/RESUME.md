@@ -33,6 +33,7 @@ About SEO description fixed (no WLAB). 13:05 asked owner: publish custom domains
 | Fabrication | 6af9b7a30d2c80a7e329f28d | NEW: sets 13 m apart, chair moved out of the text, farm moved out; stills + 4 FLORA examples; staged, check clean desktop+phone. Home caption/rail/card + Services link added in place (no full re-import). |
 | Networks & computers | 6af9bb66072856e73f5ee163 | NEW: event kit / range / rack / workstation / tower film, NG=12; stills + 4 FLORA examples; staged at sha 3a5d683, check clean desktop+phone; Home caption 05 + card, Services link added. |
 | Live video & visuals | 6af9c0ab47d68d8c7ce5f08b | NEW (slug live-video): camcorder on tripod + stream kit / range / streaming with LIVE tally + signal pulse / flypack lid lifts to multiview / VJ laptop + pads + audio-reactive screen / hybrid panel with PTZ and remote tiles. LG=12. 5 stills + 4 FLORA examples. Staged at sha 800c094, check clean desktop+phone. Home: caption 05 inserted (ad811dca), Networks→06, Fabrication→07, close→8, rail relinked, card ee124b63. Services: placeholder replaced by button ebcc5029. |
+| Interactive & tracking | 6af9c4d92742afeb22aafb4d | NEW (slug interactive), 8 stops (IG=12): portrait screen + sensor / range / interactive floor under truss goal post with footprints / depth sensor frustum + floor tiles / 6 mocap cameras + wand + rays / RFID reader + badge + welcome screen / torus-knot sculpture wireframe→solid + render screen. Uses @models: live-video (lvBigScreen, lvCase). 6 stills + 4 FLORA examples. Staged at sha d5b6579, check clean desktop+phone. Home: caption 07 (2165ce0d), Fabrication→08, close→9, rail 6d618297/807de58e, card 05f4abe1. Services button 215e2a67. |
 New-page recipe: finish src/film/pages/<k>.*, add k to LIVE in port.py and mk_home.py, img/home-<k>.jpg + port.py mapping, `./release.sh "msg"` (build+port+ref+commit → sha), upload stills/examples from the browser with ops-log/wip/upload-helper.js (only name,id,date,signature needed from create_asset; shell can't reach media.flora.ai or website-files), append ids to port/assets.txt, create page, nav/footer instances, frag.py + acts.py, set_image_asset, code.py <k> <sha>, update every page's code to the new sha, staging publish, chk() at 1280 and 390.
 Custom domains NOT published yet (old site still live there). Nav component Menu link → #menu, role=button.
 
@@ -54,7 +55,8 @@ Live pages: index.html (3D studio homepage), services.html, audio.html. Release 
 | networks | 49 KB | – | – | model only |
 | projection | done | done | done | **LIVE** (v13.1: panels mapping + object mapping) |
 | live-video | done | done | done | **on Webflow staging** |
-| interactive, logistics | – | – | – | not started |
+| interactive | done | done | done | **on Webflow staging** |
+| logistics | – | – | – | not started (last service page) |
 
 Brief for each page: AGENT_BRIEF.md. Test: `ft.sh <slot> <page> stops|cam|thumb|glance` (never pipe into tail/head).
 

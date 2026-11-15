@@ -76,3 +76,8 @@ Verification: built-in browser on possibleav.webflow.io, two iframes (Webflow pa
 - Copy follows the facts list (Resolume named; no numbers). Four labelled example projects with FLORA illustrations (talk, conference, launch party, hybrid panel).
 - Webflow page `6af9c0ab47d68d8c7ce5f08b` (slug live-video), nav/footer instances, 9 image assets, page code at the release commit. Homepage: Live video caption inserted as 05, Networks and Fabrication renumbered 06/07, close caption data-s 8, rail rebuilt, card added. Services: the "page in progress" placeholder replaced by a link to the page.
 - Staging publish only; element-by-element check clean at 1280 and 390 for Live video, Home and Services (only accepted difference: nav highlight).
+
+## Interactive & tracking page (evening)
+- New film page `interactive` (8 stops): portrait screen with a sensor on top (opening); the range (one screen / interactive floor / three-screen space); 01 interactive floor under a truss goal post, footprints appearing step by step with the content following; 02 depth sensor with its view opening out and floor tiles lighting where someone stands; 03 six tracking cameras around a taped area, the wand lifting and rays meeting its markers; 04 badge tapping a reader on a plinth, the screen answering; 05 a sculpture drawing itself in wireframe and filling in, rendered live on a screen.
+- Webflow page `6af9c4d92742afeb22aafb4d` (slug interactive), 10 image assets (6 stills, 4 labelled FLORA examples). Homepage: Interactive caption 07, Fabrication 08, close 9, rail and card. Services: placeholder replaced by a link.
+- Staging publish only; check clean at 1280 and 390 for Interactive, Home and Services.
