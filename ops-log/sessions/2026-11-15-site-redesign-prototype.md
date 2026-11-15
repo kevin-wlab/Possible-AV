@@ -99,3 +99,25 @@ Verification: built-in browser on possibleav.webflow.io, two iframes (Webflow pa
 - Page code: guard + Geist fonts + `web/page.css` in the head, `web/page.ui.js` in the footer, at commit fc9869f.
 - Copy: LED walls only as "through ledwall.nyc" (FAQ answer, Pricing extras); no WLAB, VP, client names, street address or numbers. Text scan of all four pages on staging found none.
 - Staging publish only; element-by-element check clean at 1280 and 390 for all four (only accepted difference: nav highlight).
+
+## Contact, Work, Blog and the four CMS templates (night)
+- **Contact** `6a34f3be5b5b4820028975eb`: new layout like Get a Quote. The page's own native form ("Possible AV Project Inquiry") was moved into it and restyled (ql / qi / qsend / qmsg); side cards: email (wlab@wlab.tech, unchanged), Brooklyn, New York, LED walls via ledwall.nyc; quick answers. The old "LED walls & virtual production / WLAB" card is gone. Uses `web/quote.css`; added `.qform .w-form{margin:0}` (Webflow's 15px form margin), Get a Quote updated to the same CSS.
+- **Work** `6a34f3ba57b83eec23383965`: one real project (LA) and six cards labelled "Example". The seven images were uploaded as site assets (CMS images are not in the asset library): work-la-secret-show `6af9d121fc8459c2b77f53fd`, work-ex-popup `6af9d121b2985e17b83a0c18`, -gallery `6af9d121a8707557077d460e`, -session `6af9d121b2985e17b83a0c6d`, -window `6af9d122987f038cef8a8400`, -stage `6af9d12262ce94d871315fdd`, -lobby `6af9d125994d262a71379878`. SEO title/description no longer say "case studies".
+- **Work CMS**: the six seed projects (made up in June, AI pictures) are now marked as examples in their text ("An example of the kind of job we take on, not a past client. The picture is an illustration."), with names, summaries, facts and SEO rewritten without invented figures (no 1,000 seats, 99.9%, 5,000+, 36 hrs, zero downtime, Fortune 500). LA item: "room" → "space", old service link → /live-video.
+- **Blog** `6a34f3bc44d27a821e001a14`: 13 post cards in the new design.
+- **Blog CMS**: WLAB and virtual production removed from three posts (permanent installs, roadshow, projector vs LED; LED pricing now points to ledwall.nyc). "room" reworded in all posts (hybrid post renamed "...without losing the live audience", JSON-LD updated to match). Old /service/* links point to the new pages.
+- **Templates rebuilt** (CMS-bound elements moved into the new layout, new classes cover / prose / prose.facts created): Work `6a34e9e8f829ac7e5e3ad13e`, Blog `6a34e9e8383e05c75c473534`, Industries `6a34e9e6f829ac7e5e3ace87`, old Services `6a34e9e6383e05c75c473484` (now a short page pointing to the nine service pages; their other CMS fields are no longer shown).
+- **Industries CMS**: all five rewritten (no WLAB / VP, no "zero failures", no "1,000-seat", no "Javits"/client lists; the Cases field emptied and no longer shown).
+- **Old Services CMS**: headline, subtitle and SEO for the six items now point to the new pages. The URLs stay live until the owner decides on 301s.
+- **Interactive**: example text "A room that changes…" → "A space that changes…" (Webflow and source).
+- All page.css pages and templates now load `web/page.css` / `page.ui.js` at e219dd2.
+- Files: `pages/build_cms_pages.py` (work, blog), `pages/build_tpl_refs.py` + `pages/tpl_items.json` (refs for project, post, industry, service), `pages/extra.css` (appended to page.css by build_pages.py), `chk.js` (the checker, now saved), `upload-helper.js` gained `prepUrl()`.
+
+Gotchas
+- whtml can't link CMS images (they are not site assets): upload copies with prepUrl + create_asset + upload, then set_image_asset.
+- set_style needs the class to exist: create it first (create_style, neutral box-sizing).
+- Webflow's rich text adds a clearfix (::before/::after) that stops margin collapse; `.prose` hides it.
+- The checker's ref for a template lives in ref/<collection>/<slug>.html and links ../page.css (paths resolve against ref/).
+- CMS update responses echo the whole body; long posts are expensive to edit.
+
+Verification: staging only. chk clean at 1280 and 390 (only the nav highlight differs) for Contact, Work, Blog, Industries, FAQ, Pricing, Touring, project/corporate-general-session, post/dante-audio-networking-explained, industry/trade-shows, service/projection. Scan of all 51 sitemap URLs + /contact + /get-a-quote: all 200, no old-design elements, no WLAB / virtual production / VP / XR / "room" (outside "conference room") / Navy Yard / Fortune 500, no links to wlab.tech or /service/*.
