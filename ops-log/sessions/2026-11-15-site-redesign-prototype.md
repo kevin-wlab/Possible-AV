@@ -176,3 +176,23 @@ Owner request: if the homepage 3D hasn't loaded after a set time, switch to a ve
 - Lite layout: canvas, labels and HUD hidden; hero over a static studio render; the 9 system cards become a normal scroll list, each with its own still (`web/img/studio-lite-0..10.jpg`, mobile hero crop `studio-lite-0m.jpg`; renders from `ops-log/wip/render_lite.py`). When it switches mid-load, the 3D renderer is disposed and the page scrolls to the top.
 - Webflow home page `6a34a78c3bca7b2b60e5eae5`: head + footer code set to `possible-av@1ddbea1`.
 - Verified on staging: normal path (3D ready, not lite), `?lite` on 375 px mobile and 1280 desktop, and a forced switch after load (`window.__pavGoLite()`): canvas hidden, page at top, no console errors.
+
+## 16:00 Motion capture, stage deck rental, blog gaps (owner: "tracking子页面没有出现motion capture，补上…stage deck rental能够快速的跑起来…blog…覆盖所有类型的业务…抢排名")
+Keyword data (OpenSEO project 42fb9f74…, US): "stage deck rental" 50/mo but the cluster around it is large and KD 0: rent a stage 4,400, portable stage 2,900, stage platform 1,900, stage risers 1,600, stage decks 720, portable stage rental 590, stage platform rental 480, riser rental 260, stage rental nyc 210, staging rental nyc 210, stage rental prices 140. SERP for "stage rental nyc" is local party-rental sites with deck sizes/heights/risers/skirting; no strong content page.
+- **Interactive & tracking** `6af9c4d92742afeb22aafb4d`: section 03 → "Motion capture & tracking" / "Every movement, captured." / full-body capture copy; rail and glance card → "Motion capture"; example line, hero sub-line; FAQ "Can you rent a motion capture system?" + new "Can motion capture drive visuals live?". SEO title "Interactive Installations & Motion Capture in NYC". New page JSON-LD: Service + FAQPage. (Image alt left as "Motion tracking cameras…": the API's set_attributes fails on alt.)
+- Services page interactive tab and the homepage (3 lines + the "Motion capture" spoke link) now say motion capture. Source: mk2.py, index.html, mk_home.py, src/film/pages/interactive.body.html.
+- **Stage page** `6afa011fbd094984ca50dd5e` rewritten for the stage-deck cluster: title "Stage Rental NYC: Stage Decks, Risers & Portable Stages", H1 "Stage rental in NYC: decks, risers, platforms.", what-you-can-rent (stage deck rental, risers & platforms, portable stages, stairs/skirting/railings, runways, truss), new "Stage sizes" (8×8 / 8×16 / 12×16 / 16×24 ft, decks typically 4×8 ft) and "Stage height" sections, 7 FAQs, Service JSON-LD with alternateName (stage deck / riser / portable stage / platform rental). Anchors pointing to it now say "Stage rental in NYC" / "Stage deck rental in NYC".
+- **7 new blog posts** (CMS, written by parallel writers from ops-log/wip/posts/BRIEF.md, checked for rules; FLORA covers, rehosted by Webflow; each with BlogPosting + Breadcrumb + FAQPage JSON-LD; cards added to /blog):
+  | slug | target | links to |
+  |---|---|---|
+  | stage-deck-sizes-guide | stage decks, portable stage, stage risers, rent a stage | /stage-rental-nyc |
+  | what-is-uplighting-event-guide | what is uplighting, uplighting for events | /event-lighting-rental-nyc |
+  | markerless-vs-marker-motion-capture | markerless motion capture, how motion capture works | /interactive |
+  | touch-screen-kiosk-rental-events | touch screen kiosk, touch screen rental | /tv-rental-nyc, /displays |
+  | projector-screen-size-lumens-guide | projector screen size, lumens | /projector-rental-nyc |
+  | corporate-event-production-nyc-guide | corporate event production | /event-production-company-nyc |
+  | event-sound-system-guide | sound system for event, speaker rental | /sound-system-rental-nyc |
+  Item ids: 6afa20ad73cad3669b114f46, 6afa20e62cba349a27a2bb09, 6afa211bf610cfffbefedd00, 6afa2151f610cfffbefee938, 6afa2188f37ee29748e091fa, 6afa21bc8216f97f3a859d94, 6afa21f59eb44edc3250f017.
+- Money pages link back to their guide (Related chips): stage, event lighting, projector, sound system, TV rental.
+- Staging: 16 URLs 200, all JSON-LD parses, no banned words.
+- Owner-side to speed up stage ranking: Google Business Profile with a "Stage rental"/"Audio visual equipment rental service" category and photos of decks; request indexing of /stage-rental-nyc in Search Console.
