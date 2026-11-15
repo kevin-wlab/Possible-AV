@@ -77,3 +77,10 @@ interactive-ex-lobby.jpg 6af9c53d66f69f982782d530
 interactive-ex-floor.jpg 6af9c53e24c1df7c6930e0dc
 interactive-ex-exhibit.jpg 6af9c53e66f69f982782d56d
 interactive-ex-stage.jpg 6af9c53e66f69f982782d591
+logistics-dock.jpg 6af9c965e21a48e29320209a
+logistics-cases.jpg 6af9c966ca2ec4a9da196b39
+logistics-liftgate.jpg 6af9c967ca2ec4a9da196b91
+logistics-tour.jpg 6af9c968b2985e17b8383969
+logistics-ex-drop.jpg 6af9c96816da4ff0af1e49ac
+logistics-ex-loadin.jpg 6af9c9680ebf9bb7ddd78b70
+logistics-ex-tour.jpg 6af9c96a16da4ff0af1e4a60
