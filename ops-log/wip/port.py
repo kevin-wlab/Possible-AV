@@ -76,3 +76,66 @@ W2=W+'studio.'
 for ext in ['js','css']:
     t=open(W2+ext).read(); t=t.replace("getElementById('focus')","getElementById('focusl')").replace('#focus{','#focusl{').replace('#focus,','#focusl,').replace('#focus ','#focusl ')
     open(W2+ext,'w').write(t)
+
+# ---- Home studio: low-performance ("lite") version -------------------------------------------
+# studio.ui.js decides before any 3D is downloaded: no WebGL, Save-Data, <=2 GB memory or <=2 cores
+# -> lite at once. Otherwise it injects studio.js; if the first frame is not drawn within LITE_MS,
+# or the first seconds run below ~18 fps, the page switches to lite: canvas stopped, the stills
+# (web/img/studio-lite-<n>.jpg, rendered from the same scene) shown with the same copy and cards.
+LITE_MS=7000
+t=open(W2+'js').read()
+if '__pavLite' not in t:
+    t=t.replace("requestAnimationFrame(frame); if(!visible) return; fc++;",
+                "if(window.__pavLite){ try{ renderer.dispose(); }catch(e){} return; } requestAnimationFrame(frame); if(!visible) return; fc++;",1)
+    t=t.replace("\n  renderer.render(scene,camera);\n","\n  renderer.render(scene,camera); if(window.__pavTick) window.__pavTick();\n",1)
+    assert '__pavTick' in t and '__pavLite' in t
+    open(W2+'js','w').write(t)
+u=open(W2+'ui.js').read()
+if '__pavLite' not in u:
+    u+='''
+(function(){var d=document.documentElement,w=window,n=navigator,me=document.currentScript;
+function lite(why){if(w.__pavLite)return;w.__pavLite=why;d.classList.add('lite');scrollTo(0,0);}
+w.__pavGoLite=lite;var gl=null;try{var c=document.createElement('canvas');gl=c.getContext('webgl2')||c.getContext('webgl');}catch(e){}
+var slow=!gl||(n.connection&&n.connection.saveData)||(n.deviceMemory&&n.deviceMemory<=2)||(n.hardwareConcurrency&&n.hardwareConcurrency<=2)||/[?&#]lite\\b/.test(location.search+location.hash);
+if(slow){lite(!gl?'nogl':'device');return;}
+var f=0,t0=0,ready=0;w.__pavTick=function(){var t=performance.now();if(!ready){ready=1;w.__pavReady=1;}f++;if(f===30)t0=t;if(f===120){if((t-t0)/90>55)lite('fps');w.__pavTick=null;}};
+setTimeout(function(){if(!w.__pavReady)lite('timeout');},%d);
+var s=document.createElement('script');s.type='module';s.src=(me&&me.src||'').replace(/\\.ui\\.js(\\?.*)?$/,'.js');document.body.appendChild(s);})();
+'''%LITE_MS
+    open(W2+'ui.js','w').write(u)
+c=open(W2+'css').read()
+if 'html.lite' not in c:
+    c+='''
+/* ---- lite: static version for slow devices (class set by studio.ui.js) ---- */
+html.lite .floor{height:auto}
+html.lite .pin{position:relative;height:auto;min-height:0;overflow:visible;padding-bottom:40px}
+html.lite #stage,html.lite .labels,html.lite #veil,html.lite #focusl,html.lite #lead,html.lite .hud{display:none!important}
+html.lite .copy{position:relative;left:auto;right:auto;top:auto;bottom:auto;transform:none;max-width:none;opacity:1;pointer-events:auto;min-height:min(100vh,860px);display:flex;flex-direction:column;justify-content:center;padding:110px 28px 70px;background:linear-gradient(90deg,var(--bg) 0,rgba(236,233,227,.94) 28%,rgba(236,233,227,0) 52%),url(img/studio-lite-0.jpg) right center/cover no-repeat}
+html.lite .copy>*{max-width:470px}
+html.lite .copy .sub{display:block}
+html.lite .card{position:relative;left:auto;right:auto;top:auto;bottom:auto;width:auto;transform:none;opacity:1;pointer-events:auto;margin:0 28px 14px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);grid-template-areas:"t i";column-gap:34px;padding:0;overflow:hidden;background:rgba(255,255,255,.28);backdrop-filter:none;-webkit-backdrop-filter:none}
+html.lite .card>*{grid-column:1;margin-left:28px;margin-right:0}
+html.lite .card>:first-child{margin-top:30px}
+html.lite .card>:last-child{margin-bottom:28px}
+html.lite .card::after{content:"";grid-column:2;grid-row:1/span 9;background:var(--bg2) center/cover no-repeat;min-height:320px}
+html.lite .card[data-i="1"]::after{background-image:url(img/studio-lite-1.jpg)}
+html.lite .card[data-i="2"]::after{background-image:url(img/studio-lite-2.jpg)}
+html.lite .card[data-i="3"]::after{background-image:url(img/studio-lite-3.jpg)}
+html.lite .card[data-i="4"]::after{background-image:url(img/studio-lite-4.jpg)}
+html.lite .card[data-i="5"]::after{background-image:url(img/studio-lite-5.jpg)}
+html.lite .card[data-i="6"]::after{background-image:url(img/studio-lite-6.jpg)}
+html.lite .card[data-i="7"]::after{background-image:url(img/studio-lite-7.jpg)}
+html.lite .card[data-i="8"]::after{background-image:url(img/studio-lite-8.jpg)}
+html.lite .card[data-i="9"]::after{background-image:url(img/studio-lite-9.jpg)}
+html.lite .card[data-i="10"]::after{background-image:url(img/studio-lite-10.jpg)}
+@media (max-width:900px){
+  html.lite .copy{min-height:0;justify-content:flex-start;padding:96px 20px 300px;background:linear-gradient(180deg,var(--bg) 0,rgba(236,233,227,.94) 48%,rgba(236,233,227,0) 72%),url(img/studio-lite-0.jpg) center bottom/cover no-repeat}
+  html.lite .card{display:flex;flex-direction:column;margin:0 10px 10px;border-radius:16px}
+  html.lite .card::after{order:-1;min-height:0;aspect-ratio:4/3;width:100%}
+  html.lite .card>*{margin-left:16px;margin-right:16px}
+  html.lite .card>:first-child{margin-top:14px}
+  html.lite .card>:last-child{margin-bottom:16px}
+  html.lite .card p.d{display:block;-webkit-line-clamp:unset;overflow:visible}
+}
+'''
+    open(W2+'css','w').write(c)

@@ -973,7 +973,7 @@ let visible=true; new IntersectionObserver(([e])=>visible=e.isIntersecting).obse
 const v=new THREE.Vector3(); let fc=0;
 
 function frame(){
-  requestAnimationFrame(frame); if(!visible) return; fc++;
+  if(window.__pavLite){ try{ renderer.dispose(); }catch(e){} return; } requestAnimationFrame(frame); if(!visible) return; fc++;
   const t=reduce?0:now(), ph=((t%BEAT)+BEAT)%BEAT, env=reduce?0:Math.exp(-ph*9);
 
   const span=Math.max(1,floorEl.offsetHeight-innerHeight), raw=Math.min(Math.max(-floorEl.getBoundingClientRect().top/span,0),1);
@@ -1016,7 +1016,7 @@ function frame(){
     cl[i*3]=lerp(DOT0.r,DOT1.r,kk); cl[i*3+1]=lerp(DOT0.g,DOT1.g,kk); cl[i*3+2]=lerp(DOT0.b,DOT1.b,kk); }
   dotGeo.attributes.position.needsUpdate=true; dotGeo.attributes.color.needsUpdate=true;
 
-  renderer.render(scene,camera);
+  renderer.render(scene,camera); if(window.__pavTick) window.__pavTick();
 
   if(s===0 && !narrow){ const placed=[];
     for(const l of labels){ l.obj.getWorldPosition(v); v.y+=l.y; v.project(camera);
