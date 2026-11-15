@@ -249,7 +249,7 @@ function ledCabinet(uv){ const m=dspM(), g=new THREE.Group(), C=.5; g.add(at(box
   for(const x of [-.12,.12]){ g.add(at(cyl(.011,.011,.03,M.steel,12),x,C/2-.012,-.05)); g.add(at(dspRb(.008,.006,.03,M.amber,.002),x,C/2-.032,-.066)); g.add(at(cyl(.004,.006,.012,M.steel,8),x,C/2+.005,-.03)); }
   g.add(at(rot(cyl(.011,.011,.03,M.steel,12),0,0,Q),C/2-.012,.1,-.05)); g.add(at(dspRb(.006,.008,.03,M.amber,.002),C/2-.032,.1,-.066)); return g; }
 function ledWallSection(){ const m=dspM(), g=new THREE.Group(), C=.5, NX=4, NY=3, Y0=.2; let lift=null;
-  for(let ix=0;ix<NX;ix++) for(let iy=0;iy<NY;iy++){ const c=ledCabinet([ix/NX,iy/NY,(ix+1)/NX,(iy+1)/NY]); c.position.set((ix-(NX-1)/2)*C,Y0+C/2+iy*C,0); g.add(c); if(ix===2&&iy===1){ c.userData.live=true; lift=c; } }
+  for(let ix=0;ix<NX;ix++) for(let iy=0;iy<NY;iy++){ const c=ledCabinet([ix/NX,iy/NY,(ix+1)/NX,(iy+1)/NY]); c.position.set((ix-(NX-1)/2)*C,Y0+C/2+iy*C,0); g.add(c); if(ix===2&&iy===1){ c.userData.live=true; lift=c; g.add(at(box(C+.01,C+.01,.01,m.port),c.position.x,c.position.y,-.1)); } }
   // ground stack: a base beam on levelling feet, outriggers, and a braced ladder behind each end
   g.add(at(rbox(NX*C+.08,.09,.13,m.frame,.01),0,Y0-.047,-.03)); for(const x of [-.92,0,.92]){ g.add(at(cyl(.011,.011,.1,M.steel,10),x,.06,-.03)); g.add(at(cyl(.045,.05,.014,M.rubber,18),x,.007,-.03)); g.add(at(cyl(.02,.02,.012,M.steel,6),x,.1,-.03)); }
   for(const sx of [-1,1]){ const x=sx*.76; g.add(at(rbox(.07,.05,1.05,m.frame,.012),x,.128,-.42)); for(const z of [.06,-.9]){ g.add(at(cyl(.011,.011,.1,M.steel,10),x,.06,z)); g.add(at(cyl(.045,.05,.014,M.rubber,18),x,.007,z)); }

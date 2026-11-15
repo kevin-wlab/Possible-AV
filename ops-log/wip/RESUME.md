@@ -73,3 +73,10 @@ Brief for each page: AGENT_BRIEF.md. Test: `ft.sh <slot> <page> stops|cam|thumb|
 - Space groups ~12 m apart (const DG=12), not S, so the next item slides in as the last leaves; make any line-up step aside (scale away) after the range shot.
 - Wording: "space" / "project", never "room"; "venue" only in a list of place types.
 - Owner facts (2026-11-15): Epson laser projectors at 7,000 lumens; projection use cases include immersive exhibitions; projectors hung from ceiling/truss mapping one picture across screens of different sizes (owner project reference); turnkey/all in-house is a main selling point.
+
+
+## Webflow port status (2026-11-15 night)
+On staging and checked: Home, Services, 9 service pages, About, Industries, FAQ, Pricing, Touring, Get a Quote. Static pages use web/page.css + web/page.ui.js (pages/build_pages.py). Next: Contact, Work + template, Blog + template, Industries template. Custom-domain publish waits for the owner (A/B).
+
+## 2026-11-15 late: whole site on staging
+All pages and templates are in the new design and checked (chk.js in ops-log/wip). Next: owner's answer on custom-domain publish (A/B) and 301s for /service/*. Then publish to possibleav.com + www.

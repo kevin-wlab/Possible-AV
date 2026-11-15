@@ -1,0 +1,36 @@
+  /* services page: an ordinary tabbed page. One tab per service, each with its list of what is in it and a link to its own page */
+  .links a.cur{color:var(--ink);font-weight:500}
+  .svh{padding:128px 28px 34px} .svh h1{font-size:clamp(40px,5vw,76px);margin-top:14px} .svh .sub{margin-top:14px;font-size:17px}
+  /* the tabs are the page: nine tall tiles in one row, each with its pictogram; the chosen one opens into the panel below */
+  .svw{padding:0 28px 96px}
+  .tiles{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:8px}
+  .tile{--tile:rgba(255,255,255,.34);position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:0;min-height:176px;padding:14px 14px 16px;border:1px solid var(--line);border-radius:16px 16px 0 0;border-bottom:0;background:var(--tile);color:var(--ink);font-family:inherit;text-align:left;cursor:pointer;transition:background .25s,color .25s,transform .25s,border-color .25s}
+  .tile b{font:500 11px "Geist Mono",monospace;color:var(--ink3);transition:color .25s}
+  .tile svg{width:46px;height:46px;margin:16px 0 auto;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s,color .25s}
+  .tile span{font-size:16px;font-weight:600;letter-spacing:-.02em;line-height:1.15;margin-top:14px} .tile .shrt{display:none}
+  .tile:hover{--tile:#F6F3EE;transform:translateY(-4px)} .tile:hover svg{transform:scale(1.06)}
+  .tile[aria-selected=true]{--tile:var(--ink);background:var(--ink);border-color:var(--ink);color:var(--bg);transform:none}
+  .tile[aria-selected=true] b{color:rgba(236,233,227,.55)} .tile[aria-selected=true] svg{color:var(--a)}
+  .tile:focus-visible{outline:2px solid var(--a);outline-offset:2px}
+  .tpanel{display:none;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;padding:48px 44px 52px;border:1px solid var(--ink);border-top:3px solid var(--ink);border-radius:0 0 22px 22px;background:rgba(255,255,255,.34)}
+  .tpanel.on{display:grid;animation:tpin .35s ease both}
+  @keyframes tpin{from{opacity:0}to{opacity:1}}
+  .pl h2{font-size:clamp(38px,4.4vw,68px);letter-spacing:-.045em;line-height:.98;font-weight:600;margin:12px 0 18px}
+  .lede{font-size:18px;line-height:1.5;color:var(--ink2);max-width:440px}
+  .pl .tags{margin:22px 0 26px} .pl .ctas{display:flex;gap:10px;flex-wrap:wrap}
+  .btn.off{background:none;color:var(--ink3);border:1px dashed var(--line);cursor:default} .btn.off:hover{transform:none}
+  .plist{list-style:none;border-top:1px solid var(--ink)}
+  .plist li{display:grid;grid-template-columns:38px 1fr auto;gap:4px 12px;padding:17px 2px;border-bottom:1px solid var(--line);align-items:baseline}
+  .plist li:last-child{border-bottom:0}
+  .plist li>b{font:500 12px "Geist Mono",monospace;color:var(--ink3)} .plist h3{font-size:21px;letter-spacing:-.02em;font-weight:600} .plist p{grid-column:2;font-size:15px;line-height:1.5;color:var(--ink2);max-width:540px}
+  .plist .ext{grid-column:3;grid-row:1;font-size:14px;font-weight:500;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+  @media (max-width: 1180px){ .tile{min-height:150px;padding:12px 11px 13px} .tile svg{width:38px;height:38px} .tile span{font-size:14px} .tile .full{display:none} .tile .shrt{display:block} }
+  @media (max-width: 900px){
+    .svh{padding:96px 20px 22px} .svw{padding:0 14px 56px}
+    /* phones: all nine on screen at once as a three-by-three pad */
+    .tiles{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+    .tile,.tile:hover{min-height:104px;padding:10px 10px 11px;border-radius:14px;border-bottom:1px solid var(--line);transform:none} .tile svg{width:30px;height:30px;margin:8px 0 auto} .tile span{font-size:13.5px;margin-top:8px}
+    .tile[aria-selected=true]{border-color:var(--ink)}
+    .tpanel,.tpanel.on{grid-template-columns:1fr;gap:26px;padding:26px 18px 22px;margin-top:10px;border-radius:18px;border-top-width:1px}
+    .plist li{grid-template-columns:30px 1fr} .plist h3{font-size:19px} .plist .ext{grid-column:2;grid-row:auto}
+  }

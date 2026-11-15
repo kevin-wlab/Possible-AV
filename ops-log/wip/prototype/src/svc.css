@@ -1,0 +1,35 @@
+  /* services page: the stage is one screen tall, tabs along the top, the card carries the third-level menu */
+  .floor.svc{height:auto} .floor.svc .pin{position:relative;height:100vh;height:100svh;min-height:620px}
+  .links a.cur{color:var(--ink);font-weight:500}
+  .tabs{position:absolute;left:28px;right:28px;top:72px;z-index:7;flex:none}
+  .tabs a .nm{display:inline!important}
+  #svcFade{position:absolute;inset:0;z-index:3;background:var(--bg);opacity:0;pointer-events:none;transition:opacity .22s}
+  #svcFade.on{opacity:1}
+  .svcc{top:54%}
+  .svcc .spokes li.on a{font-weight:600} .svcc .spokes li.on a::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--a);flex:none;margin-right:9px} .svcc .spokes li.on a span{margin-left:auto;color:var(--a)}
+  .svcc .spokes a{justify-content:flex-start} .svcc .spokes a span{margin-left:auto}
+  .svcc .back{display:inline-flex;gap:8px;margin:-4px 0 10px;color:var(--ink2)} .svcc .back[hidden]{display:none} .svcc .back b{font-weight:500;color:var(--ink)} .svcc .back:hover{color:var(--a)}
+  .svcc p.d{min-height:4.5em} .svcc .ext{text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+  .hud.bare{border-top:0} .hint{color:var(--ink2);background:rgba(236,233,227,.7);padding:6px 10px;border-radius:999px}
+  @media (max-width: 900px){
+    .tabs{left:0;right:0;top:60px;padding:2px 12px;-webkit-mask-image:none;mask-image:none}
+    .svcc{top:auto} .svcc p.d{min-height:2.8em} .svcc .back{margin:0 0 4px;font-size:10.5px}
+    .svcc .spokes li.on{background:var(--ink);border-color:var(--ink)} .svcc .spokes li.on a,.svcc .spokes li.on a span{color:var(--bg)}
+    .hint{display:none} .hud.bare{justify-content:flex-end}
+    .card.svcc{bottom:12px} .hud.bare{bottom:auto;top:104px}
+  }
+  /* dark studios (projection, lighting, live video, interactive): the page furniture over the stage turns light */
+  body[data-mode=services] .nav{position:absolute}
+  .dk .nav .logo,.dk .links a.cur{color:#f4f1ec} .dk .links{color:rgba(236,233,227,.7)} .dk .links a:hover{color:#fff}
+  .dk .nav .btn,.dk .svcc .btn{background:#f1eee8;color:#1a1a18}
+  .dk .svcc{background:rgba(24,24,27,.42);border-color:rgba(255,255,255,.16);color:#f4f1ec;backdrop-filter:blur(20px) brightness(.9) saturate(1.1);-webkit-backdrop-filter:blur(20px) brightness(.9) saturate(1.1);box-shadow:0 18px 50px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.12)}
+  .dk .svcc .mono,.dk .svcc p.d,.dk .svcc .spokes a span,.dk .svcc .back{color:rgba(236,233,227,.72)} .dk .svcc .back b{color:#f4f1ec}
+  .dk .svcc .spokes,.dk .svcc .spokes li{border-color:rgba(255,255,255,.2)}
+  .dk .svcc .tag{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:rgba(236,233,227,.8)}
+  .dk .tabs a{background:rgba(40,40,44,.55);border-color:rgba(255,255,255,.2);color:#ece9e3} .dk .tabs a b{color:rgba(236,233,227,.5)}
+  .dk .tabs a:hover,.dk .tabs a.on{background:#f1eee8;border-color:#f1eee8;color:#1a1a18} .dk .tabs a:hover b,.dk .tabs a.on b{color:rgba(26,26,24,.5)}
+  .dk .hint,.dk .snd{background:rgba(40,40,44,.6);color:rgba(236,233,227,.8);border-color:rgba(255,255,255,.2)}
+  .dk #svcFade{background:#1b1b1e}
+  @media (max-width: 900px){ .dk .svcc .spokes li{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22)} .dk .svcc .spokes li.on{background:#f1eee8;border-color:#f1eee8} .dk .svcc .spokes li.on a,.dk .svcc .spokes li.on a span{color:#1a1a18} }
+  .dk .menu{background:rgba(40,40,44,.6);border-color:rgba(255,255,255,.2);color:#ece9e3}
+  @media (max-width: 900px){ .dk .links{color:var(--ink)} .dk .links a.cur{color:var(--ink)} }
