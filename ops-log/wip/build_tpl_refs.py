@@ -3,7 +3,7 @@ import json
 R='/home/claude/pav-hero/'; W='/home/claude/possible-av/web/'
 exec(open(R+'pages/build_pages.py').read().split('P={}')[0])
 def page(body,depth=2):
-    return '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">\n<link rel="stylesheet" href="../../page.css"></head><body>\n%s\n<script src="../../page.ui.js"></script></body></html>'%body
+    return '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">\n<link rel="stylesheet" href="../page.css"></head><body>\n%s\n<script src="../page.ui.js"></script></body></html>'%body
 D=json.load(open(R+'pages/tpl_items.json'))
 for it in D['project']:
     m=('<main><section class="svh abh"><p class="mono">Work</p><h1>%(name)s</h1><p class="sub">%(summary)s</p></section>'
