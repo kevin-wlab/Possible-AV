@@ -20,5 +20,23 @@
    "excerpt": "Dante sends multichannel audio over standard networks. Here's why it simplifies event and install audio.",
    "body": "<p><strong>Short answer:</strong> Dante carries many channels of digital audio over a standard Ethernet network. One network cable can replace a heavy analog snake, and routing is changed in software.</p><h2>How it works</h2><p>Each Dante device, whether a mixer, stage box, amplifier or wireless receiver, appears on the network. A controller app shows every output and input as a grid, and you click to connect them.</p><h2>Why crews like it</h2><ul><li>One Cat6 run instead of dozens of copper pairs</li><li>Latency low enough for live sound</li><li>Add a recording feed or overflow space without new cable</li><li>Redundant primary and secondary networks for critical shows</li></ul><h2>Where it fits</h2><p>Corporate events, venues with several spaces and permanent installs, anywhere sources and speakers are spread out. For one small space, analog is still fine.</p><h2>What the network needs</h2><ul><li>Managed gigabit switches with energy-saving modes turned off</li><li>A dedicated VLAN for audio</li><li>Quality of service set for clock and audio packets</li><li>No WiFi in the audio path</li></ul><h2>Common mistakes</h2><ul><li>Running Dante on the guest network</li><li>Mixed sample rates between devices</li><li>No secondary network on a show that cannot stop</li></ul><h2>The bottom line</h2><p>Dante is reliable when the network is designed for it. Treat the switch like part of the sound system, because it is. See our <a href=\"/audio\">audio</a> service.</p>"
   }
+ ],
+ "industry": [
+  {
+   "slug": "trade-shows",
+   "h1": "Trade show booth AV, built for the show floor.",
+   "sub": "Booths that stand out on the floor and stay online when the hall network does not. Built and taken down on the show's schedule.",
+   "challenge": "<p>Show floors are hard on equipment: tight build windows, fast teardown and a hall full of competing screens.</p>",
+   "offer": "<ul><li>Displays, audio and interactive pieces for the booth</li><li>Booth structures and fixtures from our shop</li><li>A network of our own, so demos stay online</li><li>A technician on the floor for opening, on call after</li></ul>",
+   "scope": "Booth display, demo station, show-floor activation.",
+   "faq": "<h3>What do you handle in a booth?</h3><p>The whole AV side: displays, audio and interactive pieces, plus fixtures from our shop, planned as one system.</p><h3>Can you work to the show's build and teardown windows?</h3><p>Yes. The booth is built and tested in Brooklyn first, so the time on the floor goes into placing and checking.</p><h3>Is someone on site during the show?</h3><p>Yes. A technician is on the floor for opening and on call for the rest of the show.</p><h3>Can you add an LED wall to the booth?</h3><p>Yes. LED walls go through our sister site <a href=\"https://ledwall.nyc\">ledwall.nyc</a>, and we plan them in with the rest of the booth.</p><h3>How do we start?</h3><p>Send us the show, the booth size and what the booth has to do. We reply within 24 hours.</p>"
+  }
+ ],
+ "service": [
+  {
+   "slug": "projection",
+   "h1": "Projection, now on its own page.",
+   "sub": "Laser projectors, projection mapping on screens and objects, and home theater."
+  }
  ]
 }

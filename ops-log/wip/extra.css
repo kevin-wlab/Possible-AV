@@ -43,3 +43,5 @@ main #article.next{padding-top:72px}
 .prose.facts{max-width:none}
 @media (max-width:900px){.casecover~#background,.casecover~#work,.casecover~#glance{padding-top:44px;padding-bottom:52px}main #article.next{padding-top:48px}}
 .prose::before,.prose::after{content:none!important;display:none!important}
+.next h2+.prose{margin-top:28px}
+.next h2+.chips{margin-top:28px}
