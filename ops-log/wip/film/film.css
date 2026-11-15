@@ -1,0 +1,58 @@
+  /* audio page: products on a seamless backdrop, captions straight on the page (no card, there is no room behind them) */
+  .film{height:920vh}
+  .backb{position:fixed;left:28px;top:78px;z-index:25;display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:999px;border:1px solid var(--line);background:rgba(236,233,227,.8);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-size:14px;font-weight:500;transition:background .2s,color .2s,transform .2s}
+  .backb:hover{background:var(--ink);color:var(--bg);transform:translateX(-2px)}
+  .cap li b{font-weight:600;min-width:68px}
+  .fveil{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(236,233,227,.9) 0,rgba(236,233,227,.55) 26%,rgba(236,233,227,0) 46%);z-index:2}
+  .cap{position:absolute;left:44px;top:50%;z-index:5;width:min(440px,34vw);opacity:0;transform:translateY(-50%) translateY(22px);pointer-events:none;transition:opacity .5s,transform .5s}
+  .cap.on{opacity:1;transform:translateY(-50%);pointer-events:auto}
+  .cap h1{font-size:clamp(44px,5.4vw,92px)} .cap .mono a{text-decoration:underline;text-underline-offset:3px}
+  .cap h2{font-size:clamp(32px,3.7vw,58px);letter-spacing:-.04em;line-height:1;font-weight:600;margin:14px 0 16px}
+  .cap h1{margin:14px 0 0}
+  .cap p{font-size:17px;line-height:1.5;color:var(--ink2);max-width:410px}
+  .cap ul{list-style:none;margin-top:22px;border-top:1px solid var(--line)} .cap li{padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;display:flex;gap:12px} .cap li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--a);margin-top:8px;flex:none}
+  .cap .ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+  .cap.close{left:50%;top:auto;bottom:112px;width:min(560px,90vw);text-align:center;transform:translateX(-50%) translateY(22px)} .cap.close.on{transform:translateX(-50%)}
+  .cap.close p{margin:0 auto} .cap.close .ctas{justify-content:center}
+  body.end .fveil{background:linear-gradient(0deg,rgba(236,233,227,.94) 0,rgba(236,233,227,.7) 30%,rgba(236,233,227,0) 52%)}
+  .film .idx a .nm{display:inline}
+  .ways.three{grid-template-columns:repeat(3,1fr)}
+  @media (max-width: 900px){
+    .fveil{background:linear-gradient(0deg,rgba(236,233,227,.96) 0,rgba(236,233,227,.86) 30%,rgba(236,233,227,0) 50%)}
+    .cap,.cap.close{left:18px;right:18px;width:auto;top:auto;bottom:66px;text-align:left;transform:translateY(18px)} .cap.on,.cap.close.on{transform:none}
+    .cap h1{font-size:clamp(40px,11.5vw,56px)} .cap h2{font-size:28px;margin:8px 0 8px} .cap p{font-size:14.5px;line-height:1.42}
+    .cap .sub{display:block;margin-top:12px} .cap ul{margin-top:10px} .cap li{padding:7px 0;font-size:13.5px} .cap li:nth-child(n+3){display:none}
+    .cap .ctas{margin-top:14px} .cap.close p{margin:0} .cap.close .ctas{justify-content:flex-start}
+    .film .idx a .nm{display:none} .film .idx a.on .nm{display:inline}
+    .ways.three{grid-template-columns:1fr}
+    .backb{left:12px;top:64px;padding:8px 13px;font-size:13px} .cap li b{min-width:58px}
+    .cap.all li:nth-child(n+3){display:flex} .cap.all p:not(.mono){display:none}
+  }
+  /* after the film: everything again, still, on one screen */
+  .gl{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin-top:44px}
+  .gc{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:rgba(255,255,255,.34);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+  .gc:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(26,26,24,.08)}
+  .gc.w4{grid-column:span 4;flex-direction:row} .gc.w2{grid-column:span 2}
+  .gc img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--bg)} .gc.w4 img{width:60%;aspect-ratio:4/3;object-fit:contain;align-self:center}
+  .gc.w4{background:linear-gradient(90deg,var(--bg) 60%,rgba(255,255,255,.34) 60%)} .gt .tags{flex-wrap:wrap}
+  .gt{padding:22px 24px 24px;display:flex;flex-direction:column;gap:8px;flex:1} .gc.w4 .gt{justify-content:center;padding:28px 30px}
+  .gt h3{font-size:24px;letter-spacing:-.025em;font-weight:600;line-height:1.1} .gc.w4 h3{font-size:clamp(28px,2.6vw,38px)}
+  .gt p{font-size:15.5px;color:var(--ink2);line-height:1.45}
+  .gt ul{list-style:none;margin:8px 0 12px;display:flex;flex-direction:column;gap:7px} .gt li{font-size:14.5px;line-height:1.4;padding-left:22px;position:relative}
+  .gt li::before{content:"";position:absolute;left:2px;top:.36em;width:9px;height:5px;border-left:1.8px solid var(--a);border-bottom:1.8px solid var(--a);transform:rotate(-45deg)}
+  .gt .tags{margin-top:auto}
+  .incl{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:14px;border:1px solid var(--line);border-radius:20px;background:var(--bg2)}
+  .incl li{padding:20px 22px;font-size:14.5px;line-height:1.45;color:var(--ink2);border-left:1px solid var(--line)} .incl li:first-child{border-left:0} .incl b{display:block;color:var(--ink);font-size:16.5px;font-weight:600;letter-spacing:-.01em;margin-bottom:3px}
+  @media (max-width: 900px){
+    .gl{grid-template-columns:1fr 1fr;gap:10px;margin-top:28px} .gc.w4{grid-column:span 2;flex-direction:column;background:rgba(255,255,255,.34)} .gc.w4 img{width:100%;aspect-ratio:16/10;min-height:0} .gc.w2{grid-column:span 1}
+    .gt,.gc.w4 .gt{padding:14px 14px 16px} .gt h3{font-size:18px} .gc.w4 h3{font-size:24px} .gt p{font-size:13.5px} .gt li{font-size:13px;padding-left:18px} .gt ul{margin:4px 0 10px}
+    .incl{grid-template-columns:1fr 1fr} .incl li{padding:14px 14px;font-size:13px;border-top:1px solid var(--line)} .incl li:nth-child(-n+2){border-top:0} .incl li:nth-child(odd){border-left:0} .incl b{font-size:14.5px}
+  }
+  /* example projects: labelled as examples, with illustrations */
+  .exnote{margin-top:16px;font-size:16px;line-height:1.5;color:var(--ink2);max-width:640px}
+  .rooms.two{grid-template-columns:1fr 1fr} .room.ex:hover{transform:none;box-shadow:none}
+  .room.ex img{aspect-ratio:16/10} .room.ex div{padding:20px 24px 26px} .room.ex .mono{color:var(--a);margin-bottom:8px} .room.ex h3{font-size:26px}
+  .room.ex dl{margin-top:16px;border-top:1px solid var(--line);display:grid;grid-template-columns:92px 1fr;gap:0}
+  .room.ex dt,.room.ex dd{padding:10px 0;border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.45} .room.ex dt{font:500 11.5px "Geist Mono",monospace;text-transform:uppercase;letter-spacing:.04em;color:var(--ink3);padding-top:12px}
+  .room.ex dl>:nth-last-child(-n+2){border-bottom:0}
+  @media (max-width: 900px){ .rooms.two{grid-template-columns:1fr} .room.ex h3{font-size:21px} .room.ex div{padding:16px 16px 20px} .room.ex dl{grid-template-columns:76px 1fr} .room.ex dt,.room.ex dd{font-size:13.5px} }

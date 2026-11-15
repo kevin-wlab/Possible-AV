@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services · Possible AV (prototype)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{ --bg:#ECE9E3; --bg2:#E3DFD7; --ink:#1A1A18; --ink2:#55524C; --ink3:#8A867E; --line:rgba(26,26,24,.14); --a:#E8892D; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--ink);font-family:Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .mono{font-family:"Geist Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink2)}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--a);box-shadow:0 0 0 3px rgba(232,137,45,.18);flex:none}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:999px;font-size:14px;font-weight:500;transition:transform .2s;white-space:nowrap}
+  .btn:hover{transform:translateY(-1px)}
+  .ghost{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:999px;font-size:14px;font-weight:500;border:1px solid var(--line);background:rgba(236,233,227,.6);backdrop-filter:blur(6px);white-space:nowrap}
+
+  .nav{position:fixed;inset:0 0 auto 0;z-index:30;display:flex;align-items:center;gap:28px;padding:14px 28px;background:rgba(236,233,227,.86);backdrop-filter:blur(14px) saturate(1.1);-webkit-backdrop-filter:blur(14px) saturate(1.1);border-bottom:1px solid var(--line)}
+  .logo{font-weight:700;font-size:18px;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+  .links{display:flex;gap:22px;margin-left:auto;font-size:14px;color:var(--ink2)}
+  .links a:hover{color:var(--ink)}
+  .menu{display:none;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(236,233,227,.75);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:999px;padding:10px 14px;font:500 14px Geist,system-ui,sans-serif;color:var(--ink);cursor:pointer;position:relative}
+  .menu i{position:absolute;left:14px;width:14px;height:1.5px;background:currentColor;transition:transform .2s} .menu i:nth-child(1){transform:translateY(-3px)} .menu i:nth-child(2){transform:translateY(3px)} .menu span{padding-left:22px}
+  .nav.open .menu i:nth-child(1){transform:rotate(45deg)} .nav.open .menu i:nth-child(2){transform:rotate(-45deg)}
+
+  .floor{position:relative;height:1300vh}
+  .pin{position:sticky;top:0;height:100vh;min-height:600px;overflow:hidden}
+  #stage{position:absolute;inset:0;width:100%;height:100%;display:block}
+
+  .copy{position:absolute;left:28px;top:50%;transform:translateY(-50%);z-index:5;max-width:min(470px,33vw);transition:opacity .4s, transform .4s}
+  .copy.off{opacity:0;transform:translateY(-50%) translateX(-20px);pointer-events:none}
+  .eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+  h1{font-size:clamp(36px,4.3vw,72px);line-height:.95;letter-spacing:-.045em;font-weight:600}
+  h1 em{font-style:normal;color:var(--a);display:block}
+  .sub{margin-top:18px;font-size:16px;line-height:1.5;color:var(--ink2)}
+  .ctas{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;align-items:center}
+
+  .labels{position:absolute;inset:0;z-index:4;pointer-events:none;transition:opacity .4s}
+  .labels.off{opacity:0}
+  .lab{position:absolute;left:0;top:0;display:flex;align-items:center;gap:6px;white-space:nowrap;font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);background:rgba(236,233,227,.86);border:1px solid var(--line);padding:3px 7px 3px 5px;border-radius:999px;will-change:transform}
+  .lab i{width:5px;height:5px;border-radius:50%;background:var(--a)}
+
+  .card{position:absolute;left:28px;top:50%;z-index:6;width:min(420px,34vw);padding:26px 26px 22px;border-radius:18px;background:rgba(244,241,236,.3);backdrop-filter:blur(20px) brightness(1.14) saturate(1.1);-webkit-backdrop-filter:blur(20px) brightness(1.14) saturate(1.1);border:1px solid rgba(255,255,255,.6);box-shadow:0 18px 50px rgba(26,26,24,.12), inset 0 1px 0 rgba(255,255,255,.5);
+        opacity:0;transform:translateY(-46%);pointer-events:none;transition:opacity .35s, transform .35s}
+  .card.on{opacity:1;transform:translateY(-50%);pointer-events:auto}
+  .card h2{font-size:clamp(30px,2.8vw,42px);letter-spacing:-.035em;line-height:1;font-weight:600;margin:10px 0 12px}
+  .card p.d{font-size:15px;line-height:1.5;color:var(--ink2)}
+  .spokes{list-style:none;margin:18px 0 20px;border-top:1px solid var(--line)}
+  .spokes li{border-bottom:1px solid var(--line)}
+  .spokes a{display:flex;justify-content:space-between;align-items:center;padding:9px 0;font-size:14px}
+  .spokes a:hover{color:var(--a)}
+  .spokes a span{color:var(--ink2);font-size:13px}
+  .card p.d{color:#3f3d39}
+  .card .spokes,.card .spokes li{border-color:rgba(26,26,24,.2)}
+  .card .tag{border-color:rgba(26,26,24,.28);background:rgba(240,237,231,.4)}
+  .tags{display:flex;gap:6px}
+  .tag{font-family:"Geist Mono",monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;border:1px solid var(--line);border-radius:999px;padding:3px 8px;color:var(--ink2)}
+
+  .rail{position:absolute;right:24px;top:50%;transform:translateY(-50%);z-index:6;transition:opacity .3s;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+  .rail a{display:flex;align-items:center;gap:10px;font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink3);transition:color .2s}
+  .rail a b{width:14px;height:2px;background:var(--line);border-radius:2px;transition:width .25s, background .25s}
+  .rail a.on{color:var(--ink)} .rail a.on b{width:30px;background:var(--a)}
+  .rail a span{opacity:0;transition:opacity .2s} .rail:hover a span,.rail a.on span{opacity:1}
+
+  .idx{display:flex;gap:5px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none;align-items:center;padding:2px 0}
+  .idx::-webkit-scrollbar{display:none}
+  .idx{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);padding-right:26px}
+  .snd{flex:none}
+  @media (max-width:1500px){ .idxl{display:none} }
+  @media (max-width:1280px){ .idx a .nm{display:none} .idx a.on .nm,.idx a:hover .nm,.idx a.hot .nm{display:inline} .idx a{padding:9px 13px} }
+  .idxl{margin-right:8px;white-space:nowrap;color:var(--ink)}
+  .idx a{display:flex;gap:7px;align-items:center;white-space:nowrap;padding:9px 12px;border-radius:999px;font-family:"Geist Mono",monospace;font-size:12px;font-weight:500;letter-spacing:.03em;text-transform:uppercase;color:var(--ink);background:rgba(244,241,235,.62);border:1px solid rgba(26,26,24,.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:background .2s,color .2s,border-color .2s,transform .2s}
+  .idx a b{font-weight:500;color:var(--ink3);transition:color .2s}
+  .idx a:hover,.idx a.hot,.idx a.on{background:var(--ink);border-color:var(--ink);color:var(--bg);transform:translateY(-2px)}
+  .idx a:hover b,.idx a.hot b,.idx a.on b{color:rgba(236,233,227,.6)}
+  #veil{position:absolute;inset:0;z-index:3;pointer-events:none;transition:opacity .4s;background:linear-gradient(90deg,var(--bg) 0,rgba(236,233,227,.94) 30%,rgba(236,233,227,0) 47%)}
+  #focus{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0;transition:opacity .25s}
+  #lead{position:absolute;inset:0;width:100%;height:100%;z-index:5;pointer-events:none;opacity:0;transition:opacity .2s}
+  #lead path{fill:none;stroke:var(--ink);stroke-width:1}
+  #lead circle{fill:var(--bg);stroke:var(--ink);stroke-width:1.5}
+  .hud{position:absolute;left:28px;right:28px;bottom:18px;z-index:6;display:flex;align-items:center;gap:14px;border-top:1px solid var(--line);padding-top:12px}
+  .snd{margin-left:auto;cursor:pointer;border:1px solid var(--line);background:rgba(236,233,227,.7);border-radius:999px;padding:7px 13px;font:inherit;display:flex;align-items:center;gap:8px;white-space:nowrap}
+  .snd b{width:8px;height:8px;border-radius:50%;background:var(--ink3)}
+  .snd.on b{background:var(--a);box-shadow:0 0 0 3px rgba(232,137,45,.2)}
+
+  .next{position:relative;z-index:6;background:var(--bg);border-top:1px solid var(--line);padding:96px 28px 110px}
+  .next h2{font-size:clamp(32px,4vw,56px);letter-spacing:-.035em;line-height:1;font-weight:600;max-width:820px}
+  .next h2 span{color:var(--ink3)}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:44px;border-radius:14px;overflow:hidden}
+  .g{background:var(--bg);padding:24px 22px 28px;min-height:170px;display:flex;flex-direction:column;gap:10px;transition:background .2s}
+  .g:hover{background:var(--bg2)}
+  .g h3{font-size:21px;letter-spacing:-.02em;font-weight:600}
+  .g p{font-size:14px;line-height:1.5;color:var(--ink2)}
+  .g .mono{margin-top:auto}
+
+  .next .eb{margin-bottom:18px}
+  .grid{grid-template-columns:repeat(5,1fr)}
+  .g b.mono{color:var(--ink3);margin-top:0} .g.alt{background:var(--bg2)}
+  .next+.next{padding-top:88px}
+  .ways{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
+  .way{border:1px solid var(--line);border-radius:14px;padding:22px 22px 26px;display:flex;flex-direction:column;gap:10px;background:rgba(255,255,255,.28)}
+  .way b{color:var(--a)} .way h3,.steps h3,.rows h3,.panel h3{font-size:21px;letter-spacing:-.02em;font-weight:600}
+  .way p,.steps p,.rows p,.panel p,.faq p{font-size:14.5px;line-height:1.55;color:var(--ink2)}
+  .rows{list-style:none;margin-top:40px;border-top:1px solid var(--line);columns:2;column-gap:44px}
+  .rows li{border-bottom:1px solid var(--line);break-inside:avoid}
+  .rows a{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:18px 4px;transition:padding .2s,color .2s}
+  .rows a p{grid-column:1} .rows a i{grid-row:1/3;grid-column:2;align-self:center;font-style:normal;color:var(--ink3);transition:transform .2s,color .2s}
+  .rows a:hover{padding-left:10px} .rows a:hover i{transform:translateX(4px);color:var(--a)}
+  .steps{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);margin-top:44px;border-top:1px solid var(--ink)}
+  .steps li{padding:20px 22px 0 0;display:flex;flex-direction:column;gap:10px;position:relative}
+  .steps li::before{content:"";position:absolute;left:0;top:-5px;width:9px;height:9px;border-radius:50%;background:var(--ink)}
+  .steps b{color:var(--ink3)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:36px}
+  .chips a{border:1px solid var(--line);border-radius:999px;padding:10px 16px;font-size:15px;transition:background .2s,color .2s}
+  .chips a:hover{background:var(--ink);color:var(--bg)}
+  .duo{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
+  .panel{border:1px solid var(--line);border-radius:14px;padding:24px 24px 22px;display:flex;flex-direction:column;gap:10px;background:var(--bg2);transition:transform .2s}
+  .panel:hover{transform:translateY(-2px)} .panel span{margin-top:auto;padding-top:14px;font-weight:500} .panel b{color:var(--ink3)}
+  .faq{margin-top:40px;border-top:1px solid var(--line);max-width:900px}
+  .faq details{border-bottom:1px solid var(--line)}
+  .faq summary{list-style:none;cursor:pointer;padding:18px 4px;font-size:19px;font-weight:500;letter-spacing:-.01em;display:flex;justify-content:space-between;gap:16px}
+  .faq summary::-webkit-details-marker{display:none} .faq summary::after{content:"+";color:var(--ink3);font-weight:400} .faq details[open] summary::after{content:"–"}
+  .faq p{padding:0 4px 20px;max-width:720px} .faq p a,.lead a{text-decoration:underline;text-underline-offset:3px}
+  .end{padding-bottom:120px} .end h2{font-size:clamp(40px,6vw,92px)} .lead{margin-top:18px;font-size:18px;line-height:1.5;color:var(--ink2);max-width:560px}
+  .foot{position:relative;z-index:6;background:var(--ink);color:var(--bg);padding:56px 28px 64px;display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:28px}
+  .foot p{margin-top:14px;font-size:14px;line-height:1.55;color:rgba(236,233,227,.6)}
+  .fc{display:flex;flex-direction:column;gap:9px;font-size:14.5px} .fc b{color:rgba(236,233,227,.45);margin-bottom:6px} .fc a{color:rgba(236,233,227,.86)} .fc a:hover{color:var(--a)}
+  .rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
+  .room{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:rgba(255,255,255,.34);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+  .room:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(26,26,24,.08)}
+  .room img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--bg2)}
+  .room div{padding:18px 22px 24px} .room h3{font-size:23px;letter-spacing:-.025em;font-weight:600;margin-bottom:6px} .room p{font-size:15px;line-height:1.5;color:var(--ink2)}
+  @media (max-width:1200px){ .grid{grid-template-columns:repeat(3,1fr)} .steps{grid-template-columns:repeat(3,1fr);row-gap:30px} .ways{grid-template-columns:1fr 1fr} }
+  @media (max-width: 900px){
+    /* phones: the section links fold into a Menu button, the bar itself stays */
+    .nav{padding:12px 12px;gap:8px} .nav .btn{margin-left:auto;padding:10px 15px} .menu{display:inline-flex}
+    .links{display:none;position:absolute;left:10px;right:10px;top:calc(100% - 2px);margin:0;flex-direction:column;gap:0;padding:6px 18px;border-radius:16px;background:rgba(244,241,236,.97);border:1px solid var(--line);box-shadow:0 18px 50px rgba(26,26,24,.16);font-size:18px;color:var(--ink)}
+    .nav.open .links{display:flex} .links a{padding:15px 0;border-bottom:1px solid var(--line)} .links a:last-child{border-bottom:0}
+    .copy{left:20px;right:20px;top:auto;bottom:76px;transform:none;max-width:none}
+    .copy.off{transform:translateY(16px)}
+    .copy .sub{display:none}
+    h1{font-size:clamp(36px,10vw,52px)}
+    .labels{display:none}
+    #veil{background:linear-gradient(0deg,var(--bg) 0,rgba(236,233,227,.92) 30%,rgba(236,233,227,0) 46%)}
+    /* phones: the card is a low sheet so the room stays in view; third-level links become one swipeable row */
+    .card{left:10px;right:10px;width:auto;top:auto;bottom:62px;transform:translateY(16px);padding:13px 15px 12px;border-radius:16px;background:rgba(244,241,236,.5)}
+    .card.on{transform:none}
+    .card .mono{font-size:10.5px}
+    .card h2{font-size:25px;margin:5px 0 6px}
+    .card p.d{font-size:13.5px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .spokes{margin:10px -15px 10px;padding:0 15px;border:0;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none} .spokes::-webkit-scrollbar{display:none}
+    .card .spokes li,.spokes li{border:1px solid rgba(26,26,24,.22);border-radius:999px;flex:none;background:rgba(244,241,236,.55)}
+    .spokes a{padding:6px 11px;font-size:12.5px;gap:6px;white-space:nowrap} .spokes a span{font-size:11.5px}
+    .card .ctas{gap:8px;flex-wrap:nowrap} .card .btn{padding:8px 14px;font-size:13px} .card .ghost{padding:8px 14px;font-size:13px}
+    .card .tags{margin-left:auto} .card .tag{font-size:9.5px;padding:2px 6px}
+    .rail{display:none}
+    .hud{left:12px;right:12px;bottom:12px;padding-top:9px;gap:8px}
+    .idxl{display:none}
+    .idx a{padding:7px 11px;font-size:11px}
+    .snd{padding:6px 10px} .snd span{display:none}
+    .next{padding:64px 20px 72px} .next+.next{padding-top:56px}
+    .grid{grid-template-columns:1fr 1fr} .g{min-height:150px;padding:18px 16px 20px}
+    .rooms{grid-template-columns:1fr 1fr;gap:10px;margin-top:28px} .room div{padding:12px 14px 16px} .room h3{font-size:17px} .room p{font-size:13px;line-height:1.4}
+    .ways,.duo{grid-template-columns:1fr} .rows{columns:1} .steps{grid-template-columns:1fr 1fr}
+    .foot{grid-template-columns:1fr 1fr;padding:44px 20px 52px} .fl{grid-column:1/-1}
+  }
+  @media (max-width: 520px){ .steps{grid-template-columns:1fr} .faq summary{font-size:17px} }
+  /* services page: an ordinary tabbed page. One tab per service, each with its list of what is in it and a link to its own page */
+  .links a.cur{color:var(--ink);font-weight:500}
+  .svh{padding:128px 28px 34px} .svh h1{font-size:clamp(40px,5vw,76px);margin-top:14px} .svh .sub{margin-top:14px;font-size:17px}
+  /* the tabs are the page: nine tall tiles in one row, each with its pictogram; the chosen one opens into the panel below */
+  .svw{padding:0 28px 96px}
+  .tiles{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:8px}
+  .tile{--tile:rgba(255,255,255,.34);position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:0;min-height:176px;padding:14px 14px 16px;border:1px solid var(--line);border-radius:16px 16px 0 0;border-bottom:0;background:var(--tile);color:var(--ink);font-family:inherit;text-align:left;cursor:pointer;transition:background .25s,color .25s,transform .25s,border-color .25s}
+  .tile b{font:500 11px "Geist Mono",monospace;color:var(--ink3);transition:color .25s}
+  .tile svg{width:46px;height:46px;margin:16px 0 auto;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s,color .25s}
+  .tile span{font-size:16px;font-weight:600;letter-spacing:-.02em;line-height:1.15;margin-top:14px} .tile .shrt{display:none}
+  .tile:hover{--tile:#F6F3EE;transform:translateY(-4px)} .tile:hover svg{transform:scale(1.06)}
+  .tile[aria-selected=true]{--tile:var(--ink);background:var(--ink);border-color:var(--ink);color:var(--bg);transform:none}
+  .tile[aria-selected=true] b{color:rgba(236,233,227,.55)} .tile[aria-selected=true] svg{color:var(--a)}
+  .tile:focus-visible{outline:2px solid var(--a);outline-offset:2px}
+  .tpanel{display:none;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;padding:48px 44px 52px;border:1px solid var(--ink);border-top:3px solid var(--ink);border-radius:0 0 22px 22px;background:rgba(255,255,255,.34)}
+  .tpanel.on{display:grid;animation:tpin .35s ease both}
+  @keyframes tpin{from{opacity:0}to{opacity:1}}
+  .pl h2{font-size:clamp(38px,4.4vw,68px);letter-spacing:-.045em;line-height:.98;font-weight:600;margin:12px 0 18px}
+  .lede{font-size:18px;line-height:1.5;color:var(--ink2);max-width:440px}
+  .pl .tags{margin:22px 0 26px} .pl .ctas{display:flex;gap:10px;flex-wrap:wrap}
+  .btn.off{background:none;color:var(--ink3);border:1px dashed var(--line);cursor:default} .btn.off:hover{transform:none}
+  .plist{list-style:none;border-top:1px solid var(--ink)}
+  .plist li{display:grid;grid-template-columns:38px 1fr auto;gap:4px 12px;padding:17px 2px;border-bottom:1px solid var(--line);align-items:baseline}
+  .plist li:last-child{border-bottom:0}
+  .plist li>b{font:500 12px "Geist Mono",monospace;color:var(--ink3)} .plist h3{font-size:21px;letter-spacing:-.02em;font-weight:600} .plist p{grid-column:2;font-size:15px;line-height:1.5;color:var(--ink2);max-width:540px}
+  .plist .ext{grid-column:3;grid-row:1;font-size:14px;font-weight:500;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+  @media (max-width: 1180px){ .tile{min-height:150px;padding:12px 11px 13px} .tile svg{width:38px;height:38px} .tile span{font-size:14px} .tile .full{display:none} .tile .shrt{display:block} }
+  @media (max-width: 900px){
+    .svh{padding:96px 20px 22px} .svw{padding:0 14px 56px}
+    /* phones: all nine on screen at once as a three-by-three pad */
+    .tiles{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+    .tile,.tile:hover{min-height:104px;padding:10px 10px 11px;border-radius:14px;border-bottom:1px solid var(--line);transform:none} .tile svg{width:30px;height:30px;margin:8px 0 auto} .tile span{font-size:13.5px;margin-top:8px}
+    .tile[aria-selected=true]{border-color:var(--ink)}
+    .tpanel,.tpanel.on{grid-template-columns:1fr;gap:26px;padding:26px 18px 22px;margin-top:10px;border-radius:18px;border-top-width:1px}
+    .plist li{grid-template-columns:30px 1fr} .plist h3{font-size:19px} .plist .ext{grid-column:2;grid-row:auto}
+  }
+  /* audio page: products on a seamless backdrop, captions straight on the page (no card, there is no room behind them) */
+  .film{height:920vh}
+  .backb{position:fixed;left:28px;top:78px;z-index:25;display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:999px;border:1px solid var(--line);background:rgba(236,233,227,.8);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-size:14px;font-weight:500;transition:background .2s,color .2s,transform .2s}
+  .backb:hover{background:var(--ink);color:var(--bg);transform:translateX(-2px)}
+  .cap li b{font-weight:600;min-width:68px}
+  .fveil{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(236,233,227,.9) 0,rgba(236,233,227,.55) 26%,rgba(236,233,227,0) 46%);z-index:2}
+  .cap{position:absolute;left:44px;top:50%;z-index:5;width:min(440px,34vw);opacity:0;transform:translateY(-50%) translateY(22px);pointer-events:none;transition:opacity .5s,transform .5s}
+  .cap.on{opacity:1;transform:translateY(-50%);pointer-events:auto}
+  .cap h1{font-size:clamp(44px,5.4vw,92px)} .cap .mono a{text-decoration:underline;text-underline-offset:3px}
+  .cap h2{font-size:clamp(32px,3.7vw,58px);letter-spacing:-.04em;line-height:1;font-weight:600;margin:14px 0 16px}
+  .cap h1{margin:14px 0 0}
+  .cap p{font-size:17px;line-height:1.5;color:var(--ink2);max-width:410px}
+  .cap ul{list-style:none;margin-top:22px;border-top:1px solid var(--line)} .cap li{padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;display:flex;gap:12px} .cap li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--a);margin-top:8px;flex:none}
+  .cap .ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+  .cap.close{left:50%;top:auto;bottom:112px;width:min(560px,90vw);text-align:center;transform:translateX(-50%) translateY(22px)} .cap.close.on{transform:translateX(-50%)}
+  .cap.close p{margin:0 auto} .cap.close .ctas{justify-content:center}
+  body.end .fveil{background:linear-gradient(0deg,rgba(236,233,227,.94) 0,rgba(236,233,227,.7) 30%,rgba(236,233,227,0) 52%)}
+  .film .idx a .nm{display:inline}
+  .ways.three{grid-template-columns:repeat(3,1fr)}
+  @media (max-width: 900px){
+    .fveil{background:linear-gradient(0deg,rgba(236,233,227,.96) 0,rgba(236,233,227,.86) 30%,rgba(236,233,227,0) 50%)}
+    .cap,.cap.close{left:18px;right:18px;width:auto;top:auto;bottom:66px;text-align:left;transform:translateY(18px)} .cap.on,.cap.close.on{transform:none}
+    .cap h1{font-size:clamp(40px,11.5vw,56px)} .cap h2{font-size:28px;margin:8px 0 8px} .cap p{font-size:14.5px;line-height:1.42}
+    .cap .sub{display:block;margin-top:12px} .cap ul{margin-top:10px} .cap li{padding:7px 0;font-size:13.5px} .cap li:nth-child(n+3){display:none}
+    .cap .ctas{margin-top:14px} .cap.close p{margin:0} .cap.close .ctas{justify-content:flex-start}
+    .film .idx a .nm{display:none} .film .idx a.on .nm{display:inline}
+    .ways.three{grid-template-columns:1fr}
+    .backb{left:12px;top:64px;padding:8px 13px;font-size:13px} .cap li b{min-width:58px}
+    .cap.all li:nth-child(n+3){display:flex} .cap.all p:not(.mono){display:none}
+  }
+  /* after the film: everything again, still, on one screen */
+  .gl{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin-top:44px}
+  .gc{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:rgba(255,255,255,.34);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+  .gc:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(26,26,24,.08)}
+  .gc.w4{grid-column:span 4;flex-direction:row} .gc.w2{grid-column:span 2}
+  .gc img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--bg)} .gc.w4 img{width:60%;aspect-ratio:4/3;object-fit:contain;align-self:center}
+  .gc.w4{background:linear-gradient(90deg,var(--bg) 60%,rgba(255,255,255,.34) 60%)} .gt .tags{flex-wrap:wrap}
+  .gt{padding:22px 24px 24px;display:flex;flex-direction:column;gap:8px;flex:1} .gc.w4 .gt{justify-content:center;padding:28px 30px}
+  .gt h3{font-size:24px;letter-spacing:-.025em;font-weight:600;line-height:1.1} .gc.w4 h3{font-size:clamp(28px,2.6vw,38px)}
+  .gt p{font-size:15.5px;color:var(--ink2);line-height:1.45}
+  .gt ul{list-style:none;margin:8px 0 12px;display:flex;flex-direction:column;gap:7px} .gt li{font-size:14.5px;line-height:1.4;padding-left:22px;position:relative}
+  .gt li::before{content:"";position:absolute;left:2px;top:.36em;width:9px;height:5px;border-left:1.8px solid var(--a);border-bottom:1.8px solid var(--a);transform:rotate(-45deg)}
+  .gt .tags{margin-top:auto}
+  .incl{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:14px;border:1px solid var(--line);border-radius:20px;background:var(--bg2)}
+  .incl li{padding:20px 22px;font-size:14.5px;line-height:1.45;color:var(--ink2);border-left:1px solid var(--line)} .incl li:first-child{border-left:0} .incl b{display:block;color:var(--ink);font-size:16.5px;font-weight:600;letter-spacing:-.01em;margin-bottom:3px}
+  @media (max-width: 900px){
+    .gl{grid-template-columns:1fr 1fr;gap:10px;margin-top:28px} .gc.w4{grid-column:span 2;flex-direction:column;background:rgba(255,255,255,.34)} .gc.w4 img{width:100%;aspect-ratio:16/10;min-height:0} .gc.w2{grid-column:span 1}
+    .gt,.gc.w4 .gt{padding:14px 14px 16px} .gt h3{font-size:18px} .gc.w4 h3{font-size:24px} .gt p{font-size:13.5px} .gt li{font-size:13px;padding-left:18px} .gt ul{margin:4px 0 10px}
+    .incl{grid-template-columns:1fr 1fr} .incl li{padding:14px 14px;font-size:13px;border-top:1px solid var(--line)} .incl li:nth-child(-n+2){border-top:0} .incl li:nth-child(odd){border-left:0} .incl b{font-size:14.5px}
+  }
+  /* example projects: labelled as examples, with illustrations */
+  .exnote{margin-top:16px;font-size:16px;line-height:1.5;color:var(--ink2);max-width:640px}
+  .rooms.two{grid-template-columns:1fr 1fr} .room.ex:hover{transform:none;box-shadow:none}
+  .room.ex img{aspect-ratio:16/10} .room.ex div{padding:20px 24px 26px} .room.ex .mono{color:var(--a);margin-bottom:8px} .room.ex h3{font-size:26px}
+  .room.ex dl{margin-top:16px;border-top:1px solid var(--line);display:grid;grid-template-columns:92px 1fr;gap:0}
+  .room.ex dt,.room.ex dd{padding:10px 0;border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.45} .room.ex dt{font:500 11.5px "Geist Mono",monospace;text-transform:uppercase;letter-spacing:.04em;color:var(--ink3);padding-top:12px}
+  .room.ex dl>:nth-last-child(-n+2){border-bottom:0}
+  @media (max-width: 900px){ .rooms.two{grid-template-columns:1fr} .room.ex h3{font-size:21px} .room.ex div{padding:16px 16px 20px} .room.ex dl{grid-template-columns:76px 1fr} .room.ex dt,.room.ex dd{font-size:13.5px} }
+</style>
+</head>
+<body data-page="services">
+<header class="nav">
+  <a class="logo" href="index.html"><span class="dot"></span>Possible AV</a>
+  <nav class="links" id="menu"><a href="index.html">Home</a><a class="cur" href="services.html">Services</a><a href="index.html#solutions">Solutions</a><a href="index.html#industries">Industries</a><a href="#">Work</a><a href="#">About</a></nav>
+  <a class="btn" href="#quote">Get a quote</a>
+  <button class="menu" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu"><i></i><i></i><span>Menu</span></button>
+</header>
+<script>(function(){var n=document.querySelector('.nav'),b=document.getElementById('menuBtn');function set(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);}b.addEventListener('click',function(e){e.stopPropagation();set(!n.classList.contains('open'));});document.addEventListener('click',function(e){if(!n.contains(e.target)||e.target.closest('.links a'))set(false);});})();</script>
+<main>
+<section class="svh"><p class="mono">Services</p><h1>What does the room need?</h1><p class="sub">Nine services, one crew. Pick one to see what is in it.</p></section>
+<div class="svw"><div class="tiles" role="tablist" aria-label="Services"><button type="button" class="tile" role="tab" id="t-displays" data-k="displays" aria-controls="p-displays" aria-selected="false"><b>01</b><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="9" width="36" height="22" rx="2.5"/><path d="M24 31v7M15 39h18"/></svg><span class="full">Displays</span><span class="shrt">Displays</span></button><button type="button" class="tile" role="tab" id="t-projection" data-k="projection" aria-controls="p-projection" aria-selected="false"><b>02</b><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="4" y="20" width="22" height="13" rx="2.5"/><circle cx="13" cy="26.5" r="3.6"/><path d="M26 23.5l16-8M26 29.5l16 8M43 12v29M8 33v3M22 33v3"/></svg><span class="full">Projection</span><span class="shrt">Projection</span></button><button type="button" class="tile" role="tab" id="t-audio" data-k="audio" aria-controls="p-audio" aria-selected="false"><b>03</b><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="13" y="5" width="22" height="38" rx="3"/><circle cx="24" cy="29.5" r="7"/><circle cx="24" cy="13.5" r="3"/></svg><span class="full">Audio</span><span class="shrt">Audio</span></button><button type="button" class="tile" role="tab" id="t-lighting" data-k="lighting" aria-controls="p-lighting" aria-selected="false"><b>04</b><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M17 8h14l3 11H14zM24 4v4M16 25l-4 12M24 26v12M32 25l4 12M7 42h34"/></svg><span class="full">Lighting &amp; staging</span><span class="shrt">Lighting &amp; staging</span></button><button type="button" class="tile" role="tab" id="t-live-video" data-k="live-video" aria-controls="p-live-video" aria-selected="false"><b>05</b><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="14" width="26" height="20" rx="3"/><path d="M31 21l12-6v18l-12-6"/><circle cx="12" cy="21" r="1.7" fill="currentColor" stroke="none"/></svg><span class="full">Live video &amp; visuals</span><span class="shrt">Live video</span></button><button type="button" class="tile" role="tab" id="t-networks" data-k="networks" aria-controls="p-networks" aria-selected="false"><b>06</b><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7 19a24 24 0 0 1 34 0M13.5 25.5a15 15 0 0 1 21 0"/><circle cx="24" cy="32" r="3.2"/><path d="M24 35.2V42M14 42h20"/></svg><span class="full">Networks &amp; computers</span><span class="shrt">Networks</span></button><button type="button" class="tile" role="tab" id="t-interactive" data-k="interactive" aria-controls="p-interactive" aria-selected="false"><b>07</b><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="3.2"/><circle cx="24" cy="24" r="10"/><path d="M24 5v6M24 37v6M5 24h6M37 24h6"/></svg><span class="full">Interactive &amp; tracking</span><span class="shrt">Interactive</span></button><button type="button" class="tile" role="tab" id="t-fabrication" data-k="fabrication" aria-controls="p-fabrication" aria-selected="false"><b>08</b><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5l16 9v19l-16 9-16-9V14z"/><path d="M8 14l16 9 16-9M24 23v19"/><path d="M8 24l16 9M8 29l16 9" opacity=".5"/></svg><span class="full">Fabrication</span><span class="shrt">Fabrication</span></button><button type="button" class="tile" role="tab" id="t-logistics" data-k="logistics" aria-controls="p-logistics" aria-selected="false"><b>09</b><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 12h24v21H4zM28 19h9l7 8v6H28"/><circle cx="12" cy="35" r="4.2" fill="var(--tile)"/><circle cx="35" cy="35" r="4.2" fill="var(--tile)"/></svg><span class="full">Logistics &amp; touring</span><span class="shrt">Logistics</span></button></div>
+<section class="tpanel" id="p-displays" role="tabpanel" aria-labelledby="t-displays">
+  <div class="pl"><p class="mono">01 / 09</p><h2>Displays</h2><p class="lede">OLED TVs, touchscreens with Android or Windows built in, transparent displays and multi-screen playback stations.</p><div class="tags"><span class="tag">Rent</span><span class="tag">Buy</span><span class="tag">Install</span></div><div class="ctas"><span class="btn off">Displays page in progress</span><a class="ghost" href="#quote">Get a quote</a></div></div>
+  <ul class="plist"><li><b>01</b><h3>OLED TV rental</h3><p>OLED TVs on floor stands or mounts, delivered and set up for booths, lounges and stages.</p></li><li><b>02</b><h3>Touch screen rental</h3><p>Touch displays with Android or Windows built in, on a stand or as a kiosk, running your app or one we build.</p></li><li><b>03</b><h3>Transparent displays</h3><p>See-through screens that put motion graphics in front of a real product.</p></li><li><b>04</b><h3>Playback stations</h3><p>Screens on truss or stands with players and a control position, looping content for the whole run.</p></li><li><b>05</b><h3>LED walls</h3><a class="ext" href="https://ledwall.nyc">ledwall.nyc ↗</a><p>LED video walls go up with the same crew. Sizes, specs and pricing are on our LED site.</p></li></ul>
+</section>
+<section class="tpanel" id="p-projection" role="tabpanel" aria-labelledby="t-projection">
+  <div class="pl"><p class="mono">02 / 09</p><h2>Projection</h2><p class="lede">Projectors for events, trade shows and immersive rooms, mapping on any surface, and home theater.</p><div class="tags"><span class="tag">Rent</span><span class="tag">Buy</span><span class="tag">Install</span></div><div class="ctas"><span class="btn off">Projection page in progress</span><a class="ghost" href="#quote">Get a quote</a></div></div>
+  <ul class="plist"><li><b>01</b><h3>Projector rental</h3><p>Projectors, lenses and screens for events, trade shows and immersive rooms, hung and aligned by us.</p></li><li><b>02</b><h3>Projection mapping</h3><p>Content fitted to walls, objects, sets and architecture, including irregular and sculptural surfaces.</p></li><li><b>03</b><h3>Home theater</h3><p>A projector, screen and sound at home: rented for a night or installed for good.</p></li></ul>
+</section>
+<section class="tpanel" id="p-audio" role="tabpanel" aria-labelledby="t-audio">
+  <div class="pl"><p class="mono">03 / 09</p><h2>Audio</h2><p class="lede">Sound systems, wireless microphones, directional speakers, spatial audio and haptic seating.</p><div class="tags"><span class="tag">Rent</span><span class="tag">Buy</span><span class="tag">Install</span></div><div class="ctas"><a class="btn" href="audio.html">Open the Audio page →</a><a class="ghost" href="#quote">Get a quote</a></div></div>
+  <ul class="plist"><li><b>01</b><h3>Sound system rental</h3><p>Line arrays, subs and fills sized to the room, with an engineer at the console.</p></li><li><b>02</b><h3>Wireless microphones</h3><p>Handheld, lavalier and headset wireless for panels, presenters and performers.</p></li><li><b>03</b><h3>Directional speakers</h3><p>Sound that stays in one spot: the person underneath hears it, the person beside them does not. To rent or to buy.</p></li><li><b>04</b><h3>Spatial audio &amp; haptic seating</h3><p>Sound placed around the audience, and seating that moves with the low end.</p></li><li><b>05</b><h3>Mixing &amp; engineers</h3><p>Consoles and the audio engineers who run them, with our system or yours.</p></li></ul>
+</section>
+<section class="tpanel" id="p-lighting" role="tabpanel" aria-labelledby="t-lighting">
+  <div class="pl"><p class="mono">04 / 09</p><h2>Lighting &amp; staging</h2><p class="lede">Aputure lighting, stage decks, truss and rigging, and the stage work around them.</p><div class="tags"><span class="tag">Rent</span><span class="tag">Install</span></div><div class="ctas"><span class="btn off">Lighting &amp; staging page in progress</span><a class="ghost" href="#quote">Get a quote</a></div></div>
+  <ul class="plist"><li><b>01</b><h3>Event lighting</h3><p>Aputure fixtures for stages, rooms and camera, placed, focused and run by us.</p></li><li><b>02</b><h3>Stage decks</h3><p>Modular stage decks in the size and height the room needs, built and levelled.</p></li><li><b>03</b><h3>Truss &amp; rigging</h3><p>Ground-supported and flown truss for lights, screens, speakers and projectors.</p></li><li><b>04</b><h3>Lighting control</h3><p>A lighting desk and an operator for the show.</p></li></ul>
+</section>
+<section class="tpanel" id="p-live-video" role="tabpanel" aria-labelledby="t-live-video">
+  <div class="pl"><p class="mono">05 / 09</p><h2>Live video &amp; visuals</h2><p class="lede">Live streaming, switchers and production kits, and VJ and Resolume visuals.</p><div class="tags"><span class="tag">Rent</span><span class="tag">Install</span></div><div class="ctas"><span class="btn off">Live video &amp; visuals page in progress</span><a class="ghost" href="#quote">Get a quote</a></div></div>
+  <ul class="plist"><li><b>01</b><h3>Live streaming</h3><p>Cameras, encoding and a crew to put the event online.</p></li><li><b>02</b><h3>Switchers &amp; production kits</h3><p>Video switchers and portable production kits, rented with or without an operator.</p></li><li><b>03</b><h3>VJ &amp; live visuals</h3><p>Live and audio-reactive visuals, playback and show control. If Resolume does it, we do it.</p></li><li><b>04</b><h3>Hybrid events</h3><p>Remote speakers and remote audiences in the same show as the room.</p></li></ul>
+</section>
+<section class="tpanel" id="p-networks" role="tabpanel" aria-labelledby="t-networks">
+  <div class="pl"><p class="mono">06 / 09</p><h2>Networks &amp; computers</h2><p class="lede">UniFi networks for events and for buildings, and computers and workstations to rent or own.</p><div class="tags"><span class="tag">Rent</span><span class="tag">Buy</span><span class="tag">Install</span></div><div class="ctas"><span class="btn off">Networks &amp; computers page in progress</span><a class="ghost" href="#quote">Get a quote</a></div></div>
+  <ul class="plist"><li><b>01</b><h3>Event Wi-Fi</h3><p>A UniFi network brought in for the event: access points, switching and someone watching it.</p></li><li><b>02</b><h3>Permanent network installs</h3><p>UniFi networks designed, installed and handed over in your space.</p></li><li><b>03</b><h3>Computer &amp; workstation rental</h3><p>Workstations and show computers for the run of the event.</p></li><li><b>04</b><h3>Custom PCs &amp; workstations</h3><p>Workstations built to order, to buy.</p></li></ul>
+</section>
+<section class="tpanel" id="p-interactive" role="tabpanel" aria-labelledby="t-interactive">
+  <div class="pl"><p class="mono">07 / 09</p><h2>Interactive &amp; tracking</h2><p class="lede">TouchDesigner, sensors, RFID, motion tracking and the 3D content that reacts to them.</p><div class="tags"><span class="tag">Rent</span><span class="tag">Install</span></div><div class="ctas"><span class="btn off">Interactive &amp; tracking page in progress</span><a class="ghost" href="#quote">Get a quote</a></div></div>
+  <ul class="plist"><li><b>01</b><h3>Interactive installations</h3><p>Rooms, floors and walls that respond to people, built in TouchDesigner.</p></li><li><b>02</b><h3>Sensors &amp; body tracking</h3><p>Cameras and sensors that follow people without anything worn.</p></li><li><b>03</b><h3>Motion tracking systems</h3><p>Tracking systems rented, installed and run for events and installs.</p></li><li><b>04</b><h3>RFID &amp; NFC triggers</h3><p>Tap an object or a badge and the room does something.</p></li><li><b>05</b><h3>3D &amp; real-time content</h3><p>3D modeling and real-time content that follows the performer or the visitor.</p></li></ul>
+</section>
+<section class="tpanel" id="p-fabrication" role="tabpanel" aria-labelledby="t-fabrication">
+  <div class="pl"><p class="mono">08 / 09</p><h2>Fabrication</h2><p class="lede">Custom builds, branded pieces and pop-up shops, designed, 3D-printed and assembled in house, with the screens, light and sound already built in.</p><div class="tags"><span class="tag">Design</span><span class="tag">Build</span><span class="tag">Install</span></div><div class="ctas"><span class="btn off">Fabrication page in progress</span><a class="ghost" href="#quote">Get a quote</a></div></div>
+  <ul class="plist"><li><b>01</b><h3>Custom fabrication</h3><p>One-off pieces made for the job: housings, plinths, props and mounts.</p></li><li><b>02</b><h3>Pop-up shops &amp; retail units</h3><p>A branded unit that arrives finished, with display, light and sound inside it.</p></li><li><b>03</b><h3>Large-format 3D printing</h3><a class="ext" href="https://ctrlp.studio">ctrlp.studio ↗</a><p>Pieces printed at furniture scale, and small-batch runs on the print farm.</p></li></ul>
+</section>
+<section class="tpanel" id="p-logistics" role="tabpanel" aria-labelledby="t-logistics">
+  <div class="pl"><p class="mono">09 / 09</p><h2>Logistics &amp; touring</h2><p class="lede">We case it, truck it and load it in ourselves. For work outside New York, the same crew travels with the gear.</p><div class="tags"><span class="tag">Deliver</span><span class="tag">Tour</span></div><div class="ctas"><span class="btn off">Logistics &amp; touring page in progress</span><a class="ghost" href="#quote">Get a quote</a></div></div>
+  <ul class="plist"><li><b>01</b><h3>Delivery, load-in &amp; strike</h3><p>Our truck and our crew, from the dock to the room and back.</p></li><li><b>02</b><h3>Touring &amp; multi-city</h3><p>The same system and the same people in every city on the run.</p></li></ul>
+</section>
+</div>
+</main>
+<script>(function(){var bs=[].slice.call(document.querySelectorAll('.tile')),ps=[].slice.call(document.querySelectorAll('.tpanel'));
+function show(k,user){var i=bs.findIndex(function(b){return b.dataset.k===k});if(i<0)i=0;bs.forEach(function(b,j){b.setAttribute('aria-selected',j===i);b.tabIndex=j===i?0:-1;});ps.forEach(function(p,j){p.classList.toggle('on',j===i);});
+if(user){try{history.replaceState(null,'','#'+bs[i].dataset.k);}catch(e){}}}
+bs.forEach(function(b,j){b.addEventListener('click',function(){show(b.dataset.k,true);});b.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){var n=bs[(j+d+bs.length)%bs.length];n.focus();show(n.dataset.k,true);}});});
+addEventListener('hashchange',function(){show(location.hash.slice(1));});show(location.hash.slice(1));})();</script>
+<section class="next" id="ways">
+  <p class="mono eb">How to work with us</p>
+  <h2>Rent it, buy it, have it installed, <span>or hire just the crew.</span></h2>
+  <div class="ways">
+    <div class="way"><b class="mono">Rent</b><h3>For the event</h3><p>Delivered, set up, run and struck by our crew.</p></div>
+    <div class="way"><b class="mono">Buy</b><h3>To keep</h3><p>Displays, projectors, directional speakers, network equipment and computers, supplied and configured.</p></div>
+    <div class="way"><b class="mono">Install</b><h3>In your space</h3><p>Permanent systems for offices, venues, galleries, retail and homes, with the network underneath.</p></div>
+    <div class="way"><b class="mono">Crew</b><h3>Just the people</h3><p>Audio, video and lighting technicians for a show that already has its equipment.</p></div>
+  </div>
+</section>
+
+<section class="next" id="process">
+  <p class="mono eb">How a job runs</p>
+  <h2>One team, from the first call to the last case.</h2>
+  <ol class="steps">
+    <li><b class="mono">01</b><h3>Brief</h3><p>Tell us the room, the date and what has to happen in it. Drawings and references help.</p></li>
+    <li><b class="mono">02</b><h3>Quote</h3><p>Equipment, crew and delivery on one quote.</p></li>
+    <li><b class="mono">03</b><h3>Build</h3><p>Content, programming and custom pieces are made before the truck is loaded.</p></li>
+    <li><b class="mono">04</b><h3>Load-in</h3><p>Our truck, our cases, our crew. We set up, test and stay to run it.</p></li>
+    <li><b class="mono">05</b><h3>Strike</h3><p>We take it down and take it away. Installs are handed over working.</p></li>
+  </ol>
+</section>
+
+<section class="next" id="faq">
+  <p class="mono eb">Questions</p>
+  <h2>Short answers.</h2>
+  <div class="faq">
+    <details><summary>Do you rent, sell or install?</summary><p>All three. Most equipment can be rented for an event. Displays, projectors, directional speakers, network equipment and computers can also be bought. We install permanent systems in offices, venues, galleries, retail and homes.</p></details>
+    <details><summary>Can we hire only the crew?</summary><p>Yes. We send audio, video and lighting technicians to shows that already have their equipment.</p></details>
+    <details><summary>Do you work outside New York?</summary><p>Yes. We are based in Brooklyn, New York, and the same crew travels with the equipment.</p></details>
+    <details><summary>Do you rent LED walls?</summary><p>Yes, through our LED site, <a href="https://ledwall.nyc">ledwall.nyc</a>.</p></details>
+    <details><summary>Can you build something custom?</summary><p>Yes. We design and fabricate custom pieces and pop-up units with the screens, light and sound built in, and we run large-format 3D printing through <a href="https://ctrlp.studio">ctrlp.studio</a>.</p></details>
+    <details><summary>What if we need something that is not listed?</summary><p>We source it and integrate it with the rest of the system.</p></details>
+  </div>
+</section>
+
+<section class="next end" id="quote">
+  <p class="mono eb">Get a quote</p>
+  <h2>Start with the date and the room.</h2>
+  <p class="lead">Tell us where, when, how many people and what has to happen. We reply with one quote for equipment, crew and delivery.</p>
+  <div class="ctas"><a class="btn" href="#">Get a quote →</a><a class="ghost" href="index.html">Back to the studio</a></div>
+</section>
+
+<footer class="foot">
+  <div class="fl"><a class="logo" href="index.html"><span class="dot"></span>Possible AV</a><p>AV rental, installation and production.<br>Brooklyn, New York. Crews travel.</p></div>
+  <div class="fc"><b class="mono">Services</b><a href="services.html#displays">Displays</a><a href="services.html#projection">Projection</a><a href="audio.html">Audio</a><a href="services.html#lighting">Lighting &amp; staging</a><a href="services.html#live-video">Live video &amp; visuals</a></div>
+  <div class="fc"><b class="mono">&nbsp;</b><a href="services.html#networks">Networks &amp; computers</a><a href="services.html#interactive">Interactive &amp; tracking</a><a href="services.html#fabrication">Fabrication</a><a href="services.html#logistics">Logistics &amp; touring</a></div>
+  <div class="fc"><b class="mono">Company</b><a href="#">Solutions</a><a href="#">Industries</a><a href="#">Work</a><a href="#">About</a><a href="#">Contact</a></div>
+  <div class="fc"><b class="mono">Also ours</b><a href="https://ledwall.nyc">ledwall.nyc ↗</a><a href="https://ctrlp.studio">ctrlp.studio ↗</a></div>
+</footer>
+
+</body>
+</html>

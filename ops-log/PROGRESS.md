@@ -1,6 +1,6 @@
 # PROGRESS — Possible AV
 
-Last updated: 2026-11-13 (SEO audit + rule cleanup; see sessions/2026-11-13-seo-audit-cleanup.md).
+Last updated: 2026-11-15 (site redesign prototype; see sessions/2026-11-15-site-redesign-prototype.md).
 
 ## Live
 - Site is on Webflow and live on possibleav.com (last publish 2026-11-12, per Webflow).
@@ -10,6 +10,11 @@ Last updated: 2026-11-13 (SEO audit + rule cleanup; see sessions/2026-11-13-seo-
 - **No client names on visible pages** (2026-11-12): Touring copy is generic. The LA case study is renamed with generic labels. The Times Square and New Orleans case studies are hidden (unpublished, archived, cards removed). *Live check 2026-11-12: Home, Touring and Work show no client names; Work lists 7 cards.*
 
 - **SEO audit cleanup** (2026-11-13): CMS template SEO bound to item meta fields (30 pages had the bare title "Possible AV"); Navy Yard and client names removed from Experiential, AV Systems, industries and the Home marquee; broken links to hidden case studies fixed; long titles/descriptions trimmed. *Live 2026-11-13; live crawl clean (41/41 200, 0 broken, 0 Navy Yard, 0 client names, 0 generic titles).*
+
+## Redesign prototype (not on Webflow yet)
+- Prototype: https://claude.ai/artifact/59BenDUsBszjEaKxJeZSEw — 3D studio homepage, tabbed Services page, Audio and Displays service pages (2026-11-15).
+- Service pages are built and published one at a time: Projection next, then Lighting, Live video, Networks, Interactive, Fabrication, Logistics. Then the homepage moves to the same product-film style.
+- Example projects on service pages are labelled examples with illustrations until the owner picks real projects.
 
 ## Decided in earlier sessions (verify against the live site before relying on it)
 - Visual direction: lit dark "console" style, applied to all pages.
@@ -21,7 +26,7 @@ Last updated: 2026-11-13 (SEO audit + rule cleanup; see sessions/2026-11-13-seo-
 ## Open items
 - Earlier sessions (rebuild, restyles, Experiential move) weren't logged here. Next session: audit the live Webflow pages against `CONTEXT.md` and record what's actually done.
 - Placeholder copy and FLORA images to be replaced with real content by the owner. This includes the "STUDIO / INVENTORY IMAGE" placeholder on About and Touring.
-- Check that every ledwall.nyc mention also mentions and links WLAB. Navy Yard and client names: Home, Touring and Work are confirmed clean live; recheck About, Services, Industries, Contact, Pricing, FAQ, Blog and the blog posts on the live site.
+- (Superseded 2026-11-13: no WLAB mention or link on Possible AV.) Navy Yard and client names: Home, Touring and Work are confirmed clean live; recheck About, Services, Industries, Contact, Pricing, FAQ, Blog and the blog posts on the live site.
 - Sitemap: the Touring page is confirmed included (2026-11-12). The 4 draft duplicate pages (`untitled`…`untitled-4`) are excluded; delete them if they aren't needed.
 - **The LA case-study cover photo** shows a name on a banner, and its file URL contains names. The owner kept the photo for now; replacing or cropping it and re-uploading under a generic filename would finish the job.
 - **Two archived Work CMS items** (Times Square, New Orleans) can be permanently deleted in the Webflow dashboard if wanted. Old case-study URLs 404 on purpose (no redirects).

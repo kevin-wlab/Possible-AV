@@ -1,0 +1,7 @@
+  /* homepage film: the opening and closing captions sit centred under the line-up */
+  body[data-key=home] .cap.hero{bottom:84px} body[data-key=home] .cap.hero h1{font-size:clamp(36px,4.4vw,68px);margin-top:10px} body[data-key=home] .cap.hero h1 em{display:inline}
+  body[data-key=home] .cap.hero .sub{max-width:620px;margin:16px auto 0} body[data-key=home] .cap.close{width:min(820px,92vw)}
+  body[data-key=home] .cap .ctas{align-items:center} body[data-key=home] .cap .tags{margin-left:6px}
+  body[data-key=home].top .fveil,body[data-key=home].end .fveil{background:linear-gradient(0deg,rgba(236,233,227,.94) 0,rgba(236,233,227,.7) 24%,rgba(236,233,227,0) 44%)}
+  .gc .noimg{aspect-ratio:4/3;background:var(--bg2)} a.gc{color:inherit}
+  @media (max-width: 900px){ body[data-key=home] .cap.hero{bottom:66px} body[data-key=home] .cap.hero .sub{margin:12px 0 0} body[data-key=home] .cap .tags{display:none} }
