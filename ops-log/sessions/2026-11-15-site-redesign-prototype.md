@@ -143,3 +143,26 @@ Verification: staging only. chk clean at 1280 and 390 (only the nav highlight di
 - Old `/service/*`: script redirect + canonical in the service template head (API 301s need Enterprise).
 - Noticed the owner edited Work/Audio/Contact in the Designer at 13:41–13:44 and published; their Work sub-line and project titles differ from web/ref now (left as the owner set them).
 - Staging (possibleav.webflow.io) verified: nav/footer links on 23 pages, sub-lines, JSON-LD parses, no WLAB/VP strings, /service/audio lands on /audio.
+
+## 13:54–14:20 New York landing pages (owner: "纽约的landing page记得做，目的是抢排名")
+- Keyword research (OpenSEO, new project `42fb9f74-270f-401d-a2df-da22805fd952`, US market) on ~120 NYC AV terms. Built one page per search intent with real volume and low difficulty.
+- 12 pages, duplicated from Touring (keeps NX Nav/Footer), main content replaced via whtml, images = existing site assets, page code = page.css/page.ui.js @ e219dd2, JSON-LD per page = Service + FAQPage + BreadcrumbList:
+  | slug | page id |
+  |---|---|
+  | av-rental-nyc (hub) | 6afa00f8d98a23420890ffaf |
+  | audio-visual-company-nyc | 6afa011afe7c8e4cef5177a6 |
+  | event-production-company-nyc | 6afa011b54018f285f6a86a6 |
+  | projector-rental-nyc | 6afa011b7bab2688e909c714 |
+  | sound-system-rental-nyc | 6afa011c1bf9aae0706191f2 |
+  | microphone-rental-nyc | 6afa011c1bf9aae070619220 |
+  | tv-rental-nyc | 6afa011cec02739cec2082c1 |
+  | event-lighting-rental-nyc | 6afa011ef4cd507ac2475c79 |
+  | stage-rental-nyc | 6afa011fbd094984ca50dd5e |
+  | event-wifi-rental-nyc | 6afa011fd92dd50d9e3aef6d |
+  | computer-rental-nyc | 6afa0120feb61fc6e33c6fa3 |
+  | experiential-production-nyc | 6afa01201bf9aae07061935e |
+- Source: `pages/build_landing.py` (copy in ops-log/wip) → port/<slug>.body.html + web/ref/<slug>.html + pages/landing.json (titles, descriptions, FAQ schema). Run by release.sh.
+- Footer component: added "AV rental NYC" → /av-rental-nyc (`0742f1e4-be72-2b90-43c2-46d004ca1a94`) so the hub links to all 11 others from every page.
+- Gotchas: `bulk_update_pages` ignored `draft:false`; `update_page_settings` per page worked. Duplicated pages keep element ids (component = new page id) but not page custom code. Strip image ids = strip element id minus 3/2/1 (hex).
+- Not built on purpose: 3D printing NYC (goes to ctrlp.studio), LED wall rental (ledwall.nyc), camera rental (film gear, not this business), laptop rental (not confirmed in scope).
+- Staging verified: 12 × 200, 9 sections, 3 images, JSON-LD parses, 29 internal links all 200, no banned words.
