@@ -53,3 +53,20 @@ The redesign is built as a **prototype first** (a published Claude artifact, not
 - **Owner direction (04:31):** the redesign itself should go live on Webflow, not stay a prototype. Next session starts by rebuilding /get-a-quote in the new design, then porting Home, Services, Audio, Displays, Projection into Webflow. See `ops-log/wip/RESUME.md`.
 - **Still on the live site:** footer "WLAB ↗" / "WLAB Virtual Production ↗" links and WLAB mentions on Contact and About SEO text.
 - Scheduled: the session resumes at 07:21 ET.
+
+## Webflow port (afternoon)
+Owner: the redesign replaces the whole site, as native Webflow elements, matching the prototype exactly, checked before reporting.
+- Pages built natively with data_whtml_builder (prototype markup and class names, neutral single-class CSS so classes are kept), images linked with set_image_asset, page code = head guard + Geist fonts + `web/<page>.css` + import map, footer = `web/<page>.ui.js` + `web/<page>.js` (3D).
+- Displays `6af9a6c59d106ee114ca64c8`, Projection `6af9a6c6e699303789abd33a`, Audio `6af9a6cae699303789abd3d9`: new pages. Services `6a34f354a49eba40de650fca`, Home `6a34a78c3bca7b2b60e5eae5`, Get a Quote `6af97b78d8e68fc36722099d`: old content removed after the new content was in.
+- Get a Quote: the existing native form ("Possible AV Project Inquiry") moved into the new layout; classes ql / qi / qsend / qmsg (+ bad); hints set by quote.ui.js only where Webflow's default placeholder is still there (placeholders can't be set through the API).
+- About SEO description: WLAB removed.
+- NX Nav Menu link: href `#menu`, role=button (was a placeholder link).
+
+Gotchas
+- The old site-wide registered scripts (pawf, seriestheme, padark1-10) inject `!important` styles on every page. New pages remove them with an inline head script (guard.html).
+- webflow.css base styles (body 14px/20px, h1-h6 sizes and margins, p/ul margins, ul padding 40px, img inline-block) beat the prototype's `*` reset; every web/*.css now starts with a reset back to browser defaults.
+- whtml turns <button> into a.w-button with href="#": service tiles are now real links (`#displays` etc.), menu button gets `#menu`.
+- The prototype's lazy images make an unloaded reference look shorter; the checker forces eager loading on both sides.
+- Placeholder links in the film pages (`href="#" data-go/data-i`) now point at `#floor` (source fixed too).
+
+Verification: built-in browser on possibleav.webflow.io, two iframes (Webflow page vs web/ref/<page>.html), computed styles and rects of every element compared at 1280x800 and 390x844; only difference is the nav highlighting the current section. Screenshots checked for the 3D stops and the quote page.
