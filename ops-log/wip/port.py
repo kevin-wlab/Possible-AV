@@ -5,9 +5,10 @@
 #   port/<page>.body.html  the body markup with scripts removed and links rewritten to live URLs (fed to Webflow as native elements)
 import re, json, os, sys
 R='/home/claude/pav-hero/'; W='/home/claude/possible-av/web/'; P=R+'port/'; os.makedirs(P,exist_ok=True)
-PAGES={'home':'home.html','services':'services.html','audio':'audio.html','displays':'displays.html','projection':'projection.html'}
+LIVE=['audio','displays','projection','lighting']  # service pages that are finished and go on Webflow
+PAGES=dict([('home','home.html'),('services','services.html')]+[(k,k+'.html') for k in LIVE])
 LINK=[(r'https://www\.possibleav\.com/get-a-quote','/get-a-quote'),(r'index\.html#','/#'),(r'index\.html','/'),(r'services\.html#','/services#'),(r'services\.html','/services'),
-      (r'(audio|displays|projection)\.html','/\\1')]
+      (r'('+'|'.join(LIVE)+r')\.html','/\\1')]
 def links(h):
     def fix(m):
         v=m.group(2)
@@ -30,7 +31,7 @@ for k,f in PAGES.items():
     mod=re.search(r'<script type="module">(.*?)</script>',s,re.S)
     if mod: open(W+k+'.js','w').write(mod.group(1))
     ui=re.findall(r'<script>(.*?)</script>',s,re.S)
-    NAV="(function(){var p=location.pathname.replace(/\\/$/,'')||'/',m={'/':'/','/services':'/services','/audio':'/services','/displays':'/services','/projection':'/services','/work':'/work','/about':'/about'},t=m[p];document.querySelectorAll('.nav .links a').forEach(function(a){a.classList.toggle('cur',a.getAttribute('href')===t);});})();"
+    NAV="(function(){var p=location.pathname.replace(/\\/$/,'')||'/',m={'/':'/','/services':'/services',"+''.join("'/%s':'/services',"%k for k in LIVE)+"'/work':'/work','/about':'/about'},t=m[p];document.querySelectorAll('.nav .links a').forEach(function(a){a.classList.toggle('cur',a.getAttribute('href')===t);});})();"
     open(W+k+'.ui.js','w').write((NAV+'\n'+'\n'.join(ui)).replace('function(e){e.stopPropagation();set(!n','function(e){e.preventDefault();e.stopPropagation();set(!n'))
     body=s[s.index('<body'):s.rindex('</body>')]
     battrs=re.match(r'<body([^>]*)>',body).group(1); body=body[body.index('>')+1:]
@@ -41,9 +42,17 @@ for k,f in PAGES.items():
     body=body.replace(' style="text-decoration:underline;text-underline-offset:3px"',' class="ul"')
     if 'class="ul"' in body: extra+='.ul{text-decoration:underline;text-underline-offset:3px}\n'
     if extra: open(W+k+'.css','a').write('\n/* inline styles moved out of the markup */\n'+extra)
-    body=links(body).replace('img/home-audio.jpg','img/audio-systems.jpg').replace('img/home-displays.jpg','img/displays-transparent.jpg').replace('img/home-projection.jpg','img/projection-mapping.jpg')
+    body=links(body).replace('img/home-audio.jpg','img/audio-systems.jpg').replace('img/home-displays.jpg','img/displays-transparent.jpg').replace('img/home-projection.jpg','img/projection-mapping.jpg').replace('img/home-lighting.jpg','img/lighting-package.jpg')
     A=dict(l.split() for l in open(P+'assets.txt') if l.strip())
     body=re.sub(r'src="img/([a-z0-9-]+\.jpg)"',lambda m:'src="https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/%s_%s"'%(A[m.group(1)],m.group(1)) if m.group(1) in A else m.group(0),body)
+    # Webflow turns <button> into a.w-button with href="#": make the service tiles real links to their deep-link hash instead
+    def _tile(m):
+        at=re.sub(r'\s*type="button"','',m.group(1)); kk=re.search(r'data-k="([^"]+)"',at).group(1)
+        return '<a href="#%s"%s>'%(kk,at)
+    if 'class="tiles"' in body:
+        body=re.sub(r'<button((?:(?!>).)*class="tile"(?:(?!>).)*)>',_tile,body)
+        i=body.index('class="tiles"'); j=body.index('</div>',i); body=body[:i]+body[i:j].replace('</button>','</a>')+body[j:]
+    body=body.replace('href="#" data-','href="#floor" data-')
     open(P+k+'.body.html','w').write(body.strip())
     open(P+k+'.bodyattrs','w').write(battrs.strip())
     print(k,'css',len(css),'js',len(mod.group(1)) if mod else 0,'body',len(body),'attrs',battrs.strip()[:60])
