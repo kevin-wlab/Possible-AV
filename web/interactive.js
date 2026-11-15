@@ -485,7 +485,7 @@ const xPf=(()=>{ const g=grp(xI3,0,0,-.3), skin=std(0xd9d4ca,.62), jm=std(0x8f8a
   const lu=limb(hips,-.27,.58,.24,.05), ll=limb(lu.end,0,0,.22,.043), ru=limb(hips,.27,.58,.24,.05), rl=limb(ru.end,0,0,.22,.043), lt=limb(hips,-.1,-.04,.36,.068), ls=limb(lt.end,0,0,.36,.052), rt=limb(hips,.1,-.04,.36,.068), rs=limb(rt.end,0,0,.36,.052);
   const st={g,fig,live:null,mixer:null,joints:[head,lu.j,lu.end,ll.end,ru.j,ru.end,rl.end,hips,lt.end,ls.end,rt.end,rs.end],
     pose:(t)=>{ hips.position.y=1.0; hips.rotation.y=Math.sin(t*.7)*.55; lu.j.rotation.z=-1.9+Math.sin(t*2.2)*.6; ll.j.rotation.z=-.6+Math.sin(t*2.2+1)*.5; ru.j.rotation.z=1.2+Math.sin(t*1.7)*.7; rl.j.rotation.z=.5+Math.sin(t*1.7+.6)*.4; lt.j.rotation.x=Math.sin(t*2)*.28; rt.j.rotation.x=-Math.sin(t*2)*.28; ls.j.rotation.x=Math.max(0,-Math.sin(t*2))*.45; rs.j.rotation.x=Math.max(0,Math.sin(t*2))*.45; } };
-  const mk=glow(0xffffff); st.markers=st.joints.map(()=>{ const m=new THREE.Mesh(new THREE.SphereGeometry(.024,10,8),mk); xI3.add(m); return m; });
+  const mk=glow(0xff6a2a); st.markers=st.joints.map(()=>{ const m=new THREE.Mesh(new THREE.SphereGeometry(.032,12,10),mk); xI3.add(m); return m; });
   xWant('Michelle').then(r=>{ if(!r) return; const a=r.a, o=r.clone(a.scene), mm=std(0xdad5cb,.58); o.traverse(n=>{ if(n.isMesh){ n.material=mm; n.frustumCulled=false; n.castShadow=true; } }); g.add(o);
     const mx=new THREE.AnimationMixer(o); mx.clipAction(a.animations.find(c=>/samba/i.test(c.name))||a.animations[0]).play();
     const find=(k)=>{ let r=null; o.traverse(n=>{ if(!r&&n.isBone&&n.name.replace(/^mixamorig:?/,'')===k) r=n; }); return r; };
@@ -496,7 +496,7 @@ const xPf=(()=>{ const g=grp(xI3,0,0,-.3), skin=std(0xd9d4ca,.62), jm=std(0x8f8a
 const xBones=[[0,7],[1,4],[1,2],[2,3],[4,5],[5,6],[7,8],[8,9],[7,10],[10,11],[1,7],[4,7]];
 const xAvT=ctex(768,432,()=>{}); xAvT.userData.draw=(tt,P,k)=>{ const c=xAvT.userData.g, W=768, H=432; c.fillStyle='#0a0c12'; c.fillRect(0,0,W,H);
   c.strokeStyle='rgba(120,140,170,.18)'; c.lineWidth=1; for(let i=1;i<8;i++){ c.beginPath(); c.moveTo(0,H*.93-i*H*.11); c.lineTo(W,H*.93-i*H*.11); c.stroke(); } c.beginPath(); c.moveTo(0,H*.93); c.lineTo(W,H*.93); c.stroke();
-  if(k>.02){ const px=(p)=>[W*.5+p.x*H*.4, H*.93-p.y*H*.4]; c.globalAlpha=k; c.lineCap='round'; c.strokeStyle='#bff0ff'; c.lineWidth=5; c.shadowColor='#58d6ff'; c.shadowBlur=16;
+  if(k>.02){ const px=(p)=>[W*.5+p.x*H*.5, H*.95-p.y*H*.5]; c.globalAlpha=k; c.lineCap='round'; c.strokeStyle='#bff0ff'; c.lineWidth=5; c.shadowColor='#58d6ff'; c.shadowBlur=16;
     xBones.forEach(([a,b])=>{ const A=px(P[a]),B=px(P[b]); c.beginPath(); c.moveTo(A[0],A[1]); c.lineTo(B[0],B[1]); c.stroke(); });
     c.fillStyle='#fff'; P.forEach((p,i)=>{ const Q2=px(p); c.beginPath(); c.arc(Q2[0],Q2[1],i===0?H*.045:6,0,7); i===0?c.stroke():c.fill(); }); c.shadowBlur=0; c.globalAlpha=1; }
   for(let i=0;i<26;i++){ const sx=(i*97.3+tt*40)%W, sy=(i*53.7+tt*(20+i))%H; c.fillStyle='rgba(127,212,230,.45)'; c.fillRect(sx,sy,2,2); }
