@@ -56,3 +56,5 @@ Last updated: 2026-11-15 (site redesign prototype; see sessions/2026-11-15-site-
 - Scratch page `nx-scratch` (draft) can be deleted in the Designer; the API has no page delete.
 
 - Prototype source (src/, scene.js, mk*.py, index.html) is kept in `ops-log/wip/prototype/`; the port scripts in `ops-log/wip/`.
+
+- 2026-11-15 14:00: Blog + Touring back in nav and footer (shared components); NYC SEO pass (hero sub-lines, meta, LocalBusiness/WebSite/FAQPage JSON-LD, canonical to possibleav.com); old /service/* redirect by script. Open: set the default domain + real 301s in Webflow hosting settings; submit sitemap in Search Console.
