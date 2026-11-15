@@ -474,6 +474,9 @@ const xSt2=xSteps(xI2,[[.12,.76,-.35,-1],[.32,.7,-.35,1]],xFoot);
 const xI3=grp(scene,3*IG,0,0); xTapeSquare(xI3,2.6,2.6); const xMc=[];
 for(let k=0;k<6;k++){ const a=k/6*Math.PI*2+Math.PI/6, p=xMocapPole(2.1); p.position.set(Math.sin(a)*1.9,0,Math.cos(a)*1.9-.3); xI3.add(p); p.updateWorldMatrix(true,false); const c=p.userData.cam; c.lookAt(xI3.localToWorld(V(0,1.0,-.3))); xMc.push(p); }
 const xCs=lvCase(.7,.35,.45); xCs.position.set(1.15,0,.75); xCs.rotation.y=-.3; xI3.add(xCs);
+// the film pages carry no model loader, so this page loads one on demand for the performer
+const xWant=(name)=>Promise.all([import('three/addons/loaders/GLTFLoader.js'),import('three/addons/libs/meshopt_decoder.module.js'),import('three/addons/utils/SkeletonUtils.js'),import('./models/'+name+'.js')]).then(([G,MD,SU,m])=>{ const b=atob(m.default), u=new Uint8Array(b.length); for(let i=0;i<b.length;i++) u[i]=b.charCodeAt(i);
+  return new Promise(res=>new G.GLTFLoader().setMeshoptDecoder(MD.MeshoptDecoder).parse(u.buffer,'',a=>res({a,clone:SU.clone}),()=>res(null))); }).catch(()=>null);
 // a performer in the middle of the taped area, markers on the joints, like the home page
 const xPf=(()=>{ const g=grp(xI3,0,0,-.3), skin=std(0xd9d4ca,.62), jm=std(0x8f8a80,.5,.3), cap=(r,l)=>mesh(new THREE.CapsuleGeometry(r,l,8,16),skin);
   const fig=grp(g,0,0,0), hips=grp(fig,0,1.0,0); hips.add(at(rbox(.3,.18,.19,skin,.08),0,.04,0)); const chest=mesh(new THREE.CapsuleGeometry(.16,.26,8,18),skin); chest.scale.set(1.12,1,.8); chest.position.y=.4; hips.add(chest); hips.add(at(cyl(.045,.05,.1,skin,14),0,.69,0));
@@ -483,7 +486,7 @@ const xPf=(()=>{ const g=grp(xI3,0,0,-.3), skin=std(0xd9d4ca,.62), jm=std(0x8f8a
   const st={g,fig,live:null,mixer:null,joints:[head,lu.j,lu.end,ll.end,ru.j,ru.end,rl.end,hips,lt.end,ls.end,rt.end,rs.end],
     pose:(t)=>{ hips.position.y=1.0; hips.rotation.y=Math.sin(t*.7)*.55; lu.j.rotation.z=-1.9+Math.sin(t*2.2)*.6; ll.j.rotation.z=-.6+Math.sin(t*2.2+1)*.5; ru.j.rotation.z=1.2+Math.sin(t*1.7)*.7; rl.j.rotation.z=.5+Math.sin(t*1.7+.6)*.4; lt.j.rotation.x=Math.sin(t*2)*.28; rt.j.rotation.x=-Math.sin(t*2)*.28; ls.j.rotation.x=Math.max(0,-Math.sin(t*2))*.45; rs.j.rotation.x=Math.max(0,Math.sin(t*2))*.45; } };
   const mk=glow(0xffffff); st.markers=st.joints.map(()=>{ const m=new THREE.Mesh(new THREE.SphereGeometry(.024,10,8),mk); xI3.add(m); return m; });
-  want('Michelle').then(a=>{ if(!a) return; const o=skClone(a.scene), mm=std(0xdad5cb,.58); o.traverse(n=>{ if(n.isMesh){ n.material=mm; n.frustumCulled=false; n.castShadow=true; } }); g.add(o);
+  xWant('Michelle').then(r=>{ if(!r) return; const a=r.a, o=r.clone(a.scene), mm=std(0xdad5cb,.58); o.traverse(n=>{ if(n.isMesh){ n.material=mm; n.frustumCulled=false; n.castShadow=true; } }); g.add(o);
     const mx=new THREE.AnimationMixer(o); mx.clipAction(a.animations.find(c=>/samba/i.test(c.name))||a.animations[0]).play();
     const find=(k)=>{ let r=null; o.traverse(n=>{ if(!r&&n.isBone&&n.name.replace(/^mixamorig:?/,'')===k) r=n; }); return r; };
     const B=['Head','LeftArm','LeftForeArm','LeftHand','RightArm','RightForeArm','RightHand','Hips','LeftLeg','LeftFoot','RightLeg','RightFoot'].map(find);
