@@ -91,3 +91,9 @@ logistics-ex-tour.jpg 6af9c96a16da4ff0af1e4a60
 6af9d122987f038cef8a8400 work-ex-window.jpg
 6af9d12262ce94d871315fdd work-ex-stage.jpg
 6af9d125994d262a71379878 work-ex-lobby.jpg
+6af9a6063cf5c6a6012b7368 room-activation.jpg
+6af9a607f3d4385110560dea room-corporate.jpg
+6af9a607b58fe075438f1387 room-gallery.jpg
+6af9a6075edbd2a5411a7a74 room-office.jpg
+6af9a6075edbd2a5411a7a90 room-popup.jpg
+6af9a60888c2e2af9d1f8daf room-tradeshow.jpg

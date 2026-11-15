@@ -7,7 +7,7 @@ import re, json, os, sys
 R='/home/claude/pav-hero/'; W='/home/claude/possible-av/web/'; P=R+'port/'; os.makedirs(P,exist_ok=True)
 LIVE=['audio','displays','projection','lighting','fabrication','networks','live-video','interactive','logistics']
 HOMEIMG={'audio':'audio-systems','displays':'displays-transparent','projection':'projection-mapping','lighting':'lighting-package','fabrication':'fabrication-popup','networks':'networks-wifi','live-video':'live-video-stream','interactive':'interactive-floor','logistics':'logistics-dock'}  # homepage card picture per service  # service pages that are finished and go on Webflow
-PAGES=dict([('home','home.html'),('services','services.html')]+[(k,k+'.html') for k in LIVE])
+PAGES=dict([('home','home.html'),('studio','index.html'),('services','services.html')]+[(k,k+'.html') for k in LIVE])
 LINK=[(r'https://www\.possibleav\.com/get-a-quote','/get-a-quote'),(r'index\.html#','/#'),(r'index\.html','/'),(r'services\.html#','/services#'),(r'services\.html','/services'),
       (r'('+'|'.join(LIVE)+r')\.html','/\\1')]
 def links(h):
@@ -55,6 +55,7 @@ for k,f in PAGES.items():
     if extra: open(W+k+'.css','a').write('\n/* inline styles moved out of the markup */\n'+extra)
     for hk,hv in HOMEIMG.items(): body=body.replace('img/home-%s.jpg'%hk,'img/%s.jpg'%hv)
     body=links(body)
+    if k=='studio': body=re.sub(r'href="/services#('+'|'.join(LIVE)+r')"',r'href="/\1"',body)
     A=dict(l.split() for l in open(P+'assets.txt') if l.strip())
     body=re.sub(r'src="img/([a-z0-9-]+\.jpg)"',lambda m:'src="https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/%s_%s"'%(A[m.group(1)],m.group(1)) if m.group(1) in A else m.group(0),body)
     # Webflow turns <button> into a.w-button with href="#": make the service tiles real links to their deep-link hash instead
