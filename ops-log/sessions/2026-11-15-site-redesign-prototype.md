@@ -70,3 +70,9 @@ Gotchas
 - Placeholder links in the film pages (`href="#" data-go/data-i`) now point at `#floor` (source fixed too).
 
 Verification: built-in browser on possibleav.webflow.io, two iframes (Webflow page vs web/ref/<page>.html), computed styles and rects of every element compared at 1280x800 and 390x844; only difference is the nav highlighting the current section. Screenshots checked for the 3D stops and the quote page.
+
+## Live video & visuals page (evening)
+- New film page `live-video`: camcorder on a fluid-head tripod cabled to a small switcher, monitor and encoder on a case (opening); the range (one camera / two cameras and a switcher / flypack with cameras and a PTZ); 01 streaming (tally and encoder go LIVE, a pulse runs down the lead, program on the screen behind); 02 flypack lid lifts to a multiview; 03 VJ laptop and pad controller with audio-reactive visuals growing on the screen; 04 hybrid panel table with a PTZ on a pole and remote guests arriving on the screen.
+- Copy follows the facts list (Resolume named; no numbers). Four labelled example projects with FLORA illustrations (talk, conference, launch party, hybrid panel).
+- Webflow page `6af9c0ab47d68d8c7ce5f08b` (slug live-video), nav/footer instances, 9 image assets, page code at the release commit. Homepage: Live video caption inserted as 05, Networks and Fabrication renumbered 06/07, close caption data-s 8, rail rebuilt, card added. Services: the "page in progress" placeholder replaced by a link to the page.
+- Staging publish only; element-by-element check clean at 1280 and 390 for Live video, Home and Services (only accepted difference: nav highlight).

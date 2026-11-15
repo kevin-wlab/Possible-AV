@@ -18,7 +18,7 @@ P
 cp port.py frag.py acts.py code.py release.sh upload-helper.js port/assets.txt /home/claude/possible-av/ops-log/wip/
 cd /home/claude/possible-av
 git stash -q 2>/dev/null || true; git checkout -q main; git pull -q; B=kevin/rel-$(date +%H%M%S); git checkout -q -B $B; git stash pop -q 2>/dev/null || true
-git add web ops-log/wip
+git add web ops-log
 git diff --cached --quiet && { git rev-parse origin/main; exit 0; }
 git commit -q -m "$1
 
