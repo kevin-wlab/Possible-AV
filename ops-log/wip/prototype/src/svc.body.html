@@ -1,0 +1,37 @@
+<body data-mode="services">
+<header class="nav">
+  <a class="logo" href="index.html"><span class="dot"></span>Possible AV</a>
+  <nav class="links" id="menu"><a class="cur" href="services.html">Services</a><a href="index.html#solutions">Solutions</a><a href="index.html#industries">Industries</a><a href="#">Work</a><a href="#">About</a></nav>
+  <a class="btn" href="#quote">Get a quote</a>
+  <button class="menu" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu"><i></i><i></i><span>Menu</span></button>
+</header>
+<script>(function(){var n=document.querySelector('.nav'),b=document.getElementById('menuBtn');function set(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);}b.addEventListener('click',function(e){e.stopPropagation();set(!n.classList.contains('open'));});document.addEventListener('click',function(e){if(!n.contains(e.target)||e.target.closest('.links a'))set(false);});})();</script>
+
+<section class="floor svc" id="floor">
+ <div class="pin">
+  <canvas id="stage" aria-hidden="true"></canvas>
+  <div class="labels" id="labels"></div>
+  <div class="copy off" id="copy" hidden></div>
+  <div id="svcFade" aria-hidden="true"></div>
+
+  <nav class="idx tabs" id="rail" role="tablist" aria-label="Services">
+    <a href="#displays" role="tab" data-i="1"><b>01</b><span class="nm">Displays</span></a><a href="#projection" role="tab" data-i="2"><b>02</b><span class="nm">Projection</span></a><a href="#audio" role="tab" data-i="3"><b>03</b><span class="nm">Audio</span></a><a href="#lighting" role="tab" data-i="4"><b>04</b><span class="nm">Lighting</span></a><a href="#live-video" role="tab" data-i="5"><b>05</b><span class="nm">Live video</span></a><a href="#networks" role="tab" data-i="6"><b>06</b><span class="nm">Networks</span></a><a href="#interactive" role="tab" data-i="7"><b>07</b><span class="nm">Interactive</span></a><a href="#fabrication" role="tab" data-i="8"><b>08</b><span class="nm">Fabrication</span></a><a href="#logistics" role="tab" data-i="9"><b>09</b><span class="nm">Logistics</span></a>
+  </nav>
+
+  <article class="card on svcc" id="svcCard">
+    <p class="mono" id="svcEb"></p>
+    <h2 id="svcH"></h2>
+    <a href="#" class="back mono" id="svcBack" hidden>← Whole studio <b id="svcSub"></b></a>
+    <p class="d" id="svcD"></p>
+    <ul class="spokes" id="svcMenu"></ul>
+    <div class="ctas" style="margin-top:0"><a class="btn" href="#quote">Get a quote →</a><span class="tags" id="svcTags"></span></div>
+  </article>
+
+  <div id="veil" aria-hidden="true" hidden></div><div id="focus" aria-hidden="true"></div><svg id="lead" aria-hidden="true"><path d=""/><circle r="5"/></svg>
+
+  <div class="hud bare">
+    <span class="mono hint">Pick a service, then a piece of kit</span>
+    <button class="snd mono" id="snd" type="button" aria-label="Toggle sound"><b></b><span>Sound on</span></button>
+  </div>
+ </div>
+</section>

@@ -128,3 +128,4 @@ Verification: staging only. chk clean at 1280 and 390 (only the nav highlight di
 - Gotcha: Webflow drops/refuses the element id `focus`; the studio uses `focusl` (port.py renames it in the body, JS and CSS).
 - chk.js: optional 4th argument = ref name (chk('home',w,h,'studio')), and it now also compares top-level body sections (the studio has no <main>).
 - Checked on staging: 555 elements identical at 1280 and 390 (only the nav highlight), all 7 models load, scroll walk works. Published live to possibleav.com + www; live home confirmed on studio.js with models loading.
+- 13:38 owner: sync to GitHub. Prototype source copied to `ops-log/wip/prototype/` (src/, scene.js, mk.py, mk2.py, mk_home.py, ft.sh, index.html); the stale `ops-log/wip/film/` copy replaced by it; RESUME and AGENT_BRIEF refreshed.
