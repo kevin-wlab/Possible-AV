@@ -16,8 +16,8 @@ Last updated: 2026-11-15 (site redesign prototype; see sessions/2026-11-15-site-
 
 ## Redesign on Webflow (staged on possibleav.webflow.io, custom domains not published yet)
 - Native Webflow elements with the prototype's class names; the stylesheet, 3D and small scripts load from this repo via jsDelivr (`web/`). Method and tools: `ops-log/wip/` (port.py, frag.py, acts.py, code.py, guard.html).
-- Done and checked element by element against `web/ref/` at 1280 and 390 wide: Home, Services, Audio, Displays, Projection, Lighting & staging, Fabrication, Networks & computers, Live video & visuals, Interactive & tracking, Logistics & touring, About (new design, owner rules), Get a Quote (native form restyled). Shared components NX Nav / NX Footer.
-- All nine service pages and About are on staging. Next: the remaining site pages (Industries, Work, Blog, FAQ, Pricing, Touring, Contact).
+- Done and checked element by element against `web/ref/` at 1280 and 390 wide: Home, Services, Audio, Displays, Projection, Lighting & staging, Fabrication, Networks & computers, Live video & visuals, Interactive & tracking, Logistics & touring, About (new design, owner rules), Industries, FAQ, Pricing, Touring, Get a Quote (native form restyled). Shared components NX Nav / NX Footer.
+- All nine service pages, About, Industries, FAQ, Pricing and Touring are on staging. Next: Contact, Work (+ template), Blog (+ template), Industries template.
 - New pages carry a head guard that removes the old site-wide theme scripts' styles; remove the guard once the old registered scripts are taken off the site.
 - Waiting on the owner: publish to the custom domains now (old pages still in the old style) or after the remaining pages.
 
