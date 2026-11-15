@@ -1,6 +1,6 @@
 # CONTEXT — Possible AV
 
-Last updated: 2026-11-12 (positioning, address, client-name and Touring rules added from the NYC SEO / Touring sessions). Rules below were set by the owner.
+Last updated: 2026-11-15 (nav/footer components, structured data, NYC SEO pass). Earlier: 2026-11-12 (positioning, address, client-name and Touring rules added from the NYC SEO / Touring sessions). Rules below were set by the owner.
 
 ## Where things live
 - **Live site:** Webflow site **Possible AV** `6a34a7893bca7b2b60e5eac7` → `possibleav.com`, `www.possibleav.com`.
@@ -10,8 +10,9 @@ Last updated: 2026-11-12 (positioning, address, client-name and Touring rules ad
   - Pages: Home `6a34a78c3bca7b2b60e5eae5`, Services `6a34f354a49eba40de650fca`, Industries `6a34f3b99c1be9130cf3fded`, Work `6a34f3ba57b83eec23383965`, Blog `6a34f3bc44d27a821e001a14`, About `6a34f3bdbee39509ab20e532`, Contact `6a34f3be5b5b4820028975eb`, Pricing `6a362c70161ad75e9e266882`, FAQ `6a362c72491d6977ea71846c`, **Touring & Out-of-Town AV `6af5488a42e3ba43c291bc3f` (`/touring-av`, added 2026-11-12)**.
   - CMS template pages: post `6a34e9e8383e05c75c473534`, project `6a34e9e8f829ac7e5e3ad13e`, industry `6a34e9e6f829ac7e5e3ace87`, service `6a34e9e6383e05c75c473484`.
   - Work CMS collection: `6a34e9e7f829ac7e5e3acee3` (URLs `/project/<slug>`).
-- **Nav and footer are hand-built on every page, not a shared component.** A nav or footer change has to be made on all 9 static pages plus the Touring page and the 4 CMS templates.
-- **Structured data:** a site-wide `LocalBusiness` JSON-LD block lives in the site head custom code (Brooklyn, NY; areaServed = NYC boroughs, Jersey City, Long Island, United States; parentOrganization WLAB Innovations Inc. — to be removed per the no-WLAB rule).
+- **Nav and footer are shared components (new design, 2026-11-15):** NX Nav `a415a5c0-3f98-ffd5-2742-9d64adf5e99c`, NX Footer `fcf0ee38-0d76-5cd2-c260-debfab4e501c`. One edit changes every page. Nav order: Home, Services, Solutions, Industries (/industries), Work, Touring, Blog, About. The Blog link must stay in the nav and footer.
+- **Structured data:** site head custom code holds one JSON-LD graph: `LocalBusiness` (Brooklyn, NY, no street address; areaServed = NYC boroughs, Jersey City, Long Island, United States; an OfferCatalog of the nine service pages) + `WebSite`. The WLAB parentOrganization was removed 2026-11-15. The same block adds a canonical link to https://possibleav.com + path (both possibleav.com and www serve the site with no redirect). FAQ page has its own FAQPage JSON-LD (page settings). Blog posts carry their own BlogPosting JSON-LD in the body.
+- **Old /service/* CMS pages** redirect by script (service template head) to the new pages: audio→/audio, projection→/projection, network→/networks, interactive-experience and experiential→/interactive, av-systems→/services. Real 301s need the Webflow hosting settings (the API needs Enterprise).
 
 ## Design
 - The site family (ledwall.nyc → Possible AV → WLAB) shares copywriting style and per-page section layout, but **each site has its own visual style**.

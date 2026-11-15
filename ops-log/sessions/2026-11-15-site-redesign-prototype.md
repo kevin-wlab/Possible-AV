@@ -129,3 +129,17 @@ Verification: staging only. chk clean at 1280 and 390 (only the nav highlight di
 - chk.js: optional 4th argument = ref name (chk('home',w,h,'studio')), and it now also compares top-level body sections (the studio has no <main>).
 - Checked on staging: 555 elements identical at 1280 and 390 (only the nav highlight), all 7 models load, scroll walk works. Published live to possibleav.com + www; live home confirmed on studio.js with models loading.
 - 13:38 owner: sync to GitHub. Prototype source copied to `ops-log/wip/prototype/` (src/, scene.js, mk.py, mk2.py, mk_home.py, ft.sh, index.html); the stale `ops-log/wip/film/` copy replaced by it; RESUME and AGENT_BRIEF refreshed.
+
+## 13:39–14:00 Sitemap, Blog link, NYC SEO pass (owner: "sitemap换了吗", "是不是blog没了", "这样对我们的排名可不友好，而且记得针对纽约优化")
+- Sitemap: Webflow regenerates it on publish; 51 URLs, all new pages present. Old `/service/*` stubs still listed (duplicates of the nine service pages).
+- Blog had no link in the new nav or footer (and Touring had lost its nav item). Fixed in the shared components:
+  - NX Nav: Industries → `/industries`; added Touring (`79e60085-81fd-abc8-d139-8423aa9f9a8e`) and Blog (`4ee82651-e568-1ce8-6f58-178d78545785`) after Work.
+  - NX Footer, Company column: Industries → `/industries`; added Touring (`18f4f2fc-9099-7cb6-2709-ce0371a12d22`) and Blog (`8723002b-f3c0-4b24-9c03-1d0ae7d88e6f`).
+  - Checked at 1280, 910 (just above the 900px fold) and 375 (menu shows all 8 items).
+- "New York" added to the hero sub-line (`.sub`) on Home, Services, the 8 service pages that lacked it, Industries, Blog, FAQ, Pricing. H1s unchanged (design copy). Prototype/ref copies get the same text through `seo_patch.py`, now run by `release.sh`.
+- Site head JSON-LD rewritten: LocalBusiness (no WLAB parent, no street address) + OfferCatalog of the nine services + WebSite, plus a script canonical to https://possibleav.com (both hosts served 200 with no canonical).
+- FAQ page: FAQPage JSON-LD from the 11 visible Q&As.
+- Meta: Home, FAQ, Blog, Pricing (dropped "venue") titles/descriptions; 5 blog posts got NYC meta titles/descriptions, the cost post a new description.
+- Old `/service/*`: script redirect + canonical in the service template head (API 301s need Enterprise).
+- Noticed the owner edited Work/Audio/Contact in the Designer at 13:41–13:44 and published; their Work sub-line and project titles differ from web/ref now (left as the owner set them).
+- Staging (possibleav.webflow.io) verified: nav/footer links on 23 pages, sub-lines, JSON-LD parses, no WLAB/VP strings, /service/audio lands on /audio.
