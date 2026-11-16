@@ -1,6 +1,6 @@
 # CONTEXT — Possible AV
 
-Last updated: 2026-11-15 (nav/footer components, structured data, NYC SEO pass). Earlier: 2026-11-12 (positioning, address, client-name and Touring rules added from the NYC SEO / Touring sessions). Rules below were set by the owner.
+Last updated: 2026-11-16 (address rule, domains, redirects). Earlier: 2026-11-15 (nav/footer components, structured data, NYC SEO pass). Earlier: 2026-11-12 (positioning, address, client-name and Touring rules added from the NYC SEO / Touring sessions). Rules below were set by the owner.
 
 ## Where things live
 - **Live site:** Webflow site **Possible AV** `6a34a7893bca7b2b60e5eac7` → `possibleav.com`, `www.possibleav.com`.
@@ -11,8 +11,8 @@ Last updated: 2026-11-15 (nav/footer components, structured data, NYC SEO pass).
   - CMS template pages: post `6a34e9e8383e05c75c473534`, project `6a34e9e8f829ac7e5e3ad13e`, industry `6a34e9e6f829ac7e5e3ace87`, service `6a34e9e6383e05c75c473484`.
   - Work CMS collection: `6a34e9e7f829ac7e5e3acee3` (URLs `/project/<slug>`).
 - **Nav and footer are shared components (new design, 2026-11-15):** NX Nav `a415a5c0-3f98-ffd5-2742-9d64adf5e99c`, NX Footer `fcf0ee38-0d76-5cd2-c260-debfab4e501c`. One edit changes every page. Nav order: Home, Services, Solutions, Industries (/industries), Work, Touring, Blog, About. The Blog link must stay in the nav and footer.
-- **Structured data:** site head custom code holds one JSON-LD graph: `LocalBusiness` (Brooklyn, NY, no street address; areaServed = NYC boroughs, Jersey City, Long Island, United States; an OfferCatalog of the nine service pages) + `WebSite`. The WLAB parentOrganization was removed 2026-11-15. The same block adds a canonical link to https://possibleav.com + path (both possibleav.com and www serve the site with no redirect). FAQ page has its own FAQPage JSON-LD (page settings). Blog posts carry their own BlogPosting JSON-LD in the body.
-- **Old /service/* CMS pages** redirect by script (service template head) to the new pages: audio→/audio, projection→/projection, network→/networks, interactive-experience and experiential→/interactive, av-systems→/services. Real 301s need the Webflow hosting settings (the API needs Enterprise).
+- **Structured data:** site head custom code holds one JSON-LD graph: `LocalBusiness` (63 Flushing Ave, Brooklyn, NY 11205; areaServed = NYC boroughs, Jersey City, Long Island, United States; an OfferCatalog of the nine service pages) + `WebSite`. The WLAB parentOrganization was removed 2026-11-15. Default domain is possibleav.com (www 301s to it) and the global canonical URL is https://possibleav.com (2026-11-16). FAQ page has its own FAQPage JSON-LD (page settings). Blog posts carry their own BlogPosting JSON-LD in the body.
+- **Old /service/* URLs** have real 301s (Hosting → Redirects, 2026-11-16): audio→/audio, projection→/projection, network→/networks, interactive-experience→/interactive, experiential→/experiential-production-nyc, av-systems→/services. The redirect API needs Enterprise, so manage them in the dashboard.
 
 ## Design
 - The site family (ledwall.nyc → Possible AV → WLAB) shares copywriting style and per-page section layout, but **each site has its own visual style**.
@@ -22,7 +22,7 @@ Last updated: 2026-11-15 (nav/footer components, structured data, NYC SEO pass).
 
 ## Positioning and copy rules
 - NYC is the main focus: page titles, H1s and descriptions target New York / NYC searches. A separate **Touring & Out-of-Town AV** page (`/touring-av`) covers jobs where the crew flies to other cities. It has its own nav item placed right after "Work" on every page, and Home, About and Services each carry a one-line link to it.
-- Describe the company as **a Brooklyn, New York company** ("Brooklyn, New York" / "Brooklyn, NY"). Do not mention the Brooklyn Navy Yard, and **don't publish a street address**, on the site or in the schema. (On 2026-11-11 the full street address was briefly put on Contact and in the JSON-LD; removed 2026-11-12.)
+- Describe the company as **a Brooklyn, New York company** ("Brooklyn, New York" / "Brooklyn, NY"). Do not mention the Brooklyn Navy Yard. **Business address: 63 Flushing Ave, Brooklyn, NY 11205** (owner, 2026-11-16) — shown in the footer and the LocalBusiness JSON-LD; use exactly this for listings.
 - **Do not name clients** anywhere on the site. This includes artists, agencies and collaborators in case-study copy, image alt text and URL slugs. Use generic labels ("Beauty brand", "Spirits brand"). When the owner wants a case study gone, hide it (unpublish + archive the CMS item, remove its static card on `/work`) rather than rewriting it.
 - **Don't introduce the team** on the site.
 - Contact email: **contact@possibleav.com** (owner, 2026-11-15; replaced wlab@wlab.tech, which replaced hello@possibleav.com).

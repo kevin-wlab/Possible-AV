@@ -9,10 +9,12 @@ const canvas=document.getElementById('stage'), floorEl=document.getElementById('
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, SNAP=location.hash.startsWith('#snap');
 const BG=0xECE9E3, AMBER=0xE8892D, Q=Math.PI/2;
 
-const renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});
-renderer.setPixelRatio(Math.min(devicePixelRatio,2)); renderer.outputColorSpace=THREE.SRGBColorSpace;
+// perf: render at most 1.5x (lower if the device struggles), MSAA only on 1x screens, shadows refreshed every other frame
+const PF={n:0,t:0,a:0,l:0,r:[Math.min(devicePixelRatio,1.5),Math.min(devicePixelRatio,1.15),1],s:[2,3,6]};
+const renderer=new THREE.WebGLRenderer({canvas,antialias:devicePixelRatio<=1.25,powerPreference:'high-performance'});
+renderer.setPixelRatio(PF.r[0]); renderer.outputColorSpace=THREE.SRGBColorSpace;
 renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=1.12;
-renderer.shadowMap.enabled=true; renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+renderer.shadowMap.enabled=true; renderer.shadowMap.type=THREE.PCFSoftShadowMap; renderer.shadowMap.autoUpdate=false; renderer.shadowMap.needsUpdate=true;
 const scene=new THREE.Scene(); scene.background=new THREE.Color(BG); scene.fog=new THREE.Fog(BG,26,60);
 scene.environment=new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(),.04).texture;
 const camera=new THREE.PerspectiveCamera(30,1,.1,220);
@@ -422,6 +424,8 @@ function frame(){ requestAnimationFrame(frame); if(!visible&&!SNAP) return; cons
   for(const [o,sp] of spinners) o.rotation.y=t*sp;
   for(const u of updaters) u(t,x);
   window.__n=n; const s=Math.round(x); if(s!==stop){ stop=s; caps2.forEach(c=>c.classList.toggle('on',+c.dataset.s===s)); dots.forEach(a=>a.classList.toggle('on',+a.dataset.i===s)); document.body.classList.toggle('end',s===n); document.body.classList.toggle('top',s===0); }
+  PF.n++; { const nt=performance.now(); if(PF.l){ const d=Math.min(nt-PF.l,250); PF.a=PF.a?PF.a*.94+d*.06:d; } PF.l=nt; if(PF.n>60&&PF.n%40===0&&PF.t<2&&PF.a>24){ PF.t++; renderer.setPixelRatio(PF.r[PF.t]); PF.a=0; } }
+  if(PF.n%PF.s[PF.t]===1) renderer.shadowMap.needsUpdate=true;
   renderer.render(scene,camera); }
 document.fonts&&document.fonts.ready.then(()=>{});
 frame();
