@@ -1,6 +1,6 @@
 # PROGRESS — Possible AV
 
-Last updated: 2026-11-15 (site redesign prototype; see sessions/2026-11-15-site-redesign-prototype.md).
+Last updated: 2026-11-16 (SEO pass, address, homepage 3D performance; see sessions/2026-11-16-seo-and-3d-performance.md).
 
 ## Live
 - Site is on Webflow and live on possibleav.com (last publish 2026-11-12, per Webflow).
@@ -41,7 +41,7 @@ Last updated: 2026-11-15 (site redesign prototype; see sessions/2026-11-15-site-
 - **The LA case-study cover photo** shows a name on a banner, and its file URL contains names. The owner kept the photo for now; replacing or cropping it and re-uploading under a generic filename would finish the job.
 - **Two archived Work CMS items** (Times Square, New Orleans) can be permanently deleted in the Webflow dashboard if wanted. Old case-study URLs 404 on purpose (no redirects).
 - **Phone number** missing from the site and the JSON-LD.
-- **Duplicate hosts:** apex and www both serve the site with no canonical. Owner: set www as default domain + Global canonical URL in Webflow dashboard.
+- ~~Duplicate hosts~~ Done 2026-11-16: apex is the default domain, www 301s to it, global canonical = https://possibleav.com.
 - **Touring page:** confirm the "larger systems ship ahead to the venue" line with the owner, and add a real tour photo.
 - **Mobile nav:** check the layout with 8 items.
 - **More out-of-town case studies** (only LA is visible now), written without client names.
@@ -64,3 +64,10 @@ Last updated: 2026-11-15 (site redesign prototype; see sessions/2026-11-15-site-
 - 2026-11-15 18:00: Fixed the chip rail on the 3D subpages (and home): clicks were also caught by Webflow's built-in #anchor smooth scroll, which scrolled back to #floor. Rail handlers now stopPropagation (port.py).
 - 2026-11-15 18:15: /interactive stop 03 now has a performer in the middle (Michelle, samba, like the home page) with glowing joint markers, camera rays locking on, and a live skeleton screen behind; the calibration wand is gone.
 - 2026-11-15 18:35: /interactive "Motion capture" card image replaced with a new render of the performer scene (asset 6afa3f60039917d9185dd107, web/img/interactive-mocap-v2.jpg). Note: the element alt still says "Motion tracking cameras…" (API cannot set element alt); the asset alt is updated.
+
+## 2026-11-16
+- SEO pass live: titles/descriptions, Service/FAQ/Breadcrumb JSON-LD on service pages, real 301s for /service/*, sitemap cleaned (71 apex URLs), noindex on /contact and the service template, Google verification ID fixed.
+- Address 63 Flushing Ave, Brooklyn, NY 11205 in the footer and LocalBusiness JSON-LD; "Crews travel." removed.
+- Homepage 3D performance live (`0ef7cda`): ~40 fps with stalls → steady 60 fps; ~6,400 → ~1,100 draw calls. Lite timeout 5 s.
+- Service-page performance pass reverted; scheduled for Wed 2026-11-18 with skip / back-to-top buttons, Displays spacing and better lite versions.
+- Still open (off-site): submit the sitemap in Google Search Console and Bing, Google Business Profile with the same address, phone number on the site, directory listings.
