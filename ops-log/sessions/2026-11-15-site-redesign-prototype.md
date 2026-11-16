@@ -196,3 +196,10 @@ Keyword data (OpenSEO project 42fb9f74…, US): "stage deck rental" 50/mo but th
 - Money pages link back to their guide (Related chips): stage, event lighting, projector, sound system, TV rental.
 - Staging: 16 URLs 200, all JSON-LD parses, no banned words.
 - Owner-side to speed up stage ranking: Google Business Profile with a "Stage rental"/"Audio visual equipment rental service" category and photos of decks; request indexing of /stage-rental-nyc in Search Console.
+
+## Contact email → contact@possibleav.com (owner, 2026-11-15)
+- Site head JSON-LD `email` → contact@possibleav.com (same edit: motion capture added to the interactive OfferCatalog + knowsAbout).
+- Get a Quote (`6af97b78d8e68fc36722099d`) mailto Link `f0474a58-…6e89` and Contact (`6a34f3be5b5b4820028975eb`) mailto Link `0ca0ca60-…456f`: href + text updated.
+- Form-fail message on both pages: old Block `05b3543f-…f043` can't take set_text (its child is a String) → inserted new div after it (`c07e8d3b-…ae79` quote, `a616012d-…f541` contact), removed the old one.
+- CONTEXT.md contact-email rule updated. Staging scan: 71/71 sitemap pages carry the new address, 0 carry the old one.
+- Open: head JSON-LD still has a `streetAddress`; flagged to owner (no-street-address rule).

@@ -25,9 +25,9 @@ Last updated: 2026-11-15 (nav/footer components, structured data, NYC SEO pass).
 - Describe the company as **a Brooklyn, New York company** ("Brooklyn, New York" / "Brooklyn, NY"). Do not mention the Brooklyn Navy Yard, and **don't publish a street address**, on the site or in the schema. (On 2026-11-11 the full street address was briefly put on Contact and in the JSON-LD; removed 2026-11-12.)
 - **Do not name clients** anywhere on the site. This includes artists, agencies and collaborators in case-study copy, image alt text and URL slugs. Use generic labels ("Beauty brand", "Spirits brand"). When the owner wants a case study gone, hide it (unpublish + archive the CMS item, remove its static card on `/work`) rather than rewriting it.
 - **Don't introduce the team** on the site.
-- Contact email: **wlab@wlab.tech** (replaced hello@possibleav.com).
+- Contact email: **contact@possibleav.com** (owner, 2026-11-15; replaced wlab@wlab.tech, which replaced hello@possibleav.com).
 - **Experiential** lives on Possible AV (moved from the WLAB site), along with the experiential projects moved over from WLAB.
-- **Don't mention or link WLAB anywhere on Possible AV** (owner, 2026-11-13; replaces the earlier "link WLAB with every ledwall.nyc mention" rule). LED walls point to ledwall.nyc only. Contact email stays unchanged for now. Possible AV offers motion tracking / motion capture itself.
+- **Don't mention or link WLAB anywhere on Possible AV** (owner, 2026-11-13; replaces the earlier "link WLAB with every ledwall.nyc mention" rule). LED walls point to ledwall.nyc only. Contact email is contact@possibleav.com (2026-11-15). Possible AV offers motion tracking / motion capture itself.
 - Links between sister sites must use the **real domains**, never `*.webflow.io`.
 - Keep the sitemap complete when pages are added.
 - Never say on the site what Possible AV does not do or does not offer (owner, 2026-11-15): no "we don't" FAQ entries, no exclusion lists. If something is not carried, the line is that we source it.
