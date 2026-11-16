@@ -11,11 +11,13 @@ const canvas=document.getElementById('stage');
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const BG=0xECE9E3, AMBER=0xE8892D, ACCENT=new THREE.Color(AMBER), COOL=0x7fd4e6;
 
-const renderer=new THREE.WebGLRenderer({canvas, antialias:true});
-renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+// perf: render at most 1.5x (drops further if the device struggles), MSAA only on 1x screens, shadows refreshed every few frames instead of every frame
+const HIDPI=devicePixelRatio>1.25, PR=[Math.min(devicePixelRatio,1.5),Math.min(devicePixelRatio,1.15),1], SHADOW_EVERY=[3,6,12], TEX_EVERY=[2,3,5]; let tier=0;
+const renderer=new THREE.WebGLRenderer({canvas, antialias:!HIDPI, powerPreference:'high-performance'});
+renderer.setPixelRatio(PR[0]);
 renderer.outputColorSpace=THREE.SRGBColorSpace;
 renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=1.08;
-renderer.shadowMap.enabled=true; renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+renderer.shadowMap.enabled=true; renderer.shadowMap.type=THREE.PCFSoftShadowMap; renderer.shadowMap.autoUpdate=false; renderer.shadowMap.needsUpdate=true;
 
 const scene=new THREE.Scene();
 scene.background=new THREE.Color(BG);
@@ -25,7 +27,7 @@ const camera=new THREE.PerspectiveCamera(36,1,.1,300);
 
 const hemi=new THREE.HemisphereLight(0xffffff,0xd8d0c2,.7); scene.add(hemi);
 const key=new THREE.DirectionalLight(0xfff6ea,1.9);
-key.position.set(13,30,17); key.castShadow=true; key.shadow.mapSize.set(innerWidth<800?2048:4096,innerWidth<800?2048:4096);
+key.position.set(13,30,17); key.castShadow=true; key.shadow.mapSize.set(innerWidth<800?1024:2048,innerWidth<800?1024:2048);
 Object.assign(key.shadow.camera,{left:-27,right:27,top:27,bottom:-27,near:1,far:90});
 key.shadow.radius=4; key.shadow.bias=-.0006; key.shadow.normalBias=.04; scene.add(key);
 const fill=new THREE.DirectionalLight(0xeaf2ff,.8); fill.position.set(-18,12,-6); scene.add(fill);
@@ -102,7 +104,19 @@ function sofaFB(w,m){ const g=new THREE.Group(); g.add(at(rbox(w,.26,.86,m,.07),
 
 /* ---------- real models (furniture, plants, people), loaded from the page's own files ---------- */
 const gltf=new GLTFLoader().setMeshoptDecoder(MeshoptDecoder), assets={}, mixers=[];
-const prep=(a)=>{ const kill=[]; a.scene.traverse(o=>{ if(o.isLight) kill.push(o); if(o.isMesh){ o.castShadow=true; o.receiveShadow=true; const m=o.material; if(m){ m.envMapIntensity=.6; for(const k in m){ const t=m[k]; if(t&&t.isTexture&&t.channel>0&&!o.geometry.attributes['uv'+t.channel]) m[k]=null; } } } }); kill.forEach(o=>o.parent.remove(o)); return a; };
+// perf: the sample models' fancy materials (sheen etc.) become plain PBR, and the 57k-triangle plant pot becomes a lathe of its own outline
+const STD_KEYS=['name','color','map','normalMap','normalScale','aoMap','aoMapIntensity','roughness','roughnessMap','metalness','metalnessMap','emissive','emissiveMap','emissiveIntensity','alphaMap','transparent','opacity','side','envMapIntensity','vertexColors','alphaTest','depthWrite'];
+const stdCache=new Map();
+const toStd=(m)=>{ if(!m||!m.isMeshPhysicalMaterial) return m; if(stdCache.has(m)) return stdCache.get(m); const s=new THREE.MeshStandardMaterial(); for(const k of STD_KEYS){ const v=m[k]; if(v===undefined) continue; s[k]=(v&&(v.isColor||v.isVector2))?v.clone():v; } stdCache.set(m,s); return s; };
+const lathe=(g)=>{ g.computeBoundingBox(); const b=g.boundingBox, p=g.attributes.position, N=28, rs=new Array(N).fill(0), cx=(b.min.x+b.max.x)/2, cz=(b.min.z+b.max.z)/2, y0=b.min.y, hh=b.max.y-b.min.y;
+  for(let i=0;i<p.count;i++){ const k=Math.min(N-1,Math.max(0,Math.floor((p.getY(i)-y0)/hh*N))), r=Math.hypot(p.getX(i)-cx,p.getZ(i)-cz); if(r>rs[k]) rs[k]=r; }
+  const pts=[new THREE.Vector2(0,y0)]; for(let k=0;k<N;k++) if(rs[k]>0) pts.push(new THREE.Vector2(rs[k],y0+hh*(k===0?0:k===N-1?1:(k+.5)/N)));
+  const top=pts[pts.length-1]; pts.push(new THREE.Vector2(top.x*.9,top.y),new THREE.Vector2(top.x*.86,top.y-hh*.2));
+  const lg=new THREE.LatheGeometry(pts,40); lg.translate(cx,0,cz); return lg; };
+const prep=(a)=>{ const kill=[]; a.scene.traverse(o=>{ if(o.isLight) kill.push(o);
+    if(o.isMesh&&o.material) o.material=Array.isArray(o.material)?o.material.map(toStd):toStd(o.material);
+    if(o.isMesh&&!o.isSkinnedMesh&&/^pot$/i.test(o.name)&&(o.geometry.index?o.geometry.index.count:o.geometry.attributes.position.count)>30000){ o.geometry=lathe(o.geometry); const m=o.material; if(m&&!Array.isArray(m)){ m.normalMap=null; m.aoMap=null; if(m.emissiveMap){ m.emissiveMap=null; m.emissive&&m.emissive.set(0); } m.needsUpdate=true; } }
+    if(o.isMesh){ o.castShadow=true; o.receiveShadow=true; const m=o.material; if(m){ m.envMapIntensity=.6; for(const k in m){ const t=m[k]; if(t&&t.isTexture&&t.channel>0&&!o.geometry.attributes['uv'+t.channel]) m[k]=null; } } } }); kill.forEach(o=>o.parent.remove(o)); return a; };
 const want=(name)=>assets[name]||(assets[name]=import('./models/'+name+'.js').then(m=>{ const b=atob(m.default), u=new Uint8Array(b.length); for(let i=0;i<b.length;i++) u[i]=b.charCodeAt(i); return new Promise(res=>gltf.parse(u.buffer,'',a=>res(prep(a)),()=>res(null))); }).catch(()=>null));
 function drop(name,parent,{x=0,y=0,z=0,ry=0,s=1,tint,fallback}={},cb){ const g=grp(parent,x,y,z,ry); let fb=null; if(fallback){ fb=fallback(); g.add(fb); }
   want(name).then(a=>{ if(!a) return; if(fb) g.remove(fb); const o=skClone(a.scene); o.scale.setScalar(s); if(tint) o.traverse(n=>{ if(n.isMesh&&/fabric/i.test(n.material.name||'')){ n.material=n.material.clone(); n.material.map=null; n.material.color.set(tint); if(n.material.sheenColor) n.material.sheenColor.set(tint).multiplyScalar(1.4); } }); g.add(o); cb&&cb(o,a); }); return g; }
@@ -169,7 +183,7 @@ function crew(parent,{x=0,z=0,ry=0,clip='idle',arms=null,outfit=null,logo=true}=
         let w=1-smooth(line-.006,line+.006,dy); if(Math.abs(p.x)>.078&&dy>.09) w=0; col[i*3]=lerp(1,h.r,w); col[i*3+1]=lerp(1,h.g,w); col[i*3+2]=lerp(1,h.b,w); }
       n.geometry=n.geometry.clone(); n.geometry.setAttribute('color',new THREE.BufferAttribute(col,3)); n.material.vertexColors=true; return {W,yT}; };
     let head=null;
-    o.traverse(n=>{ if(!n.isSkinnedMesh) return; n.frustumCulled=false; n.castShadow=true; const nm=n.material.name||'';
+    o.traverse(n=>{ if(!n.isSkinnedMesh) return; n.frustumCulled=true; n.computeBoundingSphere(); if(n.boundingSphere) n.boundingSphere.radius*=1.6; n.castShadow=true; const nm=n.material.name||'';
       if(/Outfit_Top/.test(nm)) tailor(n); else if(/Outfit_Bottom/.test(nm)) cloth(n,c.bottom); else if(/Footwear/.test(nm)) cloth(n,c.shoes); else if(/Headwear|Beard/.test(nm)) n.visible=false;
       else if(/Body/.test(nm)) cloth(n,c.gloves??new THREE.Color(0xc59a84).multiply(new THREE.Color(c.skin))); // the sample's hands are white dress gloves: crew get work gloves, anyone else bare hands
       else if(/Skin/.test(nm)){ n.material=n.material.clone(); n.material.color.set(c.skin); head=scalp(n); } });
@@ -974,6 +988,8 @@ const v=new THREE.Vector3(); let fc=0;
 
 function frame(){
   if(window.__pavLite){ try{ renderer.dispose(); }catch(e){} return; } requestAnimationFrame(frame); if(!visible) return; fc++;
+  { const nt=performance.now(); if(PERF.last){ const d=Math.min(nt-PERF.last,250); PERF.avg=PERF.avg?PERF.avg*.94+d*.06:d; } PERF.last=nt;
+    if(fc>60&&fc%40===0&&tier<2&&PERF.avg>24){ tier++; renderer.setPixelRatio(PR[tier]); PERF.avg=0; } }
   const t=reduce?0:now(), ph=((t%BEAT)+BEAT)%BEAT, env=reduce?0:Math.exp(-ph*9);
 
   const span=Math.max(1,floorEl.offsetHeight-innerHeight), raw=Math.min(Math.max(-floorEl.getBoundingClientRect().top/span,0),1);
@@ -1007,7 +1023,7 @@ function frame(){
   for(const m of leds) m.emissiveIntensity=m.userData.base+env*2.2;
   mapMat.uniforms.t.value=t; mapMat.uniforms.kick.value=env;
   updaters.forEach(u=>u(t,env));
-  if(fc%2===0) for(const a of animTex){ a.draw(a.g,a.c.width,a.c.height,t); a.t.needsUpdate=true; }
+  if(fc%TEX_EVERY[tier]===0) for(const a of animTex){ a.draw(a.g,a.c.width,a.c.height,t); a.t.needsUpdate=true; }
 
   const p=dotGeo.attributes.position.array, cl=dotGeo.attributes.color.array;
   for(let i=0,nn=base.length;i<nn;i++){ const d=base[i]; let y=0;
@@ -1016,6 +1032,7 @@ function frame(){
     cl[i*3]=lerp(DOT0.r,DOT1.r,kk); cl[i*3+1]=lerp(DOT0.g,DOT1.g,kk); cl[i*3+2]=lerp(DOT0.b,DOT1.b,kk); }
   dotGeo.attributes.position.needsUpdate=true; dotGeo.attributes.color.needsUpdate=true;
 
+  if(fc%SHADOW_EVERY[tier]===1) renderer.shadowMap.needsUpdate=true;
   renderer.render(scene,camera); if(window.__pavTick) window.__pavTick();
 
   if(s===0 && !narrow){ const placed=[];
@@ -1024,4 +1041,47 @@ function frame(){
       for(let k=0;k<4&&!ok;k++){ const r={x:sx-w/2,y:sy-h,w,h}; ok=!placed.some(q=>r.x<q.x+q.w+4&&r.x+r.w+4>q.x&&r.y<q.y+q.h+2&&r.y+r.h+2>q.y); if(ok) placed.push(r); else sy-=h+3; }
       l.el.style.transform=`translate(${sx}px,${sy}px) translate(-50%,-100%)`; l.el.style.visibility=(ok&&v.z<1)?'visible':'hidden'; } }
 }
+const PERF={};
 frame();
+
+/* ---------- perf: bake static scenery into a few meshes per material and area ----------
+   Thousands of small parts (cases, trusses, cables, fittings) used to cost one draw call each, twice (shadow + screen).
+   Once every model has loaded, anything that never moves is merged per material and per 10 m cell; the originals stay in
+   the scene hidden (so labels and anchors keep working). Things that move, blink, fade or are swapped are left alone. */
+function bakeStatic(){ try{
+  if(SVCM||/nobake/.test(location.hash)) return;
+  const all=[]; scene.updateMatrixWorld(true); scene.traverse(o=>{ if(o.isMesh) all.push(o); }); PERF.meshes=all.length;
+  const vis=(o)=>{ for(let p=o;p;p=p.parent) if(!p.visible) return false; return true; };
+  const msig=(m)=>[m.color&&m.color.getHex(),m.emissive&&m.emissive.getHex(),m.emissiveIntensity,m.opacity,m.visible].join();
+  const snap=new Map(), dyn=new Set(), mats=new Map(), animMat=new Set(leds.concat(ceilMats));
+  for(const m of all){ snap.set(m,[m.matrixWorld.clone(),vis(m)]); for(const mm of [].concat(m.material)) if(mm&&!mats.has(mm)) mats.set(mm,msig(mm)); }
+  for(const t of [.1,.9,1.7,2.6,3.3,4.1,5.2,6.4,7.7,8.4,11,13.9,17,21,26,33,47,61]){ const ph=((t%BEAT)+BEAT)%BEAT, env=Math.exp(-ph*9);
+    updaters.forEach(u=>u(t,env)); mixers.forEach(m=>m.update(.37)); posers.forEach(p=>p()); scene.updateMatrixWorld(true);
+    for(const m of all){ const s=snap.get(m); if(!s[0].equals(m.matrixWorld)||s[1]!==vis(m)) dyn.add(m); }
+    for(const [mm,v] of mats) if(msig(mm)!==v) animMat.add(mm); }
+  const markTree=(o)=>o&&o.traverse&&o.traverse(n=>{ if(n.isMesh) dyn.add(n); }); insideOnly.forEach(markTree); crewAll.forEach(markTree); cones.forEach(markTree);
+  const plainMat=(m)=>m&&!Array.isArray(m)&&(m.isMeshStandardMaterial||m.isMeshBasicMaterial||m.isMeshLambertMaterial||m.isMeshPhongMaterial)&&!m.isShaderMaterial&&!m.transparent&&m.onBeforeCompile===THREE.Material.prototype.onBeforeCompile&&!m.displacementMap&&!m.lightMap;
+  const tid=(x)=>x?x.uuid:'-';
+  const sig=(m)=>animMat.has(m)?m.uuid:[m.type,m.color&&m.color.getHex(),m.emissive&&m.emissive.getHex(),m.emissiveIntensity,m.roughness,m.metalness,tid(m.map),tid(m.normalMap),tid(m.roughnessMap),tid(m.metalnessMap),tid(m.emissiveMap),tid(m.aoMap),tid(m.alphaMap),tid(m.envMap),m.normalScale&&m.normalScale.toArray().join('/'),m.aoMapIntensity,m.side,m.vertexColors,m.flatShading,m.envMapIntensity,m.toneMapped,m.fog,m.wireframe,m.alphaTest,m.depthTest,m.depthWrite,m.colorWrite,m.blending,m.polygonOffset,m.polygonOffsetFactor,m.polygonOffsetUnits].join('|');
+  const groups=new Map(), sph=new THREE.Sphere(), CELL=10;
+  for(const m of all){ const g=m.geometry;
+    if(m.isSkinnedMesh||m.isInstancedMesh||dyn.has(m)||m.children.length||m.renderOrder||!vis(m)||!plainMat(m.material)||!g||!g.attributes.position||g.morphAttributes.position||m.matrixWorld.determinant()<=0) continue;
+    if(Object.values(g.attributes).some(a=>a.isInterleavedBufferAttribute)) continue;
+    if(!g.boundingSphere) g.computeBoundingSphere(); sph.copy(g.boundingSphere).applyMatrix4(m.matrixWorld);
+    const cast=m.castShadow&&sph.radius>.06;   // tiny parts don't need to throw shadows
+    const ak=Object.keys(g.attributes).sort().map(k=>k+g.attributes[k].itemSize+(g.attributes[k].normalized?'n':'')).join(',');
+    const k=[sig(m.material),ak,g.index?1:0,cast?1:0,m.receiveShadow?1:0,Math.floor(sph.center.x/CELL),Math.floor(sph.center.z/CELL)].join('#');
+    let e=groups.get(k); if(!e) groups.set(k,e={mat:m.material,cast,recv:m.receiveShadow,list:[]}); e.list.push(m); }
+  let made=0, hidden=0;
+  for(const e of groups.values()){ if(e.list.length<2) continue;
+    const geos=e.list.map(m=>{ const g=m.geometry.clone(); g.clearGroups(); g.applyMatrix4(m.matrixWorld); return g; });
+    const mg=mergeGeometries(geos,false); geos.forEach(g=>g.dispose()); if(!mg) continue;
+    mg.computeBoundingSphere(); mg.computeBoundingBox();
+    const mm=new THREE.Mesh(mg,e.mat); mm.castShadow=e.cast; mm.receiveShadow=e.recv; mm.matrixAutoUpdate=false; mm.name='baked'; scene.add(mm); made++;
+    for(const m of e.list){ m.visible=false; hidden++; } }
+  // whatever stays separate and is tiny stops casting shadows too
+  for(const m of all) if(m.visible&&m.castShadow&&!m.isSkinnedMesh&&!dyn.has(m)){ const g=m.geometry; if(!g.boundingSphere) g.computeBoundingSphere(); sph.copy(g.boundingSphere).applyMatrix4(m.matrixWorld); if(sph.radius<=.06) m.castShadow=false; }
+  scene.matrixWorldAutoUpdate=true; renderer.shadowMap.needsUpdate=true; PERF.baked=made; PERF.hidden=hidden; window.__pavPerf=PERF;
+}catch(err){ console.warn('bake skipped',err); } }
+Promise.allSettled(Object.values(assets)).then(()=>clips&&clips()).then(()=>new Promise(r=>setTimeout(r,600))).then(bakeStatic);
+
