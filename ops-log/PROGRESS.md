@@ -71,3 +71,4 @@ Last updated: 2026-11-16 (SEO pass, address, homepage 3D performance; see sessio
 - Homepage 3D performance live (`0ef7cda`): ~40 fps with stalls → steady 60 fps; ~6,400 → ~1,100 draw calls. Lite timeout 5 s.
 - Service-page performance pass reverted; scheduled for Wed 2026-11-18 with skip / back-to-top buttons, Displays spacing and better lite versions.
 - Still open (off-site): submit the sitemap in Google Search Console and Bing, Google Business Profile with the same address, phone number on the site, directory listings.
+- 2026-11-17: Home 3D looked blurry/jagged (1.5x render, no MSAA on Retina, governor dropping quality during loading). Now full 2x + MSAA, shadows every 2 frames; governor starts 2.5 s after loading, needs ~1.5 s of slow frames, steps back up when fast. Live at `dcaabd1`: 60 fps on an M2 Pro at 2048x1536.
