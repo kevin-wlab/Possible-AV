@@ -12,8 +12,8 @@ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const BG=0xECE9E3, AMBER=0xE8892D, ACCENT=new THREE.Color(AMBER), COOL=0x7fd4e6;
 
 // perf: render at most 1.5x (drops further if the device struggles), MSAA only on 1x screens, shadows refreshed every few frames instead of every frame
-const HIDPI=devicePixelRatio>1.25, PR=[Math.min(devicePixelRatio,1.5),Math.min(devicePixelRatio,1.15),1], SHADOW_EVERY=[3,6,12], TEX_EVERY=[2,3,5]; let tier=0;
-const renderer=new THREE.WebGLRenderer({canvas, antialias:!HIDPI, powerPreference:'high-performance'});
+const DPR=devicePixelRatio||1, PR=[Math.min(DPR,2),Math.min(DPR,1.6),Math.min(DPR,1.3)], SHADOW_EVERY=[2,4,8], TEX_EVERY=[2,3,4]; let tier=0, gov={ok:0,bad:0,ups:0,from:0};
+const renderer=new THREE.WebGLRenderer({canvas, antialias:true, powerPreference:'high-performance'});
 renderer.setPixelRatio(PR[0]);
 renderer.outputColorSpace=THREE.SRGBColorSpace;
 renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=1.08;
@@ -989,7 +989,11 @@ const v=new THREE.Vector3(); let fc=0;
 function frame(){
   if(window.__pavLite){ try{ renderer.dispose(); }catch(e){} return; } requestAnimationFrame(frame); if(!visible) return; fc++;
   { const nt=performance.now(); if(PERF.last){ const d=Math.min(nt-PERF.last,250); PERF.avg=PERF.avg?PERF.avg*.94+d*.06:d; } PERF.last=nt;
-    if(fc>60&&fc%40===0&&tier<2&&PERF.avg>24){ tier++; renderer.setPixelRatio(PR[tier]); PERF.avg=0; } }
+    if(!gov.from&&(PERF.baked!==undefined||fc>600)) gov.from=nt+2500;
+    if(gov.from&&nt>gov.from&&fc%30===0){ const a=PERF.avg;
+      if(a>26){ gov.ok=0; if(++gov.bad>=3&&tier<2){ tier++; renderer.setPixelRatio(PR[tier]); gov.bad=0; gov.from=nt+1500; } }
+      else if(a<14){ gov.bad=0; if(++gov.ok>=8&&tier>0&&gov.ups<2){ tier--; gov.ups++; renderer.setPixelRatio(PR[tier]); gov.ok=0; gov.from=nt+1500; } }
+      else { gov.bad=0; gov.ok=0; } PERF.tier=tier; } }
   const t=reduce?0:now(), ph=((t%BEAT)+BEAT)%BEAT, env=reduce?0:Math.exp(-ph*9);
 
   const span=Math.max(1,floorEl.offsetHeight-innerHeight), raw=Math.min(Math.max(-floorEl.getBoundingClientRect().top/span,0),1);
