@@ -267,3 +267,53 @@ html{height:auto}body{font-size:16px;line-height:normal;min-height:0;margin:0}h1
 #glance{border-top:0}
 .ps1{text-decoration:underline;text-underline-offset:3px;pointer-events:auto}
 .ul{text-decoration:underline;text-underline-offset:3px}
+
+/* ---- lite: static version for slow devices (class set by fabrication.ui.js) — same design as the homepage lite ---- */
+html.lite .floor{height:auto}
+html.lite #stage,html.lite .fveil,html.lite .floor .hud{display:none!important}
+html.lite .floor .pin{position:relative;top:auto;height:auto;min-height:0;overflow:visible;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:1320px;margin:0 auto;padding:0 32px 64px}
+html.lite .floor .pin::before{content:"The range \00B7  stop by stop";grid-column:1/-1;grid-row:2;font:500 12px/1 'Geist Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#77736b;padding:26px 0 4px;border-top:1px solid rgba(38,36,33,.14)}
+html.lite .floor .cap{position:relative;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:none;opacity:1;transform:none;pointer-events:auto;text-align:left;display:flex;flex-direction:column;padding:10px 10px 24px;border-radius:22px;overflow:hidden;background:rgba(255,255,255,.55);box-shadow:0 0 0 1px rgba(38,36,33,.08);transition:transform .35s ease,box-shadow .35s ease}
+html.lite .floor .cap:hover{transform:translateY(-4px);box-shadow:0 0 0 1px rgba(38,36,33,.12),0 24px 50px -28px rgba(30,26,20,.5)}
+html.lite .floor .cap>*{margin-left:14px;margin-right:14px}
+html.lite .floor .cap::after{content:"";order:-1;aspect-ratio:16/10;width:100%;border-radius:14px;margin-bottom:16px;background:#e9e5dd center/cover no-repeat}
+html.lite .floor .cap h2{font-size:clamp(28px,2.6vw,40px)}
+html.lite .floor .cap p{max-width:none}
+html.lite .floor .cap.hero{grid-column:1/-1;grid-row:1;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.25fr);grid-auto-rows:min-content;align-content:center;column-gap:48px;min-height:min(86vh,760px);padding:110px 0 44px;background:none;box-shadow:none;border-radius:0;overflow:visible}
+html.lite .floor .cap.hero:hover{transform:none;box-shadow:none}
+html.lite .floor .cap.hero>*{grid-column:1;margin-left:0}
+html.lite .floor .cap.hero::after{grid-column:2;grid-row:1/span 9;align-self:center;margin:0;border-radius:24px;box-shadow:0 30px 70px -30px rgba(30,26,20,.45),0 0 0 1px rgba(38,36,33,.08);animation:pavFloat 9s ease-in-out infinite}
+html.lite .floor .cap.close{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);column-gap:34px;align-content:center;padding:10px;background:#1d1c1a;color:#f2efe9;text-align:left}
+html.lite .floor .cap.close>*{grid-column:1;margin-left:24px;color:inherit}
+html.lite .floor .cap.close>:first-child{margin-top:30px}
+html.lite .floor .cap.close>:last-child{margin-bottom:30px}
+html.lite .floor .cap.close::after{grid-column:2;grid-row:1/span 9;margin:0;aspect-ratio:auto;min-height:280px}
+html.lite .floor .cap.close p{color:rgba(242,239,233,.8)}
+html.lite .floor .cap.close .btn{background:#f2efe9;color:#1d1c1a}
+html.lite .floor .cap.close .ghost{color:#f2efe9;border-color:rgba(242,239,233,.35);background:transparent}
+html.lite .floor .cap[data-s="0"]::after{background-image:url(img/fabrication-lite-0.jpg)}
+html.lite .floor .cap[data-s="1"]::after{background-image:url(img/fabrication-lite-1.jpg)}
+html.lite .floor .cap[data-s="2"]::after{background-image:url(img/fabrication-lite-2.jpg)}
+html.lite .floor .cap[data-s="3"]::after{background-image:url(img/fabrication-lite-3.jpg)}
+html.lite .floor .cap[data-s="4"]::after{background-image:url(img/fabrication-lite-4.jpg)}
+html.lite .floor .cap[data-s="5"]::after{background-image:url(img/fabrication-lite-5.jpg)}
+html.lite .floor .cap[data-s="6"]::after{background-image:url(img/fabrication-lite-6.jpg)}
+@keyframes pavFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes pavUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+html.lite .floor .cap.hero>*{animation:pavUp .7s cubic-bezier(.2,.7,.2,1) both}
+@supports (animation-timeline:view()){html.lite .floor .cap:not(.hero){animation:pavUp linear both;animation-timeline:view();animation-range:entry 0% entry 40%}}
+@media (prefers-reduced-motion:reduce){html.lite .floor .cap,html.lite .floor .cap>*,html.lite .floor .cap::after{animation:none!important}}
+@media (max-width:900px){
+  html.lite .floor .pin{grid-template-columns:minmax(0,1fr);gap:12px;padding:0 12px 40px}
+  html.lite .floor .pin::before{padding:20px 4px 2px}
+  html.lite .floor .cap{border-radius:18px;padding:8px 8px 20px}
+  html.lite .floor .cap>*{margin-left:10px;margin-right:10px}
+  html.lite .floor .cap:hover{transform:none}
+  html.lite .floor .cap.hero{display:flex;flex-direction:column;min-height:0;padding:96px 8px 12px}
+  html.lite .floor .cap.hero>*{margin-left:0}
+  html.lite .floor .cap.hero::after{order:9;width:100%;margin-top:26px;border-radius:18px;animation:none}
+  html.lite .floor .cap.close{display:flex;flex-direction:column;padding:8px 8px 22px}
+  html.lite .floor .cap.close>*{margin-left:12px}
+  html.lite .floor .cap.close>:first-child{margin-top:0}
+  html.lite .floor .cap.close::after{order:-1;aspect-ratio:16/10;min-height:0;margin-bottom:18px}
+}
