@@ -9,10 +9,8 @@ const canvas=document.getElementById('stage'), floorEl=document.getElementById('
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, SNAP=location.hash.startsWith('#snap');
 const BG=0xECE9E3, AMBER=0xE8892D, Q=Math.PI/2;
 
-// perf: render at most 1.5x (lower if the device struggles), MSAA only on 1x screens, shadows refreshed every other frame
-const PF={n:0,t:0,a:0,l:0,r:[Math.min(devicePixelRatio,1.5),Math.min(devicePixelRatio,1.15),1],s:[2,3,6]};
-const renderer=new THREE.WebGLRenderer({canvas,antialias:devicePixelRatio<=1.25,powerPreference:'high-performance'});
-renderer.setPixelRatio(PF.r[0]); renderer.outputColorSpace=THREE.SRGBColorSpace;
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});
+const PF={tier:0,avg:0,last:0,n:0,from:0,ok:0,bad:0,ups:0,r:[Math.min(devicePixelRatio,2),Math.min(devicePixelRatio,1.6),Math.min(devicePixelRatio,1.3)],s:[2,4,8]}; renderer.setPixelRatio(PF.r[0]); renderer.outputColorSpace=THREE.SRGBColorSpace;
 renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=1.12;
 renderer.shadowMap.enabled=true; renderer.shadowMap.type=THREE.PCFSoftShadowMap; renderer.shadowMap.autoUpdate=false; renderer.shadowMap.needsUpdate=true;
 const scene=new THREE.Scene(); scene.background=new THREE.Color(BG); scene.fog=new THREE.Fog(BG,26,60);
@@ -424,8 +422,9 @@ function frame(){ requestAnimationFrame(frame); if(!visible&&!SNAP) return; cons
   for(const [o,sp] of spinners) o.rotation.y=t*sp;
   for(const u of updaters) u(t,x);
   window.__n=n; const s=Math.round(x); if(s!==stop){ stop=s; caps2.forEach(c=>c.classList.toggle('on',+c.dataset.s===s)); dots.forEach(a=>a.classList.toggle('on',+a.dataset.i===s)); document.body.classList.toggle('end',s===n); document.body.classList.toggle('top',s===0); }
-  PF.n++; { const nt=performance.now(); if(PF.l){ const d=Math.min(nt-PF.l,250); PF.a=PF.a?PF.a*.94+d*.06:d; } PF.l=nt; if(PF.n>60&&PF.n%40===0&&PF.t<2&&PF.a>24){ PF.t++; renderer.setPixelRatio(PF.r[PF.t]); PF.a=0; } }
-  if(PF.n%PF.s[PF.t]===1) renderer.shadowMap.needsUpdate=true;
+  { const nt=performance.now(); PF.n++; if(PF.last){ const d=Math.min(nt-PF.last,250); PF.avg=PF.avg?PF.avg*.94+d*.06:d; } PF.last=nt; if(!PF.from&&PF.n>240) PF.from=nt+2500;
+    if(PF.from&&nt>PF.from&&PF.n%30===0){ const a=PF.avg; if(a>26){ PF.ok=0; if(++PF.bad>=3&&PF.tier<2){ PF.tier++; renderer.setPixelRatio(PF.r[PF.tier]); PF.bad=0; PF.from=nt+1500; } } else if(a<14){ PF.bad=0; if(++PF.ok>=8&&PF.tier>0&&PF.ups<2){ PF.tier--; PF.ups++; renderer.setPixelRatio(PF.r[PF.tier]); PF.ok=0; PF.from=nt+1500; } } else { PF.bad=0; PF.ok=0; } }
+    if(PF.n%PF.s[PF.tier]===1) renderer.shadowMap.needsUpdate=true; window.__pavPF=PF; }
   renderer.render(scene,camera); }
 document.fonts&&document.fonts.ready.then(()=>{});
 frame();
