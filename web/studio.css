@@ -222,3 +222,5 @@ html.lite .copy>:nth-child(n+4){animation-delay:.18s}
   html.lite .card[data-i="10"]>:last-child{margin-bottom:0}
   html.lite .card[data-i="10"]::after{order:-1;aspect-ratio:16/10;min-height:0;margin-bottom:18px}
 }
+html.lite .card[data-i="10"] .btn{background:#f2efe9;color:#1d1c1a}
+html.lite .card[data-i="10"] .ghost{background:transparent}
