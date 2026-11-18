@@ -473,7 +473,7 @@ sndBtn.addEventListener('click', async()=>{ try{
 /* ---------- seven areas around the studio; each faces the spot the camera stops at ---------- */
 const Q=Math.PI/2;
 const LAYOUT=[ // x, z, facing (local +z points at the camera), bay number, bay name
-  [-13.8,  5.0,  Q,        '01','DISPLAYS'],
+  [-11.2,  2.2,  Q,        '01','DISPLAYS'],
   [-14.0,-10.0,  Q/2,      '02','PROJECTION'],
   [ -3.2,-10.4,  0,        '03','AUDIO'],
   [  6.6,-10.4,  0,        '04','LIGHTING & STAGING'],
