@@ -600,6 +600,7 @@ function frame(){ requestAnimationFrame(frame); if(!visible&&!SNAP) return; cons
   for(const [o,sp] of spinners) o.rotation.y=t*sp;
   for(const u of updaters) u(t,x);
   window.__n=n; const s=Math.round(x); if(s!==stop){ stop=s; caps2.forEach(c=>c.classList.toggle('on',+c.dataset.s===s)); dots.forEach(a=>a.classList.toggle('on',+a.dataset.i===s)); document.body.classList.toggle('end',s===n); document.body.classList.toggle('top',s===0); }
+  if(window.__pavLite){ try{renderer.dispose();}catch(e){} return; } window.__pavTick&&window.__pavTick();
   { const nt=performance.now(); PF.n++; if(PF.last){ const d=Math.min(nt-PF.last,250); PF.avg=PF.avg?PF.avg*.94+d*.06:d; } PF.last=nt; if(!PF.from&&PF.n>240) PF.from=nt+2500;
     if(PF.from&&nt>PF.from&&PF.n%30===0){ const a=PF.avg; if(a>26){ PF.ok=0; if(++PF.bad>=3&&PF.tier<2){ PF.tier++; renderer.setPixelRatio(PF.r[PF.tier]); PF.bad=0; PF.from=nt+1500; } } else if(a<14){ PF.bad=0; if(++PF.ok>=8&&PF.tier>0&&PF.ups<2){ PF.tier--; PF.ups++; renderer.setPixelRatio(PF.r[PF.tier]); PF.ok=0; PF.from=nt+1500; } } else { PF.bad=0; PF.ok=0; } }
     if(PF.n%PF.s[PF.tier]===1) renderer.shadowMap.needsUpdate=true; window.__pavPF=PF; }
