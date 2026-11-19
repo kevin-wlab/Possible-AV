@@ -41,3 +41,18 @@
 ## Next (not started; each needs a browser check)
 - Nav + footer: nav rules are identical in all 15 page stylesheets, so one set of native classes fits every page. Shared component → every page changes at once, so do it with the browser available.
 - Other page templates (page.css, the 9 category pages, about, services, quote): same migrate.py run per page.
+
+## Later: live checks + nav/footer (owner: "继续啊")
+- Live homepage A/B check (in-page: remove hn-* classes + load old studio.css@87cadf2, compare computed styles): 0 differences at 1280 / 1100 / 768 / 390. Script: ops-log/wip/native/abcheck.js.
+- Known difference found at 950px: Webflow's tablet breakpoint is 991px, the old CSS switched at 900px, so from 901 to 991px the homepage sections now show the tablet layout (2-column grid, smaller padding). Nothing breaks; it is the standard Webflow breakpoint.
+- Nav (component NX Nav a415a5c0-…) and footer (NX Footer fcf0ee38-…), 42 instances each:
+  - nav/footer rules are identical in all 15 page stylesheets, so one set of classes fits every page (ops-log/wip/native/navfoot/).
+  - Only properties that no @media or state rule (.open, .on, html.lite, :hover…) touches went native, so the hamburger menu and the 900px switch keep working from the stylesheets. Stylesheets were not changed.
+  - 12 classes: hn-nav, hn-nav-logo, hn-logo-dot, hn-plain-link, hn-nav-btn, hn-nav-menu, hn-menu-i, hn-menu-span, hn-foot, hn-fl-p, hn-foot-fc, hn-fc-mono. 47 elements.
+  - Webflow rejects -webkit-backdrop-filter; it adds the prefix itself.
+  - Checked before publishing by simulating the classes in the browser: 0 differences on /, /speaker-rental-nyc, /displays, /about, /get-a-quote, /blog at 1280 / 950 / 390, menu open and closed. After publishing: classes present live, mobile menu opens.
+
+## Page inventory for the rest (stylesheet per page)
+- page.css@e219dd2: 26 pages (all rental/SEO pages, touring, faq, pricing, blog, work, industries, and the post/project/industry/service CMS templates).
+- quote.css: /get-a-quote, /contact. about.css: /about. services.css: /services.
+- Category pages (/displays … /logistics): their own css each.
