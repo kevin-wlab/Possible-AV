@@ -32,3 +32,22 @@
 - Price ranges per rental page (owner to supply numbers).
 - Delete the 5 draft pages (nx-scratch, untitled…untitled-4) — waiting for owner OK.
 - Optional next: mic and TV rental pages get the same breadcrumb-via-hub treatment.
+
+## Later the same day: P1 pages (owner: "pages must be added")
+Plan + todo live in the owner's planning doc (Todo tab). Owner positioning rule: we are an integrator; category pages are entry points, the sale is the whole package.
+
+New pages, all duplicated from /sound-system-rental-nyc (create_page duplicateOf keeps element IDs, so the same IDs were edited on each copy):
+| Page | ID |
+|---|---|
+| /speaker-rental-nyc | 6aff6c859af8b0ae0aa34178 |
+| /uplighting-rental-nyc | 6aff6c85e3495622d258343a |
+| /outdoor-movie-rental-nyc | 6aff6c86b046f1fa36efde48 |
+| /rental-packages-nyc | 6aff6c8831821a0c0e40a61c |
+| /rental-terms | 6aff6c89b046f1fa36efdfa9 (image strip removed) |
+
+Each: title/description, eyebrow, H1, sub (integrator line), "what you can rent" list, 4 size/package cards, "often rented together" chips, 5 FAQs, JSON-LD (Service + FAQPage + Breadcrumb via /av-rental-nyc; terms page FAQ + Breadcrumb only). Images reused from lighting/projector pages; altText fixed with data_element_settings_tool (set_attributes alt fails).
+- /sound-system-rental-nyc moved back to "sound system / sound equipment" (H1, 2 FAQs, meta, JSON-LD) so it doesn't compete with the speaker page.
+- New links: hub /av-rental-nyc (+5 TextLinks), /projector-rental-nyc → outdoor movie, /event-lighting-rental-nyc → uplighting.
+- No prices anywhere yet (owner to supply). Rental terms copy is generic and needs the owner's review before it's relied on.
+
+Gotchas: set_text "" on a String works (used to collapse "Speakers & PA" into one string). Element builder TextLink works inside the plain "chips" divs.
