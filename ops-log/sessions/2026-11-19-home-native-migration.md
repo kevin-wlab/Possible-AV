@@ -30,3 +30,14 @@
 ## Next
 - Owner OK → swap into the real homepage: apply the same class assignments to homepage 6a34a78c3bca7b2b60e5eae5 (element IDs are the same as on the duplicate), switch its head CSS to studio-residual.css, publish, re-run the diff. Then delete the test page.
 - Then the other page templates (page.css pages) the same way.
+
+## Later: swapped into the real homepage (owner: "approve，全部执行")
+- Homepage 6a34a78c3bca7b2b60e5eae5: same element IDs as the test page (checked: all 269 present with their original classes). Applied the 269 class assignments; read back, 0 mismatches.
+- Homepage head CSS: studio.css@87cadf2 → studio-residual.css@0f481ee. Footer code unchanged.
+- Test page set back to draft (the API has no page delete; delete it in the Designer).
+- Site published.
+- Not yet checked in a browser after this publish: the browser connection dropped and web fetches needed approval nobody answered. Evidence it is right: identical classes + identical CSS to the test page, which diffed to 0 at 4 widths.
+
+## Next (not started; each needs a browser check)
+- Nav + footer: nav rules are identical in all 15 page stylesheets, so one set of native classes fits every page. Shared component → every page changes at once, so do it with the browser available.
+- Other page templates (page.css, the 9 category pages, about, services, quote): same migrate.py run per page.
