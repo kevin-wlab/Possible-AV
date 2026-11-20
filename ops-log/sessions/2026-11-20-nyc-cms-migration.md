@@ -46,3 +46,4 @@
 - Everything is published to **possibleav.webflow.io only**. possibleav.com still serves the old pages.
 - The 15 old static pages are set to **draft** (staged) — they disappear (404, no redirects, owner's choice) at the next custom-domain publish, together with the `/nyc/` pages, nav/footer/blog link changes going live.
 - **Next:** owner approval → full-site publish to possibleav.com + www → live check of all 15 `/nyc/` URLs and that old URLs 404.
+- **Published** to possibleav.com + www 2026-11-20 ~18:53 ET with owner OK; live check passed (15 new 200, 15 old 404).
