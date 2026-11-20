@@ -1,6 +1,6 @@
 # PROGRESS — Possible AV
 
-Last updated: 2026-11-16 (SEO pass, address, homepage 3D performance; see sessions/2026-11-16-seo-and-3d-performance.md).
+Last updated: 2026-11-20 (NYC landing pages → CMS template; see sessions/2026-11-20-nyc-cms-migration.md).
 
 ## Live
 - Site is on Webflow and live on possibleav.com (last publish 2026-11-12, per Webflow).
@@ -33,7 +33,14 @@ Last updated: 2026-11-16 (SEO pass, address, homepage 3D performance; see sessio
 - Positioning: NYC first, plus a Touring & Out-of-Town AV page. *(Built and live 2026-11-12; see above.)*
 - `ops-log/` + root `CLAUDE.md` added 2026-11-12.
 
+## Staged 2026-11-20 (possibleav.webflow.io only — awaiting owner OK to publish to possibleav.com)
+- **15 NYC landing pages → CMS** `NYC Pages` at `/nyc/<slug>` (old `/<slug>-nyc` pages drafted; no redirects by owner's choice). Template uses native `nx-` classes; verified identical to the old pages at 1440/768/375. See sessions/2026-11-20-nyc-cms-migration.md.
+- Internal links (nav, footer, /audio-visual-company-nyc, /rental-terms, 7 blog posts) repointed to `/nyc/`.
+
 ## Open items
+- After the publish: live-check the 15 `/nyc/` URLs and that the old URLs 404; consider 301s later if Search Console shows lost traffic.
+- Native migration still to do: nav/footer responsive rules and the remaining page.css pages (quote/contact, about, services, 9 category pages, touring, faq, pricing, blog, work, industries, CMS templates).
+- Delete test pages `home-native-draft`, `nx-scratch` and the `untitled*` drafts in the Designer.
 - Earlier sessions (rebuild, restyles, Experiential move) weren't logged here. Next session: audit the live Webflow pages against `CONTEXT.md` and record what's actually done.
 - Placeholder copy and FLORA images to be replaced with real content by the owner. This includes the "STUDIO / INVENTORY IMAGE" placeholder on About and Touring.
 - (Superseded 2026-11-13: no WLAB mention or link on Possible AV.) Navy Yard and client names: Home, Touring and Work are confirmed clean live; recheck About, Services, Industries, Contact, Pricing, FAQ, Blog and the blog posts on the live site.
