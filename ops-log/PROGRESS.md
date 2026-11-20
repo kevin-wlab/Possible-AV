@@ -33,12 +33,12 @@ Last updated: 2026-11-20 (NYC landing pages → CMS template; see sessions/2026-
 - Positioning: NYC first, plus a Touring & Out-of-Town AV page. *(Built and live 2026-11-12; see above.)*
 - `ops-log/` + root `CLAUDE.md` added 2026-11-12.
 
-## Staged 2026-11-20 (possibleav.webflow.io only — awaiting owner OK to publish to possibleav.com)
+## Live 2026-11-20 (published to possibleav.com + www with owner OK)
 - **15 NYC landing pages → CMS** `NYC Pages` at `/nyc/<slug>` (old `/<slug>-nyc` pages drafted; no redirects by owner's choice). Template uses native `nx-` classes; verified identical to the old pages at 1440/768/375. See sessions/2026-11-20-nyc-cms-migration.md.
 - Internal links (nav, footer, /audio-visual-company-nyc, /rental-terms, 7 blog posts) repointed to `/nyc/`.
 
 ## Open items
-- After the publish: live-check the 15 `/nyc/` URLs and that the old URLs 404; consider 301s later if Search Console shows lost traffic.
+- Live check 2026-11-20: all 15 `/nyc/` URLs 200 with the new template, all 15 old `-nyc` URLs 404, home nav links to /nyc/av-rental. Consider 301s later if Search Console shows lost traffic.
 - Native migration still to do: nav/footer responsive rules and the remaining page.css pages (quote/contact, about, services, 9 category pages, touring, faq, pricing, blog, work, industries, CMS templates).
 - Delete test pages `home-native-draft`, `nx-scratch` and the `untitled*` drafts in the Designer.
 - Earlier sessions (rebuild, restyles, Experiential move) weren't logged here. Next session: audit the live Webflow pages against `CONTEXT.md` and record what's actually done.
