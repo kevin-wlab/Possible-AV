@@ -1,0 +1,170 @@
+{
+"old_slug": "event-wifi-rental-nyc",
+"old_page_id": "6afa011fd92dd50d9e3aef6d",
+"name": "Event Wi-Fi",
+"seo_title": "Event Wi-Fi & Internet Rental NYC | Possible AV",
+"meta": "Temporary event Wi-Fi in New York City: access points, switching and a separate show network, with backup internet and monitoring while the event runs.",
+"eyebrow": "Event Wi-Fi · New York City",
+"h1": "Event Wi-Fi in NYC that holds up.",
+"sub": "Temporary Wi-Fi and wired networks for conferences, trade shows, pop-ups and productions across New York. Show traffic kept apart from guest traffic, a backup line ready, and someone watching it the whole time.",
+"cta2": [
+"See the nine services",
+"/services"
+],
+"a": {
+"eb": "What we set up",
+"h": "A network ",
+"hm": "built for the event.",
+"lead": "",
+"items": [
+[
+"Wi-Fi",
+"Access points placed for the number of devices, not just the size of the space"
+],
+[
+"Wired",
+"Switches and cabling for playback, streaming, check-in and payments"
+],
+[
+"Separation",
+"Show, production and guest traffic on their own networks"
+],
+[
+"Backup",
+"A second internet path and monitoring during the event"
+]
+]
+},
+"b": {
+"eb": "How it works",
+"h": "Planned, tested, ",
+"hm": "watched.",
+"lead": "",
+"items": [
+[
+"01",
+"Count the devices",
+"Guests, staff, screens, cameras and point-of-sale."
+],
+[
+"02",
+"Plan the network",
+"Access points, switching and the internet line, with a backup."
+],
+[
+"03",
+"Test before doors",
+"Every network and the failover tested on site."
+],
+[
+"04",
+"Watched live",
+"Monitored through the event, then packed out."
+]
+]
+},
+"c": {
+"eb": "Where in New York",
+"h": "All five boroughs, ",
+"hm": "delivered from Brooklyn.",
+"items": [
+[
+"Manhattan",
+"Offices, hotels and stores",
+"Midtown offices, hotel ballrooms, SoHo storefronts, galleries and rooftops."
+],
+[
+"Brooklyn & Queens",
+"Close to our dock",
+"Warehouses, studios and lofts in Brooklyn and Long Island City, minutes from where the gear is packed."
+],
+[
+"The Bronx & Staten Island",
+"The rest of the city",
+"Schools, campuses, parks and public spaces across the other boroughs, and Jersey City and Long Island too."
+]
+]
+},
+"related": {
+"eb": "Related",
+"h": "More on networks.",
+"hm": "",
+"items": [
+[
+"Networks & computers service",
+"/networks"
+],
+[
+"Event network setup guide",
+"/post/temporary-event-network-setup-guide"
+],
+[
+"Computer rental in NYC",
+"/computer-rental-nyc"
+]
+]
+},
+"also": {
+"eb": "In New York",
+"h": "Also for rent.",
+"hm": "",
+"items": [
+[
+"Computer rental in NYC",
+"/computer-rental-nyc"
+],
+[
+"AV rental in NYC",
+"/av-rental-nyc"
+],
+[
+"TV & screen rental in NYC",
+"/tv-rental-nyc"
+]
+]
+},
+"faq": {
+"eb": "Questions",
+"h": "Event Wi-Fi, briefly.",
+"items": [
+[
+"Why not use the building Wi-Fi?",
+"You cannot control it or see into it, and it is shared with everyone else. When streaming, check-in and payments depend on it, a network of your own is safer."
+],
+[
+"Can you provide internet for an event?",
+"We plan the internet connection with the space, add a backup path, and build the Wi-Fi and wired network on top."
+],
+[
+"Do you install permanent networks?",
+"Yes. UniFi networks for offices and buildings, with structured cabling and support."
+],
+[
+"Is someone on site during the event?",
+"Yes. The network is monitored while the event runs, with a technician on hand."
+]
+]
+},
+"quote": {
+"eb": "Get a quote",
+"h": "Start with what you need and when.",
+"lead": "Tell us where, when, how many people and what has to happen. We reply with one quote for equipment, crew and delivery."
+},
+"images": [
+[
+"6af9bb4346791e312beab6f9",
+"https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/6af9bb4346791e312beab6f9_networks-wifi.jpg",
+"A Wi-Fi access point set up for an event"
+],
+[
+"6af9bb44c34bd5e8ed16660c",
+"https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/6af9bb44c34bd5e8ed16660c_networks-rack.jpg",
+"Network switching in a rack"
+],
+[
+"6af9bb45c4e555cf427325d7",
+"https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/6af9bb45c4e555cf427325d7_networks-ex-conference.jpg",
+"A conference running on a temporary network"
+]
+]
+}

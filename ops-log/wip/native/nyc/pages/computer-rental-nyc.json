@@ -1,0 +1,170 @@
+{
+"old_slug": "computer-rental-nyc",
+"old_page_id": "6afa0120feb61fc6e33c6fa3",
+"name": "Computer rental",
+"seo_title": "Computer & Workstation Rental NYC | Possible AV",
+"meta": "Computer and workstation rental in New York City: show computers, playback machines and high-end workstations for events and productions, set up by our crew.",
+"eyebrow": "Computer rental · New York City",
+"h1": "Computer and workstation rental in NYC.",
+"sub": "Show computers, playback machines and high-end workstations for events, exhibitions and productions across New York. Configured for the job, delivered and set up, and custom PCs built to order if you want to keep them.",
+"cta2": [
+"See the nine services",
+"/services"
+],
+"a": {
+"eb": "What you can rent",
+"h": "Machines ",
+"hm": "that run the show.",
+"lead": "",
+"items": [
+[
+"Show computers",
+"For playback, slides, graphics and show control"
+],
+[
+"Workstations",
+"High-end machines for real-time 3D, TouchDesigner and video"
+],
+[
+"Check-in",
+"Machines and screens for registration and kiosks"
+],
+[
+"Custom PCs",
+"Built to order and sold, configured for your software"
+]
+]
+},
+"b": {
+"eb": "How it works",
+"h": "Configured, ",
+"hm": "then delivered.",
+"lead": "",
+"items": [
+[
+"01",
+"Tell us the software",
+"What has to run, and how many machines."
+],
+[
+"02",
+"Configured",
+"Software, settings and your files set up before delivery."
+],
+[
+"03",
+"Set up on site",
+"Connected to screens, the network and the show."
+],
+[
+"04",
+"Back to us",
+"Picked up at the end and wiped."
+]
+]
+},
+"c": {
+"eb": "Where in New York",
+"h": "All five boroughs, ",
+"hm": "delivered from Brooklyn.",
+"items": [
+[
+"Manhattan",
+"Offices, hotels and stores",
+"Midtown offices, hotel ballrooms, SoHo storefronts, galleries and rooftops."
+],
+[
+"Brooklyn & Queens",
+"Close to our dock",
+"Warehouses, studios and lofts in Brooklyn and Long Island City, minutes from where the gear is packed."
+],
+[
+"The Bronx & Staten Island",
+"The rest of the city",
+"Schools, campuses, parks and public spaces across the other boroughs, and Jersey City and Long Island too."
+]
+]
+},
+"related": {
+"eb": "Related",
+"h": "More on computers.",
+"hm": "",
+"items": [
+[
+"Networks & computers service",
+"/networks"
+],
+[
+"Event Wi-Fi in NYC",
+"/event-wifi-rental-nyc"
+],
+[
+"TV & screen rental in NYC",
+"/tv-rental-nyc"
+]
+]
+},
+"also": {
+"eb": "In New York",
+"h": "Also for rent.",
+"hm": "",
+"items": [
+[
+"Event Wi-Fi in NYC",
+"/event-wifi-rental-nyc"
+],
+[
+"TV & screen rental in NYC",
+"/tv-rental-nyc"
+],
+[
+"AV rental in NYC",
+"/av-rental-nyc"
+]
+]
+},
+"faq": {
+"eb": "Questions",
+"h": "Computer rental, briefly.",
+"items": [
+[
+"What computers do you rent?",
+"Show computers for playback and presentations, and high-end workstations for real-time 3D, TouchDesigner and video work."
+],
+[
+"Do you set the computers up?",
+"Yes. We configure them for your software before delivery and connect them on site."
+],
+[
+"Can I buy a workstation instead?",
+"Yes. We build and sell custom PCs and workstations configured for your work."
+],
+[
+"Do you rent computers for exhibitions?",
+"Yes. Playback and interactive machines for exhibitions, galleries and installs, set to start on their own each day."
+]
+]
+},
+"quote": {
+"eb": "Get a quote",
+"h": "Start with what you need and when.",
+"lead": "Tell us where, when, how many people and what has to happen. We reply with one quote for equipment, crew and delivery."
+},
+"images": [
+[
+"6af9bb44e1cb9d5b564cf5ab",
+"https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/6af9bb44e1cb9d5b564cf5ab_networks-workstation.jpg",
+"A high-end workstation set up for a production"
+],
+[
+"6af9bb457c7aae58d688a5a5",
+"https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/6af9bb457c7aae58d688a5a5_networks-pc.jpg",
+"A custom-built PC"
+],
+[
+"6af9bb4534f03761c4f040ab",
+"https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/6af9bb4534f03761c4f040ab_networks-ex-control.jpg",
+"A control desk with show computers"
+]
+]
+}

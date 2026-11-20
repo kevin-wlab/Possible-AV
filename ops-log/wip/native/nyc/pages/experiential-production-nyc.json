@@ -1,0 +1,182 @@
+{
+ "old_slug": "experiential-production-nyc",
+ "old_page_id": "6afa01201bf9aae07061935e",
+ "name": "Experiential production",
+ "seo_title": "Experiential Production NYC | Possible AV",
+ "meta": "Experiential production in New York City: interactive installations, immersive projection, fabrication and the AV to run them, built in Brooklyn.",
+ "eyebrow": "Experiential production · New York City",
+ "h1": "Experiential production in NYC, built in Brooklyn.",
+ "sub": "Interactive installations, immersive projection, pop-up builds and the technology behind them, for brands, museums and events across New York. Designed, built and tested in Brooklyn, then installed and run by our crew.",
+ "cta2": [
+  "See the nine services",
+  "/services"
+ ],
+ "images": [
+  [
+   "6af9c53cf772377c64c620b1",
+   "https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/6af9c53cf772377c64c620b1_interactive-floor.jpg",
+   "An interactive projected floor"
+  ],
+  [
+   "6af9c53e66f69f982782d56d",
+   "https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/6af9c53e66f69f982782d56d_interactive-ex-exhibit.jpg",
+   "An interactive exhibit in a gallery"
+  ],
+  [
+   "6af9b729aa63fba124dd681a",
+   "https://cdn.prod.website-files.com/6a34a7893bca7b2b60e5eac7/6af9b729aa63fba124dd681a_fabrication-ex-popup.jpg",
+   "A fabricated pop-up shop unit"
+  ]
+ ],
+ "a": {
+  "eb": "What we make",
+  "h": "Experiences ",
+  "hm": "people step into.",
+  "lead": "",
+  "items": [
+   [
+    "Interactive",
+    "Floors, walls and screens built in TouchDesigner, with sensors and body tracking"
+   ],
+   [
+    "Immersive",
+    "Projection mapping and spatial audio across whole spaces"
+   ],
+   [
+    "Fabrication",
+    "Sets, pop-up units, props and large-format 3D printing"
+   ],
+   [
+    "Run",
+    "Installed, tested and run on site by our crew"
+   ]
+  ]
+ },
+ "b": {
+  "eb": "Who it is for",
+  "h": "Brands, museums ",
+  "hm": "and events.",
+  "lead": "",
+  "items": [
+   [
+    "Brands",
+    "Activations and launches",
+    "A hero piece people walk up to, photograph and share."
+   ],
+   [
+    "Retail",
+    "Pop-ups and windows",
+    "Units and windows that arrive finished, with the tech built in."
+   ],
+   [
+    "Culture",
+    "Exhibitions and galleries",
+    "Immersive and interactive pieces that run every day."
+   ],
+   [
+    "Events",
+    "Parties and conferences",
+    "A moment in the program that people remember."
+   ]
+  ]
+ },
+ "c": {
+  "eb": "Where in New York",
+  "h": "All five boroughs, ",
+  "hm": "delivered from Brooklyn.",
+  "items": [
+   [
+    "Manhattan",
+    "Offices, hotels and stores",
+    "Midtown offices, hotel ballrooms, SoHo storefronts, galleries and rooftops."
+   ],
+   [
+    "Brooklyn & Queens",
+    "Close to our dock",
+    "Warehouses, studios and lofts in Brooklyn and Long Island City, minutes from where the gear is packed."
+   ],
+   [
+    "The Bronx & Staten Island",
+    "The rest of the city",
+    "Schools, campuses, parks and public spaces across the other boroughs, and Jersey City and Long Island too."
+   ]
+  ]
+ },
+ "related": {
+  "eb": "Related",
+  "h": "Services behind ",
+  "hm": "the experience.",
+  "items": [
+   [
+    "Interactive & tracking",
+    "/interactive"
+   ],
+   [
+    "Projection",
+    "/projection"
+   ],
+   [
+    "Fabrication",
+    "/fabrication"
+   ],
+   [
+    "Audio",
+    "/audio"
+   ],
+   [
+    "Displays",
+    "/displays"
+   ]
+  ]
+ },
+ "also": {
+  "eb": "In New York",
+  "h": "More ways to book.",
+  "hm": "",
+  "items": [
+   [
+    "Event production in NYC",
+    "/event-production-company-nyc"
+   ],
+   [
+    "Projector rental in NYC",
+    "/projector-rental-nyc"
+   ],
+   [
+    "Audio visual company in NYC",
+    "/audio-visual-company-nyc"
+   ]
+  ]
+ },
+ "faq": {
+  "eb": "Questions",
+  "h": "Experiential production, briefly.",
+  "items": [
+   [
+    "What is experiential production?",
+    "Building the physical experience: the interactive pieces, the set, the projection and sound, and the crew that installs and runs it."
+   ],
+   [
+    "Do you design the experience or build what an agency designed?",
+    "Both. Some projects come with creative direction from an agency or studio; on others we take it from the first sketch."
+   ],
+   [
+    "Can people interact with the piece?",
+    "Yes. We build interactive floors, walls and screens with sensors, body tracking and RFID or NFC triggers."
+   ],
+   [
+    "Can it be tested before the event?",
+    "Yes. Pieces are built and tested in Brooklyn before they are installed."
+   ],
+   [
+    "Can the experience travel?",
+    "Yes. The same build and crew can go to several cities. See touring."
+   ]
+  ]
+ },
+ "quote": {
+  "eb": "Get a quote",
+  "h": "Start with what you need and when.",
+  "lead": "Tell us where, when, how many people and what has to happen. We reply with one quote for equipment, crew and delivery."
+ }
+}
