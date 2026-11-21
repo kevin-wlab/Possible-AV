@@ -1,0 +1,493 @@
+{
+ "classes": {
+  "nv-pg-svh": {
+   "main": {
+    "padding-bottom": "34px",
+    "padding-left": "28px",
+    "padding-right": "28px",
+    "padding-top": "128px"
+   },
+   "medium": {
+    "padding-bottom": "22px",
+    "padding-left": "20px",
+    "padding-right": "20px",
+    "padding-top": "96px"
+   }
+  },
+  "nv-pg-svh-mono": {
+   "main": {
+    "color": "#55524C",
+    "font-family": "\"Geist Mono\",ui-monospace,monospace",
+    "font-size": "12px",
+    "letter-spacing": ".04em",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0",
+    "text-transform": "uppercase"
+   }
+  },
+  "nv-pg-svh-h1": {
+   "main": {
+    "font-size": "clamp(40px,5vw,76px)",
+    "font-weight": "600",
+    "letter-spacing": "-.045em",
+    "line-height": ".95",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "14px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-pg-svh-sub": {
+   "main": {
+    "color": "#55524C",
+    "font-size": "17px",
+    "line-height": "1.5",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "14px",
+    "max-width": "640px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-pg-svh-ctas": {
+   "main": {
+    "align-items": "center",
+    "display": "flex",
+    "flex-wrap": "wrap",
+    "grid-column-gap": "10px",
+    "grid-row-gap": "10px",
+    "margin-top": "26px"
+   }
+  },
+  "nv-pg-ctas-btn": {
+   "main": {
+    "align-items": "center",
+    "border-bottom-left-radius": "999px",
+    "border-bottom-right-radius": "999px",
+    "border-top-left-radius": "999px",
+    "border-top-right-radius": "999px",
+    "display": "inline-flex",
+    "font-size": "14px",
+    "font-weight": "500",
+    "grid-column-gap": "8px",
+    "grid-row-gap": "8px",
+    "padding-bottom": "11px",
+    "padding-left": "18px",
+    "padding-right": "18px",
+    "padding-top": "11px",
+    "transition": "transform .2s",
+    "white-space": "nowrap"
+   }
+  },
+  "nv-pg-ctas-ghost": {
+   "main": {
+    "align-items": "center",
+    "backdrop-filter": "blur(6px)",
+    "background-color": "rgba(236,233,227,.6)",
+    "background-image": "none",
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "999px",
+    "border-bottom-right-radius": "999px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "999px",
+    "border-top-right-radius": "999px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "display": "inline-flex",
+    "font-size": "14px",
+    "font-weight": "500",
+    "grid-column-gap": "8px",
+    "grid-row-gap": "8px",
+    "padding-bottom": "11px",
+    "padding-left": "18px",
+    "padding-right": "18px",
+    "padding-top": "11px",
+    "white-space": "nowrap"
+   }
+  },
+  "nv-pg-next": {
+   "main": {
+    "background-color": "#ECE9E3",
+    "background-image": "none",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "padding-bottom": "110px",
+    "padding-left": "28px",
+    "padding-right": "28px",
+    "padding-top": "96px",
+    "position": "relative",
+    "z-index": "6"
+   },
+   "medium": {
+    "padding-bottom": "72px",
+    "padding-left": "20px",
+    "padding-right": "20px",
+    "padding-top": "64px"
+   }
+  },
+  "nv-pg-posts-mono": {
+   "main": {
+    "color": "#55524C",
+    "font-family": "\"Geist Mono\",ui-monospace,monospace",
+    "font-size": "12px",
+    "letter-spacing": ".04em",
+    "margin-bottom": "18px",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0",
+    "text-transform": "uppercase"
+   }
+  },
+  "nv-pg-posts-h2": {
+   "main": {
+    "font-size": "clamp(32px,4vw,56px)",
+    "font-weight": "600",
+    "letter-spacing": "-.035em",
+    "line-height": "1",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "max-width": "820px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-pg-posts-span": {
+   "main": {
+    "color": "#8A867E"
+   }
+  },
+  "nv-pg-posts": {
+   "main": {
+    "display": "grid",
+    "grid-column-gap": "14px",
+    "grid-row-gap": "14px",
+    "grid-template-columns": "repeat(3,1fr)",
+    "margin-top": "40px"
+   },
+   "medium": {
+    "grid-template-columns": "1fr"
+   }
+  },
+  "nv-pg-posts-post": {
+   "hover:main": {
+    "border-bottom-color": "#8A867E",
+    "border-left-color": "#8A867E",
+    "border-right-color": "#8A867E",
+    "border-top-color": "#8A867E"
+   },
+   "main": {
+    "background-color": "rgba(255,255,255,.28)",
+    "background-image": "none",
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "20px",
+    "border-bottom-right-radius": "20px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "20px",
+    "border-top-right-radius": "20px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "display": "flex",
+    "flex-direction": "column",
+    "grid-column-gap": "10px",
+    "grid-row-gap": "10px",
+    "padding-bottom": "26px",
+    "padding-left": "24px",
+    "padding-right": "24px",
+    "padding-top": "24px",
+    "transition": "border-color .2s"
+   }
+  },
+  "nv-pg-post-mono": {
+   "main": {
+    "color": "#E8892D",
+    "font-family": "\"Geist Mono\",ui-monospace,monospace",
+    "font-size": "12px",
+    "letter-spacing": ".04em",
+    "line-height": "1.5",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0",
+    "text-transform": "uppercase"
+   }
+  },
+  "nv-pg-post-h3": {
+   "main": {
+    "font-size": "21px",
+    "font-weight": "600",
+    "letter-spacing": "-.02em",
+    "line-height": "1.2",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   },
+   "medium": {
+    "font-size": "19px"
+   }
+  },
+  "nv-pg-post-p": {
+   "main": {
+    "color": "#55524C",
+    "font-size": "14.5px",
+    "line-height": "1.5",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-pg-post-more": {
+   "main": {
+    "align-self": "flex-start",
+    "border-bottom-color": "#E8892D",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "color": "#1A1A18",
+    "font-size": "14.5px",
+    "font-weight": "600",
+    "margin-top": "auto",
+    "padding-top": "8px"
+   }
+  },
+  "nv-pg-next-2": {
+   "main": {
+    "background-color": "#ECE9E3",
+    "background-image": "none",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "padding-bottom": "120px",
+    "padding-left": "28px",
+    "padding-right": "28px",
+    "padding-top": "88px",
+    "position": "relative",
+    "z-index": "6"
+   },
+   "medium": {
+    "padding-bottom": "72px",
+    "padding-left": "20px",
+    "padding-right": "20px",
+    "padding-top": "56px"
+   }
+  },
+  "nv-pg-quote-h2": {
+   "main": {
+    "font-size": "clamp(40px,6vw,92px)",
+    "font-weight": "600",
+    "letter-spacing": "-.035em",
+    "line-height": "1",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "max-width": "820px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-pg-quote-lead": {
+   "main": {
+    "color": "#55524C",
+    "font-size": "18px",
+    "line-height": "1.5",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "18px",
+    "max-width": "560px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-pg-quote-ctas": {
+   "main": {
+    "align-items": "center",
+    "display": "flex",
+    "flex-wrap": "wrap",
+    "grid-column-gap": "10px",
+    "grid-row-gap": "10px",
+    "margin-top": "24px"
+   }
+  }
+ },
+ "elements": {
+  "6e47d198-9843-6af8-6e73-3d490ac0d832": "nv-pg-svh",
+  "6e47d198-9843-6af8-6e73-3d490ac0d826": "nv-pg-svh-mono",
+  "6e47d198-9843-6af8-6e73-3d490ac0d82a": "nv-pg-svh-h1",
+  "6e47d198-9843-6af8-6e73-3d490ac0d82c": "nv-pg-svh-sub",
+  "6e47d198-9843-6af8-6e73-3d490ac0d831": "nv-pg-svh-ctas",
+  "6e47d198-9843-6af8-6e73-3d490ac0d82e": "nv-pg-ctas-btn",
+  "6e47d198-9843-6af8-6e73-3d490ac0d830": "nv-pg-ctas-ghost",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7454": "nv-pg-next",
+  "f521c1a9-cd87-ccda-1673-7f00be2e73d9": "nv-pg-posts-mono",
+  "f521c1a9-cd87-ccda-1673-7f00be2e73dd": "nv-pg-posts-h2",
+  "f521c1a9-cd87-ccda-1673-7f00be2e73dc": "nv-pg-posts-span",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7453": "nv-pg-posts",
+  "7ec565c8-2cf3-74b9-07e0-d6c7f3d344d3": "nv-pg-posts-post",
+  "7ec565c8-2cf3-74b9-07e0-d6c7f3d344cc": "nv-pg-post-mono",
+  "7ec565c8-2cf3-74b9-07e0-d6c7f3d344ce": "nv-pg-post-h3",
+  "7ec565c8-2cf3-74b9-07e0-d6c7f3d344d0": "nv-pg-post-p",
+  "7ec565c8-2cf3-74b9-07e0-d6c7f3d344d2": "nv-pg-post-more",
+  "4c1d2837-1904-92f8-99d2-760ed1125921": "nv-pg-posts-post",
+  "4c1d2837-1904-92f8-99d2-760ed112591a": "nv-pg-post-mono",
+  "4c1d2837-1904-92f8-99d2-760ed112591c": "nv-pg-post-h3",
+  "4c1d2837-1904-92f8-99d2-760ed112591e": "nv-pg-post-p",
+  "4c1d2837-1904-92f8-99d2-760ed1125920": "nv-pg-post-more",
+  "30e75567-4d56-465e-0fc7-395181fe4eec": "nv-pg-posts-post",
+  "30e75567-4d56-465e-0fc7-395181fe4ee5": "nv-pg-post-mono",
+  "30e75567-4d56-465e-0fc7-395181fe4ee7": "nv-pg-post-h3",
+  "30e75567-4d56-465e-0fc7-395181fe4ee9": "nv-pg-post-p",
+  "30e75567-4d56-465e-0fc7-395181fe4eeb": "nv-pg-post-more",
+  "f126b2df-b842-45b7-a4cf-2624bfd7484c": "nv-pg-posts-post",
+  "f126b2df-b842-45b7-a4cf-2624bfd74845": "nv-pg-post-mono",
+  "f126b2df-b842-45b7-a4cf-2624bfd74847": "nv-pg-post-h3",
+  "f126b2df-b842-45b7-a4cf-2624bfd74849": "nv-pg-post-p",
+  "f126b2df-b842-45b7-a4cf-2624bfd7484b": "nv-pg-post-more",
+  "2aa9fdf3-a972-03ef-d1b1-1e956d7deaba": "nv-pg-posts-post",
+  "2aa9fdf3-a972-03ef-d1b1-1e956d7deab3": "nv-pg-post-mono",
+  "2aa9fdf3-a972-03ef-d1b1-1e956d7deab5": "nv-pg-post-h3",
+  "2aa9fdf3-a972-03ef-d1b1-1e956d7deab7": "nv-pg-post-p",
+  "2aa9fdf3-a972-03ef-d1b1-1e956d7deab9": "nv-pg-post-more",
+  "0786e805-b094-3426-df67-cedd41ba91b8": "nv-pg-posts-post",
+  "0786e805-b094-3426-df67-cedd41ba91b1": "nv-pg-post-mono",
+  "0786e805-b094-3426-df67-cedd41ba91b3": "nv-pg-post-h3",
+  "0786e805-b094-3426-df67-cedd41ba91b5": "nv-pg-post-p",
+  "0786e805-b094-3426-df67-cedd41ba91b7": "nv-pg-post-more",
+  "b517d10b-4956-e4b8-62dd-41bdcdfc0b8c": "nv-pg-posts-post",
+  "b517d10b-4956-e4b8-62dd-41bdcdfc0b85": "nv-pg-post-mono",
+  "b517d10b-4956-e4b8-62dd-41bdcdfc0b87": "nv-pg-post-h3",
+  "b517d10b-4956-e4b8-62dd-41bdcdfc0b89": "nv-pg-post-p",
+  "b517d10b-4956-e4b8-62dd-41bdcdfc0b8b": "nv-pg-post-more",
+  "f521c1a9-cd87-ccda-1673-7f00be2e73e6": "nv-pg-posts-post",
+  "f521c1a9-cd87-ccda-1673-7f00be2e73df": "nv-pg-post-mono",
+  "f521c1a9-cd87-ccda-1673-7f00be2e73e1": "nv-pg-post-h3",
+  "f521c1a9-cd87-ccda-1673-7f00be2e73e3": "nv-pg-post-p",
+  "f521c1a9-cd87-ccda-1673-7f00be2e73e5": "nv-pg-post-more",
+  "f521c1a9-cd87-ccda-1673-7f00be2e73ef": "nv-pg-posts-post",
+  "f521c1a9-cd87-ccda-1673-7f00be2e73e8": "nv-pg-post-mono",
+  "f521c1a9-cd87-ccda-1673-7f00be2e73ea": "nv-pg-post-h3",
+  "f521c1a9-cd87-ccda-1673-7f00be2e73ec": "nv-pg-post-p",
+  "f521c1a9-cd87-ccda-1673-7f00be2e73ee": "nv-pg-post-more",
+  "f521c1a9-cd87-ccda-1673-7f00be2e73f8": "nv-pg-posts-post",
+  "f521c1a9-cd87-ccda-1673-7f00be2e73f1": "nv-pg-post-mono",
+  "f521c1a9-cd87-ccda-1673-7f00be2e73f3": "nv-pg-post-h3",
+  "f521c1a9-cd87-ccda-1673-7f00be2e73f5": "nv-pg-post-p",
+  "f521c1a9-cd87-ccda-1673-7f00be2e73f7": "nv-pg-post-more",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7401": "nv-pg-posts-post",
+  "f521c1a9-cd87-ccda-1673-7f00be2e73fa": "nv-pg-post-mono",
+  "f521c1a9-cd87-ccda-1673-7f00be2e73fc": "nv-pg-post-h3",
+  "f521c1a9-cd87-ccda-1673-7f00be2e73fe": "nv-pg-post-p",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7400": "nv-pg-post-more",
+  "f521c1a9-cd87-ccda-1673-7f00be2e740a": "nv-pg-posts-post",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7403": "nv-pg-post-mono",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7405": "nv-pg-post-h3",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7407": "nv-pg-post-p",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7409": "nv-pg-post-more",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7413": "nv-pg-posts-post",
+  "f521c1a9-cd87-ccda-1673-7f00be2e740c": "nv-pg-post-mono",
+  "f521c1a9-cd87-ccda-1673-7f00be2e740e": "nv-pg-post-h3",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7410": "nv-pg-post-p",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7412": "nv-pg-post-more",
+  "f521c1a9-cd87-ccda-1673-7f00be2e741c": "nv-pg-posts-post",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7415": "nv-pg-post-mono",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7417": "nv-pg-post-h3",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7419": "nv-pg-post-p",
+  "f521c1a9-cd87-ccda-1673-7f00be2e741b": "nv-pg-post-more",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7425": "nv-pg-posts-post",
+  "f521c1a9-cd87-ccda-1673-7f00be2e741e": "nv-pg-post-mono",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7420": "nv-pg-post-h3",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7422": "nv-pg-post-p",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7424": "nv-pg-post-more",
+  "f521c1a9-cd87-ccda-1673-7f00be2e742e": "nv-pg-posts-post",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7427": "nv-pg-post-mono",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7429": "nv-pg-post-h3",
+  "f521c1a9-cd87-ccda-1673-7f00be2e742b": "nv-pg-post-p",
+  "f521c1a9-cd87-ccda-1673-7f00be2e742d": "nv-pg-post-more",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7437": "nv-pg-posts-post",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7430": "nv-pg-post-mono",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7432": "nv-pg-post-h3",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7434": "nv-pg-post-p",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7436": "nv-pg-post-more",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7440": "nv-pg-posts-post",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7439": "nv-pg-post-mono",
+  "f521c1a9-cd87-ccda-1673-7f00be2e743b": "nv-pg-post-h3",
+  "f521c1a9-cd87-ccda-1673-7f00be2e743d": "nv-pg-post-p",
+  "f521c1a9-cd87-ccda-1673-7f00be2e743f": "nv-pg-post-more",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7449": "nv-pg-posts-post",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7442": "nv-pg-post-mono",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7444": "nv-pg-post-h3",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7446": "nv-pg-post-p",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7448": "nv-pg-post-more",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7452": "nv-pg-posts-post",
+  "f521c1a9-cd87-ccda-1673-7f00be2e744b": "nv-pg-post-mono",
+  "f521c1a9-cd87-ccda-1673-7f00be2e744d": "nv-pg-post-h3",
+  "f521c1a9-cd87-ccda-1673-7f00be2e744f": "nv-pg-post-p",
+  "f521c1a9-cd87-ccda-1673-7f00be2e7451": "nv-pg-post-more",
+  "9cefacf7-9f08-8041-9cca-1b2baeb4e0fa": "nv-pg-next-2",
+  "9cefacf7-9f08-8041-9cca-1b2baeb4e0f0": "nv-pg-posts-mono",
+  "9cefacf7-9f08-8041-9cca-1b2baeb4e0f2": "nv-pg-quote-h2",
+  "9cefacf7-9f08-8041-9cca-1b2baeb4e0f4": "nv-pg-quote-lead",
+  "9cefacf7-9f08-8041-9cca-1b2baeb4e0f9": "nv-pg-quote-ctas",
+  "9cefacf7-9f08-8041-9cca-1b2baeb4e0f6": "nv-pg-ctas-btn",
+  "9cefacf7-9f08-8041-9cca-1b2baeb4e0f8": "nv-pg-ctas-ghost"
+ },
+ "unstyled_region_elements": [
+  "6e47d198-9843-6af8-6e73-3d490ac0d828"
+ ]
+}

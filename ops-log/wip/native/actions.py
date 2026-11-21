@@ -1,6 +1,8 @@
 """Turn plan.json into Webflow data_style_tool / data_element_tool action batches."""
 import json, sys, collections
-plan = json.load(open('out/plan.json')); tree = json.load(open(sys.argv[1])); page = sys.argv[2]
+# usage: python3 actions.py tree.json page_id out_dir
+plan_dir = sys.argv[3] if len(sys.argv) > 3 else 'out'
+plan = json.load(open(f'{plan_dir}/plan.json')); tree = json.load(open(sys.argv[1])); page = sys.argv[2]
 EL = {}
 def walk(n):
     EL[n['id']['element']] = n
@@ -33,6 +35,6 @@ for (orig, name), ctx in final_cls.items():
         style_actions.append({'label': f'u:{name}:{key}', 'update_style': u})
 el_actions = [{'label': eid[-6:], 'set_style': {'id': {'component': page, 'element': eid}, 'style_names': orig + [name]}}
               for eid, (orig, name) in final_el.items()]
-json.dump(style_actions, open('out/style_actions.json', 'w'))
-json.dump(el_actions, open('out/el_actions.json', 'w'))
+json.dump(style_actions, open(f'{plan_dir}/style_actions.json', 'w'))
+json.dump(el_actions, open(f'{plan_dir}/el_actions.json', 'w'))
 print(len(style_actions), 'style actions;', len(el_actions), 'element actions;', len(final_cls), 'classes')

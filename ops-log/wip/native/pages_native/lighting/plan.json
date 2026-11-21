@@ -1,0 +1,1238 @@
+{
+ "classes": {
+  "nv-lighting-next": {
+   "main": {
+    "background-color": "#ECE9E3",
+    "background-image": "none",
+    "border-top-color": "currentColor",
+    "border-top-style": "none",
+    "border-top-width": "0px",
+    "padding-bottom": "110px",
+    "padding-left": "28px",
+    "padding-right": "28px",
+    "padding-top": "96px",
+    "position": "relative",
+    "z-index": "6"
+   },
+   "medium": {
+    "padding-bottom": "72px",
+    "padding-left": "20px",
+    "padding-right": "20px",
+    "padding-top": "64px"
+   }
+  },
+  "nv-lighting-glance-mono": {
+   "main": {
+    "color": "#55524C",
+    "font-family": "\"Geist Mono\",ui-monospace,monospace",
+    "font-size": "12px",
+    "letter-spacing": ".04em",
+    "margin-bottom": "18px",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0",
+    "text-transform": "uppercase"
+   }
+  },
+  "nv-lighting-glance-h2": {
+   "main": {
+    "font-size": "clamp(32px,4vw,56px)",
+    "font-weight": "600",
+    "letter-spacing": "-.035em",
+    "line-height": "1",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "max-width": "820px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-lighting-glance-span": {
+   "main": {
+    "color": "#8A867E"
+   }
+  },
+  "nv-lighting-glance-gl": {
+   "main": {
+    "display": "grid",
+    "grid-column-gap": "14px",
+    "grid-row-gap": "14px",
+    "grid-template-columns": "repeat(6,minmax(0,1fr))",
+    "margin-top": "44px"
+   },
+   "medium": {
+    "grid-column-gap": "10px",
+    "grid-row-gap": "10px",
+    "grid-template-columns": "1fr 1fr",
+    "margin-top": "28px"
+   }
+  },
+  "nv-lighting-gl-gc": {
+   "hover:main": {
+    "box-shadow": "0 18px 40px rgba(26,26,24,.08)",
+    "transform": "translateY(-3px)"
+   },
+   "main": {
+    "background-color": "transparent",
+    "background-image": "linear-gradient(90deg,#ECE9E3 60%,rgba(255,255,255,.34) 60%)",
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "20px",
+    "border-bottom-right-radius": "20px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "20px",
+    "border-top-right-radius": "20px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "display": "flex",
+    "flex-direction": "row",
+    "grid-column": "span 4",
+    "overflow": "hidden",
+    "transition": "transform .25s,box-shadow .25s"
+   },
+   "medium": {
+    "background-color": "rgba(255,255,255,.34)",
+    "background-image": "none",
+    "flex-direction": "column",
+    "grid-column": "span 2"
+   }
+  },
+  "nv-lighting-gc-img": {
+   "main": {
+    "align-self": "center",
+    "aspect-ratio": "4/3",
+    "background-color": "#ECE9E3",
+    "background-image": "none",
+    "display": "block",
+    "max-width": "none",
+    "object-fit": "contain",
+    "vertical-align": "baseline",
+    "width": "60%"
+   },
+   "medium": {
+    "aspect-ratio": "16/10",
+    "min-height": "0",
+    "width": "100%"
+   }
+  },
+  "nv-lighting-gc-gt": {
+   "main": {
+    "display": "flex",
+    "flex-basis": "0%",
+    "flex-direction": "column",
+    "flex-grow": "1",
+    "flex-shrink": "1",
+    "grid-column-gap": "8px",
+    "grid-row-gap": "8px",
+    "justify-content": "center",
+    "padding-bottom": "28px",
+    "padding-left": "30px",
+    "padding-right": "30px",
+    "padding-top": "28px"
+   },
+   "medium": {
+    "padding-bottom": "16px",
+    "padding-left": "14px",
+    "padding-right": "14px",
+    "padding-top": "14px"
+   }
+  },
+  "nv-lighting-gt-h3": {
+   "main": {
+    "font-size": "clamp(28px,2.6vw,38px)",
+    "font-weight": "600",
+    "letter-spacing": "-.025em",
+    "line-height": "1.1",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   },
+   "medium": {
+    "font-size": "24px"
+   }
+  },
+  "nv-lighting-gt-p": {
+   "main": {
+    "color": "#55524C",
+    "font-size": "15.5px",
+    "line-height": "1.45",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   },
+   "medium": {
+    "font-size": "13.5px"
+   }
+  },
+  "nv-lighting-gt-ul": {
+   "main": {
+    "display": "flex",
+    "flex-direction": "column",
+    "grid-column-gap": "7px",
+    "grid-row-gap": "7px",
+    "list-style-type": "none",
+    "margin-bottom": "12px",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "8px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   },
+   "medium": {
+    "margin-bottom": "10px",
+    "margin-top": "4px"
+   }
+  },
+  "nv-lighting-gt-li": {
+   "main": {
+    "font-size": "14.5px",
+    "line-height": "1.4",
+    "padding-left": "22px",
+    "position": "relative"
+   },
+   "medium": {
+    "font-size": "13px",
+    "padding-left": "18px"
+   }
+  },
+  "nv-lighting-gt-tags": {
+   "main": {
+    "display": "flex",
+    "flex-wrap": "wrap",
+    "grid-column-gap": "6px",
+    "grid-row-gap": "6px",
+    "margin-top": "auto"
+   }
+  },
+  "nv-lighting-tags-tag": {
+   "main": {
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "999px",
+    "border-bottom-right-radius": "999px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "999px",
+    "border-top-right-radius": "999px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "color": "#55524C",
+    "font-family": "\"Geist Mono\",monospace",
+    "font-size": "10.5px",
+    "letter-spacing": ".04em",
+    "padding-bottom": "3px",
+    "padding-left": "8px",
+    "padding-right": "8px",
+    "padding-top": "3px",
+    "text-transform": "uppercase"
+   }
+  },
+  "nv-lighting-gl-gc-2": {
+   "hover:main": {
+    "box-shadow": "0 18px 40px rgba(26,26,24,.08)",
+    "transform": "translateY(-3px)"
+   },
+   "main": {
+    "background-color": "rgba(255,255,255,.34)",
+    "background-image": "none",
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "20px",
+    "border-bottom-right-radius": "20px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "20px",
+    "border-top-right-radius": "20px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "display": "flex",
+    "flex-direction": "column",
+    "grid-column": "span 2",
+    "overflow": "hidden",
+    "transition": "transform .25s,box-shadow .25s"
+   },
+   "medium": {
+    "grid-column": "span 1"
+   }
+  },
+  "nv-lighting-gc-img-2": {
+   "main": {
+    "aspect-ratio": "4/3",
+    "background-color": "#ECE9E3",
+    "background-image": "none",
+    "display": "block",
+    "max-width": "none",
+    "object-fit": "cover",
+    "vertical-align": "baseline",
+    "width": "100%"
+   }
+  },
+  "nv-lighting-gc-gt-2": {
+   "main": {
+    "display": "flex",
+    "flex-basis": "0%",
+    "flex-direction": "column",
+    "flex-grow": "1",
+    "flex-shrink": "1",
+    "grid-column-gap": "8px",
+    "grid-row-gap": "8px",
+    "padding-bottom": "24px",
+    "padding-left": "24px",
+    "padding-right": "24px",
+    "padding-top": "22px"
+   },
+   "medium": {
+    "padding-bottom": "16px",
+    "padding-left": "14px",
+    "padding-right": "14px",
+    "padding-top": "14px"
+   }
+  },
+  "nv-lighting-gt-h3-2": {
+   "main": {
+    "font-size": "24px",
+    "font-weight": "600",
+    "letter-spacing": "-.025em",
+    "line-height": "1.1",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   },
+   "medium": {
+    "font-size": "18px"
+   }
+  },
+  "nv-lighting-glance-incl": {
+   "main": {
+    "background-color": "#E3DFD7",
+    "background-image": "none",
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "20px",
+    "border-bottom-right-radius": "20px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "20px",
+    "border-top-right-radius": "20px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "display": "grid",
+    "grid-column-gap": "0",
+    "grid-row-gap": "0",
+    "grid-template-columns": "repeat(4,1fr)",
+    "list-style-type": "none",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "14px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   },
+   "medium": {
+    "grid-template-columns": "1fr 1fr"
+   }
+  },
+  "nv-lighting-incl-li": {
+   "main": {
+    "border-left-color": "currentColor",
+    "border-left-style": "none",
+    "border-left-width": "0px",
+    "color": "#55524C",
+    "font-size": "14.5px",
+    "line-height": "1.45",
+    "padding-bottom": "20px",
+    "padding-left": "22px",
+    "padding-right": "22px",
+    "padding-top": "20px"
+   },
+   "medium": {
+    "border-top-color": "currentColor",
+    "border-top-style": "none",
+    "border-top-width": "0px",
+    "font-size": "13px",
+    "padding-bottom": "14px",
+    "padding-left": "14px",
+    "padding-right": "14px",
+    "padding-top": "14px"
+   }
+  },
+  "nv-lighting-incl-b": {
+   "main": {
+    "color": "#1A1A18",
+    "display": "block",
+    "font-size": "16.5px",
+    "font-weight": "600",
+    "letter-spacing": "-.01em",
+    "margin-bottom": "3px"
+   },
+   "medium": {
+    "font-size": "14.5px"
+   }
+  },
+  "nv-lighting-incl-li-2": {
+   "main": {
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "color": "#55524C",
+    "font-size": "14.5px",
+    "line-height": "1.45",
+    "padding-bottom": "20px",
+    "padding-left": "22px",
+    "padding-right": "22px",
+    "padding-top": "20px"
+   },
+   "medium": {
+    "border-top-color": "currentColor",
+    "border-top-style": "none",
+    "border-top-width": "0px",
+    "font-size": "13px",
+    "padding-bottom": "14px",
+    "padding-left": "14px",
+    "padding-right": "14px",
+    "padding-top": "14px"
+   }
+  },
+  "nv-lighting-incl-li-3": {
+   "main": {
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "color": "#55524C",
+    "font-size": "14.5px",
+    "line-height": "1.45",
+    "padding-bottom": "20px",
+    "padding-left": "22px",
+    "padding-right": "22px",
+    "padding-top": "20px"
+   },
+   "medium": {
+    "border-left-color": "currentColor",
+    "border-left-style": "none",
+    "border-left-width": "0px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "font-size": "13px",
+    "padding-bottom": "14px",
+    "padding-left": "14px",
+    "padding-right": "14px",
+    "padding-top": "14px"
+   }
+  },
+  "nv-lighting-incl-li-4": {
+   "main": {
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "color": "#55524C",
+    "font-size": "14.5px",
+    "line-height": "1.45",
+    "padding-bottom": "20px",
+    "padding-left": "22px",
+    "padding-right": "22px",
+    "padding-top": "20px"
+   },
+   "medium": {
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "font-size": "13px",
+    "padding-bottom": "14px",
+    "padding-left": "14px",
+    "padding-right": "14px",
+    "padding-top": "14px"
+   }
+  },
+  "nv-lighting-next-2": {
+   "main": {
+    "background-color": "#ECE9E3",
+    "background-image": "none",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "padding-bottom": "110px",
+    "padding-left": "28px",
+    "padding-right": "28px",
+    "padding-top": "88px",
+    "position": "relative",
+    "z-index": "6"
+   },
+   "medium": {
+    "padding-bottom": "72px",
+    "padding-left": "20px",
+    "padding-right": "20px",
+    "padding-top": "56px"
+   }
+  },
+  "nv-lighting-examples-exnote": {
+   "main": {
+    "color": "#55524C",
+    "font-size": "16px",
+    "line-height": "1.5",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "16px",
+    "max-width": "640px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-lighting-examples-rooms": {
+   "main": {
+    "display": "grid",
+    "grid-column-gap": "14px",
+    "grid-row-gap": "14px",
+    "grid-template-columns": "1fr 1fr",
+    "margin-top": "44px"
+   },
+   "medium": {
+    "grid-column-gap": "10px",
+    "grid-row-gap": "10px",
+    "grid-template-columns": "1fr",
+    "margin-top": "28px"
+   }
+  },
+  "nv-lighting-rooms-room": {
+   "hover:main": {
+    "box-shadow": "none",
+    "transform": "none"
+   },
+   "main": {
+    "background-color": "rgba(255,255,255,.34)",
+    "background-image": "none",
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "20px",
+    "border-bottom-right-radius": "20px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "20px",
+    "border-top-right-radius": "20px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "display": "flex",
+    "flex-direction": "column",
+    "overflow": "hidden",
+    "transition": "transform .25s,box-shadow .25s"
+   }
+  },
+  "nv-lighting-room-img": {
+   "main": {
+    "aspect-ratio": "16/10",
+    "background-color": "#E3DFD7",
+    "background-image": "none",
+    "display": "block",
+    "max-width": "none",
+    "object-fit": "cover",
+    "vertical-align": "baseline",
+    "width": "100%"
+   }
+  },
+  "nv-lighting-room-div": {
+   "main": {
+    "padding-bottom": "26px",
+    "padding-left": "24px",
+    "padding-right": "24px",
+    "padding-top": "20px"
+   },
+   "medium": {
+    "padding-bottom": "20px",
+    "padding-left": "16px",
+    "padding-right": "16px",
+    "padding-top": "16px"
+   }
+  },
+  "nv-lighting-room-mono": {
+   "main": {
+    "color": "#E8892D",
+    "font-family": "\"Geist Mono\",ui-monospace,monospace",
+    "font-size": "15px",
+    "letter-spacing": ".04em",
+    "line-height": "1.5",
+    "margin-bottom": "8px",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0",
+    "text-transform": "uppercase"
+   },
+   "medium": {
+    "font-size": "13px",
+    "line-height": "1.4"
+   }
+  },
+  "nv-lighting-room-h3": {
+   "main": {
+    "font-size": "26px",
+    "font-weight": "600",
+    "letter-spacing": "-.025em",
+    "line-height": "normal",
+    "margin-bottom": "6px",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   },
+   "medium": {
+    "font-size": "21px"
+   }
+  },
+  "nv-lighting-room-p": {
+   "main": {
+    "color": "#55524C",
+    "font-size": "15px",
+    "line-height": "1.5",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   },
+   "medium": {
+    "font-size": "13px",
+    "line-height": "1.4"
+   }
+  },
+  "nv-lighting-room-dl": {
+   "main": {
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "display": "grid",
+    "grid-column-gap": "0",
+    "grid-row-gap": "0",
+    "grid-template-columns": "92px 1fr",
+    "margin-top": "16px"
+   },
+   "medium": {
+    "grid-template-columns": "76px 1fr"
+   }
+  },
+  "nv-lighting-room-dt": {
+   "main": {
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "color": "#8A867E",
+    "font-family": "\"Geist Mono\",monospace",
+    "font-size": "11.5px",
+    "font-style": "normal",
+    "font-weight": "500",
+    "letter-spacing": ".04em",
+    "line-height": "normal",
+    "padding-bottom": "10px",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "12px",
+    "text-transform": "uppercase"
+   },
+   "medium": {
+    "font-size": "13.5px"
+   }
+  },
+  "nv-lighting-room-dd": {
+   "main": {
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "font-size": "14.5px",
+    "line-height": "1.45",
+    "padding-bottom": "10px",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "10px"
+   },
+   "medium": {
+    "font-size": "13.5px"
+   }
+  },
+  "nv-lighting-room-dt-2": {
+   "main": {
+    "border-bottom-color": "currentColor",
+    "border-bottom-style": "none",
+    "border-bottom-width": "0px",
+    "color": "#8A867E",
+    "font-family": "\"Geist Mono\",monospace",
+    "font-size": "11.5px",
+    "font-style": "normal",
+    "font-weight": "500",
+    "letter-spacing": ".04em",
+    "line-height": "normal",
+    "padding-bottom": "10px",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "12px",
+    "text-transform": "uppercase"
+   },
+   "medium": {
+    "font-size": "13.5px"
+   }
+  },
+  "nv-lighting-room-dd-2": {
+   "main": {
+    "border-bottom-color": "currentColor",
+    "border-bottom-style": "none",
+    "border-bottom-width": "0px",
+    "font-size": "14.5px",
+    "line-height": "1.45",
+    "padding-bottom": "10px",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "10px"
+   },
+   "medium": {
+    "font-size": "13.5px"
+   }
+  },
+  "nv-lighting-ways": {
+   "main": {
+    "display": "grid",
+    "grid-column-gap": "14px",
+    "grid-row-gap": "14px",
+    "grid-template-columns": "repeat(3,1fr)",
+    "margin-top": "44px"
+   },
+   "medium": {
+    "grid-template-columns": "1fr"
+   }
+  },
+  "nv-lighting-ways-way": {
+   "main": {
+    "background-color": "rgba(255,255,255,.28)",
+    "background-image": "none",
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "14px",
+    "border-bottom-right-radius": "14px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "14px",
+    "border-top-right-radius": "14px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "display": "flex",
+    "flex-direction": "column",
+    "grid-column-gap": "10px",
+    "grid-row-gap": "10px",
+    "padding-bottom": "26px",
+    "padding-left": "22px",
+    "padding-right": "22px",
+    "padding-top": "22px"
+   }
+  },
+  "nv-lighting-way-mono": {
+   "main": {
+    "color": "#E8892D",
+    "font-family": "\"Geist Mono\",ui-monospace,monospace",
+    "font-size": "12px",
+    "letter-spacing": ".04em",
+    "text-transform": "uppercase"
+   }
+  },
+  "nv-lighting-way-h3": {
+   "main": {
+    "font-size": "21px",
+    "font-weight": "600",
+    "letter-spacing": "-.02em",
+    "line-height": "normal",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-lighting-way-p": {
+   "main": {
+    "color": "#55524C",
+    "font-size": "14.5px",
+    "line-height": "1.55",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-lighting-with-chips": {
+   "main": {
+    "display": "flex",
+    "flex-wrap": "wrap",
+    "grid-column-gap": "8px",
+    "grid-row-gap": "8px",
+    "margin-top": "36px"
+   }
+  },
+  "nv-lighting-chips-a": {
+   "hover:main": {
+    "background-color": "#1A1A18",
+    "background-image": "none",
+    "color": "#ECE9E3"
+   },
+   "main": {
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "999px",
+    "border-bottom-right-radius": "999px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "999px",
+    "border-top-right-radius": "999px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "color": "inherit",
+    "font-size": "15px",
+    "padding-bottom": "10px",
+    "padding-left": "16px",
+    "padding-right": "16px",
+    "padding-top": "10px",
+    "text-decoration": "none",
+    "transition": "background .2s,color .2s"
+   }
+  },
+  "nv-lighting-faq": {
+   "main": {
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "margin-top": "40px",
+    "max-width": "900px"
+   }
+  },
+  "nv-lighting-faq-details": {
+   "main": {
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px"
+   }
+  },
+  "nv-lighting-faq-summary": {
+   "main": {
+    "cursor": "pointer",
+    "display": "flex",
+    "font-size": "19px",
+    "font-weight": "500",
+    "grid-column-gap": "16px",
+    "grid-row-gap": "16px",
+    "justify-content": "space-between",
+    "letter-spacing": "-.01em",
+    "list-style-type": "none",
+    "padding-bottom": "18px",
+    "padding-left": "4px",
+    "padding-right": "4px",
+    "padding-top": "18px"
+   },
+   "tiny": {
+    "font-size": "17px"
+   }
+  },
+  "nv-lighting-faq-p": {
+   "main": {
+    "color": "#55524C",
+    "font-size": "14.5px",
+    "line-height": "1.55",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "max-width": "720px",
+    "padding-bottom": "20px",
+    "padding-left": "4px",
+    "padding-right": "4px",
+    "padding-top": "0"
+   }
+  },
+  "nv-lighting-next-3": {
+   "main": {
+    "background-color": "#ECE9E3",
+    "background-image": "none",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "padding-bottom": "120px",
+    "padding-left": "28px",
+    "padding-right": "28px",
+    "padding-top": "88px",
+    "position": "relative",
+    "z-index": "6"
+   },
+   "medium": {
+    "padding-bottom": "72px",
+    "padding-left": "20px",
+    "padding-right": "20px",
+    "padding-top": "56px"
+   }
+  },
+  "nv-lighting-quote-h2": {
+   "main": {
+    "font-size": "clamp(40px,6vw,92px)",
+    "font-weight": "600",
+    "letter-spacing": "-.035em",
+    "line-height": "1",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "max-width": "820px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-lighting-quote-lead": {
+   "main": {
+    "color": "#55524C",
+    "font-size": "18px",
+    "line-height": "1.5",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "18px",
+    "max-width": "560px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-lighting-quote-ctas": {
+   "main": {
+    "align-items": "center",
+    "display": "flex",
+    "flex-wrap": "wrap",
+    "grid-column-gap": "10px",
+    "grid-row-gap": "10px",
+    "margin-top": "24px"
+   }
+  },
+  "nv-lighting-ctas-btn": {
+   "hover:main": {
+    "transform": "translateY(-1px)"
+   },
+   "main": {
+    "align-items": "center",
+    "background-color": "#1A1A18",
+    "background-image": "none",
+    "border-bottom-left-radius": "999px",
+    "border-bottom-right-radius": "999px",
+    "border-top-left-radius": "999px",
+    "border-top-right-radius": "999px",
+    "color": "#ECE9E3",
+    "display": "inline-flex",
+    "font-size": "14px",
+    "font-weight": "500",
+    "grid-column-gap": "8px",
+    "grid-row-gap": "8px",
+    "padding-bottom": "11px",
+    "padding-left": "18px",
+    "padding-right": "18px",
+    "padding-top": "11px",
+    "text-decoration": "none",
+    "transition": "transform .2s",
+    "white-space": "nowrap"
+   }
+  },
+  "nv-lighting-ctas-ghost": {
+   "main": {
+    "align-items": "center",
+    "backdrop-filter": "blur(6px)",
+    "background-color": "rgba(236,233,227,.6)",
+    "background-image": "none",
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "999px",
+    "border-bottom-right-radius": "999px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "999px",
+    "border-top-right-radius": "999px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "color": "inherit",
+    "display": "inline-flex",
+    "font-size": "14px",
+    "font-weight": "500",
+    "grid-column-gap": "8px",
+    "grid-row-gap": "8px",
+    "padding-bottom": "11px",
+    "padding-left": "18px",
+    "padding-right": "18px",
+    "padding-top": "11px",
+    "text-decoration": "none",
+    "white-space": "nowrap"
+   }
+  }
+ },
+ "elements": {
+  "e750181d-471b-5d39-5895-70694a08e502": "nv-lighting-next",
+  "e750181d-471b-5d39-5895-70694a08e490": "nv-lighting-glance-mono",
+  "e750181d-471b-5d39-5895-70694a08e494": "nv-lighting-glance-h2",
+  "e750181d-471b-5d39-5895-70694a08e493": "nv-lighting-glance-span",
+  "e750181d-471b-5d39-5895-70694a08e4ec": "nv-lighting-glance-gl",
+  "e750181d-471b-5d39-5895-70694a08e4a7": "nv-lighting-gl-gc",
+  "e750181d-471b-5d39-5895-70694a08e495": "nv-lighting-gc-img",
+  "e750181d-471b-5d39-5895-70694a08e4a6": "nv-lighting-gc-gt",
+  "e750181d-471b-5d39-5895-70694a08e497": "nv-lighting-gt-h3",
+  "e750181d-471b-5d39-5895-70694a08e499": "nv-lighting-gt-p",
+  "e750181d-471b-5d39-5895-70694a08e4a0": "nv-lighting-gt-ul",
+  "e750181d-471b-5d39-5895-70694a08e49b": "nv-lighting-gt-li",
+  "e750181d-471b-5d39-5895-70694a08e49d": "nv-lighting-gt-li",
+  "e750181d-471b-5d39-5895-70694a08e49f": "nv-lighting-gt-li",
+  "e750181d-471b-5d39-5895-70694a08e4a5": "nv-lighting-gt-tags",
+  "e750181d-471b-5d39-5895-70694a08e4a2": "nv-lighting-tags-tag",
+  "e750181d-471b-5d39-5895-70694a08e4a4": "nv-lighting-tags-tag",
+  "e750181d-471b-5d39-5895-70694a08e4b8": "nv-lighting-gl-gc-2",
+  "e750181d-471b-5d39-5895-70694a08e4a8": "nv-lighting-gc-img-2",
+  "e750181d-471b-5d39-5895-70694a08e4b7": "nv-lighting-gc-gt-2",
+  "e750181d-471b-5d39-5895-70694a08e4aa": "nv-lighting-gt-h3-2",
+  "e750181d-471b-5d39-5895-70694a08e4ac": "nv-lighting-gt-p",
+  "e750181d-471b-5d39-5895-70694a08e4b1": "nv-lighting-gt-ul",
+  "e750181d-471b-5d39-5895-70694a08e4ae": "nv-lighting-gt-li",
+  "e750181d-471b-5d39-5895-70694a08e4b0": "nv-lighting-gt-li",
+  "e750181d-471b-5d39-5895-70694a08e4b6": "nv-lighting-gt-tags",
+  "e750181d-471b-5d39-5895-70694a08e4b3": "nv-lighting-tags-tag",
+  "e750181d-471b-5d39-5895-70694a08e4b5": "nv-lighting-tags-tag",
+  "e750181d-471b-5d39-5895-70694a08e4cb": "nv-lighting-gl-gc-2",
+  "e750181d-471b-5d39-5895-70694a08e4b9": "nv-lighting-gc-img-2",
+  "e750181d-471b-5d39-5895-70694a08e4ca": "nv-lighting-gc-gt-2",
+  "e750181d-471b-5d39-5895-70694a08e4bd": "nv-lighting-gt-h3-2",
+  "e750181d-471b-5d39-5895-70694a08e4bf": "nv-lighting-gt-p",
+  "e750181d-471b-5d39-5895-70694a08e4c4": "nv-lighting-gt-ul",
+  "e750181d-471b-5d39-5895-70694a08e4c1": "nv-lighting-gt-li",
+  "e750181d-471b-5d39-5895-70694a08e4c3": "nv-lighting-gt-li",
+  "e750181d-471b-5d39-5895-70694a08e4c9": "nv-lighting-gt-tags",
+  "e750181d-471b-5d39-5895-70694a08e4c6": "nv-lighting-tags-tag",
+  "e750181d-471b-5d39-5895-70694a08e4c8": "nv-lighting-tags-tag",
+  "e750181d-471b-5d39-5895-70694a08e4dc": "nv-lighting-gl-gc-2",
+  "e750181d-471b-5d39-5895-70694a08e4cc": "nv-lighting-gc-img-2",
+  "e750181d-471b-5d39-5895-70694a08e4db": "nv-lighting-gc-gt-2",
+  "e750181d-471b-5d39-5895-70694a08e4ce": "nv-lighting-gt-h3-2",
+  "e750181d-471b-5d39-5895-70694a08e4d0": "nv-lighting-gt-p",
+  "e750181d-471b-5d39-5895-70694a08e4d5": "nv-lighting-gt-ul",
+  "e750181d-471b-5d39-5895-70694a08e4d2": "nv-lighting-gt-li",
+  "e750181d-471b-5d39-5895-70694a08e4d4": "nv-lighting-gt-li",
+  "e750181d-471b-5d39-5895-70694a08e4da": "nv-lighting-gt-tags",
+  "e750181d-471b-5d39-5895-70694a08e4d7": "nv-lighting-tags-tag",
+  "e750181d-471b-5d39-5895-70694a08e4d9": "nv-lighting-tags-tag",
+  "e750181d-471b-5d39-5895-70694a08e4eb": "nv-lighting-gl-gc-2",
+  "e750181d-471b-5d39-5895-70694a08e4dd": "nv-lighting-gc-img-2",
+  "e750181d-471b-5d39-5895-70694a08e4ea": "nv-lighting-gc-gt-2",
+  "e750181d-471b-5d39-5895-70694a08e4df": "nv-lighting-gt-h3-2",
+  "e750181d-471b-5d39-5895-70694a08e4e1": "nv-lighting-gt-p",
+  "e750181d-471b-5d39-5895-70694a08e4e6": "nv-lighting-gt-ul",
+  "e750181d-471b-5d39-5895-70694a08e4e3": "nv-lighting-gt-li",
+  "e750181d-471b-5d39-5895-70694a08e4e5": "nv-lighting-gt-li",
+  "e750181d-471b-5d39-5895-70694a08e4e9": "nv-lighting-gt-tags",
+  "e750181d-471b-5d39-5895-70694a08e4e8": "nv-lighting-tags-tag",
+  "e750181d-471b-5d39-5895-70694a08e501": "nv-lighting-glance-incl",
+  "e750181d-471b-5d39-5895-70694a08e4f1": "nv-lighting-incl-li",
+  "e750181d-471b-5d39-5895-70694a08e4ef": "nv-lighting-incl-b",
+  "e750181d-471b-5d39-5895-70694a08e4f6": "nv-lighting-incl-li-2",
+  "e750181d-471b-5d39-5895-70694a08e4f4": "nv-lighting-incl-b",
+  "e750181d-471b-5d39-5895-70694a08e4fb": "nv-lighting-incl-li-3",
+  "e750181d-471b-5d39-5895-70694a08e4f9": "nv-lighting-incl-b",
+  "e750181d-471b-5d39-5895-70694a08e500": "nv-lighting-incl-li-4",
+  "e750181d-471b-5d39-5895-70694a08e4fe": "nv-lighting-incl-b",
+  "42fee5d2-76a4-b887-1b82-6682eb40c516": "nv-lighting-next-2",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4b4": "nv-lighting-glance-mono",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4b6": "nv-lighting-glance-h2",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4b8": "nv-lighting-examples-exnote",
+  "42fee5d2-76a4-b887-1b82-6682eb40c515": "nv-lighting-examples-rooms",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4cf": "nv-lighting-rooms-room",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4b9": "nv-lighting-room-img",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4ce": "nv-lighting-room-div",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4bb": "nv-lighting-room-mono",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4bd": "nv-lighting-room-h3",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4bf": "nv-lighting-room-p",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4cd": "nv-lighting-room-dl",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4c2": "nv-lighting-room-dt",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4c5": "nv-lighting-room-dd",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4c8": "nv-lighting-room-dt-2",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4cb": "nv-lighting-room-dd-2",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4e6": "nv-lighting-rooms-room",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4d0": "nv-lighting-room-img",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4e5": "nv-lighting-room-div",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4d2": "nv-lighting-room-mono",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4d4": "nv-lighting-room-h3",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4d6": "nv-lighting-room-p",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4e4": "nv-lighting-room-dl",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4d9": "nv-lighting-room-dt",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4dc": "nv-lighting-room-dd",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4df": "nv-lighting-room-dt-2",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4e2": "nv-lighting-room-dd-2",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4fd": "nv-lighting-rooms-room",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4e7": "nv-lighting-room-img",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4fc": "nv-lighting-room-div",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4e9": "nv-lighting-room-mono",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4eb": "nv-lighting-room-h3",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4ed": "nv-lighting-room-p",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4fb": "nv-lighting-room-dl",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4f0": "nv-lighting-room-dt",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4f3": "nv-lighting-room-dd",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4f6": "nv-lighting-room-dt-2",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4f9": "nv-lighting-room-dd-2",
+  "42fee5d2-76a4-b887-1b82-6682eb40c514": "nv-lighting-rooms-room",
+  "42fee5d2-76a4-b887-1b82-6682eb40c4fe": "nv-lighting-room-img",
+  "42fee5d2-76a4-b887-1b82-6682eb40c513": "nv-lighting-room-div",
+  "42fee5d2-76a4-b887-1b82-6682eb40c500": "nv-lighting-room-mono",
+  "42fee5d2-76a4-b887-1b82-6682eb40c502": "nv-lighting-room-h3",
+  "42fee5d2-76a4-b887-1b82-6682eb40c504": "nv-lighting-room-p",
+  "42fee5d2-76a4-b887-1b82-6682eb40c512": "nv-lighting-room-dl",
+  "42fee5d2-76a4-b887-1b82-6682eb40c507": "nv-lighting-room-dt",
+  "42fee5d2-76a4-b887-1b82-6682eb40c50a": "nv-lighting-room-dd",
+  "42fee5d2-76a4-b887-1b82-6682eb40c50d": "nv-lighting-room-dt-2",
+  "42fee5d2-76a4-b887-1b82-6682eb40c510": "nv-lighting-room-dd-2",
+  "7f8beb24-1c31-7ea3-3a71-8ec316711263": "nv-lighting-next-2",
+  "7f8beb24-1c31-7ea3-3a71-8ec316711245": "nv-lighting-glance-mono",
+  "7f8beb24-1c31-7ea3-3a71-8ec316711249": "nv-lighting-glance-h2",
+  "7f8beb24-1c31-7ea3-3a71-8ec316711248": "nv-lighting-glance-span",
+  "7f8beb24-1c31-7ea3-3a71-8ec316711262": "nv-lighting-ways",
+  "7f8beb24-1c31-7ea3-3a71-8ec316711251": "nv-lighting-ways-way",
+  "7f8beb24-1c31-7ea3-3a71-8ec31671124c": "nv-lighting-way-mono",
+  "7f8beb24-1c31-7ea3-3a71-8ec31671124e": "nv-lighting-way-h3",
+  "7f8beb24-1c31-7ea3-3a71-8ec316711250": "nv-lighting-way-p",
+  "7f8beb24-1c31-7ea3-3a71-8ec316711259": "nv-lighting-ways-way",
+  "7f8beb24-1c31-7ea3-3a71-8ec316711254": "nv-lighting-way-mono",
+  "7f8beb24-1c31-7ea3-3a71-8ec316711256": "nv-lighting-way-h3",
+  "7f8beb24-1c31-7ea3-3a71-8ec316711258": "nv-lighting-way-p",
+  "7f8beb24-1c31-7ea3-3a71-8ec316711261": "nv-lighting-ways-way",
+  "7f8beb24-1c31-7ea3-3a71-8ec31671125c": "nv-lighting-way-mono",
+  "7f8beb24-1c31-7ea3-3a71-8ec31671125e": "nv-lighting-way-h3",
+  "7f8beb24-1c31-7ea3-3a71-8ec316711260": "nv-lighting-way-p",
+  "5a251c35-bb3a-25bc-7c5a-1e487f17e4e2": "nv-lighting-next-2",
+  "5a251c35-bb3a-25bc-7c5a-1e487f17e4c6": "nv-lighting-glance-mono",
+  "5a251c35-bb3a-25bc-7c5a-1e487f17e4c8": "nv-lighting-glance-h2",
+  "5a251c35-bb3a-25bc-7c5a-1e487f17e4e1": "nv-lighting-with-chips",
+  "5a251c35-bb3a-25bc-7c5a-1e487f17e4ca": "nv-lighting-chips-a",
+  "5a251c35-bb3a-25bc-7c5a-1e487f17e4cc": "nv-lighting-chips-a",
+  "5a251c35-bb3a-25bc-7c5a-1e487f17e4ce": "nv-lighting-chips-a",
+  "5a251c35-bb3a-25bc-7c5a-1e487f17e4d2": "nv-lighting-chips-a",
+  "5a251c35-bb3a-25bc-7c5a-1e487f17e4d6": "nv-lighting-chips-a",
+  "5a251c35-bb3a-25bc-7c5a-1e487f17e4da": "nv-lighting-chips-a",
+  "5a251c35-bb3a-25bc-7c5a-1e487f17e4dc": "nv-lighting-chips-a",
+  "5a251c35-bb3a-25bc-7c5a-1e487f17e4e0": "nv-lighting-chips-a",
+  "6947249f-ef8b-40cc-bfba-75014402d584": "nv-lighting-next-2",
+  "6947249f-ef8b-40cc-bfba-75014402d55b": "nv-lighting-glance-mono",
+  "6947249f-ef8b-40cc-bfba-75014402d55f": "nv-lighting-glance-h2",
+  "6947249f-ef8b-40cc-bfba-75014402d583": "nv-lighting-faq",
+  "6947249f-ef8b-40cc-bfba-75014402d566": "nv-lighting-faq-details",
+  "6947249f-ef8b-40cc-bfba-75014402d562": "nv-lighting-faq-summary",
+  "6947249f-ef8b-40cc-bfba-75014402d564": "nv-lighting-faq-p",
+  "6947249f-ef8b-40cc-bfba-75014402d56d": "nv-lighting-faq-details",
+  "6947249f-ef8b-40cc-bfba-75014402d569": "nv-lighting-faq-summary",
+  "6947249f-ef8b-40cc-bfba-75014402d56b": "nv-lighting-faq-p",
+  "6947249f-ef8b-40cc-bfba-75014402d574": "nv-lighting-faq-details",
+  "6947249f-ef8b-40cc-bfba-75014402d570": "nv-lighting-faq-summary",
+  "6947249f-ef8b-40cc-bfba-75014402d572": "nv-lighting-faq-p",
+  "6947249f-ef8b-40cc-bfba-75014402d57b": "nv-lighting-faq-details",
+  "6947249f-ef8b-40cc-bfba-75014402d577": "nv-lighting-faq-summary",
+  "6947249f-ef8b-40cc-bfba-75014402d579": "nv-lighting-faq-p",
+  "6947249f-ef8b-40cc-bfba-75014402d582": "nv-lighting-faq-details",
+  "6947249f-ef8b-40cc-bfba-75014402d57e": "nv-lighting-faq-summary",
+  "6947249f-ef8b-40cc-bfba-75014402d580": "nv-lighting-faq-p",
+  "8a0fdae4-0091-1901-cf11-40d54b8c9de0": "nv-lighting-next-3",
+  "8a0fdae4-0091-1901-cf11-40d54b8c9dd6": "nv-lighting-glance-mono",
+  "8a0fdae4-0091-1901-cf11-40d54b8c9dd8": "nv-lighting-quote-h2",
+  "8a0fdae4-0091-1901-cf11-40d54b8c9dda": "nv-lighting-quote-lead",
+  "8a0fdae4-0091-1901-cf11-40d54b8c9ddf": "nv-lighting-quote-ctas",
+  "8a0fdae4-0091-1901-cf11-40d54b8c9ddc": "nv-lighting-ctas-btn",
+  "8a0fdae4-0091-1901-cf11-40d54b8c9dde": "nv-lighting-ctas-ghost"
+ },
+ "unstyled_region_elements": []
+}

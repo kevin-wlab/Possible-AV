@@ -1,0 +1,1235 @@
+{
+ "classes": {
+  "nv-networks-next": {
+   "main": {
+    "background-color": "#ECE9E3",
+    "background-image": "none",
+    "border-top-color": "currentColor",
+    "border-top-style": "none",
+    "border-top-width": "0px",
+    "padding-bottom": "110px",
+    "padding-left": "28px",
+    "padding-right": "28px",
+    "padding-top": "96px",
+    "position": "relative",
+    "z-index": "6"
+   },
+   "medium": {
+    "padding-bottom": "72px",
+    "padding-left": "20px",
+    "padding-right": "20px",
+    "padding-top": "64px"
+   }
+  },
+  "nv-networks-glance-mono": {
+   "main": {
+    "color": "#55524C",
+    "font-family": "\"Geist Mono\",ui-monospace,monospace",
+    "font-size": "12px",
+    "letter-spacing": ".04em",
+    "margin-bottom": "18px",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0",
+    "text-transform": "uppercase"
+   }
+  },
+  "nv-networks-glance-h2": {
+   "main": {
+    "font-size": "clamp(32px,4vw,56px)",
+    "font-weight": "600",
+    "letter-spacing": "-.035em",
+    "line-height": "1",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "max-width": "820px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-networks-glance-span": {
+   "main": {
+    "color": "#8A867E"
+   }
+  },
+  "nv-networks-glance-gl": {
+   "main": {
+    "display": "grid",
+    "grid-column-gap": "14px",
+    "grid-row-gap": "14px",
+    "grid-template-columns": "repeat(6,minmax(0,1fr))",
+    "margin-top": "44px"
+   },
+   "medium": {
+    "grid-column-gap": "10px",
+    "grid-row-gap": "10px",
+    "grid-template-columns": "1fr 1fr",
+    "margin-top": "28px"
+   }
+  },
+  "nv-networks-gl-gc": {
+   "hover:main": {
+    "box-shadow": "0 18px 40px rgba(26,26,24,.08)",
+    "transform": "translateY(-3px)"
+   },
+   "main": {
+    "background-color": "transparent",
+    "background-image": "linear-gradient(90deg,#ECE9E3 60%,rgba(255,255,255,.34) 60%)",
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "20px",
+    "border-bottom-right-radius": "20px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "20px",
+    "border-top-right-radius": "20px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "display": "flex",
+    "flex-direction": "row",
+    "grid-column": "span 4",
+    "overflow": "hidden",
+    "transition": "transform .25s,box-shadow .25s"
+   },
+   "medium": {
+    "background-color": "rgba(255,255,255,.34)",
+    "background-image": "none",
+    "flex-direction": "column",
+    "grid-column": "span 2"
+   }
+  },
+  "nv-networks-gc-img": {
+   "main": {
+    "align-self": "center",
+    "aspect-ratio": "4/3",
+    "background-color": "#ECE9E3",
+    "background-image": "none",
+    "display": "block",
+    "max-width": "none",
+    "object-fit": "contain",
+    "vertical-align": "baseline",
+    "width": "60%"
+   },
+   "medium": {
+    "aspect-ratio": "16/10",
+    "min-height": "0",
+    "width": "100%"
+   }
+  },
+  "nv-networks-gc-gt": {
+   "main": {
+    "display": "flex",
+    "flex-basis": "0%",
+    "flex-direction": "column",
+    "flex-grow": "1",
+    "flex-shrink": "1",
+    "grid-column-gap": "8px",
+    "grid-row-gap": "8px",
+    "justify-content": "center",
+    "padding-bottom": "28px",
+    "padding-left": "30px",
+    "padding-right": "30px",
+    "padding-top": "28px"
+   },
+   "medium": {
+    "padding-bottom": "16px",
+    "padding-left": "14px",
+    "padding-right": "14px",
+    "padding-top": "14px"
+   }
+  },
+  "nv-networks-gt-h3": {
+   "main": {
+    "font-size": "clamp(28px,2.6vw,38px)",
+    "font-weight": "600",
+    "letter-spacing": "-.025em",
+    "line-height": "1.1",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   },
+   "medium": {
+    "font-size": "24px"
+   }
+  },
+  "nv-networks-gt-p": {
+   "main": {
+    "color": "#55524C",
+    "font-size": "15.5px",
+    "line-height": "1.45",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   },
+   "medium": {
+    "font-size": "13.5px"
+   }
+  },
+  "nv-networks-gt-ul": {
+   "main": {
+    "display": "flex",
+    "flex-direction": "column",
+    "grid-column-gap": "7px",
+    "grid-row-gap": "7px",
+    "list-style-type": "none",
+    "margin-bottom": "12px",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "8px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   },
+   "medium": {
+    "margin-bottom": "10px",
+    "margin-top": "4px"
+   }
+  },
+  "nv-networks-gt-li": {
+   "main": {
+    "font-size": "14.5px",
+    "line-height": "1.4",
+    "padding-left": "22px",
+    "position": "relative"
+   },
+   "medium": {
+    "font-size": "13px",
+    "padding-left": "18px"
+   }
+  },
+  "nv-networks-gt-tags": {
+   "main": {
+    "display": "flex",
+    "flex-wrap": "wrap",
+    "grid-column-gap": "6px",
+    "grid-row-gap": "6px",
+    "margin-top": "auto"
+   }
+  },
+  "nv-networks-tags-tag": {
+   "main": {
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "999px",
+    "border-bottom-right-radius": "999px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "999px",
+    "border-top-right-radius": "999px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "color": "#55524C",
+    "font-family": "\"Geist Mono\",monospace",
+    "font-size": "10.5px",
+    "letter-spacing": ".04em",
+    "padding-bottom": "3px",
+    "padding-left": "8px",
+    "padding-right": "8px",
+    "padding-top": "3px",
+    "text-transform": "uppercase"
+   }
+  },
+  "nv-networks-gl-gc-2": {
+   "hover:main": {
+    "box-shadow": "0 18px 40px rgba(26,26,24,.08)",
+    "transform": "translateY(-3px)"
+   },
+   "main": {
+    "background-color": "rgba(255,255,255,.34)",
+    "background-image": "none",
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "20px",
+    "border-bottom-right-radius": "20px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "20px",
+    "border-top-right-radius": "20px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "display": "flex",
+    "flex-direction": "column",
+    "grid-column": "span 2",
+    "overflow": "hidden",
+    "transition": "transform .25s,box-shadow .25s"
+   },
+   "medium": {
+    "grid-column": "span 1"
+   }
+  },
+  "nv-networks-gc-img-2": {
+   "main": {
+    "aspect-ratio": "4/3",
+    "background-color": "#ECE9E3",
+    "background-image": "none",
+    "display": "block",
+    "max-width": "none",
+    "object-fit": "cover",
+    "vertical-align": "baseline",
+    "width": "100%"
+   }
+  },
+  "nv-networks-gc-gt-2": {
+   "main": {
+    "display": "flex",
+    "flex-basis": "0%",
+    "flex-direction": "column",
+    "flex-grow": "1",
+    "flex-shrink": "1",
+    "grid-column-gap": "8px",
+    "grid-row-gap": "8px",
+    "padding-bottom": "24px",
+    "padding-left": "24px",
+    "padding-right": "24px",
+    "padding-top": "22px"
+   },
+   "medium": {
+    "padding-bottom": "16px",
+    "padding-left": "14px",
+    "padding-right": "14px",
+    "padding-top": "14px"
+   }
+  },
+  "nv-networks-gt-h3-2": {
+   "main": {
+    "font-size": "24px",
+    "font-weight": "600",
+    "letter-spacing": "-.025em",
+    "line-height": "1.1",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   },
+   "medium": {
+    "font-size": "18px"
+   }
+  },
+  "nv-networks-glance-incl": {
+   "main": {
+    "background-color": "#E3DFD7",
+    "background-image": "none",
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "20px",
+    "border-bottom-right-radius": "20px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "20px",
+    "border-top-right-radius": "20px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "display": "grid",
+    "grid-column-gap": "0",
+    "grid-row-gap": "0",
+    "grid-template-columns": "repeat(4,1fr)",
+    "list-style-type": "none",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "14px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   },
+   "medium": {
+    "grid-template-columns": "1fr 1fr"
+   }
+  },
+  "nv-networks-incl-li": {
+   "main": {
+    "border-left-color": "currentColor",
+    "border-left-style": "none",
+    "border-left-width": "0px",
+    "color": "#55524C",
+    "font-size": "14.5px",
+    "line-height": "1.45",
+    "padding-bottom": "20px",
+    "padding-left": "22px",
+    "padding-right": "22px",
+    "padding-top": "20px"
+   },
+   "medium": {
+    "border-top-color": "currentColor",
+    "border-top-style": "none",
+    "border-top-width": "0px",
+    "font-size": "13px",
+    "padding-bottom": "14px",
+    "padding-left": "14px",
+    "padding-right": "14px",
+    "padding-top": "14px"
+   }
+  },
+  "nv-networks-incl-b": {
+   "main": {
+    "color": "#1A1A18",
+    "display": "block",
+    "font-size": "16.5px",
+    "font-weight": "600",
+    "letter-spacing": "-.01em",
+    "margin-bottom": "3px"
+   },
+   "medium": {
+    "font-size": "14.5px"
+   }
+  },
+  "nv-networks-incl-li-2": {
+   "main": {
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "color": "#55524C",
+    "font-size": "14.5px",
+    "line-height": "1.45",
+    "padding-bottom": "20px",
+    "padding-left": "22px",
+    "padding-right": "22px",
+    "padding-top": "20px"
+   },
+   "medium": {
+    "border-top-color": "currentColor",
+    "border-top-style": "none",
+    "border-top-width": "0px",
+    "font-size": "13px",
+    "padding-bottom": "14px",
+    "padding-left": "14px",
+    "padding-right": "14px",
+    "padding-top": "14px"
+   }
+  },
+  "nv-networks-incl-li-3": {
+   "main": {
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "color": "#55524C",
+    "font-size": "14.5px",
+    "line-height": "1.45",
+    "padding-bottom": "20px",
+    "padding-left": "22px",
+    "padding-right": "22px",
+    "padding-top": "20px"
+   },
+   "medium": {
+    "border-left-color": "currentColor",
+    "border-left-style": "none",
+    "border-left-width": "0px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "font-size": "13px",
+    "padding-bottom": "14px",
+    "padding-left": "14px",
+    "padding-right": "14px",
+    "padding-top": "14px"
+   }
+  },
+  "nv-networks-incl-li-4": {
+   "main": {
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "color": "#55524C",
+    "font-size": "14.5px",
+    "line-height": "1.45",
+    "padding-bottom": "20px",
+    "padding-left": "22px",
+    "padding-right": "22px",
+    "padding-top": "20px"
+   },
+   "medium": {
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "font-size": "13px",
+    "padding-bottom": "14px",
+    "padding-left": "14px",
+    "padding-right": "14px",
+    "padding-top": "14px"
+   }
+  },
+  "nv-networks-next-2": {
+   "main": {
+    "background-color": "#ECE9E3",
+    "background-image": "none",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "padding-bottom": "110px",
+    "padding-left": "28px",
+    "padding-right": "28px",
+    "padding-top": "88px",
+    "position": "relative",
+    "z-index": "6"
+   },
+   "medium": {
+    "padding-bottom": "72px",
+    "padding-left": "20px",
+    "padding-right": "20px",
+    "padding-top": "56px"
+   }
+  },
+  "nv-networks-examples-exnote": {
+   "main": {
+    "color": "#55524C",
+    "font-size": "16px",
+    "line-height": "1.5",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "16px",
+    "max-width": "640px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-networks-examples-rooms": {
+   "main": {
+    "display": "grid",
+    "grid-column-gap": "14px",
+    "grid-row-gap": "14px",
+    "grid-template-columns": "1fr 1fr",
+    "margin-top": "44px"
+   },
+   "medium": {
+    "grid-column-gap": "10px",
+    "grid-row-gap": "10px",
+    "grid-template-columns": "1fr",
+    "margin-top": "28px"
+   }
+  },
+  "nv-networks-rooms-room": {
+   "hover:main": {
+    "box-shadow": "none",
+    "transform": "none"
+   },
+   "main": {
+    "background-color": "rgba(255,255,255,.34)",
+    "background-image": "none",
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "20px",
+    "border-bottom-right-radius": "20px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "20px",
+    "border-top-right-radius": "20px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "display": "flex",
+    "flex-direction": "column",
+    "overflow": "hidden",
+    "transition": "transform .25s,box-shadow .25s"
+   }
+  },
+  "nv-networks-room-img": {
+   "main": {
+    "aspect-ratio": "16/10",
+    "background-color": "#E3DFD7",
+    "background-image": "none",
+    "display": "block",
+    "max-width": "none",
+    "object-fit": "cover",
+    "vertical-align": "baseline",
+    "width": "100%"
+   }
+  },
+  "nv-networks-room-div": {
+   "main": {
+    "padding-bottom": "26px",
+    "padding-left": "24px",
+    "padding-right": "24px",
+    "padding-top": "20px"
+   },
+   "medium": {
+    "padding-bottom": "20px",
+    "padding-left": "16px",
+    "padding-right": "16px",
+    "padding-top": "16px"
+   }
+  },
+  "nv-networks-room-mono": {
+   "main": {
+    "color": "#E8892D",
+    "font-family": "\"Geist Mono\",ui-monospace,monospace",
+    "font-size": "15px",
+    "letter-spacing": ".04em",
+    "line-height": "1.5",
+    "margin-bottom": "8px",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0",
+    "text-transform": "uppercase"
+   },
+   "medium": {
+    "font-size": "13px",
+    "line-height": "1.4"
+   }
+  },
+  "nv-networks-room-h3": {
+   "main": {
+    "font-size": "26px",
+    "font-weight": "600",
+    "letter-spacing": "-.025em",
+    "line-height": "normal",
+    "margin-bottom": "6px",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   },
+   "medium": {
+    "font-size": "21px"
+   }
+  },
+  "nv-networks-room-p": {
+   "main": {
+    "color": "#55524C",
+    "font-size": "15px",
+    "line-height": "1.5",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   },
+   "medium": {
+    "font-size": "13px",
+    "line-height": "1.4"
+   }
+  },
+  "nv-networks-room-dl": {
+   "main": {
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "display": "grid",
+    "grid-column-gap": "0",
+    "grid-row-gap": "0",
+    "grid-template-columns": "92px 1fr",
+    "margin-top": "16px"
+   },
+   "medium": {
+    "grid-template-columns": "76px 1fr"
+   }
+  },
+  "nv-networks-room-dt": {
+   "main": {
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "color": "#8A867E",
+    "font-family": "\"Geist Mono\",monospace",
+    "font-size": "11.5px",
+    "font-style": "normal",
+    "font-weight": "500",
+    "letter-spacing": ".04em",
+    "line-height": "normal",
+    "padding-bottom": "10px",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "12px",
+    "text-transform": "uppercase"
+   },
+   "medium": {
+    "font-size": "13.5px"
+   }
+  },
+  "nv-networks-room-dd": {
+   "main": {
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "font-size": "14.5px",
+    "line-height": "1.45",
+    "padding-bottom": "10px",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "10px"
+   },
+   "medium": {
+    "font-size": "13.5px"
+   }
+  },
+  "nv-networks-room-dt-2": {
+   "main": {
+    "border-bottom-color": "currentColor",
+    "border-bottom-style": "none",
+    "border-bottom-width": "0px",
+    "color": "#8A867E",
+    "font-family": "\"Geist Mono\",monospace",
+    "font-size": "11.5px",
+    "font-style": "normal",
+    "font-weight": "500",
+    "letter-spacing": ".04em",
+    "line-height": "normal",
+    "padding-bottom": "10px",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "12px",
+    "text-transform": "uppercase"
+   },
+   "medium": {
+    "font-size": "13.5px"
+   }
+  },
+  "nv-networks-room-dd-2": {
+   "main": {
+    "border-bottom-color": "currentColor",
+    "border-bottom-style": "none",
+    "border-bottom-width": "0px",
+    "font-size": "14.5px",
+    "line-height": "1.45",
+    "padding-bottom": "10px",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "10px"
+   },
+   "medium": {
+    "font-size": "13.5px"
+   }
+  },
+  "nv-networks-ways": {
+   "main": {
+    "display": "grid",
+    "grid-column-gap": "14px",
+    "grid-row-gap": "14px",
+    "grid-template-columns": "repeat(3,1fr)",
+    "margin-top": "44px"
+   },
+   "medium": {
+    "grid-template-columns": "1fr"
+   }
+  },
+  "nv-networks-ways-way": {
+   "main": {
+    "background-color": "rgba(255,255,255,.28)",
+    "background-image": "none",
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "14px",
+    "border-bottom-right-radius": "14px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "14px",
+    "border-top-right-radius": "14px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "display": "flex",
+    "flex-direction": "column",
+    "grid-column-gap": "10px",
+    "grid-row-gap": "10px",
+    "padding-bottom": "26px",
+    "padding-left": "22px",
+    "padding-right": "22px",
+    "padding-top": "22px"
+   }
+  },
+  "nv-networks-way-mono": {
+   "main": {
+    "color": "#E8892D",
+    "font-family": "\"Geist Mono\",ui-monospace,monospace",
+    "font-size": "12px",
+    "letter-spacing": ".04em",
+    "text-transform": "uppercase"
+   }
+  },
+  "nv-networks-way-h3": {
+   "main": {
+    "font-size": "21px",
+    "font-weight": "600",
+    "letter-spacing": "-.02em",
+    "line-height": "normal",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-networks-way-p": {
+   "main": {
+    "color": "#55524C",
+    "font-size": "14.5px",
+    "line-height": "1.55",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-networks-with-chips": {
+   "main": {
+    "display": "flex",
+    "flex-wrap": "wrap",
+    "grid-column-gap": "8px",
+    "grid-row-gap": "8px",
+    "margin-top": "36px"
+   }
+  },
+  "nv-networks-chips-a": {
+   "hover:main": {
+    "background-color": "#1A1A18",
+    "background-image": "none",
+    "color": "#ECE9E3"
+   },
+   "main": {
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "999px",
+    "border-bottom-right-radius": "999px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "999px",
+    "border-top-right-radius": "999px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "color": "inherit",
+    "font-size": "15px",
+    "padding-bottom": "10px",
+    "padding-left": "16px",
+    "padding-right": "16px",
+    "padding-top": "10px",
+    "text-decoration": "none",
+    "transition": "background .2s,color .2s"
+   }
+  },
+  "nv-networks-faq": {
+   "main": {
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "margin-top": "40px",
+    "max-width": "900px"
+   }
+  },
+  "nv-networks-faq-details": {
+   "main": {
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px"
+   }
+  },
+  "nv-networks-faq-summary": {
+   "main": {
+    "cursor": "pointer",
+    "display": "flex",
+    "font-size": "19px",
+    "font-weight": "500",
+    "grid-column-gap": "16px",
+    "grid-row-gap": "16px",
+    "justify-content": "space-between",
+    "letter-spacing": "-.01em",
+    "list-style-type": "none",
+    "padding-bottom": "18px",
+    "padding-left": "4px",
+    "padding-right": "4px",
+    "padding-top": "18px"
+   },
+   "tiny": {
+    "font-size": "17px"
+   }
+  },
+  "nv-networks-faq-p": {
+   "main": {
+    "color": "#55524C",
+    "font-size": "14.5px",
+    "line-height": "1.55",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "max-width": "720px",
+    "padding-bottom": "20px",
+    "padding-left": "4px",
+    "padding-right": "4px",
+    "padding-top": "0"
+   }
+  },
+  "nv-networks-next-3": {
+   "main": {
+    "background-color": "#ECE9E3",
+    "background-image": "none",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "padding-bottom": "120px",
+    "padding-left": "28px",
+    "padding-right": "28px",
+    "padding-top": "88px",
+    "position": "relative",
+    "z-index": "6"
+   },
+   "medium": {
+    "padding-bottom": "72px",
+    "padding-left": "20px",
+    "padding-right": "20px",
+    "padding-top": "56px"
+   }
+  },
+  "nv-networks-quote-h2": {
+   "main": {
+    "font-size": "clamp(40px,6vw,92px)",
+    "font-weight": "600",
+    "letter-spacing": "-.035em",
+    "line-height": "1",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "max-width": "820px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-networks-quote-lead": {
+   "main": {
+    "color": "#55524C",
+    "font-size": "18px",
+    "line-height": "1.5",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "18px",
+    "max-width": "560px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-networks-quote-ctas": {
+   "main": {
+    "align-items": "center",
+    "display": "flex",
+    "flex-wrap": "wrap",
+    "grid-column-gap": "10px",
+    "grid-row-gap": "10px",
+    "margin-top": "24px"
+   }
+  },
+  "nv-networks-ctas-btn": {
+   "hover:main": {
+    "transform": "translateY(-1px)"
+   },
+   "main": {
+    "align-items": "center",
+    "background-color": "#1A1A18",
+    "background-image": "none",
+    "border-bottom-left-radius": "999px",
+    "border-bottom-right-radius": "999px",
+    "border-top-left-radius": "999px",
+    "border-top-right-radius": "999px",
+    "color": "#ECE9E3",
+    "display": "inline-flex",
+    "font-size": "14px",
+    "font-weight": "500",
+    "grid-column-gap": "8px",
+    "grid-row-gap": "8px",
+    "padding-bottom": "11px",
+    "padding-left": "18px",
+    "padding-right": "18px",
+    "padding-top": "11px",
+    "text-decoration": "none",
+    "transition": "transform .2s",
+    "white-space": "nowrap"
+   }
+  },
+  "nv-networks-ctas-ghost": {
+   "main": {
+    "align-items": "center",
+    "backdrop-filter": "blur(6px)",
+    "background-color": "rgba(236,233,227,.6)",
+    "background-image": "none",
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "999px",
+    "border-bottom-right-radius": "999px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "999px",
+    "border-top-right-radius": "999px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "color": "inherit",
+    "display": "inline-flex",
+    "font-size": "14px",
+    "font-weight": "500",
+    "grid-column-gap": "8px",
+    "grid-row-gap": "8px",
+    "padding-bottom": "11px",
+    "padding-left": "18px",
+    "padding-right": "18px",
+    "padding-top": "11px",
+    "text-decoration": "none",
+    "white-space": "nowrap"
+   }
+  }
+ },
+ "elements": {
+  "ad0fb223-6937-a87b-9973-f80a4c66d735": "nv-networks-next",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6cb": "nv-networks-glance-mono",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6cf": "nv-networks-glance-h2",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6ce": "nv-networks-glance-span",
+  "ad0fb223-6937-a87b-9973-f80a4c66d71f": "nv-networks-glance-gl",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6e0": "nv-networks-gl-gc",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6d0": "nv-networks-gc-img",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6df": "nv-networks-gc-gt",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6d2": "nv-networks-gt-h3",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6d4": "nv-networks-gt-p",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6db": "nv-networks-gt-ul",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6d6": "nv-networks-gt-li",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6d8": "nv-networks-gt-li",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6da": "nv-networks-gt-li",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6de": "nv-networks-gt-tags",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6dd": "nv-networks-tags-tag",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6ef": "nv-networks-gl-gc-2",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6e1": "nv-networks-gc-img-2",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6ee": "nv-networks-gc-gt-2",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6e3": "nv-networks-gt-h3-2",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6e5": "nv-networks-gt-p",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6ea": "nv-networks-gt-ul",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6e7": "nv-networks-gt-li",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6e9": "nv-networks-gt-li",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6ed": "nv-networks-gt-tags",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6ec": "nv-networks-tags-tag",
+  "ad0fb223-6937-a87b-9973-f80a4c66d700": "nv-networks-gl-gc-2",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6f0": "nv-networks-gc-img-2",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6ff": "nv-networks-gc-gt-2",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6f2": "nv-networks-gt-h3-2",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6f4": "nv-networks-gt-p",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6f9": "nv-networks-gt-ul",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6f6": "nv-networks-gt-li",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6f8": "nv-networks-gt-li",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6fe": "nv-networks-gt-tags",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6fb": "nv-networks-tags-tag",
+  "ad0fb223-6937-a87b-9973-f80a4c66d6fd": "nv-networks-tags-tag",
+  "ad0fb223-6937-a87b-9973-f80a4c66d70f": "nv-networks-gl-gc-2",
+  "ad0fb223-6937-a87b-9973-f80a4c66d701": "nv-networks-gc-img-2",
+  "ad0fb223-6937-a87b-9973-f80a4c66d70e": "nv-networks-gc-gt-2",
+  "ad0fb223-6937-a87b-9973-f80a4c66d703": "nv-networks-gt-h3-2",
+  "ad0fb223-6937-a87b-9973-f80a4c66d705": "nv-networks-gt-p",
+  "ad0fb223-6937-a87b-9973-f80a4c66d70a": "nv-networks-gt-ul",
+  "ad0fb223-6937-a87b-9973-f80a4c66d707": "nv-networks-gt-li",
+  "ad0fb223-6937-a87b-9973-f80a4c66d709": "nv-networks-gt-li",
+  "ad0fb223-6937-a87b-9973-f80a4c66d70d": "nv-networks-gt-tags",
+  "ad0fb223-6937-a87b-9973-f80a4c66d70c": "nv-networks-tags-tag",
+  "ad0fb223-6937-a87b-9973-f80a4c66d71e": "nv-networks-gl-gc-2",
+  "ad0fb223-6937-a87b-9973-f80a4c66d710": "nv-networks-gc-img-2",
+  "ad0fb223-6937-a87b-9973-f80a4c66d71d": "nv-networks-gc-gt-2",
+  "ad0fb223-6937-a87b-9973-f80a4c66d712": "nv-networks-gt-h3-2",
+  "ad0fb223-6937-a87b-9973-f80a4c66d714": "nv-networks-gt-p",
+  "ad0fb223-6937-a87b-9973-f80a4c66d719": "nv-networks-gt-ul",
+  "ad0fb223-6937-a87b-9973-f80a4c66d716": "nv-networks-gt-li",
+  "ad0fb223-6937-a87b-9973-f80a4c66d718": "nv-networks-gt-li",
+  "ad0fb223-6937-a87b-9973-f80a4c66d71c": "nv-networks-gt-tags",
+  "ad0fb223-6937-a87b-9973-f80a4c66d71b": "nv-networks-tags-tag",
+  "ad0fb223-6937-a87b-9973-f80a4c66d734": "nv-networks-glance-incl",
+  "ad0fb223-6937-a87b-9973-f80a4c66d724": "nv-networks-incl-li",
+  "ad0fb223-6937-a87b-9973-f80a4c66d722": "nv-networks-incl-b",
+  "ad0fb223-6937-a87b-9973-f80a4c66d729": "nv-networks-incl-li-2",
+  "ad0fb223-6937-a87b-9973-f80a4c66d727": "nv-networks-incl-b",
+  "ad0fb223-6937-a87b-9973-f80a4c66d72e": "nv-networks-incl-li-3",
+  "ad0fb223-6937-a87b-9973-f80a4c66d72c": "nv-networks-incl-b",
+  "ad0fb223-6937-a87b-9973-f80a4c66d733": "nv-networks-incl-li-4",
+  "ad0fb223-6937-a87b-9973-f80a4c66d731": "nv-networks-incl-b",
+  "ea72b14b-fc8a-833c-4815-566ddc4b6341": "nv-networks-next-2",
+  "ea72b14b-fc8a-833c-4815-566ddc4b62df": "nv-networks-glance-mono",
+  "ea72b14b-fc8a-833c-4815-566ddc4b62e1": "nv-networks-glance-h2",
+  "ea72b14b-fc8a-833c-4815-566ddc4b62e3": "nv-networks-examples-exnote",
+  "ea72b14b-fc8a-833c-4815-566ddc4b6340": "nv-networks-examples-rooms",
+  "ea72b14b-fc8a-833c-4815-566ddc4b62fa": "nv-networks-rooms-room",
+  "ea72b14b-fc8a-833c-4815-566ddc4b62e4": "nv-networks-room-img",
+  "ea72b14b-fc8a-833c-4815-566ddc4b62f9": "nv-networks-room-div",
+  "ea72b14b-fc8a-833c-4815-566ddc4b62e6": "nv-networks-room-mono",
+  "ea72b14b-fc8a-833c-4815-566ddc4b62e8": "nv-networks-room-h3",
+  "ea72b14b-fc8a-833c-4815-566ddc4b62ea": "nv-networks-room-p",
+  "ea72b14b-fc8a-833c-4815-566ddc4b62f8": "nv-networks-room-dl",
+  "ea72b14b-fc8a-833c-4815-566ddc4b62ed": "nv-networks-room-dt",
+  "ea72b14b-fc8a-833c-4815-566ddc4b62f0": "nv-networks-room-dd",
+  "ea72b14b-fc8a-833c-4815-566ddc4b62f3": "nv-networks-room-dt-2",
+  "ea72b14b-fc8a-833c-4815-566ddc4b62f6": "nv-networks-room-dd-2",
+  "ea72b14b-fc8a-833c-4815-566ddc4b6311": "nv-networks-rooms-room",
+  "ea72b14b-fc8a-833c-4815-566ddc4b62fb": "nv-networks-room-img",
+  "ea72b14b-fc8a-833c-4815-566ddc4b6310": "nv-networks-room-div",
+  "ea72b14b-fc8a-833c-4815-566ddc4b62fd": "nv-networks-room-mono",
+  "ea72b14b-fc8a-833c-4815-566ddc4b62ff": "nv-networks-room-h3",
+  "ea72b14b-fc8a-833c-4815-566ddc4b6301": "nv-networks-room-p",
+  "ea72b14b-fc8a-833c-4815-566ddc4b630f": "nv-networks-room-dl",
+  "ea72b14b-fc8a-833c-4815-566ddc4b6304": "nv-networks-room-dt",
+  "ea72b14b-fc8a-833c-4815-566ddc4b6307": "nv-networks-room-dd",
+  "ea72b14b-fc8a-833c-4815-566ddc4b630a": "nv-networks-room-dt-2",
+  "ea72b14b-fc8a-833c-4815-566ddc4b630d": "nv-networks-room-dd-2",
+  "ea72b14b-fc8a-833c-4815-566ddc4b6328": "nv-networks-rooms-room",
+  "ea72b14b-fc8a-833c-4815-566ddc4b6312": "nv-networks-room-img",
+  "ea72b14b-fc8a-833c-4815-566ddc4b6327": "nv-networks-room-div",
+  "ea72b14b-fc8a-833c-4815-566ddc4b6314": "nv-networks-room-mono",
+  "ea72b14b-fc8a-833c-4815-566ddc4b6316": "nv-networks-room-h3",
+  "ea72b14b-fc8a-833c-4815-566ddc4b6318": "nv-networks-room-p",
+  "ea72b14b-fc8a-833c-4815-566ddc4b6326": "nv-networks-room-dl",
+  "ea72b14b-fc8a-833c-4815-566ddc4b631b": "nv-networks-room-dt",
+  "ea72b14b-fc8a-833c-4815-566ddc4b631e": "nv-networks-room-dd",
+  "ea72b14b-fc8a-833c-4815-566ddc4b6321": "nv-networks-room-dt-2",
+  "ea72b14b-fc8a-833c-4815-566ddc4b6324": "nv-networks-room-dd-2",
+  "ea72b14b-fc8a-833c-4815-566ddc4b633f": "nv-networks-rooms-room",
+  "ea72b14b-fc8a-833c-4815-566ddc4b6329": "nv-networks-room-img",
+  "ea72b14b-fc8a-833c-4815-566ddc4b633e": "nv-networks-room-div",
+  "ea72b14b-fc8a-833c-4815-566ddc4b632b": "nv-networks-room-mono",
+  "ea72b14b-fc8a-833c-4815-566ddc4b632d": "nv-networks-room-h3",
+  "ea72b14b-fc8a-833c-4815-566ddc4b632f": "nv-networks-room-p",
+  "ea72b14b-fc8a-833c-4815-566ddc4b633d": "nv-networks-room-dl",
+  "ea72b14b-fc8a-833c-4815-566ddc4b6332": "nv-networks-room-dt",
+  "ea72b14b-fc8a-833c-4815-566ddc4b6335": "nv-networks-room-dd",
+  "ea72b14b-fc8a-833c-4815-566ddc4b6338": "nv-networks-room-dt-2",
+  "ea72b14b-fc8a-833c-4815-566ddc4b633b": "nv-networks-room-dd-2",
+  "7074fefa-6e85-6b8f-4992-c380b6ceca2b": "nv-networks-next-2",
+  "7074fefa-6e85-6b8f-4992-c380b6ceca0d": "nv-networks-glance-mono",
+  "7074fefa-6e85-6b8f-4992-c380b6ceca11": "nv-networks-glance-h2",
+  "7074fefa-6e85-6b8f-4992-c380b6ceca10": "nv-networks-glance-span",
+  "7074fefa-6e85-6b8f-4992-c380b6ceca2a": "nv-networks-ways",
+  "7074fefa-6e85-6b8f-4992-c380b6ceca19": "nv-networks-ways-way",
+  "7074fefa-6e85-6b8f-4992-c380b6ceca14": "nv-networks-way-mono",
+  "7074fefa-6e85-6b8f-4992-c380b6ceca16": "nv-networks-way-h3",
+  "7074fefa-6e85-6b8f-4992-c380b6ceca18": "nv-networks-way-p",
+  "7074fefa-6e85-6b8f-4992-c380b6ceca21": "nv-networks-ways-way",
+  "7074fefa-6e85-6b8f-4992-c380b6ceca1c": "nv-networks-way-mono",
+  "7074fefa-6e85-6b8f-4992-c380b6ceca1e": "nv-networks-way-h3",
+  "7074fefa-6e85-6b8f-4992-c380b6ceca20": "nv-networks-way-p",
+  "7074fefa-6e85-6b8f-4992-c380b6ceca29": "nv-networks-ways-way",
+  "7074fefa-6e85-6b8f-4992-c380b6ceca24": "nv-networks-way-mono",
+  "7074fefa-6e85-6b8f-4992-c380b6ceca26": "nv-networks-way-h3",
+  "7074fefa-6e85-6b8f-4992-c380b6ceca28": "nv-networks-way-p",
+  "68f423d6-5b2a-0923-7ef4-64a8408cc746": "nv-networks-next-2",
+  "68f423d6-5b2a-0923-7ef4-64a8408cc72a": "nv-networks-glance-mono",
+  "68f423d6-5b2a-0923-7ef4-64a8408cc72c": "nv-networks-glance-h2",
+  "68f423d6-5b2a-0923-7ef4-64a8408cc745": "nv-networks-with-chips",
+  "68f423d6-5b2a-0923-7ef4-64a8408cc72e": "nv-networks-chips-a",
+  "68f423d6-5b2a-0923-7ef4-64a8408cc730": "nv-networks-chips-a",
+  "68f423d6-5b2a-0923-7ef4-64a8408cc732": "nv-networks-chips-a",
+  "68f423d6-5b2a-0923-7ef4-64a8408cc736": "nv-networks-chips-a",
+  "68f423d6-5b2a-0923-7ef4-64a8408cc73a": "nv-networks-chips-a",
+  "68f423d6-5b2a-0923-7ef4-64a8408cc73e": "nv-networks-chips-a",
+  "68f423d6-5b2a-0923-7ef4-64a8408cc740": "nv-networks-chips-a",
+  "68f423d6-5b2a-0923-7ef4-64a8408cc744": "nv-networks-chips-a",
+  "6f0a5406-ab6a-c6ad-3ad8-7417cc4a35f4": "nv-networks-next-2",
+  "6f0a5406-ab6a-c6ad-3ad8-7417cc4a35cb": "nv-networks-glance-mono",
+  "6f0a5406-ab6a-c6ad-3ad8-7417cc4a35cf": "nv-networks-glance-h2",
+  "6f0a5406-ab6a-c6ad-3ad8-7417cc4a35f3": "nv-networks-faq",
+  "6f0a5406-ab6a-c6ad-3ad8-7417cc4a35d6": "nv-networks-faq-details",
+  "6f0a5406-ab6a-c6ad-3ad8-7417cc4a35d2": "nv-networks-faq-summary",
+  "6f0a5406-ab6a-c6ad-3ad8-7417cc4a35d4": "nv-networks-faq-p",
+  "6f0a5406-ab6a-c6ad-3ad8-7417cc4a35dd": "nv-networks-faq-details",
+  "6f0a5406-ab6a-c6ad-3ad8-7417cc4a35d9": "nv-networks-faq-summary",
+  "6f0a5406-ab6a-c6ad-3ad8-7417cc4a35db": "nv-networks-faq-p",
+  "6f0a5406-ab6a-c6ad-3ad8-7417cc4a35e4": "nv-networks-faq-details",
+  "6f0a5406-ab6a-c6ad-3ad8-7417cc4a35e0": "nv-networks-faq-summary",
+  "6f0a5406-ab6a-c6ad-3ad8-7417cc4a35e2": "nv-networks-faq-p",
+  "6f0a5406-ab6a-c6ad-3ad8-7417cc4a35eb": "nv-networks-faq-details",
+  "6f0a5406-ab6a-c6ad-3ad8-7417cc4a35e7": "nv-networks-faq-summary",
+  "6f0a5406-ab6a-c6ad-3ad8-7417cc4a35e9": "nv-networks-faq-p",
+  "6f0a5406-ab6a-c6ad-3ad8-7417cc4a35f2": "nv-networks-faq-details",
+  "6f0a5406-ab6a-c6ad-3ad8-7417cc4a35ee": "nv-networks-faq-summary",
+  "6f0a5406-ab6a-c6ad-3ad8-7417cc4a35f0": "nv-networks-faq-p",
+  "ae71d41f-f20a-2805-70f7-91f011fbf266": "nv-networks-next-3",
+  "ae71d41f-f20a-2805-70f7-91f011fbf25c": "nv-networks-glance-mono",
+  "ae71d41f-f20a-2805-70f7-91f011fbf25e": "nv-networks-quote-h2",
+  "ae71d41f-f20a-2805-70f7-91f011fbf260": "nv-networks-quote-lead",
+  "ae71d41f-f20a-2805-70f7-91f011fbf265": "nv-networks-quote-ctas",
+  "ae71d41f-f20a-2805-70f7-91f011fbf262": "nv-networks-ctas-btn",
+  "ae71d41f-f20a-2805-70f7-91f011fbf264": "nv-networks-ctas-ghost"
+ },
+ "unstyled_region_elements": []
+}
