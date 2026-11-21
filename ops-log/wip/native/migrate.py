@@ -6,9 +6,9 @@ name and that class's properties per breakpoint/hover; plus residual.css, the
 rules that must stay in custom code (JS states, lite mode, pseudo-elements,
 rules that also match elements outside the region).
 
-Usage: python3 migrate.py tree.json web/studio.css out_dir [region_selector]
+Usage: python3 migrate.py tree.json web/studio.css out_dir [region_selector] [class_prefix]
 """
-import json, re, sys, collections
+import json, re, sys, collections, os
 import tinycss2
 from lxml import etree
 from cssselect import GenericTranslator, SelectorError
@@ -16,10 +16,30 @@ from cssselect.parser import parse as css_parse
 
 tree_path, css_path, out_dir = sys.argv[1:4]
 REGION = sys.argv[4] if len(sys.argv) > 4 else 'section.next'
+PREFIX = sys.argv[5] if len(sys.argv) > 5 else 'hn'
+# optional: comma list of classes JS toggles at runtime on body/html (e.g. 'end,top').
+# Rules using them are applied natively (static state) AND kept in residual (runtime state).
+DUAL = [c for c in (sys.argv[6].split(',') if len(sys.argv) > 6 else []) if c]
+DUAL_RE = re.compile(r'\.(' + '|'.join(map(re.escape, DUAL)) + r')(?![\w-])') if DUAL else None
 
 # ---------- tree -> DOM ----------
 TAGMAP = {'Paragraph': 'p', 'Link': 'a', 'Span': 'span', 'ListItem': 'li', 'Image': 'img',
-          'Emphasized': 'em', 'Strong': 'strong', 'Body': 'body'}
+          'Emphasized': 'em', 'Strong': 'strong', 'Body': 'body',
+          # native form elements
+          'FormWrapper': 'div', 'FormForm': 'form', 'FormBlockLabel': 'label', 'FormTextInput': 'input',
+          'FormTextarea': 'textarea', 'FormButton': 'input', 'FormSuccessMessage': 'div',
+          'FormErrorMessage': 'div', 'FormSelect': 'select', '': 'br'}
+# RichText renders as a div; NX_RICH=1 adds generated children (no data-eid) so rules that also style
+# CMS rich-text content (p, h2, a, .prose li...) are detected as hitting non-region elements and stay residual.
+TAGMAP.setdefault('RichText', 'div')
+RICH_KIDS = ['p>a,strong,em,code', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul>li', 'ol>li', 'figure>img,figcaption', 'blockquote', 'table>tr>th,td', 'hr', 'img']
+# Optional: NX_COMPONENTS=navfoot/tree.json splices the real nav/footer component trees in place of
+# their instances, so tag selectors (a, h1, p...) that also hit nav/footer stay residual.
+import os
+COMP = {}
+if os.environ.get('NX_COMPONENTS'):
+    for _c in json.load(open(os.environ['NX_COMPONENTS'])).get('children', []):
+        COMP[_c['id']['component']] = _c
 root_json = json.load(open(tree_path))
 EL = {}
 
@@ -31,6 +51,8 @@ def tag_of(n):
     return TAGMAP.get(t, 'span')
 
 def build(n, parent):
+    if n['type'] == 'ComponentInstance' and (n.get('instanceDetails') or {}).get('id') in COMP:
+        n = COMP[n['instanceDetails']['id']]
     if n['type'] == 'String':
         if len(parent):
             last = parent[-1]; last.tail = (last.tail or '') + n.get('textContent', '')
@@ -45,6 +67,16 @@ def build(n, parent):
     for k, v in (n.get('attributes') or {}).items():
         if k in ('id', 'href', 'type', 'data-i'): e.set(k, str(v))
     for c in n.get('children', []): build(c, e)
+    if n['type'] == 'RichText' and os.environ.get('NX_RICH') == '1':
+        for spec_ in RICH_KIDS:
+            parts = spec_.split('>'); cur = e
+            for i, tg in enumerate(parts):
+                tags = tg.split(',')
+                for t2 in tags[1:] if i == len(parts) - 1 else []:
+                    etree.SubElement(cur, t2)
+                cur = etree.SubElement(cur, tags[0])
+                if i < len(parts) - 1 and len(tags) > 1:
+                    for t2 in tags[1:]: etree.SubElement(cur.getparent(), t2)
     return e
 
 html = etree.Element('html')
@@ -100,6 +132,7 @@ def media_bp(media):
     m = re.fullmatch(r'@media \(max-width:\s*(\d+)px\)', media)
     if not m: return None
     w = int(m.group(1))
+    if str(w) in os.environ.get('NX_KEEP_BP', '').split(','): return None   # opt-in: keep off-grid breakpoints exact (custom code)
     if w >= 1100: return None          # large-desktop tweaks: keep custom
     if w >= 800: return 'medium'       # 900 -> Webflow tablet (<=991)
     if w >= 600: return 'small'        # 760 -> landscape phone (<=767)
@@ -113,7 +146,33 @@ def spec(sel):
 
 # per element: list of (bp, hover, specificity, order, prop, val, important)
 hits = collections.defaultdict(list)
+# NX_PIN_WIDE=1 (opt-in): properties that a wide-screen media rule (>=1100px / min-width, kept in custom code)
+# sets on a region element are not made native for that element (a combo class would out-rank the residual
+# rule); the plain rules setting those properties stay in residual.css instead, so every width stays exact.
+import os
+PIN_WIDE = os.environ.get('NX_PIN_WIDE') == '1'
+pinned = collections.defaultdict(set)
+pin_src = []   # (order, media, part, decls, matched eids) of plain rules, for re-emitting pinned props
 residual = []   # (order, media, selector, decls) kept in custom code
+# NX_LOCK_STATE=1 (opt-in): same idea as NX_PIN_WIDE for runtime-state rules (.on, [aria-selected], :focus,
+# :hover inside a selector...). Their base element's properties stay in residual so a native combo class
+# (higher specificity) never beats the state rule. Compared by longhand, so border vs border-color etc. match.
+LOCK_STATE = os.environ.get('NX_LOCK_STATE') == '1'
+spinned = collections.defaultdict(set)
+ALLCLS = set(c for e in html.iter() for c in (e.get('class') or '').split())
+def state_base(part):
+    t = re.sub(r':hover\s*$', '', part)
+    out = []
+    for tok in re.split(r'(\s*[>+~]\s*|\s+)', t):
+        if not tok.strip() or re.fullmatch(r'\s*[>+~]\s*', tok):
+            out.append(tok); continue
+        c = re.sub(r':(hover|focus|focus-visible|focus-within|active|checked|target|visited|disabled|placeholder-shown)(?![\w-])', '', tok)
+        c = re.sub(r'\[(?!(href|type|id)\b)[^\]]*\]', '', c)
+        c = re.sub(r'\.([\w-]+)', lambda m: m.group(0) if m.group(1) in ALLCLS else '', c)
+        if not c: return None
+        out.append(c)
+    b = ''.join(out)
+    return b if b != t else None
 for o, media, sel, ds in items:
     if sel is None:
         residual.append((o, media, None, ds)); continue
@@ -121,6 +180,23 @@ for o, media, sel, ds in items:
     keep_parts = []
     for part in [p.strip() for p in sel.split(',')]:
         hover = False; test = part
+        if bp is None and PIN_WIDE and '::' not in part and 'html.lite' not in part and ':hover' not in part \
+                and part not in ('*', 'html', 'body', 'html,body', ':root'):
+            try:
+                for m in html.xpath(GenericTranslator().css_to_xpath(part)):
+                    if m in region_nodes and m.get('data-eid'):
+                        pinned[m.get('data-eid')].update(p for p, _, _ in ds if not p.startswith('--'))
+            except SelectorError:
+                pass
+        if LOCK_STATE and bp is not None and '::' not in part and 'html.lite' not in part:
+            _b = state_base(part)
+            if _b:
+                try:
+                    for m in html.xpath(GenericTranslator().css_to_xpath(_b)):
+                        if m in region_nodes and m.get('data-eid'):
+                            spinned[m.get('data-eid')].update((p, resolve(v)) for p, v, _ in ds if not p.startswith('--'))
+                except SelectorError:
+                    pass
         if '::' in part or 'html.lite' in part or bp is None or part in ('*', 'html', 'body', 'html,body', ':root'):
             keep_parts.append(part); continue
         if re.search(r':hover\s*$', part):
@@ -135,15 +211,35 @@ for o, media, sel, ds in items:
         if not matched:
             keep_parts.append(part); continue        # state rules (.on/.open), other pages' bits
         in_r = [m for m in matched if m in region_nodes and m.get('data-eid')]
-        if len(in_r) != len(matched):
+        if len(in_r) != len(matched) or (DUAL_RE and DUAL_RE.search(part)):
             keep_parts.append(part)                  # also styles nav/floor/footer: keep it too
         sp = spec(part)
+        if LOCK_STATE and in_r and part not in keep_parts:
+            _cv = [d for d in ds if d[0].startswith('--')]
+            if _cv: residual.append((o, media, part, _cv))   # element-scoped custom properties stay in custom code
+        if in_r: pin_src.append((o, media, part, ds, [m.get('data-eid') for m in in_r]))
         for m in in_r:
             for p, v, imp in ds:
                 if p.startswith('--'): continue
                 hits[m.get('data-eid')].append((bp, hover, sp, o, p, resolve(v), imp))
     if keep_parts:
         residual.append((o, media, ', '.join(keep_parts), ds))
+
+def _apply_pinned():
+    # compared by longhand (NX_PIN_LONGHAND=1), so e.g. a wide rule's row-gap also pins a plain rule's gap
+    lh = os.environ.get('NX_PIN_LONGHAND') == '1'
+    L = (lambda p, v='0': set(x for x, _ in expand(p, v))) if lh else (lambda p, v='0': {p})
+    PN = {e: set().union(*[L(p) for p in ps]) for e, ps in pinned.items()}
+    for eid in list(hits):
+        if eid in PN:
+            hits[eid] = [h for h in hits[eid] if not (L(h[4], h[5]) & PN[eid])]
+    for o, media, part, ds, eids in pin_src:
+        props = set().union(*[PN.get(e, set()) for e in eids])
+        keep = [d for d in ds if L(d[0], d[1]) & props]
+        if keep:
+            residual.append((o, media, part, keep))
+    residual.sort(key=lambda r: r[0])
+    print('pinned', {EL[e].get('styleNames') and ' '.join(EL[e]['styleNames']) or e: sorted(v) for e, v in pinned.items()})
 
 # ---------- shorthand expansion to Webflow longhands ----------
 def box(v):
@@ -166,7 +262,9 @@ def expand(p, v):
     if p in ('border', 'border-top', 'border-right', 'border-bottom', 'border-left'):
         sides = ('top', 'right', 'bottom', 'left') if p == 'border' else (p.split('-')[1],)
         if v in ('0', 'none'):
-            return [(f'border-{s}-style', 'none') for s in sides]
+            # shorthand resets all three longhands (color back to currentColor)
+            return [x for s in sides for x in ((f'border-{s}-width', '0px' if v == '0' else 'medium'),
+                                                 (f'border-{s}-style', 'none'), (f'border-{s}-color', 'currentColor'))]
         t = v.split(); w = '1px'; st = 'solid'; col = 'currentColor'
         rest = []
         for x in re.findall(r'rgba?\([^)]*\)|\S+', v):
@@ -186,14 +284,53 @@ def expand(p, v):
         t = v.split()
         if len(t) == 3: return [('flex-grow', t[0]), ('flex-shrink', t[1]), ('flex-basis', t[2])]
     if p == 'background':
-        if re.fullmatch(r'(#[0-9a-fA-F]{3,8}|rgba?\([^)]*\)|[a-z]+)', v): return [('background-color', v)]
-        return [('background-image', v)]
+        full = os.environ.get('NX_BG_FULL') == '1'   # shorthands also reset their other longhands
+        if re.fullmatch(r'(#[0-9a-fA-F]{3,8}|rgba?\([^)]*\)|[a-z]+)', v):
+            return [('background-color', v)] + ([('background-image', 'none')] if full else [])
+        if re.fullmatch(r'\s*(?:(?:repeating-)?(?:linear|radial|conic)-gradient|url)\(.*\)\s*', v) and v.count('gradient(') + v.count('url(') == 1:
+            return [('background-color', 'transparent'), ('background-image', v)]  # shorthand resets the color
+        return [('background-image', v)] + ([('background-color', 'transparent')] if full else [])
+    if p == 'font' and v != 'inherit':
+        m = re.fullmatch(r'(?:(italic|normal)\s+)?(?:(\d{3}|bold|normal)\s+)?([\d.]+(?:px|em|rem))(?:/(\S+))?\s+(.+)', v)
+        if m:
+            return [('font-style', m.group(1) or 'normal'), ('font-weight', m.group(2) or 'normal'), ('font-size', m.group(3)),
+                    ('line-height', m.group(4) or 'normal'), ('font-family', m.group(5))]
     if p == 'overflow' and len(v.split()) == 1:
         return [('overflow-x', v), ('overflow-y', v)] if False else [('overflow', v)]
     if p == 'list-style' and v == 'none': return [('list-style-type', 'none')]
     if p == 'font' and v == 'inherit':
         return [('font-family', 'inherit'), ('font-size', 'inherit'), ('font-weight', 'inherit'), ('line-height', 'inherit')]
+    if p == 'font':
+        # "[style] [weight] size[/line-height] family" -> longhands (shorthand resets line-height to normal)
+        m = re.fullmatch(r'\s*(?:(italic|normal)\s+)?(?:(\d{3}|bold|normal)\s+)?([\d.]+(?:px|em|rem|%))(?:/([\d.]+(?:px|em|rem|%)?))?\s+(.+)', v)
+        if m:
+            return [('font-style', m.group(1) or 'normal'), ('font-weight', m.group(2) or '400'), ('font-size', m.group(3)),
+                    ('line-height', m.group(4) or 'normal'), ('font-family', m.group(5).strip())]
     return [(p, v)]
+
+if pinned:
+    _apply_pinned()
+
+if spinned:
+    def _lh(p, v='0'):
+        r = set(x for x, _ in expand(p, v))
+        if p == 'background': r |= {'background-color', 'background-image'}
+        if p in ('border', 'border-top', 'border-right', 'border-bottom', 'border-left'):
+            r |= set(x for x, _ in expand(p, '1px solid red'))
+        return r
+    SP = {e: set().union(*[_lh(p, v) for p, v in ps]) for e, ps in spinned.items()}
+    for eid in list(hits):
+        if eid in SP:
+            hits[eid] = [h for h in hits[eid] if not (_lh(h[4], h[5]) & SP[eid])]
+    for o, media, part, ds, eids in pin_src:
+        props = set().union(*[SP.get(e, set()) for e in eids])
+        keep = [d for d in ds if _lh(d[0], resolve(d[1])) & props]
+        have = set(d[0] for r in residual if r[0] == o and r[2] == part and not isinstance(r[3], str) for d in r[3])
+        keep = [d for d in keep if d[0] not in have]
+        if keep:
+            residual.append((o, media, part, keep))
+    residual.sort(key=lambda r: r[0])
+    print('state-locked', {EL[e].get('styleNames') and ' '.join(EL[e]['styleNames']) or e: sorted(SP[e]) for e in spinned if EL[e].get('styleNames')})
 
 # ---------- cascade per element ----------
 CTX = ['main', 'medium', 'small', 'tiny']
@@ -235,7 +372,7 @@ def role_name(e):
         if c and c[0] not in ('next',): acls = c[0]; break
         if c and c[0] == 'next': acls = anc.get('id') or 'next'; break
         anc = anc.getparent()
-    base = f'hn-{acls}-{own}' if acls and acls != own else f'hn-{own}'
+    base = f'{PREFIX}-{acls}-{own}' if acls and acls != own else f'{PREFIX}-{own}'
     return re.sub(r'[^a-zA-Z0-9-]', '-', base)
 
 sig2cls = {}; used = collections.Counter(); el_class = {}

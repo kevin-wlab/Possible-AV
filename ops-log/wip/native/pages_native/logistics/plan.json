@@ -1,0 +1,1241 @@
+{
+ "classes": {
+  "nv-logistics-next": {
+   "main": {
+    "background-color": "#ECE9E3",
+    "background-image": "none",
+    "border-top-color": "currentColor",
+    "border-top-style": "none",
+    "border-top-width": "1px",
+    "padding-bottom": "110px",
+    "padding-left": "28px",
+    "padding-right": "28px",
+    "padding-top": "96px",
+    "position": "relative",
+    "z-index": "6"
+   },
+   "medium": {
+    "padding-bottom": "72px",
+    "padding-left": "20px",
+    "padding-right": "20px",
+    "padding-top": "64px"
+   }
+  },
+  "nv-logistics-glance-mono": {
+   "main": {
+    "color": "#55524C",
+    "font-family": "\"Geist Mono\",ui-monospace,monospace",
+    "font-size": "12px",
+    "letter-spacing": ".04em",
+    "margin-bottom": "18px",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0",
+    "text-transform": "uppercase"
+   }
+  },
+  "nv-logistics-glance-h2": {
+   "main": {
+    "font-size": "clamp(32px,4vw,56px)",
+    "font-weight": "600",
+    "letter-spacing": "-.035em",
+    "line-height": "1",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "max-width": "820px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-logistics-glance-span": {
+   "main": {
+    "color": "#8A867E"
+   }
+  },
+  "nv-logistics-glance-gl": {
+   "main": {
+    "display": "grid",
+    "grid-column-gap": "14px",
+    "grid-row-gap": "14px",
+    "grid-template-columns": "repeat(6,minmax(0,1fr))",
+    "margin-top": "44px"
+   },
+   "medium": {
+    "grid-column-gap": "10px",
+    "grid-row-gap": "10px",
+    "grid-template-columns": "1fr 1fr",
+    "margin-top": "28px"
+   }
+  },
+  "nv-logistics-gl-gc": {
+   "hover:main": {
+    "box-shadow": "0 18px 40px rgba(26,26,24,.08)",
+    "transform": "translateY(-3px)"
+   },
+   "main": {
+    "background-color": "transparent",
+    "background-image": "linear-gradient(90deg,#ECE9E3 60%,rgba(255,255,255,.34) 60%)",
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "20px",
+    "border-bottom-right-radius": "20px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "20px",
+    "border-top-right-radius": "20px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "display": "flex",
+    "flex-direction": "row",
+    "grid-column": "span 4",
+    "overflow": "hidden",
+    "transition": "transform .25s,box-shadow .25s"
+   },
+   "medium": {
+    "background-color": "rgba(255,255,255,.34)",
+    "background-image": "none",
+    "flex-direction": "column",
+    "grid-column": "span 2"
+   }
+  },
+  "nv-logistics-gc-img": {
+   "main": {
+    "align-self": "center",
+    "aspect-ratio": "4/3",
+    "background-color": "#ECE9E3",
+    "background-image": "none",
+    "display": "block",
+    "max-width": "none",
+    "object-fit": "contain",
+    "vertical-align": "baseline",
+    "width": "60%"
+   },
+   "medium": {
+    "aspect-ratio": "16/10",
+    "min-height": "0",
+    "width": "100%"
+   }
+  },
+  "nv-logistics-gc-gt": {
+   "main": {
+    "display": "flex",
+    "flex-basis": "0%",
+    "flex-direction": "column",
+    "flex-grow": "1",
+    "flex-shrink": "1",
+    "grid-column-gap": "8px",
+    "grid-row-gap": "8px",
+    "justify-content": "center",
+    "padding-bottom": "28px",
+    "padding-left": "30px",
+    "padding-right": "30px",
+    "padding-top": "28px"
+   },
+   "medium": {
+    "padding-bottom": "16px",
+    "padding-left": "14px",
+    "padding-right": "14px",
+    "padding-top": "14px"
+   }
+  },
+  "nv-logistics-gt-h3": {
+   "main": {
+    "font-size": "clamp(28px,2.6vw,38px)",
+    "font-weight": "600",
+    "letter-spacing": "-.025em",
+    "line-height": "1.1",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   },
+   "medium": {
+    "font-size": "24px"
+   }
+  },
+  "nv-logistics-gt-p": {
+   "main": {
+    "color": "#55524C",
+    "font-size": "15.5px",
+    "line-height": "1.45",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   },
+   "medium": {
+    "font-size": "13.5px"
+   }
+  },
+  "nv-logistics-gt-ul": {
+   "main": {
+    "display": "flex",
+    "flex-direction": "column",
+    "grid-column-gap": "7px",
+    "grid-row-gap": "7px",
+    "list-style-type": "none",
+    "margin-bottom": "12px",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "8px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   },
+   "medium": {
+    "margin-bottom": "10px",
+    "margin-top": "4px"
+   }
+  },
+  "nv-logistics-gt-li": {
+   "main": {
+    "font-size": "14.5px",
+    "line-height": "1.4",
+    "padding-left": "22px",
+    "position": "relative"
+   },
+   "medium": {
+    "font-size": "13px",
+    "padding-left": "18px"
+   }
+  },
+  "nv-logistics-gt-tags": {
+   "main": {
+    "display": "flex",
+    "flex-wrap": "wrap",
+    "grid-column-gap": "6px",
+    "grid-row-gap": "6px",
+    "margin-top": "auto"
+   }
+  },
+  "nv-logistics-tags-tag": {
+   "main": {
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "999px",
+    "border-bottom-right-radius": "999px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "999px",
+    "border-top-right-radius": "999px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "color": "#55524C",
+    "font-family": "\"Geist Mono\",monospace",
+    "font-size": "10.5px",
+    "letter-spacing": ".04em",
+    "padding-bottom": "3px",
+    "padding-left": "8px",
+    "padding-right": "8px",
+    "padding-top": "3px",
+    "text-transform": "uppercase"
+   }
+  },
+  "nv-logistics-gl-gc-2": {
+   "hover:main": {
+    "box-shadow": "0 18px 40px rgba(26,26,24,.08)",
+    "transform": "translateY(-3px)"
+   },
+   "main": {
+    "background-color": "rgba(255,255,255,.34)",
+    "background-image": "none",
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "20px",
+    "border-bottom-right-radius": "20px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "20px",
+    "border-top-right-radius": "20px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "display": "flex",
+    "flex-direction": "column",
+    "grid-column": "span 2",
+    "overflow": "hidden",
+    "transition": "transform .25s,box-shadow .25s"
+   },
+   "medium": {
+    "grid-column": "span 1"
+   }
+  },
+  "nv-logistics-gc-img-2": {
+   "main": {
+    "aspect-ratio": "4/3",
+    "background-color": "#ECE9E3",
+    "background-image": "none",
+    "display": "block",
+    "max-width": "none",
+    "object-fit": "cover",
+    "vertical-align": "baseline",
+    "width": "100%"
+   }
+  },
+  "nv-logistics-gc-gt-2": {
+   "main": {
+    "display": "flex",
+    "flex-basis": "0%",
+    "flex-direction": "column",
+    "flex-grow": "1",
+    "flex-shrink": "1",
+    "grid-column-gap": "8px",
+    "grid-row-gap": "8px",
+    "padding-bottom": "24px",
+    "padding-left": "24px",
+    "padding-right": "24px",
+    "padding-top": "22px"
+   },
+   "medium": {
+    "padding-bottom": "16px",
+    "padding-left": "14px",
+    "padding-right": "14px",
+    "padding-top": "14px"
+   }
+  },
+  "nv-logistics-gt-h3-2": {
+   "main": {
+    "font-size": "24px",
+    "font-weight": "600",
+    "letter-spacing": "-.025em",
+    "line-height": "1.1",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   },
+   "medium": {
+    "font-size": "18px"
+   }
+  },
+  "nv-logistics-glance-incl": {
+   "main": {
+    "background-color": "#E3DFD7",
+    "background-image": "none",
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "20px",
+    "border-bottom-right-radius": "20px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "20px",
+    "border-top-right-radius": "20px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "display": "grid",
+    "grid-column-gap": "0",
+    "grid-row-gap": "0",
+    "grid-template-columns": "repeat(4,1fr)",
+    "list-style-type": "none",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "14px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   },
+   "medium": {
+    "grid-template-columns": "1fr 1fr"
+   }
+  },
+  "nv-logistics-incl-li": {
+   "main": {
+    "border-left-color": "currentColor",
+    "border-left-style": "none",
+    "border-left-width": "1px",
+    "color": "#55524C",
+    "font-size": "14.5px",
+    "line-height": "1.45",
+    "padding-bottom": "20px",
+    "padding-left": "22px",
+    "padding-right": "22px",
+    "padding-top": "20px"
+   },
+   "medium": {
+    "border-top-color": "currentColor",
+    "border-top-style": "none",
+    "border-top-width": "1px",
+    "font-size": "13px",
+    "padding-bottom": "14px",
+    "padding-left": "14px",
+    "padding-right": "14px",
+    "padding-top": "14px"
+   }
+  },
+  "nv-logistics-incl-b": {
+   "main": {
+    "color": "#1A1A18",
+    "display": "block",
+    "font-size": "16.5px",
+    "font-weight": "600",
+    "letter-spacing": "-.01em",
+    "margin-bottom": "3px"
+   },
+   "medium": {
+    "font-size": "14.5px"
+   }
+  },
+  "nv-logistics-incl-li-2": {
+   "main": {
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "color": "#55524C",
+    "font-size": "14.5px",
+    "line-height": "1.45",
+    "padding-bottom": "20px",
+    "padding-left": "22px",
+    "padding-right": "22px",
+    "padding-top": "20px"
+   },
+   "medium": {
+    "border-top-color": "currentColor",
+    "border-top-style": "none",
+    "border-top-width": "1px",
+    "font-size": "13px",
+    "padding-bottom": "14px",
+    "padding-left": "14px",
+    "padding-right": "14px",
+    "padding-top": "14px"
+   }
+  },
+  "nv-logistics-incl-li-3": {
+   "main": {
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "color": "#55524C",
+    "font-size": "14.5px",
+    "line-height": "1.45",
+    "padding-bottom": "20px",
+    "padding-left": "22px",
+    "padding-right": "22px",
+    "padding-top": "20px"
+   },
+   "medium": {
+    "border-left-color": "currentColor",
+    "border-left-style": "none",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "font-size": "13px",
+    "padding-bottom": "14px",
+    "padding-left": "14px",
+    "padding-right": "14px",
+    "padding-top": "14px"
+   }
+  },
+  "nv-logistics-incl-li-4": {
+   "main": {
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "color": "#55524C",
+    "font-size": "14.5px",
+    "line-height": "1.45",
+    "padding-bottom": "20px",
+    "padding-left": "22px",
+    "padding-right": "22px",
+    "padding-top": "20px"
+   },
+   "medium": {
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "font-size": "13px",
+    "padding-bottom": "14px",
+    "padding-left": "14px",
+    "padding-right": "14px",
+    "padding-top": "14px"
+   }
+  },
+  "nv-logistics-next-2": {
+   "main": {
+    "background-color": "#ECE9E3",
+    "background-image": "none",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "padding-bottom": "110px",
+    "padding-left": "28px",
+    "padding-right": "28px",
+    "padding-top": "88px",
+    "position": "relative",
+    "z-index": "6"
+   },
+   "medium": {
+    "padding-bottom": "72px",
+    "padding-left": "20px",
+    "padding-right": "20px",
+    "padding-top": "56px"
+   }
+  },
+  "nv-logistics-examples-exnote": {
+   "main": {
+    "color": "#55524C",
+    "font-size": "16px",
+    "line-height": "1.5",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "16px",
+    "max-width": "640px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-logistics-examples-rooms": {
+   "main": {
+    "display": "grid",
+    "grid-column-gap": "14px",
+    "grid-row-gap": "14px",
+    "grid-template-columns": "1fr 1fr",
+    "margin-top": "44px"
+   },
+   "medium": {
+    "grid-column-gap": "10px",
+    "grid-row-gap": "10px",
+    "grid-template-columns": "1fr",
+    "margin-top": "28px"
+   }
+  },
+  "nv-logistics-rooms-room": {
+   "hover:main": {
+    "box-shadow": "none",
+    "transform": "none"
+   },
+   "main": {
+    "background-color": "rgba(255,255,255,.34)",
+    "background-image": "none",
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "20px",
+    "border-bottom-right-radius": "20px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "20px",
+    "border-top-right-radius": "20px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "display": "flex",
+    "flex-direction": "column",
+    "overflow": "hidden",
+    "transition": "transform .25s,box-shadow .25s"
+   }
+  },
+  "nv-logistics-room-img": {
+   "main": {
+    "aspect-ratio": "16/10",
+    "background-color": "#E3DFD7",
+    "background-image": "none",
+    "display": "block",
+    "max-width": "none",
+    "object-fit": "cover",
+    "vertical-align": "baseline",
+    "width": "100%"
+   }
+  },
+  "nv-logistics-room-div": {
+   "main": {
+    "padding-bottom": "26px",
+    "padding-left": "24px",
+    "padding-right": "24px",
+    "padding-top": "20px"
+   },
+   "medium": {
+    "padding-bottom": "20px",
+    "padding-left": "16px",
+    "padding-right": "16px",
+    "padding-top": "16px"
+   }
+  },
+  "nv-logistics-room-mono": {
+   "main": {
+    "color": "#E8892D",
+    "font-family": "\"Geist Mono\",ui-monospace,monospace",
+    "font-size": "15px",
+    "letter-spacing": ".04em",
+    "line-height": "1.5",
+    "margin-bottom": "8px",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0",
+    "text-transform": "uppercase"
+   },
+   "medium": {
+    "font-size": "13px",
+    "line-height": "1.4"
+   }
+  },
+  "nv-logistics-room-h3": {
+   "main": {
+    "font-size": "26px",
+    "font-weight": "600",
+    "letter-spacing": "-.025em",
+    "line-height": "normal",
+    "margin-bottom": "6px",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   },
+   "medium": {
+    "font-size": "21px"
+   }
+  },
+  "nv-logistics-room-p": {
+   "main": {
+    "color": "#55524C",
+    "font-size": "15px",
+    "line-height": "1.5",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   },
+   "medium": {
+    "font-size": "13px",
+    "line-height": "1.4"
+   }
+  },
+  "nv-logistics-room-dl": {
+   "main": {
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "display": "grid",
+    "grid-column-gap": "0",
+    "grid-row-gap": "0",
+    "grid-template-columns": "92px 1fr",
+    "margin-top": "16px"
+   },
+   "medium": {
+    "grid-template-columns": "76px 1fr"
+   }
+  },
+  "nv-logistics-room-dt": {
+   "main": {
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "color": "#8A867E",
+    "font-family": "\"Geist Mono\",monospace",
+    "font-size": "11.5px",
+    "font-style": "normal",
+    "font-weight": "500",
+    "letter-spacing": ".04em",
+    "line-height": "normal",
+    "padding-bottom": "10px",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "12px",
+    "text-transform": "uppercase"
+   },
+   "medium": {
+    "font-size": "13.5px"
+   }
+  },
+  "nv-logistics-room-dd": {
+   "main": {
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "font-size": "14.5px",
+    "line-height": "1.45",
+    "padding-bottom": "10px",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "10px"
+   },
+   "medium": {
+    "font-size": "13.5px"
+   }
+  },
+  "nv-logistics-room-dt-2": {
+   "main": {
+    "border-bottom-color": "currentColor",
+    "border-bottom-style": "none",
+    "border-bottom-width": "1px",
+    "color": "#8A867E",
+    "font-family": "\"Geist Mono\",monospace",
+    "font-size": "11.5px",
+    "font-style": "normal",
+    "font-weight": "500",
+    "letter-spacing": ".04em",
+    "line-height": "normal",
+    "padding-bottom": "10px",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "12px",
+    "text-transform": "uppercase"
+   },
+   "medium": {
+    "font-size": "13.5px"
+   }
+  },
+  "nv-logistics-room-dd-2": {
+   "main": {
+    "border-bottom-color": "currentColor",
+    "border-bottom-style": "none",
+    "border-bottom-width": "1px",
+    "font-size": "14.5px",
+    "line-height": "1.45",
+    "padding-bottom": "10px",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "10px"
+   },
+   "medium": {
+    "font-size": "13.5px"
+   }
+  },
+  "nv-logistics-rooms-room-2": {
+   "hover:main": {
+    "box-shadow": "none",
+    "transform": "none"
+   },
+   "main": {
+    "background-color": "rgba(255,255,255,.34)",
+    "background-image": "none",
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "20px",
+    "border-bottom-right-radius": "20px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "20px",
+    "border-top-right-radius": "20px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "flex-direction": "column",
+    "overflow": "hidden",
+    "transition": "transform .25s,box-shadow .25s"
+   }
+  },
+  "nv-logistics-room-img-2": {
+   "main": {
+    "background-color": "#E3DFD7",
+    "background-image": "none",
+    "display": "block",
+    "max-width": "none",
+    "vertical-align": "baseline",
+    "width": "100%"
+   }
+  },
+  "nv-logistics-ways": {
+   "main": {
+    "display": "grid",
+    "grid-column-gap": "14px",
+    "grid-row-gap": "14px",
+    "margin-top": "44px"
+   }
+  },
+  "nv-logistics-ways-way": {
+   "main": {
+    "background-color": "rgba(255,255,255,.28)",
+    "background-image": "none",
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "14px",
+    "border-bottom-right-radius": "14px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "14px",
+    "border-top-right-radius": "14px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "display": "flex",
+    "flex-direction": "column",
+    "grid-column-gap": "10px",
+    "grid-row-gap": "10px",
+    "padding-bottom": "26px",
+    "padding-left": "22px",
+    "padding-right": "22px",
+    "padding-top": "22px"
+   }
+  },
+  "nv-logistics-way-mono": {
+   "main": {
+    "color": "#E8892D",
+    "font-family": "\"Geist Mono\",ui-monospace,monospace",
+    "font-size": "12px",
+    "letter-spacing": ".04em",
+    "text-transform": "uppercase"
+   }
+  },
+  "nv-logistics-way-h3": {
+   "main": {
+    "font-size": "21px",
+    "font-weight": "600",
+    "letter-spacing": "-.02em",
+    "line-height": "normal",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-logistics-way-p": {
+   "main": {
+    "color": "#55524C",
+    "font-size": "14.5px",
+    "line-height": "1.55",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-logistics-with-chips": {
+   "main": {
+    "display": "flex",
+    "flex-wrap": "wrap",
+    "grid-column-gap": "8px",
+    "grid-row-gap": "8px",
+    "margin-top": "36px"
+   }
+  },
+  "nv-logistics-chips-a": {
+   "hover:main": {
+    "background-color": "#1A1A18",
+    "background-image": "none",
+    "color": "#ECE9E3"
+   },
+   "main": {
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "999px",
+    "border-bottom-right-radius": "999px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "999px",
+    "border-top-right-radius": "999px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "color": "inherit",
+    "font-size": "15px",
+    "padding-bottom": "10px",
+    "padding-left": "16px",
+    "padding-right": "16px",
+    "padding-top": "10px",
+    "text-decoration": "none",
+    "transition": "background .2s,color .2s"
+   }
+  },
+  "nv-logistics-faq": {
+   "main": {
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "margin-top": "40px",
+    "max-width": "900px"
+   }
+  },
+  "nv-logistics-faq-details": {
+   "main": {
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px"
+   }
+  },
+  "nv-logistics-faq-summary": {
+   "main": {
+    "cursor": "pointer",
+    "display": "flex",
+    "font-size": "19px",
+    "font-weight": "500",
+    "grid-column-gap": "16px",
+    "grid-row-gap": "16px",
+    "justify-content": "space-between",
+    "letter-spacing": "-.01em",
+    "list-style-type": "none",
+    "padding-bottom": "18px",
+    "padding-left": "4px",
+    "padding-right": "4px",
+    "padding-top": "18px"
+   },
+   "tiny": {
+    "font-size": "17px"
+   }
+  },
+  "nv-logistics-faq-p": {
+   "main": {
+    "color": "#55524C",
+    "font-size": "14.5px",
+    "line-height": "1.55",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "max-width": "720px",
+    "padding-bottom": "20px",
+    "padding-left": "4px",
+    "padding-right": "4px",
+    "padding-top": "0"
+   }
+  },
+  "nv-logistics-next-3": {
+   "main": {
+    "background-color": "#ECE9E3",
+    "background-image": "none",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "padding-bottom": "120px",
+    "padding-left": "28px",
+    "padding-right": "28px",
+    "padding-top": "88px",
+    "position": "relative",
+    "z-index": "6"
+   },
+   "medium": {
+    "padding-bottom": "72px",
+    "padding-left": "20px",
+    "padding-right": "20px",
+    "padding-top": "56px"
+   }
+  },
+  "nv-logistics-quote-h2": {
+   "main": {
+    "font-size": "clamp(40px,6vw,92px)",
+    "font-weight": "600",
+    "letter-spacing": "-.035em",
+    "line-height": "1",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "0",
+    "max-width": "820px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-logistics-quote-lead": {
+   "main": {
+    "color": "#55524C",
+    "font-size": "18px",
+    "line-height": "1.5",
+    "margin-bottom": "0",
+    "margin-left": "0",
+    "margin-right": "0",
+    "margin-top": "18px",
+    "max-width": "560px",
+    "padding-bottom": "0",
+    "padding-left": "0",
+    "padding-right": "0",
+    "padding-top": "0"
+   }
+  },
+  "nv-logistics-quote-ctas": {
+   "main": {
+    "align-items": "center",
+    "display": "flex",
+    "flex-wrap": "wrap",
+    "grid-column-gap": "10px",
+    "grid-row-gap": "10px",
+    "margin-top": "24px"
+   }
+  },
+  "nv-logistics-ctas-btn": {
+   "hover:main": {
+    "transform": "translateY(-1px)"
+   },
+   "main": {
+    "align-items": "center",
+    "background-color": "#1A1A18",
+    "background-image": "none",
+    "border-bottom-left-radius": "999px",
+    "border-bottom-right-radius": "999px",
+    "border-top-left-radius": "999px",
+    "border-top-right-radius": "999px",
+    "color": "#ECE9E3",
+    "display": "inline-flex",
+    "font-size": "14px",
+    "font-weight": "500",
+    "grid-column-gap": "8px",
+    "grid-row-gap": "8px",
+    "padding-bottom": "11px",
+    "padding-left": "18px",
+    "padding-right": "18px",
+    "padding-top": "11px",
+    "text-decoration": "none",
+    "transition": "transform .2s",
+    "white-space": "nowrap"
+   }
+  },
+  "nv-logistics-ctas-ghost": {
+   "main": {
+    "align-items": "center",
+    "backdrop-filter": "blur(6px)",
+    "background-color": "rgba(236,233,227,.6)",
+    "background-image": "none",
+    "border-bottom-color": "rgba(26,26,24,.14)",
+    "border-bottom-left-radius": "999px",
+    "border-bottom-right-radius": "999px",
+    "border-bottom-style": "solid",
+    "border-bottom-width": "1px",
+    "border-left-color": "rgba(26,26,24,.14)",
+    "border-left-style": "solid",
+    "border-left-width": "1px",
+    "border-right-color": "rgba(26,26,24,.14)",
+    "border-right-style": "solid",
+    "border-right-width": "1px",
+    "border-top-color": "rgba(26,26,24,.14)",
+    "border-top-left-radius": "999px",
+    "border-top-right-radius": "999px",
+    "border-top-style": "solid",
+    "border-top-width": "1px",
+    "color": "inherit",
+    "display": "inline-flex",
+    "font-size": "14px",
+    "font-weight": "500",
+    "grid-column-gap": "8px",
+    "grid-row-gap": "8px",
+    "padding-bottom": "11px",
+    "padding-left": "18px",
+    "padding-right": "18px",
+    "padding-top": "11px",
+    "text-decoration": "none",
+    "white-space": "nowrap"
+   }
+  }
+ },
+ "elements": {
+  "3da79410-b9ec-d3c5-f436-a368abcedca6": "nv-logistics-next",
+  "3da79410-b9ec-d3c5-f436-a368abcedc47": "nv-logistics-glance-mono",
+  "3da79410-b9ec-d3c5-f436-a368abcedc4b": "nv-logistics-glance-h2",
+  "3da79410-b9ec-d3c5-f436-a368abcedc4a": "nv-logistics-glance-span",
+  "3da79410-b9ec-d3c5-f436-a368abcedc90": "nv-logistics-glance-gl",
+  "3da79410-b9ec-d3c5-f436-a368abcedc5e": "nv-logistics-gl-gc",
+  "3da79410-b9ec-d3c5-f436-a368abcedc4c": "nv-logistics-gc-img",
+  "3da79410-b9ec-d3c5-f436-a368abcedc5d": "nv-logistics-gc-gt",
+  "3da79410-b9ec-d3c5-f436-a368abcedc50": "nv-logistics-gt-h3",
+  "3da79410-b9ec-d3c5-f436-a368abcedc52": "nv-logistics-gt-p",
+  "3da79410-b9ec-d3c5-f436-a368abcedc59": "nv-logistics-gt-ul",
+  "3da79410-b9ec-d3c5-f436-a368abcedc54": "nv-logistics-gt-li",
+  "3da79410-b9ec-d3c5-f436-a368abcedc56": "nv-logistics-gt-li",
+  "3da79410-b9ec-d3c5-f436-a368abcedc58": "nv-logistics-gt-li",
+  "3da79410-b9ec-d3c5-f436-a368abcedc5c": "nv-logistics-gt-tags",
+  "3da79410-b9ec-d3c5-f436-a368abcedc5b": "nv-logistics-tags-tag",
+  "3da79410-b9ec-d3c5-f436-a368abcedc6d": "nv-logistics-gl-gc-2",
+  "3da79410-b9ec-d3c5-f436-a368abcedc5f": "nv-logistics-gc-img-2",
+  "3da79410-b9ec-d3c5-f436-a368abcedc6c": "nv-logistics-gc-gt-2",
+  "3da79410-b9ec-d3c5-f436-a368abcedc61": "nv-logistics-gt-h3-2",
+  "3da79410-b9ec-d3c5-f436-a368abcedc63": "nv-logistics-gt-p",
+  "3da79410-b9ec-d3c5-f436-a368abcedc68": "nv-logistics-gt-ul",
+  "3da79410-b9ec-d3c5-f436-a368abcedc65": "nv-logistics-gt-li",
+  "3da79410-b9ec-d3c5-f436-a368abcedc67": "nv-logistics-gt-li",
+  "3da79410-b9ec-d3c5-f436-a368abcedc6b": "nv-logistics-gt-tags",
+  "3da79410-b9ec-d3c5-f436-a368abcedc6a": "nv-logistics-tags-tag",
+  "3da79410-b9ec-d3c5-f436-a368abcedc7c": "nv-logistics-gl-gc-2",
+  "3da79410-b9ec-d3c5-f436-a368abcedc6e": "nv-logistics-gc-img-2",
+  "3da79410-b9ec-d3c5-f436-a368abcedc7b": "nv-logistics-gc-gt-2",
+  "3da79410-b9ec-d3c5-f436-a368abcedc70": "nv-logistics-gt-h3-2",
+  "3da79410-b9ec-d3c5-f436-a368abcedc72": "nv-logistics-gt-p",
+  "3da79410-b9ec-d3c5-f436-a368abcedc77": "nv-logistics-gt-ul",
+  "3da79410-b9ec-d3c5-f436-a368abcedc74": "nv-logistics-gt-li",
+  "3da79410-b9ec-d3c5-f436-a368abcedc76": "nv-logistics-gt-li",
+  "3da79410-b9ec-d3c5-f436-a368abcedc7a": "nv-logistics-gt-tags",
+  "3da79410-b9ec-d3c5-f436-a368abcedc79": "nv-logistics-tags-tag",
+  "3da79410-b9ec-d3c5-f436-a368abcedc8f": "nv-logistics-gl-gc",
+  "3da79410-b9ec-d3c5-f436-a368abcedc7d": "nv-logistics-gc-img",
+  "3da79410-b9ec-d3c5-f436-a368abcedc8e": "nv-logistics-gc-gt",
+  "3da79410-b9ec-d3c5-f436-a368abcedc81": "nv-logistics-gt-h3",
+  "3da79410-b9ec-d3c5-f436-a368abcedc83": "nv-logistics-gt-p",
+  "3da79410-b9ec-d3c5-f436-a368abcedc8a": "nv-logistics-gt-ul",
+  "3da79410-b9ec-d3c5-f436-a368abcedc85": "nv-logistics-gt-li",
+  "3da79410-b9ec-d3c5-f436-a368abcedc87": "nv-logistics-gt-li",
+  "3da79410-b9ec-d3c5-f436-a368abcedc89": "nv-logistics-gt-li",
+  "3da79410-b9ec-d3c5-f436-a368abcedc8d": "nv-logistics-gt-tags",
+  "3da79410-b9ec-d3c5-f436-a368abcedc8c": "nv-logistics-tags-tag",
+  "3da79410-b9ec-d3c5-f436-a368abcedca5": "nv-logistics-glance-incl",
+  "3da79410-b9ec-d3c5-f436-a368abcedc95": "nv-logistics-incl-li",
+  "3da79410-b9ec-d3c5-f436-a368abcedc93": "nv-logistics-incl-b",
+  "3da79410-b9ec-d3c5-f436-a368abcedc9a": "nv-logistics-incl-li-2",
+  "3da79410-b9ec-d3c5-f436-a368abcedc98": "nv-logistics-incl-b",
+  "3da79410-b9ec-d3c5-f436-a368abcedc9f": "nv-logistics-incl-li-3",
+  "3da79410-b9ec-d3c5-f436-a368abcedc9d": "nv-logistics-incl-b",
+  "3da79410-b9ec-d3c5-f436-a368abcedca4": "nv-logistics-incl-li-4",
+  "3da79410-b9ec-d3c5-f436-a368abcedca2": "nv-logistics-incl-b",
+  "63d70939-f438-1a6d-30a0-a9d9567d536e": "nv-logistics-next-2",
+  "63d70939-f438-1a6d-30a0-a9d9567d5323": "nv-logistics-glance-mono",
+  "63d70939-f438-1a6d-30a0-a9d9567d5325": "nv-logistics-glance-h2",
+  "63d70939-f438-1a6d-30a0-a9d9567d5327": "nv-logistics-examples-exnote",
+  "63d70939-f438-1a6d-30a0-a9d9567d536d": "nv-logistics-examples-rooms",
+  "63d70939-f438-1a6d-30a0-a9d9567d533e": "nv-logistics-rooms-room",
+  "63d70939-f438-1a6d-30a0-a9d9567d5328": "nv-logistics-room-img",
+  "63d70939-f438-1a6d-30a0-a9d9567d533d": "nv-logistics-room-div",
+  "63d70939-f438-1a6d-30a0-a9d9567d532a": "nv-logistics-room-mono",
+  "63d70939-f438-1a6d-30a0-a9d9567d532c": "nv-logistics-room-h3",
+  "63d70939-f438-1a6d-30a0-a9d9567d532e": "nv-logistics-room-p",
+  "63d70939-f438-1a6d-30a0-a9d9567d533c": "nv-logistics-room-dl",
+  "63d70939-f438-1a6d-30a0-a9d9567d5331": "nv-logistics-room-dt",
+  "63d70939-f438-1a6d-30a0-a9d9567d5334": "nv-logistics-room-dd",
+  "63d70939-f438-1a6d-30a0-a9d9567d5337": "nv-logistics-room-dt-2",
+  "63d70939-f438-1a6d-30a0-a9d9567d533a": "nv-logistics-room-dd-2",
+  "63d70939-f438-1a6d-30a0-a9d9567d5355": "nv-logistics-rooms-room",
+  "63d70939-f438-1a6d-30a0-a9d9567d533f": "nv-logistics-room-img",
+  "63d70939-f438-1a6d-30a0-a9d9567d5354": "nv-logistics-room-div",
+  "63d70939-f438-1a6d-30a0-a9d9567d5341": "nv-logistics-room-mono",
+  "63d70939-f438-1a6d-30a0-a9d9567d5343": "nv-logistics-room-h3",
+  "63d70939-f438-1a6d-30a0-a9d9567d5345": "nv-logistics-room-p",
+  "63d70939-f438-1a6d-30a0-a9d9567d5353": "nv-logistics-room-dl",
+  "63d70939-f438-1a6d-30a0-a9d9567d5348": "nv-logistics-room-dt",
+  "63d70939-f438-1a6d-30a0-a9d9567d534b": "nv-logistics-room-dd",
+  "63d70939-f438-1a6d-30a0-a9d9567d534e": "nv-logistics-room-dt-2",
+  "63d70939-f438-1a6d-30a0-a9d9567d5351": "nv-logistics-room-dd-2",
+  "63d70939-f438-1a6d-30a0-a9d9567d536c": "nv-logistics-rooms-room-2",
+  "63d70939-f438-1a6d-30a0-a9d9567d5356": "nv-logistics-room-img-2",
+  "63d70939-f438-1a6d-30a0-a9d9567d536b": "nv-logistics-room-div",
+  "63d70939-f438-1a6d-30a0-a9d9567d5358": "nv-logistics-room-mono",
+  "63d70939-f438-1a6d-30a0-a9d9567d535a": "nv-logistics-room-h3",
+  "63d70939-f438-1a6d-30a0-a9d9567d535c": "nv-logistics-room-p",
+  "63d70939-f438-1a6d-30a0-a9d9567d536a": "nv-logistics-room-dl",
+  "63d70939-f438-1a6d-30a0-a9d9567d535f": "nv-logistics-room-dt",
+  "63d70939-f438-1a6d-30a0-a9d9567d5362": "nv-logistics-room-dd",
+  "63d70939-f438-1a6d-30a0-a9d9567d5365": "nv-logistics-room-dt-2",
+  "63d70939-f438-1a6d-30a0-a9d9567d5368": "nv-logistics-room-dd-2",
+  "dc4a2c63-91cb-990f-32c9-f8ebda386d08": "nv-logistics-next-2",
+  "dc4a2c63-91cb-990f-32c9-f8ebda386cf2": "nv-logistics-glance-mono",
+  "dc4a2c63-91cb-990f-32c9-f8ebda386cf6": "nv-logistics-glance-h2",
+  "dc4a2c63-91cb-990f-32c9-f8ebda386cf5": "nv-logistics-glance-span",
+  "dc4a2c63-91cb-990f-32c9-f8ebda386d07": "nv-logistics-ways",
+  "dc4a2c63-91cb-990f-32c9-f8ebda386cfe": "nv-logistics-ways-way",
+  "dc4a2c63-91cb-990f-32c9-f8ebda386cf9": "nv-logistics-way-mono",
+  "dc4a2c63-91cb-990f-32c9-f8ebda386cfb": "nv-logistics-way-h3",
+  "dc4a2c63-91cb-990f-32c9-f8ebda386cfd": "nv-logistics-way-p",
+  "dc4a2c63-91cb-990f-32c9-f8ebda386d06": "nv-logistics-ways-way",
+  "dc4a2c63-91cb-990f-32c9-f8ebda386d01": "nv-logistics-way-mono",
+  "dc4a2c63-91cb-990f-32c9-f8ebda386d03": "nv-logistics-way-h3",
+  "dc4a2c63-91cb-990f-32c9-f8ebda386d05": "nv-logistics-way-p",
+  "9987b66e-57a2-b6ae-e45f-eb76ec8dee48": "nv-logistics-next-2",
+  "9987b66e-57a2-b6ae-e45f-eb76ec8dee2c": "nv-logistics-glance-mono",
+  "9987b66e-57a2-b6ae-e45f-eb76ec8dee2e": "nv-logistics-glance-h2",
+  "9987b66e-57a2-b6ae-e45f-eb76ec8dee47": "nv-logistics-with-chips",
+  "9987b66e-57a2-b6ae-e45f-eb76ec8dee30": "nv-logistics-chips-a",
+  "9987b66e-57a2-b6ae-e45f-eb76ec8dee32": "nv-logistics-chips-a",
+  "9987b66e-57a2-b6ae-e45f-eb76ec8dee34": "nv-logistics-chips-a",
+  "9987b66e-57a2-b6ae-e45f-eb76ec8dee38": "nv-logistics-chips-a",
+  "9987b66e-57a2-b6ae-e45f-eb76ec8dee3c": "nv-logistics-chips-a",
+  "9987b66e-57a2-b6ae-e45f-eb76ec8dee40": "nv-logistics-chips-a",
+  "9987b66e-57a2-b6ae-e45f-eb76ec8dee44": "nv-logistics-chips-a",
+  "9987b66e-57a2-b6ae-e45f-eb76ec8dee46": "nv-logistics-chips-a",
+  "577ec3f9-7f98-6aad-3a50-83dcadff1d81": "nv-logistics-next-2",
+  "577ec3f9-7f98-6aad-3a50-83dcadff1d5f": "nv-logistics-glance-mono",
+  "577ec3f9-7f98-6aad-3a50-83dcadff1d63": "nv-logistics-glance-h2",
+  "577ec3f9-7f98-6aad-3a50-83dcadff1d80": "nv-logistics-faq",
+  "577ec3f9-7f98-6aad-3a50-83dcadff1d6a": "nv-logistics-faq-details",
+  "577ec3f9-7f98-6aad-3a50-83dcadff1d66": "nv-logistics-faq-summary",
+  "577ec3f9-7f98-6aad-3a50-83dcadff1d68": "nv-logistics-faq-p",
+  "577ec3f9-7f98-6aad-3a50-83dcadff1d71": "nv-logistics-faq-details",
+  "577ec3f9-7f98-6aad-3a50-83dcadff1d6d": "nv-logistics-faq-summary",
+  "577ec3f9-7f98-6aad-3a50-83dcadff1d6f": "nv-logistics-faq-p",
+  "577ec3f9-7f98-6aad-3a50-83dcadff1d78": "nv-logistics-faq-details",
+  "577ec3f9-7f98-6aad-3a50-83dcadff1d74": "nv-logistics-faq-summary",
+  "577ec3f9-7f98-6aad-3a50-83dcadff1d76": "nv-logistics-faq-p",
+  "577ec3f9-7f98-6aad-3a50-83dcadff1d7f": "nv-logistics-faq-details",
+  "577ec3f9-7f98-6aad-3a50-83dcadff1d7b": "nv-logistics-faq-summary",
+  "577ec3f9-7f98-6aad-3a50-83dcadff1d7d": "nv-logistics-faq-p",
+  "d8d2e106-366a-15b5-013e-fd1d8e714d9b": "nv-logistics-next-3",
+  "d8d2e106-366a-15b5-013e-fd1d8e714d91": "nv-logistics-glance-mono",
+  "d8d2e106-366a-15b5-013e-fd1d8e714d93": "nv-logistics-quote-h2",
+  "d8d2e106-366a-15b5-013e-fd1d8e714d95": "nv-logistics-quote-lead",
+  "d8d2e106-366a-15b5-013e-fd1d8e714d9a": "nv-logistics-quote-ctas",
+  "d8d2e106-366a-15b5-013e-fd1d8e714d97": "nv-logistics-ctas-btn",
+  "d8d2e106-366a-15b5-013e-fd1d8e714d99": "nv-logistics-ctas-ghost"
+ },
+ "unstyled_region_elements": []
+}
