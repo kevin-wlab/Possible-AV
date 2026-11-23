@@ -47,12 +47,14 @@ Last updated: 2026-11-20 (NYC landing pages → CMS template; see sessions/2026-
 - FLORA-generated images to be replaced with real photos by the owner when available (checked live 2026-11-23: the "STUDIO / INVENTORY IMAGE" placeholders are gone — About shows 3 images, Touring has no images).
 - (Superseded 2026-11-13: no WLAB mention or link on Possible AV.) Navy Yard and client names: Home, Touring and Work are confirmed clean live; recheck About, Services, Industries, Contact, Pricing, FAQ, Blog and the blog posts on the live site.
 - Sitemap: the Touring page is confirmed included (2026-11-12). The 4 draft duplicate pages (`untitled`…`untitled-4`) are excluded; delete them if they aren't needed.
-- **The LA case-study cover photo** shows a name on a banner, and its file URL contains names. The owner kept the photo for now; replacing or cropping it and re-uploading under a generic filename would finish the job.
+- **The LA case-study cover photo** shows a name on a banner (owner kept the photo). Filename fixed 2026-11-23 (staged): now `la-secret-show-led-wall.jpeg`.
 - **Two archived Work CMS items** (Times Square, New Orleans) can be permanently deleted in the Webflow dashboard if wanted. Old case-study URLs 404 on purpose (no redirects).
 - **Phone number** missing from the site and the JSON-LD.
 - ~~Duplicate hosts~~ Done 2026-11-16: apex is the default domain, www 301s to it, global canonical = https://possibleav.com.
 - **Touring page:** confirm the "larger systems ship ahead to the venue" line with the owner, and add a real tour photo.
-- **Mobile nav:** check the layout with 8 items.
+- **Mobile nav:** fixes staged 2026-11-23 (site footer `nx-navfix`); publish to custom domains after owner OK.
+- **From the 2026-11-23 inventory (owner to decide):** `/service/experiential` 301s to the dead `/experiential-production-nyc` (should go to `/nyc/experiential-production`, dashboard redirects); "the room" wording on /nyc/sound-system-rental and /nyc/uplighting-rental; homepage `#snd` link uses `href="#"`; footer says "Solutions" where the nav says "Rentals"; 9 older blog posts lack BlogPosting JSON-LD; /interactive has no BreadcrumbList; dead registered script `mobilenav`; Services CMS rich text still holds old WLAB links (hidden by 301s). jsDelivr URLs under the owner's GitHub account: owner handles.
+- /faq LED walls answer reworded 2026-11-23 (staged).
 - **More out-of-town case studies** (only LA is visible now), written without client names.
 
 ## Next steps (suggested)
