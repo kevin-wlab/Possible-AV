@@ -85,3 +85,4 @@ Changes (new global styles `nx-more` `fe534236-380f-8806-f7b0-968e4c6fa08d`, `nx
 
 Verified on possibleav.webflow.io: `.nx-more` on 13 pages, /contact 301, template breadcrumb present, only 8 URLs left under 3 body links in (case pages at 2). /audio screenshot checked.
 URL restructure (/industry/ vs /industries, /project/ vs /work) not done on purpose: low gain, redirect risk.
+- LIVE 2026-11-23 (owner OK): full publish; checked /audio, home, /contact 301, a case page, an industry page and a post on possibleav.com.

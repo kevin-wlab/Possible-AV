@@ -90,4 +90,4 @@ Last updated: 2026-11-20 (NYC landing pages → CMS template; see sessions/2026-
 - 2026-11-19 (later): Homepage native migration on test page /home-native-draft (noindex): 49 hn-* classes, 269 elements, residual CSS 18 KB; computed-style diff vs live = 0 at 1280/1100/768/390. Swapped into the real homepage and published the same day (owner approved); browser re-check after that publish still to do. See sessions/2026-11-19-home-native-migration.md.
 
 - 2026-11-23: Instagram link in footer (all pages) + `sameAs` in LocalBusiness JSON-LD — LIVE.
-- 2026-11-23: internal linking pass (home, 9 service pages, about/pricing/quote, all Work/Industry items, 11 posts), breadcrumbs, /contact → /get-a-quote 301 — staged, live pending owner OK.
+- 2026-11-23: internal linking pass (home, 9 service pages, about/pricing/quote, all Work/Industry items, 11 posts), breadcrumbs, /contact → /get-a-quote 301 — LIVE.
