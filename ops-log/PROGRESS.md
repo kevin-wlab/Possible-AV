@@ -44,7 +44,7 @@ Last updated: 2026-11-20 (NYC landing pages → CMS template; see sessions/2026-
 - Live check 2026-11-20: all 15 `/nyc/` URLs 200 with the new template, all 15 old `-nyc` URLs 404, home nav links to /nyc/av-rental. Consider 301s later if Search Console shows lost traffic.
 - Delete test pages `home-native-draft`, `nx-scratch` and the `untitled*` drafts in the Designer.
 - Earlier sessions (rebuild, restyles, Experiential move) weren't logged here. Next session: audit the live Webflow pages against `CONTEXT.md` and record what's actually done.
-- Placeholder copy and FLORA images to be replaced with real content by the owner. This includes the "STUDIO / INVENTORY IMAGE" placeholder on About and Touring.
+- FLORA-generated images to be replaced with real photos by the owner when available (checked live 2026-11-23: the "STUDIO / INVENTORY IMAGE" placeholders are gone — About shows 3 images, Touring has no images).
 - (Superseded 2026-11-13: no WLAB mention or link on Possible AV.) Navy Yard and client names: Home, Touring and Work are confirmed clean live; recheck About, Services, Industries, Contact, Pricing, FAQ, Blog and the blog posts on the live site.
 - Sitemap: the Touring page is confirmed included (2026-11-12). The 4 draft duplicate pages (`untitled`…`untitled-4`) are excluded; delete them if they aren't needed.
 - **The LA case-study cover photo** shows a name on a banner, and its file URL contains names. The owner kept the photo for now; replacing or cropping it and re-uploading under a generic filename would finish the job.
