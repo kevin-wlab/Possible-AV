@@ -53,7 +53,7 @@ Last updated: 2026-11-20 (NYC landing pages → CMS template; see sessions/2026-
 - ~~Duplicate hosts~~ Done 2026-11-16: apex is the default domain, www 301s to it, global canonical = https://possibleav.com.
 - **Touring page:** confirm the "larger systems ship ahead to the venue" line with the owner, and add a real tour photo.
 - **Mobile nav:** fixes live 2026-11-23 (site footer `nx-navfix`).
-- **From the 2026-11-23 inventory (owner to decide):** `/service/experiential` 301s to the dead `/experiential-production-nyc` (should go to `/nyc/experiential-production`, dashboard redirects); "the room" wording on /nyc/sound-system-rental and /nyc/uplighting-rental; homepage `#snd` link uses `href="#"`; footer says "Solutions" where the nav says "Rentals"; 9 older blog posts lack BlogPosting JSON-LD; /interactive has no BreadcrumbList; dead registered script `mobilenav`; Services CMS rich text still holds old WLAB links (hidden by 301s). jsDelivr URLs under the owner's GitHub account: owner handles.
+- **2026-11-23 inventory fixes staged** (see session log): legacy site scripts removed, "the room" wording, homepage sound button, Services CMS WLAB links, /interactive breadcrumb, BlogPosting on 9 posts. **Owner:** change the `/service/experiential` 301 target to `/nyc/experiential-production` in the dashboard. jsDelivr URLs (incl. site script `pawf`): owner handles.
 - /faq LED walls answer reworded 2026-11-23 (live 2026-11-23).
 - **More out-of-town case studies** (only LA is visible now), written without client names.
 
