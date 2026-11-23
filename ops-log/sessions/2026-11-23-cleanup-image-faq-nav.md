@@ -28,3 +28,6 @@
 
 ## Inventory
 - `ops-log/site-inventory-2026-11-23.md` added (agent crawl of all 76 sitemap URLs + CMS + settings). Open findings are listed in PROGRESS.
+
+## Live publish
+- Owner OK → published to possibleav.com + www (15:53 ET). Live check: /faq text + JSON-LD new, LA page uses only the new image, `nx-navfix` present.
