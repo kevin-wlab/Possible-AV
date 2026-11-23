@@ -37,8 +37,8 @@ Last updated: 2026-11-20 (NYC landing pages → CMS template; see sessions/2026-
 - **15 NYC landing pages → CMS** `NYC Pages` at `/nyc/<slug>` (old `/<slug>-nyc` pages drafted; no redirects by owner's choice). Template uses native `nx-` classes; verified identical to the old pages at 1440/768/375. See sessions/2026-11-20-nyc-cms-migration.md.
 - Internal links (nav, footer, /audio-visual-company-nyc, /rental-terms, 7 blog posts) repointed to `/nyc/`.
 
-## Staged 2026-11-20 (webflow.io only) — all pages native
-- Every page except the homepage now uses native classes + a small inline residual instead of external CSS (homepage was done 2026-11-19). A/B 0 diffs everywhere. Awaiting owner OK to publish. See sessions/2026-11-20-native-all-pages.md.
+## Live 2026-11-23 — all pages native
+- Every page except the homepage now uses native classes + a small inline residual instead of external CSS (homepage was done 2026-11-19). Published to possibleav.com + www 2026-11-23 with owner OK; live crawl 76/76 OK, spot A/B (/lighting, /services, /blog) 0 diffs. See sessions/2026-11-20-native-all-pages.md.
 
 ## Open items
 - Live check 2026-11-20: all 15 `/nyc/` URLs 200 with the new template, all 15 old `-nyc` URLs 404, home nav links to /nyc/av-rental. Consider 301s later if Search Console shows lost traffic.

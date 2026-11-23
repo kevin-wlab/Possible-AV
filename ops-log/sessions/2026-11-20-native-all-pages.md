@@ -34,3 +34,4 @@ migrate.py (+ opt-in flags: NX_PIN_WIDE, NX_BG_FULL, NX_LOCK_STATE, NX_KEEP_BP, 
 
 ## Next
 - Owner OK → full-site publish to possibleav.com + www → live crawl (all 200, no external CSS) + spot A/B on a few pages.
+- **Published** 2026-11-23 15:35 ET (owner: "发布"). Live: 76 URLs 200, no external page CSS except the homepage's studio-residual.css; spot A/B on /lighting, /services, /blog at 1440 = 0 diffs.
