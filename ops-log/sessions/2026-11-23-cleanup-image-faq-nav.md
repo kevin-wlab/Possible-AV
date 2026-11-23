@@ -66,3 +66,4 @@ Owner: "让possible和ledwall互相外链，顺便 Instagram 找个地方挂".
 - Site head JSON-LD: LocalBusiness gets `"sameAs":["https://www.instagram.com/possible.av/"]`; rest of the head block unchanged.
 - Possible AV → ledwall.nyc already linked from 16 pages + footer; the reverse (ledwall.nyc → possibleav.com) is now in body copy on its 3 event pages (logged in that repo, v5.162).
 - Verified on possibleav.webflow.io: /, /faq, /audio, /blog each have 1 Instagram link + sameAs.
+- LIVE 2026-11-23 (owner OK): full publish to possibleav.com + www; /, /faq, /audio verified with Instagram link + sameAs.
