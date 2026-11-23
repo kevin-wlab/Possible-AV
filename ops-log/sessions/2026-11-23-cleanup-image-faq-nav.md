@@ -59,3 +59,10 @@
 - Webflow pages and collections can only be deleted in the Designer UI; the Data API has no delete. Collection delete stays disabled until it has 0 items.
 - `/work` cards are static elements, not a CMS list — a new Work item needs a card added by hand.
 - Shell can't fetch media.flora.ai either; convert/upload images in the browser (canvas → JPEG → MD5 → `create_asset` → S3 POST).
+
+## Round 4 — Instagram + two-way sister links (STAGED, awaiting owner OK)
+Owner: "让possible和ledwall互相外链，顺便 Instagram 找个地方挂".
+- NX Footer component `fcf0ee38-0d76-5cd2-c260-debfab4e501c` (27 instances, incl. home): new link `b42615c1-12ac-ef88-5425-1172da2636ee` "Instagram ↗" → https://www.instagram.com/possible.av/ (target _blank, rel noopener, class hn-plain-link), after ctrlp.studio in the "Also ours" column.
+- Site head JSON-LD: LocalBusiness gets `"sameAs":["https://www.instagram.com/possible.av/"]`; rest of the head block unchanged.
+- Possible AV → ledwall.nyc already linked from 16 pages + footer; the reverse (ledwall.nyc → possibleav.com) is now in body copy on its 3 event pages (logged in that repo, v5.162).
+- Verified on possibleav.webflow.io: /, /faq, /audio, /blog each have 1 Instagram link + sameAs.
