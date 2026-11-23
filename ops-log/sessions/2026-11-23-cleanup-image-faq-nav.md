@@ -42,3 +42,20 @@
 - **Not done (needs owner):** `/service/experiential` 301 → change target to `/nyc/experiential-production` in Site settings → Publishing → 301 redirects (API needs Enterprise; dashboard not signed in in the agent browser).
 - **Left as is on purpose:** footer "Solutions" → `/#solutions` (valid homepage section, different from the nav "Rentals" link); H1s without "NYC" (titles/descriptions carry NYC; H1 copy is a design choice); NYC JSON-LD injected by JS (Google renders JS).
 - CONTEXT.md updated (IDs, nav, design, scripts, structured data, redirect note).
+
+## Round 3 (owner: "1-3执行，4 6 7 8你操作浏览器完成 …") — published live 2026-11-23
+- **Live publish** of the inventory-fix batch + everything below (possibleav.com + www). Live check: sound `<button>`, 6 script tags on home, redirect, blog JSON-LD, /interactive breadcrumb, no "speakers for the room", deleted pages 404, sitemap 77 URLs.
+- **Assets:** deleted the unused asset whose filename held a client name (`6af3d16e9b2449ac2602e638`). Deleted the old LA image asset `6af3c299c8fbb2eedeccc0e1` on the sister site (owner OK; CMS copies are separate files).
+- **Blog:** the 11 posts that already had JSON-LD used `https://www.possibleav.com`; now apex `https://possibleav.com` (subagent; JSON still parses).
+- **Redirect:** `/service/experiential` now → `/nyc/experiential-production`. Done in the Webflow dashboard via the owner's Chrome (delete old row + add new; rows can't be edited in place).
+- **Designer (Chrome):** deleted 20 pages — `untitled`, `untitled-2/-3/-4`, `home-native-draft`, `nx-scratch`, and the 15 old `-nyc` draft pages. Each slug was checked against an allowlist before delete. Deleted the 2 Site Images items (unused on all 76 pages) and the Site Images collection + template.
+- **Work CMS:** permanently deleted the 2 archived items (`…f41`, `…f43`).
+- **New case study** (owner's real three-city LED job; client deliberately not named, FLORA images only): Work item `6b04ae01d4cb34c83a90ad59`, `/project/three-city-led-wall-campaign` — 1.8 mm LED walls (4×7 cabinets NY/Chicago, 4×4 LA), flown with the crew, installed in four days, four-week run. Cover asset `6b04addbde9d83bf26bc9e00`. Static card added after the LA card on /work (card `c71146f7-c7ed-49e7-4e18-83f8bbd4192e`; dl built with the WHTML builder because DOM dt/dd can't take text via the element builder; stray `class` attributes removed).
+- **Touring:** FLORA load-in photo (asset `6b04addb143ba43ca7192de3`) added under "How the equipment travels" with new class `nv-tour-img` (16:9, 18px radius). Owner confirmed the "ship ahead" sentence is fine.
+- FLORA: 4 images on `t2i-elote-gateway`, $0.052 each ($0.208).
+- Owner said the LA cover photo is fine as is.
+
+## Gotchas (round 3)
+- Webflow pages and collections can only be deleted in the Designer UI; the Data API has no delete. Collection delete stays disabled until it has 0 items.
+- `/work` cards are static elements, not a CMS list — a new Work item needs a card added by hand.
+- Shell can't fetch media.flora.ai either; convert/upload images in the browser (canvas → JPEG → MD5 → `create_asset` → S3 POST).
