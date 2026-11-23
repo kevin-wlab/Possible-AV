@@ -67,3 +67,21 @@ Owner: "让possible和ledwall互相外链，顺便 Instagram 找个地方挂".
 - Possible AV → ledwall.nyc already linked from 16 pages + footer; the reverse (ledwall.nyc → possibleav.com) is now in body copy on its 3 event pages (logged in that repo, v5.162).
 - Verified on possibleav.webflow.io: /, /faq, /audio, /blog each have 1 Instagram link + sameAs.
 - LIVE 2026-11-23 (owner OK): full publish to possibleav.com + www; /, /faq, /audio verified with Instagram link + sameAs.
+
+## Round 5 — Site architecture / internal linking (STAGED, awaiting owner OK)
+Owner: "网页架构方面再看看有啥能优化的" → "先全部做了".
+
+Audit (77 sitemap URLs, nav/footer excluded): 17 case pages and 5 industry pages each had 1 body link in; /about 0, /faq 1, /rental-terms 1, /pricing 3, /audio-visual-company-nyc 3; service pages linked only to each other; 4 posts linked to the noindex /contact page.
+
+Changes (new global styles `nx-more` `fe534236-380f-8806-f7b0-968e4c6fa08d`, `nx-more-a` `6bf26a10-5b15-3ed7-5e3b-e8a68504b4ae`):
+- Home: 3 lines — industry pages (after `.hn-industries-rooms`), AV company page / work / about / pricing (after `.hn-turnkey-tkl`), FAQ + rental terms (after `.hn-faq`).
+- 9 service pages: one line appended to `#examples` (2 case studies + 1–2 guides) and one to `#ways` (matching /nyc rental pages + pricing, rental terms, FAQ).
+- /about (#turnkey, #where), /pricing (#tiers, #pfaq), /get-a-quote (#faq): links to AV company page, work, industries, touring, rental packages, cost guide, rental terms, FAQ.
+- Work CMS: `background` of all 16 items gained a line linking its industry, services, NYC rental page or guide.
+- Industries CMS: `offer` of all 5 items gained a line linking services, 2–3 case studies, a rental page and a guide.
+- Blog CMS: 9 short posts + 2 long posts gained a closing line to the matching /nyc rental, industry or case page; /contact → /get-a-quote in 2 posts.
+- /contact page set to draft + 301 /contact → /get-a-quote (dashboard via Chrome), so the 2 remaining post links also land on the quote form.
+- BreadcrumbList: page JSON-LD on /services, /industries, /work, /blog, /about, /pricing, /get-a-quote; Work and Industries templates get a footer script that builds Home › Work/Industries › H1.
+
+Verified on possibleav.webflow.io: `.nx-more` on 13 pages, /contact 301, template breadcrumb present, only 8 URLs left under 3 body links in (case pages at 2). /audio screenshot checked.
+URL restructure (/industry/ vs /industries, /project/ vs /work) not done on purpose: low gain, redirect risk.
