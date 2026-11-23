@@ -42,20 +42,20 @@ Last updated: 2026-11-20 (NYC landing pages → CMS template; see sessions/2026-
 
 ## Open items
 - Live check 2026-11-20: all 15 `/nyc/` URLs 200 with the new template, all 15 old `-nyc` URLs 404, home nav links to /nyc/av-rental. Consider 301s later if Search Console shows lost traffic.
-- Delete test pages `home-native-draft`, `nx-scratch` and the `untitled*` drafts in the Designer.
+- ~~Delete test pages~~ Done 2026-11-23: all test/draft pages, the 15 old `-nyc` drafts and the Site Images collection deleted.
 - Earlier sessions (rebuild, restyles, Experiential move) weren't logged here. Next session: audit the live Webflow pages against `CONTEXT.md` and record what's actually done.
 - FLORA-generated images to be replaced with real photos by the owner when available (checked live 2026-11-23: the "STUDIO / INVENTORY IMAGE" placeholders are gone — About shows 3 images, Touring has no images).
 - (Superseded 2026-11-13: no WLAB mention or link on Possible AV.) Navy Yard and client names: Home, Touring and Work are confirmed clean live; recheck About, Services, Industries, Contact, Pricing, FAQ, Blog and the blog posts on the live site.
 - Sitemap: the Touring page is confirmed included (2026-11-12). The 4 draft duplicate pages (`untitled`…`untitled-4`) are excluded; delete them if they aren't needed.
-- **The LA case-study cover photo** shows a name on a banner (owner kept the photo). Filename fixed 2026-11-23 (live 2026-11-23): now `la-secret-show-led-wall.jpeg`.
-- **Two archived Work CMS items** (Times Square, New Orleans) can be permanently deleted in the Webflow dashboard if wanted. Old case-study URLs 404 on purpose (no redirects).
+- LA cover photo: owner OK as is (2026-11-23). Filename fixed 2026-11-23 (live 2026-11-23): now `la-secret-show-led-wall.jpeg`.
+- ~~Two archived Work items~~ deleted 2026-11-23. Old case-study URLs 404 on purpose (no redirects).
 - **Phone number** missing from the site and the JSON-LD.
 - ~~Duplicate hosts~~ Done 2026-11-16: apex is the default domain, www 301s to it, global canonical = https://possibleav.com.
-- **Touring page:** confirm the "larger systems ship ahead to the venue" line with the owner, and add a real tour photo.
+- Touring: sentence confirmed; FLORA load-in photo added 2026-11-23 (owner wants FLORA images, not real photos).
 - **Mobile nav:** fixes live 2026-11-23 (site footer `nx-navfix`).
-- **2026-11-23 inventory fixes staged** (see session log): legacy site scripts removed, "the room" wording, homepage sound button, Services CMS WLAB links, /interactive breadcrumb, BlogPosting on 9 posts. **Owner:** change the `/service/experiential` 301 target to `/nyc/experiential-production` in the dashboard. jsDelivr URLs (incl. site script `pawf`): owner handles.
+- **2026-11-23 inventory fixes — live** (see session log): legacy site scripts removed, "the room" wording, homepage sound button, Services CMS WLAB links, /interactive breadcrumb, BlogPosting on 9 posts. `/service/experiential` 301 fixed. jsDelivr URLs (incl. site script `pawf`): owner handles.
 - /faq LED walls answer reworded 2026-11-23 (live 2026-11-23).
-- **More out-of-town case studies** (only LA is visible now), written without client names.
+- Out-of-town case studies: LA + three-city LED walls (added 2026-11-23, FLORA cover). /work cards are static: add a card by hand for each new Work item.
 
 ## Next steps (suggested)
 - Give each sister site its own keyword focus so shared copy doesn't compete: ledwall.nyc = LED walls, Possible AV = event / experiential AV, WLAB = virtual production / mocap.
