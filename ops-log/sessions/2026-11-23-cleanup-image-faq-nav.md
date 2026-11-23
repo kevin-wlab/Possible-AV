@@ -31,3 +31,14 @@
 
 ## Live publish
 - Owner OK → published to possibleav.com + www (15:53 ET). Live check: /faq text + JSON-LD new, LA page uses only the new image, `nx-navfix` present.
+
+## Inventory fixes (owner: "do whatever you think needs doing") — staged, not live yet
+- **Site scripts:** 13 legacy scripts (`padark1`–`10`, `seriestheme`, `seriestheme2`, `mobilenav`) unapplied site-wide. Check first: on 14 pages no `.pa-*` elements exist and none of their injected styles survive in the DOM, so computed styles were identical with them disabled (0 diffs). Kept `noindexdupes` and `pawf` (pawf loads a jsDelivr CSS under the owner's GitHub account — owner is handling those URLs). Script tags per page 19 → 7. Registrations kept (not deleted).
+- **"the room" (CONTEXT rule):** NYC Blocks `6b00d53fd0bb44401d756acc` (uplighting: "A full color wash / Uplights along every wall…"), `6b00d517aefe1284261a95be` (speaker: "for large spaces"), `6b00cf1aa67a95f7c51c09d5` (sound system FAQ: "speakers sized to the space") + the matching answer in NYC Pages `6b00cef30aed3a2cc9945636` `schema-json`.
+- **Homepage sound toggle:** `<a href="#" class="w-button">` replaced by a real `<button id="snd" type="button" class="snd mono">` (element `8729dd17-a6c7-4faa-7ebf-0e67b9eea811`), same children moved in. Staging: identical computed style and position, click toggles "Sound on/off".
+- **Services CMS (hidden, all 301):** WLAB links removed from Experiential `capabilities`/`faq` and AV Systems `faq` (LED answer now points to ledwall.nyc only).
+- **/interactive:** BreadcrumbList added to page JSON-LD (Home › Services › Interactive & tracking).
+- **Blog:** BlogPosting + BreadcrumbList embed appended to the body of the 9 older posts (subagent); verified on staging, all parse. None has images or FAQ sections.
+- **Not done (needs owner):** `/service/experiential` 301 → change target to `/nyc/experiential-production` in Site settings → Publishing → 301 redirects (API needs Enterprise; dashboard not signed in in the agent browser).
+- **Left as is on purpose:** footer "Solutions" → `/#solutions` (valid homepage section, different from the nav "Rentals" link); H1s without "NYC" (titles/descriptions carry NYC; H1 copy is a design choice); NYC JSON-LD injected by JS (Google renders JS).
+- CONTEXT.md updated (IDs, nav, design, scripts, structured data, redirect note).
