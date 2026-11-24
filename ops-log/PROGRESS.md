@@ -40,6 +40,9 @@ Last updated: 2026-11-20 (NYC landing pages → CMS template; see sessions/2026-
 ## Live 2026-11-23 — all pages native
 - Every page except the homepage now uses native classes + a small inline residual instead of external CSS (homepage was done 2026-11-19). Published to possibleav.com + www 2026-11-23 with owner OK; live crawl 76/76 OK, spot A/B (/lighting, /services, /blog) 0 diffs. See sessions/2026-11-20-native-all-pages.md.
 
+## Ranking plan
+See `ops-log/RANKING-PLAN.md` (2026-11-23): map pack → directories → long-tail → links, with expectations and who does what.
+
 ## GEO / AI-search to-do (2026-11-23 audit, in priority order)
 Audit: sessions/2026-11-23-geo-crawl-audit.md. Crawl is clean (77/77); the gaps are authority and schema.
 - [ ] (owner) P0 · 5 min: in ChatGPT and Perplexity, ask "Open https://possibleav.com/pricing and quote the H1 and the first sentence." Confirms AI crawlers get through.
