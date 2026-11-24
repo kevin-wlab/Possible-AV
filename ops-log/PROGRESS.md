@@ -40,6 +40,18 @@ Last updated: 2026-11-20 (NYC landing pages → CMS template; see sessions/2026-
 ## Live 2026-11-23 — all pages native
 - Every page except the homepage now uses native classes + a small inline residual instead of external CSS (homepage was done 2026-11-19). Published to possibleav.com + www 2026-11-23 with owner OK; live crawl 76/76 OK, spot A/B (/lighting, /services, /blog) 0 diffs. See sessions/2026-11-20-native-all-pages.md.
 
+## GEO / AI-search to-do (2026-11-23 audit, in priority order)
+Audit: sessions/2026-11-23-geo-crawl-audit.md. Crawl is clean (77/77); the gaps are authority and schema.
+- [ ] (owner) P0 · 5 min: in ChatGPT and Perplexity, ask "Open https://possibleav.com/pricing and quote the H1 and the first sentence." Confirms AI crawlers get through.
+- [ ] (owner) P0: Bing Webmaster Tools — add the site, submit the sitemap.
+- [ ] (owner) P0: free listings on the directories that dominate "AV rental NYC" results (event-vendor marketplaces, local directories). Same name / address / email as the footer. Biggest lever for both Google and AI answers.
+- [ ] (agent) P1: FAQPage JSON-LD on the ~25 pages that show an FAQ block without it (15 /nyc/*, 5 /industry/*, Home, About, Services, Pricing, Touring).
+- [ ] (agent) P1: BreadcrumbList on the 37 pages without it (/nyc/*, /project/*, /industry/*, /faq).
+- [ ] (agent, owner OK on wording) P2: one answer sentence under the main H2 of the 15 /nyc/* pages and /pricing. Headings stay.
+- [ ] (agent) P2: `sameAs` — add the Google Business Profile link and each listing as it goes live (Instagram only today).
+- [ ] (agent) P3: repoint 3 post links /contact → /get-a-quote; unapply the dead `noindexdupes` script.
+- [ ] (owner) P3 decide: page source loads CSS/JS from a GitHub path that contains the parent studio's name (all pages, not visible). Move to Webflow assets or leave.
+
 ## Open items
 - Live check 2026-11-20: all 15 `/nyc/` URLs 200 with the new template, all 15 old `-nyc` URLs 404, home nav links to /nyc/av-rental. Consider 301s later if Search Console shows lost traffic.
 - ~~Delete test pages~~ Done 2026-11-23: all test/draft pages, the 15 old `-nyc` drafts and the Site Images collection deleted.
